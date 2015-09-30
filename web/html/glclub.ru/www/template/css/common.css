@@ -1,0 +1,116 @@
+/**
+ * Elements default styles reset
+ */
+article,aside,figcaption,figure,footer,header,hgroup,nav,section,time {
+     display:block;
+}
+
+.clr {
+	clear:both;
+}
+
+
+
+section {
+	width:100%;
+	padding-top:1.6666em;
+	padding-bottom:1.6666em;
+}
+
+.sectionWrapper {
+	width:80%;
+	margin:0 auto 3.333em auto;
+}
+
+
+
+/**
+ * Typographics
+ */
+html {
+	font-size:18px;
+}
+body {
+	font-size:100%;
+}
+h2 {
+	font-size:2.666em;
+	margin-top:1.5em;
+	margin-bottom:1em;
+	padding-left:0.8333em;
+	padding-right:0.8333em;
+	line-height:1.25em;
+}
+p {
+	margin: 1em 0 1.6666em 0;
+	padding-left:2.2222em;
+	padding-right:2.2222em;
+}
+
+
+
+/**
+ * Forms
+ */
+form {
+	margin: 1em 0 1.6666em 0;
+	padding-left:2.2222em;
+	padding-right:2.2222em;
+}
+button {
+	font-size:inherit;
+	padding:0 1em;
+	line-height:2.4444em;
+	margin-bottom:1.6666em;
+}
+
+
+/**
+ * Separators
+ */
+.headerSeparator {
+	margin:-1.6666em auto 2.5em auto;
+	height:2.5em;
+}
+.headerSeparator hr, .headerSeparator .icon {
+	float:left;
+}
+.headerSeparator hr {
+	width:3.888em;
+}
+.headerSeparator .icon {
+	margin: 10px 13px 11px 13px
+}
+
+
+/**
+ * Icons
+ */
+.-xs {
+	width:16px;
+	height:16px;
+}
+.-s {
+	width:24px;
+	height:24px;
+}
+.-m {
+	width:32px;
+	height:32px;
+}
+.-l {
+	width:48px;
+	height:48px;
+}
+.-xl {
+	width:64px;
+	height:64px;
+}
+.-2xl {
+	width:128px;
+	height:128px;
+}
+.-3xl {
+	width:256px;
+	height:256px;
+}
