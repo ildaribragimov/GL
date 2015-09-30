@@ -22,6 +22,7 @@
     <body>
 		<?php
 			include "includes/section-sendResponce.php";
+			
 		?>
         <!-- Подвал страницы - Начало -->
         <footer>
