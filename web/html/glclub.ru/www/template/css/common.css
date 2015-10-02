@@ -1,27 +1,72 @@
 /**
  * Elements default styles reset
  */
-article,aside,figcaption,figure,footer,header,hgroup,nav,section,time {
-     display:block;
-}
 
+
+
+/**
+ * Global elements styles
+ */
 .clr {
 	clear:both;
 }
 
 
 
+/**
+ * Template construction styles
+ */
+/* Sections */
 section {
 	width:100%;
 	padding-top:1.6666em;
 	padding-bottom:1.6666em;
 }
-
 .sectionWrapper {
-	width:80%;
 	margin:0 auto 3.333em auto;
 }
 
+/* Collumns */
+.collumns-2 .col {
+	width:50%;
+	float:left;
+}
+.collumns-3 .col {
+	width:33.3333%;
+	float:left;
+}
+.collumns-4 .col {
+	width:25%;
+	float:left;
+}
+
+/* If window width >= 1280 px */
+@media screen and (min-width:1280px){
+	.sectionWrapper {
+		width:80%;
+	}
+}
+/* If window width < 1280 px */
+@media screen and (max-width:1279px) {
+	.sectionWrapper {
+		width:1024px;
+	}
+}
+/* If window width < 1041 px */
+@media screen and (max-width:1041px) {
+	.sectionWrapper {
+		width:100%;
+	}
+}
+/* If window width < 800 px */
+@media screen and (max-width:799px) {
+	.collumns-2 .col,
+	.collumns-3 .col,
+	.collumns-4 .col {
+		width:100%;
+	}	
+}
+/* ================ */
 
 
 /**
@@ -32,20 +77,28 @@ html {
 }
 body {
 	font-size:100%;
+	line-height:1.6666em;
+	text-align:center;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'PT Serif', 'Times New Roman';
+	font-weight: normal;
 }
 h2 {
-	font-size:2.666em;
-	margin-top:1.5em;
-	margin-bottom:1em;
+	font-size:2.6666em;
+	margin-top:1.25em;
+	margin-bottom:0.9375em;
 	padding-left:0.8333em;
 	padding-right:0.8333em;
 	line-height:1.25em;
 }
 p {
-	margin: 1em 0 1.6666em 0;
+	margin: 0.8333em 0 1.6666em 0;
 	padding-left:2.2222em;
 	padding-right:2.2222em;
+	font-family: 'Open Sans', sans-serif;
 }
+/* ================ */
 
 
 
@@ -63,6 +116,8 @@ button {
 	line-height:2.4444em;
 	margin-bottom:1.6666em;
 }
+/* ================ */
+
 
 
 /**
@@ -72,15 +127,30 @@ button {
 	margin:-1.6666em auto 2.5em auto;
 	height:2.5em;
 }
+.headerSeparator-wrapper, .headerSeparator-content {
+	float:left;
+	position:relative;
+}
+.headerSeparator-wrapper {
+	left:50%;
+}
+.headerSeparator-content {
+	left:-50%;
+}
 .headerSeparator hr, .headerSeparator .icon {
 	float:left;
 }
 .headerSeparator hr {
+	margin:1.1666em 0 1.2777em;
 	width:3.888em;
+	height:1px;
+	border:0;
 }
 .headerSeparator .icon {
-	margin: 10px 13px 11px 13px
+	margin: 10px 13px 11px 13px;
 }
+/* ================ */
+
 
 
 /**
@@ -114,3 +184,32 @@ button {
 	width:256px;
 	height:256px;
 }
+/* ================ */
+
+
+
+/**
+ * Individual styles
+ */
+
+/* Sections "About" & "Send Review" */
+#sendResponce,
+#about {
+	background-color: #625c5a;
+	color: #f8f8f9;
+}
+#sendResponce .headerSeparator hr,
+#about .headerSeparator hr {
+	background-color:#e9bdac;
+}
+#sendResponce .headerSeparator .icon,
+#about .headerSeparator .icon {
+	background-color:#e9bdac;
+}
+
+/* Section "About" */
+#about .sectionContent {
+	text-align:left;
+}
+
+/* ================ */
