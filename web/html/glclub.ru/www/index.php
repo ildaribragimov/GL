@@ -24,10 +24,14 @@
     </head>
     <body>
 		<?php
+			// Вставка секции "Цены"
+			include "includes/section-prices.php";
 			// Вставка секции "О клубе"
 			include "includes/section-about.php";
+			// Вставка секции "Отщывы"
+			include "includes/section-reviews.php";
 			// Вставка секции "Добавить отзыв"
-			//include "includes/section-sendResponce.php";
+			include "includes/section-sendReview.php";
 		?>
         <!-- Подвал страницы - Начало -->
 		<!--

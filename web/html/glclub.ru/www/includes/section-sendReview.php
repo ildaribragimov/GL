@@ -4,8 +4,8 @@
  */
 ?>
 
-<section id="sendResponce">
-	<div class="sectionWrapper">
+<section id="sendReview">
+	<div class="section-wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
 			<h2>Хотите поделиться впечатлением?</h2>
@@ -24,9 +24,8 @@
 		<!-- Шапка секции - Конец -->
 		
 		<!-- Содержимое секции - Начало -->
-		<div class="sectionContent">
-			<p>Вы уже отдыхали у Нас?<br>
-			У Вас есть предложения по улучшению сервиса?<br>
+		<div class="section-content">
+			<p>Вы уже отдыхали у Нас? &nbsp; У Вас есть предложения по улучшению сервиса?<br>
 			Поделитесь своим впечатлением.</p>
 			<form>
 				<button class="">Добавить отзыв</button>

@@ -22,11 +22,14 @@ section {
 	padding-top:1.6666em;
 	padding-bottom:1.6666em;
 }
-.sectionWrapper {
+.section-wrapper {
 	margin:0 auto 3.333em auto;
 }
 
 /* Collumns */
+.col {
+	margin-top:-0.8333em;
+}
 .collumns-2 .col {
 	width:50%;
 	float:left;
@@ -38,33 +41,6 @@ section {
 .collumns-4 .col {
 	width:25%;
 	float:left;
-}
-
-/* If window width >= 1280 px */
-@media screen and (min-width:1280px){
-	.sectionWrapper {
-		width:80%;
-	}
-}
-/* If window width < 1280 px */
-@media screen and (max-width:1279px) {
-	.sectionWrapper {
-		width:1024px;
-	}
-}
-/* If window width < 1041 px */
-@media screen and (max-width:1041px) {
-	.sectionWrapper {
-		width:100%;
-	}
-}
-/* If window width < 800 px */
-@media screen and (max-width:799px) {
-	.collumns-2 .col,
-	.collumns-3 .col,
-	.collumns-4 .col {
-		width:100%;
-	}	
 }
 /* ================ */
 
@@ -97,6 +73,9 @@ p {
 	padding-left:2.2222em;
 	padding-right:2.2222em;
 	font-family: 'Open Sans', sans-serif;
+}
+cite .marker {
+	color:#8d2b2e;
 }
 /* ================ */
 
@@ -193,23 +172,95 @@ button {
  */
 
 /* Sections "About" & "Send Review" */
-#sendResponce,
+#sendReview,
 #about {
 	background-color: #625c5a;
 	color: #f8f8f9;
 }
-#sendResponce .headerSeparator hr,
+#sendReview .headerSeparator hr,
 #about .headerSeparator hr {
 	background-color:#e9bdac;
 }
-#sendResponce .headerSeparator .icon,
+#sendReview .headerSeparator .icon,
 #about .headerSeparator .icon {
 	background-color:#e9bdac;
 }
 
 /* Section "About" */
-#about .sectionContent {
+#about .section-content {
 	text-align:left;
 }
 
+/* Sections "Prices" & "Reviews" */
+#prices,
+#reviews {
+	background-color:#daccc0;
+	color:#625c5a;
+}
+#prices .headerSeparator hr,
+#reviews .headerSeparator hr {
+	background-color:#6fa491;
+}
+#prices .headerSeparator .icon,
+#reviews .headerSeparator .icon {
+	background-color:#6fa491;
+}
+
+/* Sections "Prices" */
+#prices .priceLabel {
+	max-width:440px;
+	padding:0.8333em 1.1111em;
+	margin:0.8333em auto 0.6666em;
+}
+#prices .priceLabel-wrapper {
+	height:500px;
+	box-shadow:0 5px 20px #cbbeb3;
+	border-radius:5px;
+	background-color:#f2eee9;
+}
+/* ================ */
+
+
+
+/**
+ * Redefinition of styles depending on the device
+ */
+ 
+/* For Desktop users (If window width >= 960 px) */
+@media screen and (min-width:960px) {
+	.section-wrapper {
+		width:960px;
+	}
+}
+
+/* For Tablet users (If window width < 768 px) */
+@media screen and (min-width:768px) and (max-width: 960px) {
+	.section-wrapper {
+		width:auto;
+	}
+}
+
+/* For Smartphone users (If window width < 768 px) */
+@media screen and (max-width:768px) {
+	.section-wrapper {
+		width:auto;
+	}
+	.collumns-2 .col,
+	.collumns-3 .col,
+	.collumns-4 .col {
+		width:100%;
+	}
+	body {
+		font-size:0.8888em;
+	}
+	h2 {
+		font-size:2.25em;
+		padding-left:0.5666em;
+		padding-right:0.5666em;
+	}
+	p {
+		padding-left:1.5em;
+		padding-right:1.5em;
+	}
+} 
 /* ================ */
