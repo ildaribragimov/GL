@@ -50,6 +50,7 @@ section {
  */
 html {
 	font-size:18px;
+	font-family: 'Open Sans', sans-serif;
 }
 body {
 	font-size:100%;
@@ -61,18 +62,25 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 }
 h2 {
-	font-size:2.6666em;
 	margin-top:1.25em;
 	margin-bottom:0.9375em;
 	padding-left:0.8333em;
 	padding-right:0.8333em;
+	font-size:2.6666em;
 	line-height:1.25em;
+}
+h4 {
+	margin-top:1.5em;
+	margin-bottom:1em;
+	padding-left:1.3333em;
+	padding-right:1.3333em;
+	font-size:1.6666em;
+	line-height:1.5em;
 }
 p {
 	margin: 0.8333em 0 1.6666em 0;
 	padding-left:2.2222em;
 	padding-right:2.2222em;
-	font-family: 'Open Sans', sans-serif;
 }
 cite .marker {
 	color:#8d2b2e;
@@ -210,13 +218,31 @@ button {
 #prices .priceLabel {
 	max-width:440px;
 	padding:0.8333em 1.1111em;
-	margin:0.8333em auto 0.6666em;
+	margin:0.8333em auto 1.6666em;
 }
 #prices .priceLabel-wrapper {
-	height:500px;
+	padding:8px;
 	box-shadow:0 5px 20px #cbbeb3;
 	border-radius:5px;
 	background-color:#f2eee9;
+}
+#prices .priceLabel-content {
+	height:494px; /* Изменить после */
+	border:2px solid #daccc0;
+}
+#prices .priceLabel-content h4 {
+	margin-top:1.2333em;
+}
+#prices .priceLabel-content .price {
+	margin-top:1.6666em;
+	margin-bottom:2.5555em;
+}
+#prices .priceLabel-content .price span {
+	display:block;
+}
+#prices .priceLabel-content .cost {
+	font-size:4em;
+	line-height:1.25em;
 }
 /* ================ */
 
@@ -257,6 +283,10 @@ button {
 		font-size:2.25em;
 		padding-left:0.5666em;
 		padding-right:0.5666em;
+	}
+	h4 {
+		padding-left:0.9em;
+		padding-right:0.9em;
 	}
 	p {
 		padding-left:1.5em;

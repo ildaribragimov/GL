@@ -40,8 +40,8 @@
         </footer>
 		-->
         <!-- Подвал страницы - Конец -->
-		<!--
+		<!---->
 		<script src="template/js/modulargrid.js" type="text/javascript"></script>
-		-->
+		
     </body>
 </html>

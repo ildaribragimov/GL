@@ -28,12 +28,24 @@
 			<div class="collumns-2">
 				<div class="col">
 					<div class="priceLabel">
-						<div class="priceLabel-wrapper"></div>
+						<div class="priceLabel-wrapper">
+							<div class="priceLabel-content">
+								<h4>New York</h4>
+								<div class="price">
+									<span class="cost">1300</span>
+									<span class="currency">руб/час</span>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="col">
 					<div class="priceLabel">
-						<div class="priceLabel-wrapper"></div>
+						<div class="priceLabel-wrapper">
+							<div class="priceLabel-content">
+								<h4>Japan</h4>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="clr"></div>
