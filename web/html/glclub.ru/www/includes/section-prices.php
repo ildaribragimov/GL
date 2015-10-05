@@ -32,9 +32,14 @@
 							<div class="priceLabel-content">
 								<h4>New York</h4>
 								<div class="price">
-									<span class="cost">1300</span>
+									<span class="cost">1 300</span>
 									<span class="currency">руб/час</span>
 								</div>
+								<ul>
+									<li>Чистый бассейн (3 х 3 м.)</li>
+									<li><b>2 комнаты</b> отдыха</li>
+									<li>Стоимость часа учитывает компанию из <b>12 человек</b> <span class="footnote">*</span></li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -44,13 +49,22 @@
 						<div class="priceLabel-wrapper">
 							<div class="priceLabel-content">
 								<h4>Japan</h4>
+								<div class="price">
+									<span class="cost">1 000</span>
+									<span class="currency">руб/час</span>
+								</div>
+								<ul>
+									<li>Настоящая японская купель</li>
+									<li><b>1 комната</b> отдыха</li>
+									<li>Стоимость часа учитывает компанию из <b>6 человек</b> <span class="footnote">*</span></li>
+								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="clr"></div>
 			</div>
-			<p><cite><span class="marker">*</span> - За каждого дополнительного гостя доплата составит 100 рублей в час !</cite></p>
+			<p><cite><span class="footnote">*</span> - За каждого дополнительного гостя доплата составит 100 рублей в час !</cite></p>
 			<p>Так же в наличии всегда чистые простыни и полотенца, свежие банные веники (береза, дуб), средства гигиены (шампуни, мыло) и прочие банные принадлежности.</p>
 		</div>
 		<!-- Содержимое секции - Конец -->

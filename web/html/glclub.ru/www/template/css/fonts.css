@@ -8,6 +8,11 @@
 /* PT Serif */
 @import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic);
 
+/* PT Sans */
+@import url(https://fonts.googleapis.com/css?family=PT+Sans&subset=cyrillic,latin);
+
+/* Ubuntu */
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700,700italic&subset=latin,cyrillic);
 /*
 @font-face {
 	font-family: 'MyFont';
