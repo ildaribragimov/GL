@@ -7,6 +7,11 @@
 /**
  * Global elements styles
  */
+.headerSeparator .icon,
+ul li {
+	background-image:url(../img/sprite.png);
+	background-repeat:no-repeat;
+}
 .clr {
 	clear:both;
 }
@@ -87,11 +92,14 @@ p {
 }
 ul {
 	margin:0.8333em 0 1.6666em;
+	padding-left:2.2222em;
 	text-align:left;
+	list-style-type:none;
 }
 ul li {
 	padding-left:1.1111em;
 	margin:0.8333em 0;
+	background-position:-570px -262px;
 }
 /* ================ */
 
@@ -119,7 +127,8 @@ button {
  * Separators
  */
 .headerSeparator {
-	margin:-1.6666em auto 2.5em auto;
+	/* margin:-1.6666em auto 2.5em auto; */
+	margin:-0.8333em auto 2.5em auto;
 	height:2.5em;
 }
 .headerSeparator-wrapper, .headerSeparator-content {
@@ -197,14 +206,18 @@ button {
 #about .headerSeparator hr {
 	background-color:#e9bdac;
 }
-#sendReview .headerSeparator .icon,
-#about .headerSeparator .icon {
-	background-color:#e9bdac;
-}
 
 /* Section "About" */
 #about .section-content {
 	text-align:left;
+}
+#about .headerSeparator .icon {
+	background-position:-264px -176px;
+}
+
+/* Section "Send Review" */
+#sendReview .headerSeparator .icon {
+	background-position:-264px -216px;
 }
 
 /* Sections "Prices" & "Reviews" */
@@ -217,12 +230,11 @@ button {
 #reviews .headerSeparator hr {
 	background-color:#6fa491;
 }
-#prices .headerSeparator .icon,
-#reviews .headerSeparator .icon {
-	background-color:#6fa491;
-}
 
 /* Sections "Prices" */
+#prices .headerSeparator .icon {
+	background-position:-224px -176px;
+}
 #prices .priceLabel {
 	max-width:440px;
 	padding:0.8333em 1.1111em;
@@ -258,9 +270,12 @@ button {
 	font-size:1.6666em;
 	line-height:1.5em;
 }
-#prices .priceLabel-content ul {
-	list-style-type:none;
+
+/* Sections "Reviews" */
+#reviews .headerSeparator .icon {
+	background-position:-224px -216px;
 }
+
 /* ================ */
 
 
@@ -270,36 +285,32 @@ button {
  */
  
 /* For Desktop users (If window width >= 960 px) */
-@media screen and (min-width:960px) {
+@media only screen and (min-width:976px) {
 	.section-wrapper {
 		width:960px;
 	}
 }
 
-/* For Tablet users (If window width < 768 px) */
-@media screen and (min-width:768px) and (max-width: 960px) {
+/* For Tablet & Smartphone users (If window width < 960 px) */
+@media only screen and (max-width: 976px) {
 	.section-wrapper {
 		width:auto;
 	}
 }
 
+/* For Tablet users (If window width > 768 px and < 960 px) */
+@media only screen and (min-width:768px) and (max-width: 960px) {
+}
+
 /* For Smartphone users (If window width < 768 px) */
-@media screen and (max-width:768px) {
-	.section-wrapper {
-		width:auto;
-	}
-	.collumns-2 .col,
-	.collumns-3 .col,
-	.collumns-4 .col {
-		width:100%;
-	}
+@media only screen and (max-width:768px) {
 	body {
 		font-size:0.8888em;
 	}
 	h2 {
 		font-size:2.25em;
-		padding-left:0.5666em;
-		padding-right:0.5666em;
+		padding-left:0.6666em;
+		padding-right:0.6666em;
 	}
 	h4 {
 		padding-left:0.9em;
@@ -309,5 +320,39 @@ button {
 		padding-left:1.5em;
 		padding-right:1.5em;
 	}
-} 
+	ul {
+		padding-left:1.5em;
+	}
+}
+
+/* For Smartphone (Landscape orientation) users (If window width > 640 px and < 768 px) */
+@media only screen and (min-width:641px) and (max-width:768px) {
+	.collumns-2 .col,
+	.collumns-3 .col,
+	.collumns-4 .col {
+		width:50%;
+	}
+}
+
+/* For Smartphone (Landscape orientation) users (If window width < 568 px and < 640 px) */
+@media only screen and (min-width:569px) and (max-width:640px) {
+	.collumns-2 .col,
+	.collumns-3 .col,
+	.collumns-4 .col {
+		width:100%;
+	}
+	#prices .collumns-2 .col {
+		width:50%;
+	}
+}
+
+/* For Smartphone (Portrait orientation) users (If window width < 568 px) */
+@media only screen and (max-width:568px) {
+	.collumns-2 .col,
+	.collumns-3 .col,
+	.collumns-4 .col {
+		width:100%;
+	}
+}
+
 /* ================ */
