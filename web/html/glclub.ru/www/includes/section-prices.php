@@ -13,8 +13,7 @@
 				<div class="headerSeparator-wrapper">
 					<div class="headerSeparator-content">
 						<hr>
-						<div class="icon -s">
-						</div>
+						<div class="icon -s"></div>
 						<hr>
 					</div>
 				</div>

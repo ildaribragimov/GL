@@ -28,7 +28,13 @@
 			<p>Вы уже отдыхали у Нас? &nbsp; У Вас есть предложения по улучшению сервиса?<br>
 			Поделитесь своим впечатлением.</p>
 			<form>
-				<button class="">Добавить отзыв</button>
+				<div class="form-wrapper">
+					<div class="form-content">
+						<div class="formElement">
+							<button class="">Добавить отзыв</button>
+						</div>
+					</div>
+				</div>
 			</form>
 		</div>
 		<!-- Содержимое секции - Конец -->

@@ -32,6 +32,8 @@
 			include "includes/section-reviews.php";
 			// Вставка секции "Добавить отзыв"
 			include "includes/section-sendReview.php";
+			// Вставка секции "Контакты"
+			include "includes/section-contacts.php";
 		?>
         <!-- Подвал страницы - Начало -->
 		<!--
@@ -40,8 +42,8 @@
         </footer>
 		-->
         <!-- Подвал страницы - Конец -->
-		<!---->
+		<!--
 		<script src="template/js/modulargrid.js" type="text/javascript"></script>
-		
+		-->
     </body>
 </html>
