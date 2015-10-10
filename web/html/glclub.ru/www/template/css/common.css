@@ -8,8 +8,9 @@
  * Global elements styles
  */
 .headerSeparator .icon,
-ul li {
-	background-image:url(../img/sprite.png);
+ul li,
+button .icon {
+	background-image:url(../img/sprite_min.svg);
 	background-repeat:no-repeat;
 }
 .clr {
@@ -120,24 +121,64 @@ form .formElement {
 	padding-top:0.6666em;
 	padding-bottom:0.6666em;
 }
-form .formElement .formElement-field {
-	padding:0 1.1111em;
+form .formElement .element-field {
+	padding-left:1.1111em;
+	padding-right:1.1111em;
 	border-radius:2px;
 	border:1px solid #d9d5d3;
+}
+input,
+textarea,
+button {	
+	border:0;
 }
 input,
 textarea {
 	width:100%;
 	margin-left:-1.1111em;
-	margin-right:0 -1.1111em;
+	margin-right:-1.1111em;
 	padding:0.9444em 1.1111em;
 	line-height:1.6666em;
-	border:0;
 }
+
+/* Default Button Style */
 button {
-	font-size:inherit;
-	padding:0 1em;
-	line-height:2.4444em;
+	margin-top:0.3333em;
+	margin-bottom:0.3333em;
+	border-width:2px;
+	border-style:solid;
+	border-radius:4px;
+	padding-left:0;
+	padding-right:1em;
+	background:none;
+}
+button .icon,
+button .title {
+	margin-left:1em;
+	float:left;
+}
+button .icon.-s {
+	margin-top:0.5555em;
+	margin-bottom:0.5555em;
+}
+button .title {
+	margin-top:0.3888em;
+	margin-bottom:0.3888em;
+}
+
+/* Rounded Button Style */
+button.rounded {
+	border-radius:32px;
+	margin-top:0.0555em;
+	margin-bottom:0.0555em;
+}
+button.rounded .icon.-s {
+	margin-top:1em;
+	margin-bottom:1em;
+}
+button.rounded .title {
+	margin-top:0.8333em;
+	margin-bottom:0.8333em;
 }
 /* ================ */
 
@@ -147,12 +188,12 @@ button {
  * Separators
  */
 .headerSeparator {
-	/* margin:-1.6666em auto 2.5em auto; */
 	margin:-0.8333em auto 2.5em auto;
 	height:2.5em;
 	overflow:hidden;
 }
-.headerSeparator-wrapper, .headerSeparator-content {
+.headerSeparator-wrapper,
+.headerSeparator-content {
 	float:left;
 	position:relative;
 }
@@ -162,7 +203,8 @@ button {
 .headerSeparator-content {
 	left:-50%;
 }
-.headerSeparator hr, .headerSeparator .icon {
+.headerSeparator hr,
+.headerSeparator .icon {
 	float:left;
 }
 .headerSeparator hr {
@@ -209,6 +251,23 @@ button {
 	width:256px;
 	height:256px;
 }
+
+.icon.plane {
+	background-position:-424px -176px;
+}
+.element-button.disabled .icon.plane,
+.element-button.disabled button:hover .icon.plane {
+	background-position:-384px -216px;
+}
+.element-button button:hover .icon.plane {
+	background-position:-424px -216px;
+}
+.icon.showMap {
+	background-position:-344px -216px;
+}
+.formElement.hover .icon.showMap {
+	background-position:-384px -176px;
+}
 /* ================ */
 
 
@@ -238,9 +297,29 @@ button {
 	background-position:-264px -176px;
 }
 
-/* Section "Send Review" */
+/* Section "Send Review" & "Contacts" */
 #sendReview header .headerSeparator .icon {
 	background-position:-264px -216px;
+}
+#sendReview form,
+#contacts .subsection-address form {
+	padding-top:0;
+	padding-bottom:0;
+}
+#sendReview button,
+#contacts .subsection-address button {
+	border-color:#e9bdac;
+	color:#e9bdac;
+}
+#sendReview button:hover,
+#contacts .subsection-address button:hover {
+	background:#e9bdac;
+	color:#5d463a;
+}
+#contacts .subsection-sendMail button:hover {
+	border-color:#3b876f;
+	background:#3b876f;
+	color:#f8f8f9;
 }
 
 /* Sections "Prices" & "Reviews" */
@@ -300,11 +379,19 @@ button {
 }
 
 /* Sections "Contacts" */
+#contacts {
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+}
 #contacts header .headerSeparator .icon {
 	background-position:-347px -176px;
 }
 #contacts .section-content .headerSeparator {
     margin-top: 0;
+}
+#contacts .subsection-address button:hover .icon.showMap {
+	background-position:-384px -176px;
 }
 #contacts .subsection-phone .headerSeparator .icon {
 	background-position:-304px -176px;
@@ -316,27 +403,43 @@ button {
 #contacts .subsection-sendMail .headerSeparator .icon {
 	background-position:-304px -219px;
 }
-#contacts form {
+#contacts .subsection-sendMail form {
 	max-width:640px;
 }
-#contacts form .form-wrapper {
+#contacts .subsection-sendMail form .form-wrapper {
 	padding:1em;
 	border-radius:5px;
 	box-shadow:0 5px 20px rgba(0, 0, 0, 0.25);
+	background-image:url(../img/bg1.png);
 }
-#contacts form .form-content,
-#contacts form input,
-#contacts form textarea {
+#contacts .subsection-sendMail form .form-content {
+	border:1px solid #d9d5d3;
+	padding:0.7777em 1.0555em;
+}
+#contacts .subsection-sendMail form .form-content,
+#contacts .subsection-sendMail form input,
+#contacts .subsection-sendMail form textarea {
 	background-color:#f8f8f9;
 }
 
-#contacts form input,
-#contacts form textarea {
+#contacts .subsection-sendMail form input,
+#contacts .subsection-sendMail form textarea {
 	text-align:center;
 	color:#625c5a;
 }
-
-
+#contacts .subsection-sendMail form button .icon.plane {
+	margin-left:1.1111em;
+	margin-right:-0.1111em;
+}
+#contacts .subsection-sendMail button {
+	border-color:#3b876f;
+}
+#contacts .subsection-sendMail .element-button.disabled button,
+#contacts .subsection-sendMail .element-button.disabled form button:hover {
+	border-color:#e8e5e2;
+	background:none;
+	box-shadow:0 0 15px rgba(0, 0, 0, 0.05) inset;
+}
 /* ================ */
 
 
@@ -350,12 +453,18 @@ button {
 	.section-wrapper {
 		width:960px;
 	}
+	#contacts {
+		background-image:url(../../media/contacts_bg.jpg);
+	}
 }
 
 /* For Tablet & Smartphone users (If window width < 960 px) */
 @media only screen and (max-width: 976px) {
 	.section-wrapper {
 		width:auto;
+	}
+	#contacts {
+		background-image:url(../../media/contacts_bg_tablet.jpg);
 	}
 }
 
@@ -384,6 +493,9 @@ button {
 	}
 	ul {
 		padding-left:1.5em;
+	}
+	#contacts {
+		background-image:url(../../media/contacts_bg_mobile.jpg);
 	}
 }
 

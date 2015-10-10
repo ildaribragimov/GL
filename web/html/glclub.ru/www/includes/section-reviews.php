@@ -25,6 +25,14 @@
 		
 		<!-- Содержимое секции - Начало -->
 		<div class="section-content">
+			<div class="reviewsItems">
+				
+			</div>
+			<div class="switchers">
+				<div class="arrows"></div>
+				<div class="radioButtons"></div>
+			</div>
+
 			<div class="collumns-2">
 				<div class="col"></div>
 				<div class="col"></div>

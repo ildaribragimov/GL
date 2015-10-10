@@ -31,7 +31,11 @@
 				<div class="subsection-address adr">
 					<p><span class="country-name"><span class="value-title" title="Россия"></span></span> <span class="region"><span class="value-title" title="Республика Татарстан"></span></span> <span class="locality">Набережные Челны</span>, <span class="street-address">пр. Чулман, 37/04</span>, <span class="extended-address">цокольный этаж</span>.</p>
 					<form>
-						<button class="">Посмотреть на карте</button>
+						<button>
+							<span class="icon -s showMap"></span>
+							<span class="title">Посмотреть на карте</span>
+							<span class="clr"></span>
+						</button>
 					</form>
 				</div>
 				<div class="subsection-phone">
@@ -66,18 +70,26 @@
 					<div class="form-wrapper">
 						<div class="form-content">
 							<div class="formElement">
-								<div class="formElement-field">
+								<div class="element-field">
 									<input name="userName" placeholder="Имя" type="text" required >
 								</div>
 							</div>
 							<div class="formElement">
-								<div class="formElement-field">
+								<div class="element-field">
 									<input name="userEmail" placeholder="E-mail" type="text" required >
 								</div>
 							</div>
 							<div class="formElement">
-								<div class="formElement-field textarea">
+								<div class="element-field">
 									<textarea name="userMessage" placeholder="Напишите свой отзыв здесь..." rows="3" required ></textarea>
+								</div>
+							</div>
+							<div class="formElement">
+								<div class="element-button disabled">
+									<button class="rounded">
+										<span class="icon -s plane"></span>
+										<span class="clr"></span>
+									</button>
 								</div>
 							</div>
 						</div>
