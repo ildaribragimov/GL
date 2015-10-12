@@ -9,9 +9,9 @@
 		<!-- Шапка секции - Начало -->
 		<header>
 			<h2>Приезжайте отдохнуть</h2>
-			<div class="headerSeparator">
-				<div class="headerSeparator-wrapper">
-					<div class="headerSeparator-content">
+			<div class="separator">
+				<div class="separator-wrapper">
+					<div class="separator-content">
 						<hr>
 						<div class="icon -s"></div>
 						<hr>
@@ -39,9 +39,9 @@
 					</form>
 				</div>
 				<div class="subsection-phone">
-					<div class="headerSeparator">
-						<div class="headerSeparator-wrapper">
-							<div class="headerSeparator-content">
+					<div class="separator">
+						<div class="separator-wrapper">
+							<div class="separator-content">
 								<hr>
 								<div class="icon -s"></div>
 								<hr>
@@ -53,9 +53,9 @@
 				</div>
 			</div>
 			<div class="subsection-sendMail">
-				<div class="headerSeparator">
-					<div class="headerSeparator-wrapper">
-						<div class="headerSeparator-content">
+				<div class="separator">
+					<div class="separator-wrapper">
+						<div class="separator-content">
 							<hr>
 							<div class="icon -s"></div>
 							<hr>

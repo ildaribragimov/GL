@@ -9,9 +9,9 @@
 		<!-- Шапка секции - Начало -->
 		<header>
 			<h2>О клубе</h2>
-			<div class="headerSeparator">
-				<div class="headerSeparator-wrapper">
-					<div class="headerSeparator-content">
+			<div class="separator">
+				<div class="separator-wrapper">
+					<div class="separator-content">
 						<hr>
 						<div class="icon -s">
 						</div>
