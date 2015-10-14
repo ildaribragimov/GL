@@ -108,6 +108,9 @@ p a {
 	font-style:italic;
 	color:#3b876f;
 }
+p a:hover {
+	text-decoration:none;
+}
 .footnote {
 	color:#8d2b2e;
 }
@@ -341,6 +344,59 @@ button.rounded .title {
  * Individual styles
  */
 
+/* Section "Rooms" */
+#rooms {
+	padding:0;
+}
+#rooms .section-wrapper {
+	margin:0;
+}
+#rooms .roomsItems,
+#rooms .roomsItem {
+	height:100vh;
+}
+#rooms .roomsItems {
+	width:100%;
+	overflow:hidden;
+}
+#rooms .roomsItems-wrapper {
+	margin-left:-50%;
+	width:200%;
+}
+#rooms .roomsItem {
+	width:50%;
+	float:left;
+}
+#rooms .roomsItem .room-preview {
+	width:100%;
+}
+#rooms .roomsItem .room-preview,
+#rooms .roomsItem .room-previewImg {
+	height:inherit;
+}
+#rooms .roomsItem .room-preview a {
+	position:relative;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+}
+
+#rooms .roomsItem .room-previewImg {
+	width:inherit;
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+#rooms .roomsItem.-newYork .room-previewImg {
+	background-image:url("../../media/rooms/new_york/medium/CK1A9258.jpg");
+	background-position:center right;
+}
+#rooms .roomsItem.-japan .room-previewImg {
+	background-image:url("../../media/rooms/japan/medium/CK1A9294.jpg");
+	background-position:center left;
+}
+
+ 
 /* Sections "About" & "Send Review" & "Contacts" */
 #sendReview,
 #about,
