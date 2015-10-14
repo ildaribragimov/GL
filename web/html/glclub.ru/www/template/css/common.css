@@ -10,7 +10,9 @@
 .separator .icon,
 ul li,
 button .icon,
-.radioItem a {
+.radioItem a,
+.arrowLeft a,
+.arrowRight a {
 	background-image:url(../img/sprite_min.svg);
 	background-repeat:no-repeat;
 }
@@ -30,24 +32,30 @@ section {
 	padding-bottom:1.6666em;
 }
 .section-wrapper {
-	margin:0 auto 3.333em auto;
+	margin-bottom:3.333em;
+}
+.section-content {
+	position:relative;
+}
+header,
+.content-wrapper {
+	margin-left:auto;
+	margin-right:auto;
 }
 
 /* Collumns */
-.col {
+.collumns .col {
 	margin-top:-0.8333em;
+	float:left;
 }
-.collumns-2 .col {
+.collumns.-two .col {
 	width:50%;
-	float:left;
 }
-.collumns-3 .col {
+.collumns.-three .col {
 	width:33.3333%;
-	float:left;
 }
-.collumns-4 .col {
+.collumns.-four .col {
 	width:25%;
-	float:left;
 }
 /* ================ */
 
@@ -226,6 +234,7 @@ button.rounded .title {
 }
 .radioItem {
 	margin:0.3888em 0.6666em;
+	background:none;
 }
 .radioItem a {
 	display:block;
@@ -483,11 +492,56 @@ button.rounded .title {
 	background-color:#b1a8a6;
 }
 
-#reviews .radioItem {
+#reviews .radioItem a {
 	background-position:-560px -80px;	
 }
-#reviews .radioItem.-active {
+#reviews .radioItem.-active a,
+#reviews .radioItem a:hover {
 	background-position:-560px -112px;
+}
+
+#reviews .arrows .arrowLeft,
+#reviews .arrows .arrowRight {
+	top:87px;
+	width:64px;
+	height:64px;
+	padding:1px 8px;
+	position:absolute;
+}
+#reviews .arrows .arrowLeft {
+	left:25%;
+	left:calc( 0.5 * (50% - 200px) + 80px );
+}
+#reviews .arrows .arrowRight {
+	right:25%;
+	right:calc( 0.5 * (50% - 200px) + 80px );
+}
+#reviews .arrows .arrowLeft.-disable,
+#reviews .arrows .arrowRight.-disable {
+	opacity:0.25;
+}
+#reviews .arrows .arrowLeft a {
+	left:-50%;
+	background-position:-400px -16px;
+}
+#reviews .arrows .arrowLeft.-active a,
+#reviews .arrows .arrowLeft a:hover {
+	background-position:-400px -96px;
+}
+#reviews .arrows .arrowRight a {
+	right:-50%;
+	background-position:-480px -16px;
+}
+#reviews .arrows .arrowRight.-active a,
+#reviews .arrows .arrowRight a:hover {
+	background-position:-480px -96px;
+}
+#reviews .arrows .arrowLeft a,
+#reviews .arrows .arrowRight a {
+	display:block;
+	width:inherit;
+	height:inherit;
+	position:relative;
 }
 
 /* Sections "Contacts" */
@@ -559,10 +613,22 @@ button.rounded .title {
 /**
  * Redefinition of styles depending on the device
  */
- 
+
+/* For Desktop users (If window width <= 1280 px) */
+@media only screen and (max-width: 1296px) {
+	#reviews .arrows .arrowLeft {
+		left:15%;
+		left:calc( 0.5 * (50% - 120px) );
+	}
+	#reviews .arrows .arrowRight {
+		right:15%;
+		right:calc( 0.5 * (50% - 120px) );
+	}
+}
+
 /* For Desktop users (If window width >= 960 px) */
 @media only screen and (min-width:976px) {
-	.section-wrapper {
+	.content-wrapper {
 		width:960px;
 	}
 	#contacts {
@@ -609,36 +675,43 @@ button.rounded .title {
 	#contacts {
 		background-image:url(../../media/contacts/contacts_bg_mobile.jpg);
 	}
+	#reviews .arrows {
+		display:none;
+	}
 }
 
 /* For Smartphone (Landscape orientation) users (If window width > 640 px and < 768 px) */
 @media only screen and (min-width:641px) and (max-width:768px) {
-	.collumns-2 .col,
-	.collumns-3 .col,
-	.collumns-4 .col {
+	.collumns.-two .col,
+	.collumns.-three .col,
+	.collumns.-four .col {
 		width:50%;
 	}
 }
 
-/* For Smartphone (Landscape orientation) users (If window width < 568 px and < 640 px) */
-@media only screen and (min-width:569px) and (max-width:640px) {
-	.collumns-2 .col,
-	.collumns-3 .col,
-	.collumns-4 .col {
+/* For Smartphone (Landscape orientation) users (If window width < 640 px) */
+@media only screen and (max-width:640px) {
+	.collumns.-two .col,
+	.collumns.-three .col,
+	.collumns.-four .col {
 		width:100%;
 	}
-	#prices .collumns-2 .col {
+	#reviews .reviewItem.-active .author .photo {
+		width:150px;
+		height:150px;
+		border-radius:75px;
+	}
+}
+
+/* For Smartphone (Landscape orientation) users (If window width > 568 px and < 640 px) */
+@media only screen and (min-width:569px) and (max-width:640px) {
+	#prices .collumns.-two .col {
 		width:50%;
 	}
 }
 
 /* For Smartphone (Portrait orientation) users (If window width < 568 px) */
 @media only screen and (max-width:568px) {
-	.collumns-2 .col,
-	.collumns-3 .col,
-	.collumns-4 .col {
-		width:100%;
-	}
 }
 
 /* ================ */

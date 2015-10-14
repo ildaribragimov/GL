@@ -62,18 +62,25 @@
 				<div class="clr"></div>
 			</div>
 			<div class="switchers">
-				<div class="arrows"></div>
+				<div class="arrows">
+					<div class="arrowLeft">
+						<a href="/index.php?review=1" target="_self" title="Отзыв от Мария Кривенкова"></a>
+					</div>
+					<div class="arrowRight">
+						<a href="/index.php?review=3" target="_self" title="Отзыв от Виктор Щедрый"></a>
+					</div>
+				</div>
 				<div class="radioButtons">
 					<div class="radioButtons-wrapper">
 						<div class="radioButtons-content">
 							<ul>
-								<li class="radioItem -xs">
+								<li class="radioItem -xs -beforeActiveItem">
 									<a href="/index.php?review=1" target="_self" title="Отзыв от Мария Кривенкова"></a>
 								</li>
 								<li class="radioItem -xs -active">
 									<a href="/index.php?review=2" target="_self" title="Отзыв от Александр Григоров"></a>
 								</li>
-								<li class="radioItem -xs">
+								<li class="radioItem -xs -beforeActiveItem">
 									<a href="/index.php?review=3" target="_self" title="Отзыв от Виктор Щедрый"></a>
 								</li>
 								<li class="radioItem -xs">

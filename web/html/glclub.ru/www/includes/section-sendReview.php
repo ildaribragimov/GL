@@ -25,14 +25,16 @@
 		
 		<!-- Содержимое секции - Начало -->
 		<div class="section-content">
-			<p>Вы уже отдыхали у Нас? &nbsp; У Вас есть предложения по улучшению сервиса?<br>
-			Поделитесь своим впечатлением.</p>
-			<form>
-				<button>
-					<span class="title">Добавить отзыв</span>
-					<span class="clr"></span>
-				</button>
-			</form>
+			<div class="content-wrapper">
+				<p>Вы уже отдыхали у Нас? &nbsp; У Вас есть предложения по улучшению сервиса?<br>
+				Поделитесь своим впечатлением.</p>
+				<form>
+					<button>
+						<span class="title">Добавить отзыв</span>
+						<span class="clr"></span>
+					</button>
+				</form>
+			</div>
 		</div>
 		<!-- Содержимое секции - Конец -->
 	</div>
