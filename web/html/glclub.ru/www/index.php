@@ -24,16 +24,18 @@
     </head>
     <body>
 		<?php
+			// Вставка секции "Номера"
+			include "includes/rooms.php";
 			// Вставка секции "Цены"
-			include "includes/section-prices.php";
+			include "includes/prices.php";
 			// Вставка секции "О клубе"
-			include "includes/section-about.php";
+			include "includes/about.php";
 			// Вставка секции "Отщывы"
-			include "includes/section-reviews.php";
+			include "includes/reviews.php";
 			// Вставка секции "Добавить отзыв"
-			include "includes/section-sendReview.php";
+			include "includes/sendReview.php";
 			// Вставка секции "Контакты"
-			include "includes/section-contacts.php";
+			include "includes/contacts.php";
 		?>
         <!-- Подвал страницы - Начало -->
 		<!--

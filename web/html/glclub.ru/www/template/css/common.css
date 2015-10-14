@@ -366,35 +366,64 @@ button.rounded .title {
 #rooms .roomsItem {
 	width:50%;
 	float:left;
-}
-#rooms .roomsItem .room-preview {
-	width:100%;
-}
-#rooms .roomsItem .room-preview,
-#rooms .roomsItem .room-previewImg {
-	height:inherit;
-}
-#rooms .roomsItem .room-preview a {
 	position:relative;
-	left:0;
-	top:0;
-	width:100%;
-	height:100%;
-}
-
-#rooms .roomsItem .room-previewImg {
-	width:inherit;
 	background-repeat:no-repeat;
 	background-size:cover;
 }
-#rooms .roomsItem.-newYork .room-previewImg {
+#rooms .roomsItem.-newYork  {
 	background-image:url("../../media/rooms/new_york/medium/CK1A9258.jpg");
 	background-position:center right;
 }
-#rooms .roomsItem.-japan .room-previewImg {
+#rooms .roomsItem.-japan  {
 	background-image:url("../../media/rooms/japan/medium/CK1A9294.jpg");
 	background-position:center left;
 }
+#rooms .roomsItem a,
+#rooms .roomsItem .room-number {	
+	position:absolute;
+}
+#rooms .roomsItem a {	
+	left:0;
+	top:0;
+	width:100%;
+	height:inherit;
+	background-color:rgba( 35, 31, 32, 0.4 );
+}
+#rooms .roomsItem a:hover {
+	background:none;
+}
+#rooms .roomsItem .room-number {
+	top:50%;
+}
+#rooms .roomsItem .number-wrapper {
+	margin-top:-50%;
+	border:3px solid #f7da7e;
+	border-radius:40px;
+	width:74px;
+	height:74px;
+	display:block;
+	position:relative;
+	color:#f7da7e;
+}
+#rooms .roomsItem a:hover .number-wrapper {
+	background-color:#f7da7e;
+	color:#5d463a;
+}
+#rooms .roomsItem.-newYork .room-number {
+	right:25%;
+}
+#rooms .roomsItem.-newYork .number-wrapper {
+	right:-50%;
+}
+#rooms .roomsItem.-japan .room-number {
+	left:25%;
+}
+#rooms .roomsItem.-japan .number-wrapper {
+	left:-50%;
+}
+
+
+
 
  
 /* Sections "About" & "Send Review" & "Contacts" */
