@@ -362,19 +362,29 @@ button.rounded .title {
 #rooms .roomsItems-wrapper {
 	margin-left:-50%;
 	width:200%;
+	position:relative;
+	z-index:10;
 }
 #rooms .roomsItem {
 	width:50%;
-	float:left;
-	position:relative;
+	position:absolute;
+	top:0;
 	background-repeat:no-repeat;
 	background-size:cover;
+	z-index:11;
 }
-#rooms .roomsItem.-newYork  {
+#rooms .roomsItem:hover,
+#rooms .roomsItem.-active {
+	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.75);
+	z-index:12;
+}
+#rooms .roomsItem.-newYork {
+	left:0;
 	background-image:url("../../media/rooms/new_york/medium/CK1A9258.jpg");
 	background-position:center right;
 }
-#rooms .roomsItem.-japan  {
+#rooms .roomsItem.-japan {
+	right:0;
 	background-image:url("../../media/rooms/japan/medium/CK1A9294.jpg");
 	background-position:center left;
 }
@@ -389,6 +399,8 @@ button.rounded .title {
 	height:inherit;
 	background-color:rgba( 35, 31, 32, 0.4 );
 }
+#rooms .roomsItem:hover a,
+#rooms .roomsItem.-active a,
 #rooms .roomsItem a:hover {
 	background:none;
 }
@@ -399,12 +411,19 @@ button.rounded .title {
 	margin-top:-50%;
 	border:3px solid #f7da7e;
 	border-radius:40px;
+	padding-top:12px;
 	width:74px;
-	height:74px;
+	height:62px;
 	display:block;
 	position:relative;
 	color:#f7da7e;
+	font-family: 'PT Serif', 'Times New Roman';
+	font-size:2em;
+	font-weight:bold;
+	line-height:1.25em;
+	text-align:center;
 }
+
 #rooms .roomsItem a:hover .number-wrapper {
 	background-color:#f7da7e;
 	color:#5d463a;
@@ -422,8 +441,22 @@ button.rounded .title {
 	left:-50%;
 }
 
-
-
+#rooms .sticker {
+	position:absolute;
+	top:50%;
+	left:50%;
+}
+#rooms .sticker-wrapper {
+	position:relative;
+	margin-top:-50%;
+	margin-left:-50%;
+	width:150px;
+	height:150px;
+	border-radius:75px;
+	background-color:#f7da7e;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+	z-index:20;
+}
 
  
 /* Sections "About" & "Send Review" & "Contacts" */
