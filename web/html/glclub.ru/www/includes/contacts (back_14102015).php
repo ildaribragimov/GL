@@ -39,8 +39,22 @@
 							</button>
 						</form>
 					</div>
-					<h2>Хотите забронировать номер?</h2>
-					<div class="separator -phone">
+					<div class="subsection-phone">
+						<div class="separator">
+							<div class="separator-wrapper">
+								<div class="separator-content">
+									<hr>
+									<div class="icon -s"></div>
+									<hr>
+								</div>
+							</div>
+							<div class="clr"></div>
+						</div>
+						<p><span class="tel">+7 (963) 122 55 08</span></p>
+					</div>
+				</div>
+				<div class="subsection-sendMail">
+					<div class="separator">
 						<div class="separator-wrapper">
 							<div class="separator-content">
 								<hr>
@@ -50,13 +64,9 @@
 						</div>
 						<div class="clr"></div>
 					</div>
-					<p>Интересуют дополнительные услуги? &nbsp; Или у вас к нам коммерческое предложение?<br>
-					Свяжитесь с нами! &nbsp; Мы открыты и для новых друзей!</p>
-					<div class="subsection-phone">
-						<p><span class="tel">+7 (963) 122 55 08</span></p>
-					</div>
-				</div>
-				<div class="subsection-sendMail">
+					<h2>Хотите забронировать номер?</h2>
+					<p>Интересуют дополнительные услуги? &nbsp; Или у Вас к Нам коммерческое предложение?<br>
+					Свяжитесь с Нами! &nbsp; Мы открыты и для новых Друзей!</p>
 					<form>
 						<div class="form-wrapper">
 							<div class="form-content">

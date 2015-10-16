@@ -8,7 +8,7 @@
 	<div class="section-wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
-			<h2>Что Гости говорят о Нас</h2>
+			<h2>Отзывы гостей о нас</h2>
 			<div class="separator">
 				<div class="separator-wrapper">
 					<div class="separator-content">

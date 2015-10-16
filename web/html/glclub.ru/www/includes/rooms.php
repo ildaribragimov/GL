@@ -30,8 +30,9 @@
 			<div class="sticker">
 				<div class="sticker-wrapper">
 					<div class="progressBar">
-						<div class="logo -big"></div>
+						<div class="track"></div>
 					</div>
+					<div class="logo -big"></div>
 				</div>
 			</div>
 		</div>
