@@ -30,7 +30,7 @@
 						<div class="priceLabel">
 							<div class="priceLabel-wrapper">
 								<div class="priceLabel-content">
-									<h4>New York</h4>
+									<h4>Нью-Йорк</h4>
 									<div class="price">
 										<span class="cost">1 300</span>
 										<span class="currency">руб/час</span>
@@ -38,6 +38,8 @@
 									<ul>
 										<li>Чистый бассейн (3 х 3 м.)</li>
 										<li><b>2 комнаты</b> отдыха</li>
+										<li>Спутниковое ТВ</li>
+										<li>Караоке</li>
 										<li>Стоимость часа учитывает компанию из <b>12 человек</b> <span class="footnote">*</span></li>
 									</ul>
 								</div>
@@ -48,7 +50,7 @@
 						<div class="priceLabel">
 							<div class="priceLabel-wrapper">
 								<div class="priceLabel-content">
-									<h4>Japan</h4>
+									<h4>Япония</h4>
 									<div class="price">
 										<span class="cost">1 000</span>
 										<span class="currency">руб/час</span>
@@ -56,6 +58,8 @@
 									<ul>
 										<li>Настоящая японская купель</li>
 										<li><b>1 комната</b> отдыха</li>
+										<li>Спутниковое ТВ</li>
+										<li>Караоке</li>
 										<li>Стоимость часа учитывает компанию из <b>6 человек</b> <span class="footnote">*</span></li>
 									</ul>
 								</div>

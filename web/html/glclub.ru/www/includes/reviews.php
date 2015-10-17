@@ -1,6 +1,6 @@
 <?php 
 /**
- * Описание шаблона вывода секции "Цены"
+ * Описание шаблона вывода секции "Отзывы"
  */
 ?>
 
@@ -26,26 +26,26 @@
 		<!-- Содержимое секции - Начало -->
 		<div class="section-content">
 			<div class="reviewsItems">
-			<div class="reviewsItems-wrapper">
-				<div class="reviewItem -active">
-					<div class="author">
-						<div class="photo" style="background-image:url(media/reviews/review2.jpg);">
-							<a href="/" target="_blank" title="Посетить страницу профиля гостя в соц.сети"></a>
+				<div class="reviewsItems-wrapper">
+					<div class="reviewItem -active">
+						<div class="author">
+							<div class="photo" style="background-image:url(media/reviews/review2.jpg);">
+								<a href="/" target="_blank" title="Посетить страницу профиля гостя в соц.сети"></a>
+							</div>
+							<h4 class="name"><a href="/" target="_blank" title="Посетить страницу профиля гостя в соц.сети">Александр Григоров</a></h4>
 						</div>
-						<h4 class="name"><a href="/" target="_blank" title="Посетить страницу профиля гостя в соц.сети">Александр Григоров</a></h4>
-					</div>
-					<div class="separator">
-						<div class="separator-wrapper">
-							<div class="separator-content"><hr></div>
+						<div class="separator">
+							<div class="separator-wrapper">
+								<div class="separator-content"><hr></div>
+							</div>
+						</div>
+						<div class="reviewContent">
+							<p>Отмечал день рождения. Классная сауна для больших компаний. Интерьер - супер!<br> Как будто и не в бане вовсе. Были друзья из Москвы, тоже оценили, сказали, что уровень высокий.<br> Жена тоже будет отмечать в GL. Спасибо за отлично проделанную работу администрации!</p>
+							<p class="rooms">Отдыхал в <a href="/" target="_self">Нью-Йорк</a>, <a href="/" target="_self">Япония</a></p>
 						</div>
 					</div>
-					<div class="reviewContent">
-						<p>Отмечал день рождения. Классная сауна для больших компаний. Интерьер - супер!<br> Как будто и не в бане вовсе. Были друзья из Москвы, тоже оценили, сказали, что уровень высокий.<br> Жена тоже будет отмечать в GL. Спасибо за отлично проделанную работу администрации!</p>
-						<p class="rooms">Отдыхал в <a href="/" target="_self">New York</a>, <a href="/" target="_self">Japan</a></p>
-					</div>
+					<div class="clr"></div>
 				</div>
-				<div class="clr"></div>
-			</div>
 			</div>
 			<div class="switchers">
 				<div class="arrows">
@@ -78,7 +78,7 @@
 							</ul>
 						</div>
 					</div>
-					</div class="clr"></div>
+					<div class="clr"></div>
 				</div>
 			</div>
 		</div>

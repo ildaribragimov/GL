@@ -1,6 +1,6 @@
 <?php 
 /**
- * Описание шаблона вывода секции "Добавить отзыв"
+ * Описание шаблона вывода секции "Номера"
  */
 ?>
 
@@ -9,23 +9,21 @@
 		<!-- Содержимое секции - Начало -->
 		<div class="section-content">
 			<div class="roomsItems">
-				<div class="roomsItems-wrapper">
-					<div class="roomsItem -newYork">
-						<a href="/index.php?room_number=1">
-							<span class="room-number">
-								<span class="number-wrapper">#1</span>
-							</span>
-						</a>
-					</div>
-					<div class="roomsItem -japan">
-						<a href="/index.php?room_number=2">
-							<span class="room-number">
-								<span class="number-wrapper">#2</span>
-							</span>
-						</a>
-					</div>
-					<div class="clr"></div>
+				<div class="roomsItem -newYork">
+					<a href="/index.php?room_number=1">
+						<span class="room-number">
+							<span class="number-wrapper">#1</span>
+						</span>
+					</a>
 				</div>
+				<div class="roomsItem -japan">
+					<a href="/index.php?room_number=2">
+						<span class="room-number">
+							<span class="number-wrapper">#2</span>
+						</span>
+					</a>
+				</div>
+				<div class="clr"></div>
 			</div>
 			<div class="sticker">
 				<div class="sticker-wrapper">
