@@ -2,11 +2,14 @@
  * Elements default styles reset
  */
 
+/* ================ */
+
 
 
 /**
  * Global elements styles
  */
+ 
 .logo,
 .icon,
 .section-content ul li,
@@ -20,11 +23,13 @@
 	clear:both;
 }
 
+/* ================ */
 
 
 /**
  * Template construction styles
  */
+
 body {
 	overflow-x:hidden;
 	background-color:#545456;
@@ -34,6 +39,7 @@ body {
 	overflow-x:hidden;
 	box-shadow:0 0 30px rgba(0, 0, 0, 0.5);
 }
+
 /* Sections */
 section {
 	width:100%;
@@ -66,12 +72,14 @@ header,
 .collumns.-four .col {
 	width:25%;
 }
+
 /* ================ */
 
 
 /**
  * Typographics
  */
+
 html {
 	font-size:18px;
 	font-family: 'Open Sans', sans-serif;
@@ -138,6 +146,7 @@ ul {
 	margin:0.8333em 0;
 	background-position:-570px -262px;
 }
+
 /* ================ */
 
 
@@ -145,6 +154,7 @@ ul {
 /**
  * Forms
  */
+
 form {
 	margin: 0.8333em auto 0;
 	padding:0.8333em 1.1111em 1.6666em;
@@ -216,6 +226,7 @@ button.rounded .title {
 	margin-top:0.8333em;
 	margin-bottom:0.8333em;
 }
+
 /* ================ */
 
 
@@ -243,12 +254,12 @@ button.rounded .title {
 }
 
 .radioButtons ul,
-.radioItem {
+.radioButtons .radioItem {
 	float:left;
 	padding:0;
 	margin:0;
 }
-.radioItem {
+.radioButtons .radioItem {
 	margin:0.3888em 0.6666em;
 	background:none;
 }
@@ -769,15 +780,20 @@ button.rounded .title {
 }
 #topPannel .topPannel-wrapper {
 	margin:0 auto;
-	padding:0 120px;
-	max-width:960px;
+	max-width:1280px;
 	position:relative;
 }
 #topPannel .socialLinks,
-#topPannel .logotype,
+#topPannel .logotype-wrapper,
 #topPannel .topMenu-wrapper {
 	padding-left:1.1111em;
 	padding-right:1.1111em;
+}
+#topPannel .socialLinks,
+#topPannel .logotype {
+	position:absolute;
+	height:inherit;
+	z-index:20;
 }
 #topPannel ul,
 #topPannel ul li {
@@ -793,7 +809,7 @@ button.rounded .title {
 	text-decoration:none;
 }
 #topPannel ul li,
-#topPannel .topMenu .button.-showMenu,
+#topPannel .button.-showMenu,
 #topPannel .logotype {
 	padding-top:10px;
 	padding-bottom:10px;
@@ -801,8 +817,7 @@ button.rounded .title {
 
 /* Social links */
 #topPannel .socialLinks {
-	float:right;
-	margin-right:-120px;
+	right:0;
 }
 #topPannel .socialLinks ul,
 #topPannel .socialLinks ul li {
@@ -814,15 +829,10 @@ button.rounded .title {
 
 /* Logo small */
 #topPannel .logotype {
-	float:left;
-	margin-left:-120px;
-}
-#topPannel .logotype .logo-wrapper {
-	padding-left:8px;
-	padding-right:8px;
+	left:0;
 }
 #topPannel .logotype a {
-	padding:0;
+	padding:0 8px;
 }
 #topPannel .logo.-small {
 	width:64px;
@@ -832,21 +842,22 @@ button.rounded .title {
 
 /* Main menu */
 #topPannel .topMenu,
-#topPannel .topMenu-wrapper {
+#topPannel .topMenu-wrapper,
+#topPannel .button,
+#topPannel #mainMenu {
 	float:left;
 	position:relative;
 }
-
 #topPannel .topMenu {
 	left:50%;
 }
 #topPannel .topMenu-wrapper {
 	left:-50%;
 }
-#topPannel .topMenu .button {
+#topPannel .button {
 	display:none;
 }
-#topPannel .topMenu .button.-showMenu .icon {
+#topPannel .button.-showMenu .icon {
 	background-position:-504px -216px;
 }
 #topPannel #mainMenu .menuItem {
@@ -857,9 +868,11 @@ button.rounded .title {
 }
 #topPannel #mainMenu .menuItem:first-child {
 	border-left:0;
+	border-top:0;
 }
 #topPannel #mainMenu .menuItem:last-child {
 	border-right:0;
+	border-bottom:0;
 }
 #topPannel #mainMenu a {
 	padding:15px 19px;
@@ -907,10 +920,42 @@ button.rounded .title {
 		background-image:url(../../media/contacts/contacts_bg_tablet.jpg);
 	}
 	#topPannel .logotype {
-		float:right;
+		left:50%;
 	}
-	#topPannel .topMenu .button {
+	#topPannel .logotype-wrapper {
+		margin-left:-50%;
+	}
+	#topPannel .topMenu,
+	#topPannel .topMenu-wrapper {
+		left:0;
+	}
+	#topPannel .topMenu {
+		z-index:20;
+	}
+	#topPannel .button {
 		display:block;
+	}
+	
+	#topPannel #mainMenu {
+		display:none;
+		position:fixed;
+		top:60px;
+		left:0;
+		width:240px;
+	}
+	#topPannel #mainMenu ul,
+	#topPannel #mainMenu ul li.menuItem {
+		float:none;
+		text-align:center;
+	}
+	#topPannel #mainMenu .menuItem {
+		border-left:0;
+		border-right:0;
+		border-top:1px solid rgba(255, 255, 255, 0.2);
+		border-bottom:1px solid rgba(0, 0, 0, 0.1);
+	}
+	#topPannel #mainMenu a {
+		color:#f7da7e;
 	}
 }
 
@@ -937,7 +982,7 @@ button.rounded .title {
 		padding-left:1.5em;
 		padding-right:1.5em;
 	}
-	ul {
+	.section-content ul {
 		padding-left:1.5em;
 	}
 	#contacts {
@@ -972,6 +1017,12 @@ button.rounded .title {
 		height:150px;
 		border-radius:75px;
 	}
+	#rooms .roomsItem .room-number {
+		/*
+		top:80%;
+		*/
+		display:none;
+	}
 }
 
 /* For Smartphone (Landscape orientation) users (If window width > 568 px and < 640 px) */
@@ -983,6 +1034,6 @@ button.rounded .title {
 
 /* For Smartphone (Portrait orientation) users (If window width < 568 px) */
 @media only screen and (max-width:568px) {
+	
 }
-
 /* ================ */

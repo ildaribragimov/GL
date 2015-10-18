@@ -21,6 +21,7 @@
 		<link href="template/css/normalize.css" rel="stylesheet" type="text/css">
 		<link href="template/css/fonts.css" rel="stylesheet" type="text/css">
         <link href="template/css/common.css" rel="stylesheet" type="text/css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     </head>
     <body>
 		<div id="page-wrapper">

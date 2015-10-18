@@ -14,7 +14,7 @@
 			</ul>
 		</div>
 		<div class="logotype">
-			<div class="logo-wrapper">
+			<div class="logotype-wrapper">
 				<a href="/" target="_self"><span class="logo -small"></span></a>
 			</div>
 		</div>
@@ -41,7 +41,6 @@
 							<a href="/" target="_self">Контакты</a>
 						</li>
 					</ul>
-					<div class="clr"></div>
 				</nav>
 			</div>
 		</div>
