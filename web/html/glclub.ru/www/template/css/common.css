@@ -19,6 +19,9 @@
 	background-image:url(../img/sprite_min.svg);
 	background-repeat:no-repeat;
 }
+.icon {
+	display:block;
+}
 .clr {
 	clear:both;
 }
@@ -34,10 +37,17 @@ body {
 	overflow-x:hidden;
 	background-color:#545456;
 }
+body.overflow-hidden {
+	overflow:hidden;
+}
 #page-wrapper {
+	transition:0.5s;
 	width:100%;
 	overflow-x:hidden;
 	box-shadow:0 0 30px rgba(0, 0, 0, 0.5);
+}
+#page-wrapper.menu-enabled {
+	transform:translateX(240px);
 }
 
 /* Sections */
@@ -771,7 +781,6 @@ button.rounded .title {
 /* general styles */
 #topPannel {
 	width:100%;
-	height:60px;
 	position:fixed;
 	top:0;
 	background-color:#f7da7e;
@@ -854,12 +863,70 @@ button.rounded .title {
 #topPannel .topMenu-wrapper {
 	left:-50%;
 }
-#topPannel .button {
+
+/* Animated "Show Menu" button's icon */
+.button.-showMenu {
 	display:none;
 }
+.button.-showMenu .icon {
+	transition: 0.5s;
+}
+.button.-showMenu .icon span,
+.button.-showMenu .icon span:before,
+.button.-showMenu .icon span:after {
+    display:block;
+    width:100%;
+    height:4px;
+    border-radius:2px;
+    background-color:#5d463a;
+}
+.button.-showMenu .icon span:before,
+.button.-showMenu .icon span:after {
+    position:absolute;
+    right:0;
+    content: "";
+    transition: 0.3s;
+}
+.button.-showMenu .icon span {
+    position:relative;
+    top:10px;
+    
+}
+.button.-showMenu .icon span:before {
+    top:-8px;
+}
+.button.-showMenu .icon span:after {
+    top:8px;
+}
+.button.-showMenu.menu-enabled .icon span:before,
+.button.-showMenu.menu-enabled .icon span:after {
+    width:70%;
+    right:-2px;
+    transition: 0.3s;
+}
+
+.button.-showMenu.menu-enabled .icon span:before {
+    top: 2px !important;
+    transform: rotate(45deg);
+    transform-origin: right top;
+}
+
+.button.-showMenu.menu-enabled .icon span:after {
+   /* top:0;*/
+    top: -2px !important;
+    transform: rotate(-45deg);
+    transform-origin: right bottom;
+}
+
+.button.-showMenu.menu-enabled .icon {
+    transform: rotate(180deg);  
+}
+
+/*
 #topPannel .button.-showMenu .icon {
 	background-position:-504px -216px;
 }
+*/
 #topPannel #mainMenu .menuItem {
 	padding-top:0;
 	padding-bottom:0;

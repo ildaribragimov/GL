@@ -21,7 +21,7 @@
 		<div class="topMenu">
 			<div class="topMenu-wrapper">
 				<div class="button -showMenu">
-					<a href="/" target="_self"><span class="icon -s"></span></a>
+					<a class="icon -s" href="/" target="_self"><span></span></a>
 				</div>
 				<nav id="mainMenu">
 					<ul>
