@@ -41,12 +41,25 @@ body.overflow-hidden {
 	overflow:hidden;
 }
 #page-wrapper {
-	transition:0.5s;
 	width:100%;
 	overflow-x:hidden;
 	box-shadow:0 0 30px rgba(0, 0, 0, 0.5);
 }
-#page-wrapper.menu-enabled {
+#page-wrapper,
+#topPannel {
+	-webkit-transition:0.5s;
+    -moz-transition:0.5s;
+    -ms-transition:0.5s;
+    -o-transition:0.5s;
+	transition:0.5s;
+}
+
+#page-wrapper.menu-enabled,
+#topPannel.menu-enabled {
+    -webkit-transform: translateX(240px); /** Chrome & Safari **/
+    -moz-transform: translateX(240px); /** Firefox **/
+    -ms-transform: translateX(240px); /* Для IE */
+    -o-transform: translateX(240px); /** Opera **/
 	transform:translateX(240px);
 }
 
@@ -868,7 +881,15 @@ button.rounded .title {
 .button.-showMenu {
 	display:none;
 }
-.button.-showMenu .icon {
+.button.-showMenu .icon,
+.button.-showMenu .icon span:before,
+.button.-showMenu .icon span:after,
+.button.-showMenu.menu-enabled .icon span:before,
+.button.-showMenu.menu-enabled .icon span:after {
+    -webkit-transition:0.5s;
+    -moz-transition:0.5s;
+    -ms-transition:0.5s;
+    -o-transition:0.5s;
 	transition: 0.5s;
 }
 .button.-showMenu .icon span,
@@ -885,7 +906,6 @@ button.rounded .title {
     position:absolute;
     right:0;
     content: "";
-    transition: 0.3s;
 }
 .button.-showMenu .icon span {
     position:relative;
@@ -901,32 +921,42 @@ button.rounded .title {
 .button.-showMenu.menu-enabled .icon span:before,
 .button.-showMenu.menu-enabled .icon span:after {
     width:70%;
-    right:-2px;
-    transition: 0.3s;
 }
 
 .button.-showMenu.menu-enabled .icon span:before {
-    top: 2px !important;
-    transform: rotate(45deg);
+	-webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -ms-transform-origin: right top;
+    -o-transform-origin: right top;
     transform-origin: right top;
+    -webkit-transform: translate(2px, 10px) rotate(45deg); /** Chrome & Safari **/
+    -moz-transform: translate(2px, 10px) rotate(45deg); /** Firefox **/
+    -ms-transform: translate(2px, 10px) rotate(45deg); /* Для IE */
+    -o-transform: translate(2px, 10px) rotate(45deg); /** Opera **/
+    transform: translate(2px, 10px) rotate(45deg);
 }
 
 .button.-showMenu.menu-enabled .icon span:after {
-   /* top:0;*/
-    top: -2px !important;
-    transform: rotate(-45deg);
+    -webkit-transform-origin: right bottom;
+    -moz-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    -o-transform-origin: right bottom;
     transform-origin: right bottom;
+    -webkit-transform: translate(2px, -10px) rotate(-45deg); /** Chrome & Safari **/
+    -moz-transform: translate(2px, -10px) rotate(-45deg); /** Firefox **/
+    -ms-transform: translate(2px, -10px) rotate(-45deg); /* Для IE */
+    -o-transform: translate(2px, -10px) rotate(-45deg); /** Opera **/
+    transform: translate(2px, -10px) rotate(-45deg);
 }
 
 .button.-showMenu.menu-enabled .icon {
-    transform: rotate(180deg);  
+    -webkit-transform: rotate(180deg); /** Chrome & Safari **/
+    -moz-transform: rotate(180deg); /** Firefox **/    
+    -ms-transform: rotate(180deg); /* Для IE */
+    -o-transform: rotate(180deg); /** Opera **/
+    transform: rotate(180deg);
 }
 
-/*
-#topPannel .button.-showMenu .icon {
-	background-position:-504px -216px;
-}
-*/
 #topPannel #mainMenu .menuItem {
 	padding-top:0;
 	padding-bottom:0;
@@ -958,6 +988,12 @@ button.rounded .title {
 
 /* For Desktop users (If window width <= 1280 px) */
 @media only screen and (max-width: 1296px) {
+	#rooms .roomsItem.-newYork {
+		background-image:url("../../media/rooms/new_york/low/CK1A9261.jpg");
+	}
+	#rooms .roomsItem.-japan {
+		background-image:url("../../media/rooms/japan/low/CK1A9294.jpg");
+	}
 	#reviews .arrows .arrowLeft {
 		left:15%;
 		left:calc( 0.5 * (50% - 120px) );
@@ -986,6 +1022,7 @@ button.rounded .title {
 	#contacts {
 		background-image:url(../../media/contacts/contacts_bg_tablet.jpg);
 	}
+	
 	#topPannel .logotype {
 		left:50%;
 	}
@@ -1051,6 +1088,9 @@ button.rounded .title {
 	}
 	.section-content ul {
 		padding-left:1.5em;
+	}
+	.switchers ul {
+		padding:0;
 	}
 	#contacts {
 		background-image:url(../../media/contacts/contacts_bg_mobile.jpg);

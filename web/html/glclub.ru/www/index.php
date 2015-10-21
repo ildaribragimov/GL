@@ -40,8 +40,7 @@
 				include "includes/sendReview.php";
 				// Вставка секции "Контакты"
 				include "includes/contacts.php";
-				// Вставка пенели "основное меню навигации"
-				include "includes/topPannel.php";
+				
 			?>
 			<!-- Подвал страницы - Начало -->
 			<!--
@@ -54,5 +53,9 @@
 			<script src="template/js/modulargrid.js" type="text/javascript"></script>
 			-->
 		</div>
+		<?php
+			// Вставка пенели "основное меню навигации"
+			include "includes/topPannel.php";
+		?>
     </body>
 </html>
