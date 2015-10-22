@@ -8,8 +8,21 @@ $(document).ready( function(){
 	 *
 	 * Возвращаемое значение:
 	 * urlVars[varName] (тип: string) - значение параметра
-	 */
-
+	 
+	function showMainMenu() {
+		// Получение ссылки на набор элементов
+		$('#page-wrapper, #topPannel .button.-showMenu')
+			// Переключение занчения атрибута class, выбранных эелементов
+			.toggleClass('menu-enabled')
+			// Получение ссылки на прямого родителя набора элементов - элемент "body"
+			//.parent('body')
+			// Переключение значения атрибута class, элемента "body"
+			//.toggleClass('overflow-hidden');
+			
+		// Запрет на переход по ссылке
+		return false;
+	}*/
+	
 	// Определение высоты секции "НОМЕРА" равной высоте видимой области просмотра окна браузера
 	$('#rooms .roomsItems, #rooms .roomsItem').height( $(window).height() );
 	
@@ -82,4 +95,8 @@ $(document).ready( function(){
 			return false;
 		});
 
+	// Получение ссылки на элемент видимой иконки "Показать меню"
+	//$('#topPannel .button.-showMenu:visible')
+		// Клик по кнопке "showMenu"
+		//.on('click', '.icon', showMainMenu);
 });
