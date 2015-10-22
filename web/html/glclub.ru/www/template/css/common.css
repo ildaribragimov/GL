@@ -44,6 +44,8 @@ body.overflow-hidden {
 	width:100%;
 	overflow-x:hidden;
 	box-shadow:0 0 30px rgba(0, 0, 0, 0.5);
+	position:relative;
+	z-index:5;
 }
 #page-wrapper,
 #topPannel {
@@ -53,7 +55,6 @@ body.overflow-hidden {
     -o-transition:0.5s;
 	transition:0.5s;
 }
-
 #page-wrapper.menu-enabled,
 #topPannel.menu-enabled {
     -webkit-transform: translateX(240px); /** Chrome & Safari **/
@@ -796,6 +797,7 @@ button.rounded .title {
 	width:100%;
 	position:fixed;
 	top:0;
+	left:0;
 	background-color:#f7da7e;
 	box-shadow:0 0 30px rgba(0, 0, 0, 0.25);	
 	z-index:100;
@@ -822,7 +824,8 @@ button.rounded .title {
 	float:left;
 }
 #topPannel a,
-#topPannel span {
+#topPannel span,
+#mainMenu a {
 	display:block;
 }
 #topPannel a {
@@ -832,9 +835,10 @@ button.rounded .title {
 }
 #topPannel ul li,
 #topPannel .button.-showMenu,
-#topPannel .logotype {
-	padding-top:10px;
-	padding-bottom:10px;
+#topPannel .logotype,
+#mainMenu ul li {
+	padding-top:0.5555em;
+	padding-bottom:0.5555em;
 }
 
 /* Social links */
@@ -857,16 +861,16 @@ button.rounded .title {
 	padding:0 8px;
 }
 #topPannel .logo.-small {
-	width:64px;
-	height:40px;
-	background-position:-160px -28px;
+	width: 3.5555em;
+	height: 2.2222em;
+	background-position: -8.8888em -1.5em;
 }
 
 /* Main menu */
 #topPannel .topMenu,
 #topPannel .topMenu-wrapper,
 #topPannel .button,
-#topPannel #mainMenu {
+#mainMenu {
 	float:left;
 	position:relative;
 }
@@ -957,25 +961,25 @@ button.rounded .title {
     transform: rotate(180deg);
 }
 
-#topPannel #mainMenu .menuItem {
+#mainMenu .menuItem {
 	padding-top:0;
 	padding-bottom:0;
 	border-left:1px solid rgba(255, 255, 255, 0.2);
 	border-right:1px solid rgba(0, 0, 0, 0.1);
 }
-#topPannel #mainMenu .menuItem:first-child {
+#mainMenu .menuItem:first-child {
 	border-left:0;
 	border-top:0;
 }
-#topPannel #mainMenu .menuItem:last-child {
+#mainMenu .menuItem:last-child {
 	border-right:0;
 	border-bottom:0;
 }
-#topPannel #mainMenu a {
+#mainMenu a {
 	padding:15px 19px;
 	text-transform:uppercase;
 }
-#topPannel #mainMenu a:hover {
+#mainMenu a:hover {
 	text-decoration:underline;
 }
 /* ================ */
@@ -1040,25 +1044,25 @@ button.rounded .title {
 		display:block;
 	}
 	
-	#topPannel #mainMenu {
+	#mainMenu {
 		display:none;
 		position:fixed;
 		top:60px;
 		left:0;
 		width:240px;
 	}
-	#topPannel #mainMenu ul,
-	#topPannel #mainMenu ul li.menuItem {
+	#mainMenu ul,
+	#mainMenu ul li.menuItem {
 		float:none;
 		text-align:center;
 	}
-	#topPannel #mainMenu .menuItem {
+	#mainMenu .menuItem {
 		border-left:0;
 		border-right:0;
 		border-top:1px solid rgba(255, 255, 255, 0.2);
 		border-bottom:1px solid rgba(0, 0, 0, 0.1);
 	}
-	#topPannel #mainMenu a {
+	#mainMenu a {
 		color:#f7da7e;
 	}
 }
@@ -1100,6 +1104,9 @@ button.rounded .title {
 	}
 	#rooms .sticker .logo.-big {
 		background-size:auto 17.3333em;
+	}
+	#topPannel .logo.-small {
+		background-size: 32.8888em;
 	}
 }
 

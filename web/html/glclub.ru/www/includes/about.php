@@ -5,6 +5,7 @@
 ?>
 
 <section id="about">
+	<a name="about"></a>
 	<div class="section-wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>

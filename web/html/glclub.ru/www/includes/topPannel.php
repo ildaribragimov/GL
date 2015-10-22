@@ -26,19 +26,19 @@
 				<nav id="mainMenu">
 					<ul>
 						<li class="menuItem">
-							<a href="/" target="_self">О клубе</a>
+							<a href="#about" target="_self">О клубе</a>
 						</li>
 						<li class="menuItem">
-							<a href="/" target="_self">Номера</a>
+							<a href="#rooms" target="_self">Номера</a>
 						</li>
 						<li class="menuItem">
-							<a href="/" target="_self">Цены</a>
+							<a href="#prices" target="_self">Цены</a>
 						</li>
 						<li class="menuItem">
-							<a href="/" target="_self">Отзывы</a>
+							<a href="#reviews" target="_self">Отзывы</a>
 						</li>
 						<li class="menuItem">
-							<a href="/" target="_self">Контакты</a>
+							<a href="#contacts" target="_self">Контакты</a>
 						</li>
 					</ul>
 				</nav>

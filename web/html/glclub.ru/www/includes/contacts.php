@@ -5,6 +5,7 @@
 ?>
 
 <section id="contacts">
+	<a name="contacts"></a>
 	<div class="section-wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>

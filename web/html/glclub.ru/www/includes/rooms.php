@@ -5,6 +5,7 @@
 ?>
 
 <section id="rooms">
+	<a name="rooms"></a>
 	<div class="section-wrapper">
 		<!-- Содержимое секции - Начало -->
 		<div class="section-content">

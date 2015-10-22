@@ -5,6 +5,7 @@
 ?>
 
 <section id="prices">
+	<a name="prices"></a>
 	<div class="section-wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>

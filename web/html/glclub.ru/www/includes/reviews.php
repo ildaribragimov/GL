@@ -5,6 +5,7 @@
 ?>
 
 <section id="reviews">
+	<a name="reviews"></a>
 	<div class="section-wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
