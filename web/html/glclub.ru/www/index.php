@@ -12,7 +12,7 @@
 -->
 <html lang="ru">
     <head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="viewport" content="width=device-width, initial-scale=0.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 		<meta charset="utf-8">
         <title>Типовой шаблон страницы на HTML5 - html5.tpl</title>
         <!--[if lt IE 9]>
@@ -21,7 +21,7 @@
 		<link href="template/css/normalize.css" rel="stylesheet" type="text/css">
 		<link href="template/css/fonts.css" rel="stylesheet" type="text/css">
         <link href="template/css/common.css" rel="stylesheet" type="text/css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="template/js/jquery.easing.1.3.min.js" type="text/javascript"></script>
 		<script src="template/js/common.js" type="text/javascript"></script>
     </head>

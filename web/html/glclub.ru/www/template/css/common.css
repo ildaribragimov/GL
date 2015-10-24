@@ -37,9 +37,6 @@ body {
 	overflow-x:hidden;
 	background-color:#545456;
 }
-body.overflow-hidden {
-	overflow:hidden;
-}
 #page-wrapper {
 	width:100%;
 	overflow-x:hidden;
@@ -49,11 +46,11 @@ body.overflow-hidden {
 }
 #page-wrapper,
 #topPannel {
-	-webkit-transition:0.5s;
-    -moz-transition:0.5s;
-    -ms-transition:0.5s;
-    -o-transition:0.5s;
-	transition:0.5s;
+	-webkit-transition:0.25s;
+    -moz-transition:0.25s;
+    -ms-transition:0.25s;
+    -o-transition:0.25s;
+	transition:0.25s;
 }
 #page-wrapper.menu-enabled,
 #topPannel.menu-enabled {
@@ -890,11 +887,11 @@ button.rounded .title {
 .button.-showMenu .icon span:after,
 .button.-showMenu.menu-enabled .icon span:before,
 .button.-showMenu.menu-enabled .icon span:after {
-    -webkit-transition:0.5s;
-    -moz-transition:0.5s;
-    -ms-transition:0.5s;
-    -o-transition:0.5s;
-	transition: 0.5s;
+	-webkit-transition:0.25s;
+    -moz-transition:0.25s;
+    -ms-transition:0.25s;
+    -o-transition:0.25s;
+	transition:0.25s;
 }
 .button.-showMenu .icon span,
 .button.-showMenu .icon span:before,
