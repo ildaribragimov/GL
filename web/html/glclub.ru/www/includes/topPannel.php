@@ -18,30 +18,9 @@
 				<a href="/" target="_self"><span class="logo -small"></span></a>
 			</div>
 		</div>
-		<div class="topMenu">
-			<div class="topMenu-wrapper">
-				<div class="button -showMenu">
-					<a class="icon -s" href="/" target="_self"><span></span></a>
-				</div>
-				<nav id="mainMenu">
-					<ul>
-						<li class="menuItem">
-							<a href="#about" target="_self">О клубе</a>
-						</li>
-						<li class="menuItem">
-							<a href="#rooms" target="_self">Номера</a>
-						</li>
-						<li class="menuItem">
-							<a href="#prices" target="_self">Цены</a>
-						</li>
-						<li class="menuItem">
-							<a href="#reviews" target="_self">Отзывы</a>
-						</li>
-						<li class="menuItem">
-							<a href="#contacts" target="_self">Контакты</a>
-						</li>
-					</ul>
-				</nav>
+		<div class="burgerButton">
+			<div class="burgerButton-wrapper">
+				<a class="icon -s" href="/" target="_self"><span></span></a>
 			</div>
 		</div>
 		<div class="clr"></div>

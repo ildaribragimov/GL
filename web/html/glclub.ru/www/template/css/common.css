@@ -9,8 +9,7 @@
 /**
  * Global elements styles
  */
- 
-.logo,
+ .logo,
 .icon,
 .section-content ul li,
 .radioItem a,
@@ -25,14 +24,12 @@
 .clr {
 	clear:both;
 }
-
 /* ================ */
 
 
 /**
  * Template construction styles
  */
-
 body {
 	overflow-x:hidden;
 	background-color:#545456;
@@ -93,14 +90,12 @@ header,
 .collumns.-four .col {
 	width:25%;
 }
-
 /* ================ */
 
 
 /**
  * Typographics
  */
-
 html {
 	font-size:18px;
 	font-family: 'Open Sans', sans-serif;
@@ -167,7 +162,6 @@ ul {
 	margin:0.8333em 0;
 	background-position:-570px -262px;
 }
-
 /* ================ */
 
 
@@ -175,7 +169,6 @@ ul {
 /**
  * Forms
  */
-
 form {
 	margin: 0.8333em auto 0;
 	padding:0.8333em 1.1111em 1.6666em;
@@ -247,7 +240,6 @@ button.rounded .title {
 	margin-top:0.8333em;
 	margin-bottom:0.8333em;
 }
-
 /* ================ */
 
 
@@ -255,7 +247,6 @@ button.rounded .title {
 /**
  * Forms
  */
-
 /* Radio Buttons */
 .radioButtons {
 	margin:0.8333em auto 1.6666em;
@@ -273,7 +264,6 @@ button.rounded .title {
 .radioButtons-content {
 	left:-50%;
 }
-
 .radioButtons ul,
 .radioButtons .radioItem {
 	float:left;
@@ -364,7 +354,6 @@ button.rounded .title {
 	width:256px;
 	height:256px;
 }
-
 .icon.plane {
 	background-position:-424px -176px;
 }
@@ -388,7 +377,6 @@ button.rounded .title {
 /**
  * Individual styles
  */
-
 /* Section "Rooms" */
 #rooms {
 	padding:0;
@@ -801,23 +789,33 @@ button.rounded .title {
 }
 #topPannel .topPannel-wrapper {
 	margin:0 auto;
+	padding:0.9999em 0;
+	height:24px;
 	max-width:1280px;
 	position:relative;
 }
 #topPannel .socialLinks,
+#topPannel .logotype,
+#topPannel .burgerButton {
+	position:absolute;
+	top:0;
+}
+
+#topPannel .socialLinks,
 #topPannel .logotype-wrapper,
-#topPannel .topMenu-wrapper {
+#topPannel .burgerButton {
 	padding-left:1.1111em;
 	padding-right:1.1111em;
 }
 #topPannel .socialLinks,
-#topPannel .logotype {
-	position:absolute;
-	height:inherit;
+#topPannel .logotype,
+#topPannel .burgerButton {
 	z-index:20;
 }
 #topPannel ul,
-#topPannel ul li {
+#topPannel ul li,
+#mainMenu ul,
+#mainMenu ul li {
 	float:left;
 }
 #topPannel a,
@@ -825,13 +823,14 @@ button.rounded .title {
 #mainMenu a {
 	display:block;
 }
-#topPannel a {
+#topPannel a,
+#mainMenu a {
 	padding:0.4444em;
 	color:#5d463a;
 	text-decoration:none;
 }
 #topPannel ul li,
-#topPannel .button.-showMenu,
+#topPannel .burgerButton-wrapper,
 #topPannel .logotype,
 #mainMenu ul li {
 	padding-top:0.5555em;
@@ -841,10 +840,6 @@ button.rounded .title {
 /* Social links */
 #topPannel .socialLinks {
 	right:0;
-}
-#topPannel .socialLinks ul,
-#topPannel .socialLinks ul li {
-	float:left;
 }
 #topPannel .socialLinks .vk .icon {
 	background-position:-424px -256px;
@@ -863,68 +858,51 @@ button.rounded .title {
 	background-position: -8.8888em -1.5em;
 }
 
-/* Main menu */
-#topPannel .topMenu,
-#topPannel .topMenu-wrapper,
-#topPannel .button,
-#mainMenu {
-	float:left;
-	position:relative;
-}
-#topPannel .topMenu {
-	left:50%;
-}
-#topPannel .topMenu-wrapper {
-	left:-50%;
-}
-
 /* Animated "Show Menu" button's icon */
-.button.-showMenu {
+.burgerButton {
+	left:0;
 	display:none;
 }
-.button.-showMenu .icon,
-.button.-showMenu .icon span:before,
-.button.-showMenu .icon span:after,
-.button.-showMenu.menu-enabled .icon span:before,
-.button.-showMenu.menu-enabled .icon span:after {
+.burgerButton .icon,
+.burgerButton .icon span:before,
+.burgerButton .icon span:after {
 	-webkit-transition:0.25s;
     -moz-transition:0.25s;
     -ms-transition:0.25s;
     -o-transition:0.25s;
 	transition:0.25s;
 }
-.button.-showMenu .icon span,
-.button.-showMenu .icon span:before,
-.button.-showMenu .icon span:after {
+.burgerButton .icon span,
+.burgerButton .icon span:before,
+.burgerButton .icon span:after {
     display:block;
     width:100%;
     height:4px;
     border-radius:2px;
     background-color:#5d463a;
 }
-.button.-showMenu .icon span:before,
-.button.-showMenu .icon span:after {
+.burgerButton .icon span:before,
+.burgerButton .icon span:after {
     position:absolute;
     right:0;
     content: "";
 }
-.button.-showMenu .icon span {
+.burgerButton .icon span {
     position:relative;
     top:10px;
     
 }
-.button.-showMenu .icon span:before {
+.burgerButton .icon span:before {
     top:-8px;
 }
-.button.-showMenu .icon span:after {
+.burgerButton .icon span:after {
     top:8px;
 }
-.button.-showMenu.menu-enabled .icon span:before,
-.button.-showMenu.menu-enabled .icon span:after {
+.burgerButton.menu-enabled .icon span:before,
+.burgerButton.menu-enabled .icon span:after {
     width:70%;
 }
-
-.button.-showMenu.menu-enabled .icon span:before {
+.burgerButton.menu-enabled .icon span:before {
 	-webkit-transform-origin: right top;
     -moz-transform-origin: right top;
     -ms-transform-origin: right top;
@@ -936,8 +914,7 @@ button.rounded .title {
     -o-transform: translate(2px, 10px) rotate(45deg); /** Opera **/
     transform: translate(2px, 10px) rotate(45deg);
 }
-
-.button.-showMenu.menu-enabled .icon span:after {
+.burgerButton.menu-enabled .icon span:after {
     -webkit-transform-origin: right bottom;
     -moz-transform-origin: right bottom;
     -ms-transform-origin: right bottom;
@@ -949,8 +926,7 @@ button.rounded .title {
     -o-transform: translate(2px, -10px) rotate(-45deg); /** Opera **/
     transform: translate(2px, -10px) rotate(-45deg);
 }
-
-.button.-showMenu.menu-enabled .icon {
+.burgerButton.menu-enabled .icon {
     -webkit-transform: rotate(180deg); /** Chrome & Safari **/
     -moz-transform: rotate(180deg); /** Firefox **/    
     -ms-transform: rotate(180deg); /* Для IE */
@@ -958,6 +934,16 @@ button.rounded .title {
     transform: rotate(180deg);
 }
 
+/* Main menu */
+#mainMenu {
+	top:0;
+	left:50%;
+	position:fixed;
+	z-index:101;
+}
+#mainMenu .mainMenu-wrapper {
+	margin-left:-50%;
+}
 #mainMenu .menuItem {
 	padding-top:0;
 	padding-bottom:0;
@@ -1030,23 +1016,17 @@ button.rounded .title {
 	#topPannel .logotype-wrapper {
 		margin-left:-50%;
 	}
-	#topPannel .topMenu,
-	#topPannel .topMenu-wrapper {
-		left:0;
-	}
-	#topPannel .topMenu {
-		z-index:20;
-	}
-	#topPannel .button {
+	#topPannel .burgerButton {
 		display:block;
 	}
-	
 	#mainMenu {
-		display:none;
-		position:fixed;
 		top:60px;
 		left:0;
 		width:240px;
+		z-index:2;
+	}
+	#mainMenu .mainMenu-wrapper {
+		margin-left:0;
 	}
 	#mainMenu ul,
 	#mainMenu ul li.menuItem {
@@ -1129,9 +1109,6 @@ button.rounded .title {
 		border-radius:75px;
 	}
 	#rooms .roomsItem .room-number {
-		/*
-		top:80%;
-		*/
 		display:none;
 	}
 }

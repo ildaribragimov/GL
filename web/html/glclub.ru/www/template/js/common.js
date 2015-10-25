@@ -3,7 +3,6 @@ $(document).ready( function(){
 	/* ================================================= *
 	 * ==== Блокировка/Активация прокрутки страницы ==== *
 	 * ================================================= */
-
 	/**
 	 * Объявление переменных
 	 *
@@ -86,27 +85,44 @@ $(document).ready( function(){
 		window.ontouchmove = null;  
 		document.onkeydown = null;  
 	}
-	/* ============== */
-	
+	/* ================================================= */
+
+
+
+	/* ====================================================== *
+	 * ==== Разворачивание/Сворачивание панели навигации ==== *
+	 * ====================================================== */
+	/** Объявление переменных:
+	 * 
+	 * menuEnable (тип: boolean) - Состояние выезжающей панели меню. Может принимать два значения:
+	 * * true - Меню раскрыто;
+	 * * false - меню закрыто.
+	 */
+	var menuEnable = false;
 	/**
 	 * Функция "Разворачивания/Сворачивания главного меню"
 	 */ 
 	function showMainMenu() {
 		// Получение ссылки на набор элементов
-		$('#page-wrapper, #topPannel, #topPannel .button.-showMenu')
+		$('#page-wrapper, #topPannel, #topPannel .burgerButton, #mainMenu')
 			// Переключение занчения атрибута class, выбранных эелементов
 			.toggleClass('menu-enabled');
 		
+		// Смена значения переменной состояния панели навигации
+		menuEnable = ( menuEnable == false )? true: false;
+		
 		// Блокировка/Активация прокрутки страницы
-		( $('#page-wrapper').hasClass('menu-enabled') == true )
+		( menuEnable == true )
+		//( $('#page-wrapper').hasClass('menu-enabled') == true )
 			// Блокировка
 			? disableScroll()
 			// Активация
 			: enableScroll();
-	
+		
 		// Запрет на переход по ссылке
 		return false;
 	}
+	/* ====================================================== */
 	
 	// Определение высоты секции "НОМЕРА" равной высоте видимой области просмотра окна браузера
 	$('#rooms .roomsItems, #rooms .roomsItem').height( $(window).height() );
@@ -114,58 +130,49 @@ $(document).ready( function(){
 	// Переопределение высоты секции "НОМЕРА" при изменении размера окна
 	$(window).resize(function(){
 		$('#rooms .roomsItems, #rooms .roomsItem').height($(window).height());
+		if ( $(this).width() > 960 && menuEnable == true ) showMainMenu();
 	});
 	
 	// Получение ссылки на элемент видимой иконки "Показать меню"
-	$('#topPannel .button.-showMenu:visible')
-		// Получение ссылки на дочерний элемент с id "mainMenu"
-		.siblings('#mainMenu')
-		// Перемещение выбранных элементов в конец содержимого элемента "body"
-		.appendTo('body')
-		// Отображение элемента
-		.css('display', 'block')
-		
-		// Получение ссылки на пункты меню
-		.find(".menuItem")
-		// Клик по пункту меню
-		.on('click', 'a', function(event){
+	$('#topPannel .burgerButton')
+		// Установка обработчика события клика по кнопке "Показать/Скрыть меню"
+		.on('click', '.icon', function(){
+			// Обращение у функции "Разворачивания/Сворачивания главного меню"
+			showMainMenu();
 			
-			var anchor = $(this);
+			// Запрет на переход по ссылке
+			return false;
+		});
+	
+	// Получение ссылки на пункты главного меню
+	$('#mainMenu .menuItem')
+		// Установка обработчика события клика по пункту главного меню
+		.on('click', 'a', function(){
+			//if ( menuEnable == true ) showMainMenu();
+			
+			/** Объявление переменных:
+			 * 
+			 * sectionName (тип: string) - Ссылка пункта меню на якорь
+			 * scrollTopValue (тип: integer) - Расстояние от верхнего края окна браузера до верхней границы якоря
+			 */
+			var sectionName = $(this).attr('href'),
+				scrollTopValue = $(sectionName).offset().top;
+		
+			// Получение ссылки на набор элементов "html, body"
 			$('html, body')
+			//$('html').css({'transition':'0.25s', 'transform':'translateY(-250px)'});
+				// Выполнение анимации "плавная прокрутка страницы до якоря
+				
 				.animate(
-					{
-						scrollTop: $(anchor.attr('href')).offset().top
-					},
-					{
-						duration: 500,
-						easing: 'easeOutExpo',
-						complete: showMainMenu()
-					}
+					{scrollTop: scrollTopValue},
+					{duration: 500, easing: 'easeOutExpo', complete: function(){
+						//if ( menuEnable == true ) showMainMenu();
+					}}
 				);
 				
-		/*		
-				
-			// Получение ссылки на набор с id "page-wrapper", "topPannel"
-			.find('#page-wrapper, #topPannel')
-				// Переключение занчения атрибута class, выбранных эелементов
-				.toggleClass('menu-enabled')
-				// Получение ссылки на прямого родителя набора элементов - элемент "body"
-				.parent('body')
-				// Переключение значения атрибута class, элемента "body"
-				.toggleClass('overflow-hidden');
-				
-			
-			*/
-			event.preventDefault();
-			
-			return false;	
+				if ( menuEnable == true ) showMainMenu();
+			// Запрет на переход по ссылке
+			return false;
 		});
-		
-		
 
-	/**
-	 * Клик по кнопке "ПОКАЗАТЬ/СКРЫТЬ МЕНЮ"
-	 */
-	$('#topPannel .button.-showMenu:visible').on('click', '.icon', showMainMenu);
-	
 });

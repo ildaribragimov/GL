@@ -54,8 +54,10 @@
 			-->
 		</div>
 		<?php
-			// Вставка пенели "основное меню навигации"
+			// Вставка верхней пенели навигации
 			include "includes/topPannel.php";
+			// Вставка главного меню
+			include "includes/mainMenu.php";
 		?>
     </body>
 </html>
