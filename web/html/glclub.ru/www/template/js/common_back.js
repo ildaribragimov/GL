@@ -1,7 +1,5 @@
-//function ready() {
-
 $(document).ready( function(){
-	
+
 	/**
 	 * Объявление глобальных переменных
 	 *
@@ -140,20 +138,18 @@ $(document).ready( function(){
 
 
 	// Определение высоты секции "НОМЕРА" равной высоте видимой области просмотра окна браузера
-	$('.roomsItems, .roomsItem').css({'height':viewport.clientHeight});
-	
-		// Переопределение высоты секции "НОМЕРА" при изменении размера окна
-	window.onresize = function(){
-		$('.roomsItems, .roomsItem').css({'height':viewport.clientHeight});
+	$('.roomsItems, .roomsItem').height(viewport.clientHeight);
+
+	// Переопределение высоты секции "НОМЕРА" при изменении размера окна
+	$(window).resize(function(){
+		$('.roomsItems, .roomsItem').height(viewport.clientHeight);
 		if ( viewport.clientWidth > 960 && slideNavPannel.enable == true ) slideNavPannel.hide();
-	};
-
-
+	});
 
 	// Получение ссылки на элемент видимой иконки "Показать меню"
-	$('#topPannel .burgerButton .icon')
+	$('#topPannel .burgerButton')
 		// Установка обработчика события клика по кнопке "Показать/Скрыть меню"
-		.click(function(){
+		.on('click', '.icon', function(){
 			// Обращение у функции "Разворачивания/Сворачивания главного меню"
 			//showMainMenu();
 			( slideNavPannel.enable == true )
@@ -164,12 +160,10 @@ $(document).ready( function(){
 			return false;
 		});
 
-
-
 	// Получение ссылки на пункты главного меню
-	$('#mainMenu .menuItem a')
+	$('#mainMenu .menuItem')
 		// Установка обработчика события клика по пункту главного меню
-		.click(function(){
+		.on('click', 'a', function(){
 			if ( slideNavPannel.enable == true ) slideNavPannel.hide();
 			
 			/** Объявление переменных:
@@ -177,25 +171,8 @@ $(document).ready( function(){
 			 * scrollTopValue (тип: integer) - Расстояние от верхнего края окна браузера до верхней границы якоря
 			 */
 			var anchor = $(this).attr('href'),
-				scrollTopValue = document.getElementById( anchor.match(/[^#].*/) ).offsetTop;
+				scrollTopValue = $( anchor ).offset().top;
 
-				var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-				//alert(scrolled);
-				document.documentElement.scrollTo(scrollTopValue);
-				/*
-			var duration = 500,
-				interval = 20,
-				scrollYPage = setInterval(function(){
-				
-				var scrolled = window.pageYOffset || document.documentElement.scrollTop,
-					needToScroll = (scrollTopValue-scrolled)/(duration/interval);
-				alert(needToScroll);
-				document.documentElement.scrollTo(0,scrolled+needToScroll);
-				
-				if (scrollTopValue == (scrolled+needToScroll)) clearInterval(scrollYPage);
-			}, interval);
-			*/
-			/*
 			// Получение ссылки на набор элементов "html, body"
 			$('html, body')
 				// Выполнение анимации "плавная прокрутка страницы до якоря
@@ -203,11 +180,9 @@ $(document).ready( function(){
 					{scrollTop: scrollTopValue},
 					{duration: 500, easing: 'easeOutExpo'}
 				);
-*/
+
 			// Запрет на переход по ссылке
 			return false;
 		});
 
 });
-
-//} document.addEventListener("DOMContentLoaded", ready);
