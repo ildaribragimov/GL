@@ -22,17 +22,15 @@
 		<link href="template/css/fonts.css" rel="stylesheet" type="text/css">
         <link href="template/css/common.css" rel="stylesheet" type="text/css">
 		
-		<script src="template/js/jqlite.1.1.1.min.js" type="text/javascript"></script>
-		<!--
-		<script src="template/js/jq.animation.min.js" type="text/javascript"></script>
-		-->
+		<script defer src="template/js/jqlite.1.1.1.min.js" type="text/javascript"></script>
+
 		<!--
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		-->
 		<!--
 		<script src="template/js/jquery.easing.1.3.min.js" type="text/javascript"></script>
 		-->
-		<script src="template/js/common.js" type="text/javascript"></script>		
+		<script defer src="template/js/common.js" type="text/javascript"></script>		
     </head>
     <body>
 		<div id="page-wrapper">
@@ -49,7 +47,6 @@
 				include "includes/sendReview.php";
 				// Вставка секции "Контакты"
 				include "includes/contacts.php";
-				
 			?>
 			<!-- Подвал страницы - Начало -->
 			<!--
@@ -58,15 +55,17 @@
 			</footer>
 			-->
 			<!-- Подвал страницы - Конец -->
-			<!--
-			<script src="template/js/modulargrid.js" type="text/javascript"></script>
-			-->
 		</div>
 		<?php
 			// Вставка верхней пенели навигации
 			include "includes/topPannel.php";
 			// Вставка главного меню
 			include "includes/mainMenu.php";
+			// Вставка всплывающего окна "Google-карта"
+			include "includes/popupWindow-map.php";
 		?>
+		<!--
+		<script src="template/js/modulargrid.js" type="text/javascript"></script>
+		-->
     </body>
 </html>

@@ -379,6 +379,52 @@ button.rounded .title {
 
 
 /**
+ * Popup Windows styles
+ */
+/* general styles */
+.popupWindow {
+	top:0;
+	left:0;
+	width:100vw;
+	height:100vh;
+	position:fixed;
+	background-color:rgba(0, 0, 0, 0.5);
+	z-index:200;
+}
+.popupWindow-wrapper {
+	padding:2.2222em 1.6666em;
+	position:relative;
+}
+.popupWindow-content {
+	border-radius:5px;
+	background-color:#f8f8f9;
+	box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.25);
+	position:relative;
+}
+.closeWindow .icon {
+	background-position: -320px -256px;
+}
+.closeWindow:hover .icon,
+.closeWindow:active .icon {
+	background-position: -368px -256px;
+}
+
+/* "Show Map" window styles */
+#popupWindow-map {
+	display:none;
+}
+#popupWindow-map .windowNavPan {
+	padding:0.7777em;
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:250;
+}
+/* ================ */
+
+
+
+/**
  * Individual styles
  */
 /* Section "Rooms" */

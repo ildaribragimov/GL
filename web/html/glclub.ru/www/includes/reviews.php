@@ -28,6 +28,15 @@
 		<div class="section-content">
 			<div class="reviewsItems">
 				<div class="reviewsItems-wrapper">
+					<!--
+					<div class="reviewItem -beforeActiveReview">
+						<div class="author">
+							<div class="photo" style="background-image:url(media/reviews/review1.jpg);">
+								<a href="/index.php?" ></a>
+							</div>
+						</div>
+					</div>
+					-->
 					<div class="reviewItem -active">
 						<div class="author">
 							<div class="photo" style="background-image:url(media/reviews/review2.jpg);">
@@ -45,6 +54,13 @@
 							<p class="rooms">Отдыхал в <a href="/" target="_self">Нью-Йорк</a>, <a href="/" target="_self">Япония</a></p>
 						</div>
 					</div>
+					<!--
+					<div class="reviewItem -afterActiveReview">
+						<div class="author">
+							<div class="photo" style="background-image:url(media/reviews/review3.jpg);"></div>
+						</div>
+					</div>
+					-->
 					<div class="clr"></div>
 				</div>
 			</div>
