@@ -73,7 +73,7 @@
 								</div>
 								<div class="formElement">
 									<div class="element-field">
-										<textarea name="userMessage" placeholder="Напишите свой отзыв здесь..." rows="3" required ></textarea>
+										<textarea name="userMessage" placeholder="Напишите свой отзыв здесь..." rows="3" required ><div></div></textarea>
 									</div>
 								</div>
 								<div class="formElement">

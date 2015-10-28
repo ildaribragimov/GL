@@ -200,6 +200,10 @@ textarea {
 	padding:0.9444em 1.1111em;
 	line-height:1.6666em;
 }
+textarea {
+	min-width:100%;
+	max-width:100%;
+}
 
 /* Default Button Style */
 button {
@@ -1020,6 +1024,7 @@ button.rounded .title {
 		display:block;
 	}
 	#mainMenu {
+		display:none;
 		top:60px;
 		left:0;
 		width:240px;

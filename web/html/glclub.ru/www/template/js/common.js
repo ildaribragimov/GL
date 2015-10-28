@@ -154,10 +154,13 @@ $(document).ready( function(){
 	$('#topPannel .burgerButton .icon')
 		// Установка обработчика события клика по кнопке "Показать/Скрыть меню"
 		.click(function(){
-			// Обращение у функции "Разворачивания/Сворачивания главного меню"
-			//showMainMenu();
+			// Отображение списка пунктов меню для свернутой панели навигации (только для мобильных устройств)
+			if ( $('#mainMenu').css({'display':'none'}) ) $('#mainMenu').css({'display':'block'});
+			// Проверка состояния панели навигации
 			( slideNavPannel.enable == true )
+				// Вызов метода "Сворачивания панели", если панель развернута
 				? slideNavPannel.hide()
+				// Вызов метода "Разворачивания панели", если панель свернута
 				: slideNavPannel.show();
 			
 			// Запрет на переход по ссылке
@@ -177,36 +180,36 @@ $(document).ready( function(){
 			 * scrollTopValue (тип: integer) - Расстояние от верхнего края окна браузера до верхней границы якоря
 			 */
 			var anchor = $(this).attr('href'),
-				scrollTopValue = document.getElementById( anchor.match(/[^#].*/) ).offsetTop;
+				scrollTopValue = document.getElementById( anchor.match(/[^#].*/) ).offsetTop,
+				duration = 500,
+				fps = 50,
+				interval = 1000/fps,
+				scrollPageY = setInterval(function(){
 
-				var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-				//alert(scrolled);
-				document.documentElement.scrollTo(scrollTopValue);
-				/*
-			var duration = 500,
-				interval = 20,
-				scrollYPage = setInterval(function(){
-				
-				var scrolled = window.pageYOffset || document.documentElement.scrollTop,
-					needToScroll = (scrollTopValue-scrolled)/(duration/interval);
-				alert(needToScroll);
-				document.documentElement.scrollTo(0,scrolled+needToScroll);
-				
-				if (scrollTopValue == (scrolled+needToScroll)) clearInterval(scrollYPage);
-			}, interval);
-			*/
-			/*
-			// Получение ссылки на набор элементов "html, body"
-			$('html, body')
-				// Выполнение анимации "плавная прокрутка страницы до якоря
-				.animate(
-					{scrollTop: scrollTopValue},
-					{duration: 500, easing: 'easeOutExpo'}
-				);
-*/
+					var scrolled = window.pageYOffset || document.documentElement.scrollTop,
+						needToScroll = (scrollTopValue-scrolled),
+
+						scrollStep = (Math.abs(needToScroll) != 2) ? needToScroll/3 : needToScroll;
+
+						window.scrollBy(0,scrollStep);
+
+					if (scrollTopValue == scrolled) clearInterval(scrollPageY);
+
+				}, interval);
+			
 			// Запрет на переход по ссылке
 			return false;
 		});
+
+	var sectionContacts = document.getElementById('contacts'),
+		formSendMail = sectionContacts.getElementsByClassName('subsection-sendMail'),
+		userMessage = document.getElementsByName('userMessage');
+		
+		document.getElementsByName('userMessage').click = function(){
+			alert('userMessage');
+		};
+		
+	
 
 });
 
