@@ -203,6 +203,8 @@ textarea {
 textarea {
 	min-width:100%;
 	max-width:100%;
+	min-height:1.6666em;
+	overflow:hidden;
 }
 
 /* Default Button Style */
@@ -390,6 +392,10 @@ button.rounded .title {
 	position:fixed;
 	background-color:rgba(0, 0, 0, 0.5);
 	z-index:200;
+	display:none;
+}
+.popupWindow.open {
+	display:block;
 }
 .popupWindow-wrapper {
 	padding:2.2222em 1.6666em;
@@ -410,9 +416,6 @@ button.rounded .title {
 }
 
 /* "Show Map" window styles */
-#popupWindow-map {
-	display:none;
-}
 #popupWindow-map .windowNavPan {
 	padding:0.7777em;
 	position:absolute;

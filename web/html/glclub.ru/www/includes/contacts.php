@@ -33,7 +33,7 @@
 					<div class="subsection-address adr">
 						<p><span class="country-name"><span class="value-title" title="Россия"></span></span> <span class="region"><span class="value-title" title="Республика Татарстан"></span></span> <span class="locality">Набережные Челны</span>, <span class="street-address">пр. Чулман, 37/04</span>, <span class="extended-address">цокольный этаж</span>.</p>
 						<form>
-							<button>
+							<button id="showMap">
 								<span class="icon -s showMap"></span>
 								<span class="title">Посмотреть на карте</span>
 								<span class="clr"></span>
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 				<div class="subsection-sendMail">
-					<form>
+					<form id="sendMail" name="sendMail" method="post">
 						<div class="form-wrapper">
 							<div class="form-content">
 								<div class="formElement">

@@ -1,13 +1,21 @@
+"use strict";
+
 //function ready() {
 
 $(document).ready( function(){
-	
+
 	/**
 	 * Объявление глобальных переменных
 	 *
 	 * viewport (тип: object) - Объект области просмотра браузера
+	 * $_roomsItems (тип: object) - Объект элементов секции "НОМЕРА"
+	 * $_mainMenu (тип: object) - Ссылка на DOM-элемент с id "mainMenu"
+	 * $_topPannel (тип: object) - Ссылка на DOM-элемент с id "topPannel"
 	 */
-	var viewport = document.documentElement;
+	var viewport = document.documentElement,
+		$_roomsItems = document.querySelectorAll('.roomsItems, .roomsItem'),
+		$_mainMenu = document.getElementById('mainMenu'),
+		$_topPannel = document.getElementById('topPannel');
 
 
 
@@ -59,9 +67,6 @@ $(document).ready( function(){
 
 	/**
 	 * Функция "Блокировки прокрутки страницы"
-	 *
-	 * Параметры функции:
-	 * e (тип: Объект) - объект, содержащий данные о событии
 	 */
 	function disableScroll() {
 		// Старые версии FF
@@ -79,9 +84,6 @@ $(document).ready( function(){
 
 	/**
 	 * Функция "Активации прокрутки страницы"
-	 *
-	 * Параметры функции:
-	 * e (тип: Объект) - объект, содержащий данные о событии
 	 */
 	function enableScroll() {
 		// Старые версии FF
@@ -138,24 +140,42 @@ $(document).ready( function(){
 	/* ====================================================== */
 
 
-
-	// Определение высоты секции "НОМЕРА" равной высоте видимой области просмотра окна браузера
-	$('.roomsItems, .roomsItem').css({'height':viewport.clientHeight});
+	/* ======================================================== *
+	 * ==== Установка высоты секции "НОМЕРА" равной        ==== *
+	 * ==== высоте видимой области просмотра окна браузера ==== *
+	 * ======================================================== */
+	function setRoomsItemsViewportHeight() {
+		// Обход массива элементов "$_roomsItems"
+		for (var i = 0; i < $_roomsItems.length; i++) {
+			// Установка высоты равной высоте объекта "viewport"
+			$_roomsItems[i].style.height = viewport.clientHeight+'px';
+		};
+	};
+	/* ======================================================== */
 	
-		// Переопределение высоты секции "НОМЕРА" при изменении размера окна
+	// Вызов функции "Установка высоты секции "НОМЕРА" равной высоте видимой области просмотра окна браузера
+	setRoomsItemsViewportHeight();
+
+
+
+	// Переопределение высоты секции "НОМЕРА" при изменении размера окна
 	window.onresize = function(){
-		$('.roomsItems, .roomsItem').css({'height':viewport.clientHeight});
+		// Вызов функции "Установка высоты секции "НОМЕРА" равной высоте видимой области просмотра окна браузера
+		setRoomsItemsViewportHeight();
+		// Сворачивание панели навигации, при условиях: Ширина "viewport" > 960px; Панель навигации развернута.
 		if ( viewport.clientWidth > 960 && slideNavPannel.enable == true ) slideNavPannel.hide();
 	};
 
 
 
 	// Получение ссылки на элемент видимой иконки "Показать меню"
-	$('#topPannel .burgerButton .icon')
+	$_topPannel.querySelector('.burgerButton .icon')
 		// Установка обработчика события клика по кнопке "Показать/Скрыть меню"
-		.click(function(){
+		.onclick = function(){
 			// Отображение списка пунктов меню для свернутой панели навигации (только для мобильных устройств)
-			if ( $('#mainMenu').css({'display':'none'}) ) $('#mainMenu').css({'display':'block'});
+			//alert($_mainMenu.display);
+			if ( getComputedStyle($_mainMenu).display == 'none' ) $_mainMenu.style.display = 'block';
+			//if ( $('#mainMenu').css({'display':'none'}) ) $('#mainMenu').css({'display':'block'});
 			// Проверка состояния панели навигации
 			( slideNavPannel.enable == true )
 				// Вызов метода "Сворачивания панели", если панель развернута
@@ -165,51 +185,89 @@ $(document).ready( function(){
 			
 			// Запрет на переход по ссылке
 			return false;
-		});
+		};
 
 
 
 	// Получение ссылки на пункты главного меню
-	$('#mainMenu .menuItem a')
+	$_mainMenu.querySelector('ul')
 		// Установка обработчика события клика по пункту главного меню
-		.click(function(){
+		.onclick = function(event){
+			// Сворачивание панели навигации, если она развернута
 			if ( slideNavPannel.enable == true ) slideNavPannel.hide();
 			
-			/** Объявление переменных:
-			 * 
-			 * scrollTopValue (тип: integer) - Расстояние от верхнего края окна браузера до верхней границы якоря
+			/** 
+			 * Объявление переменных:
+			 *
+			 * anchor (тип: string) - Строка, содержащая ссылку на якорь 
+			 * scrollTopValue (тип: number) - Расстояние от верхнего края окна браузера до верхней границы якоря
+			 * duration (тип: number) - Длительность анимации (в мс.)
+			 * fps (тип: number) - Частотность кадров анимации в секунду
+			 * interval (тип: number) - Скорость смены кадров (в мс.)
+			 * scrollPageY - Функция смены положения области просмотра браузера относительно его текущего положения
 			 */
-			var anchor = $(this).attr('href'),
+			//var anchor = this.attr('href'),
+			var anchor = event.target.getAttribute('href'),
 				scrollTopValue = document.getElementById( anchor.match(/[^#].*/) ).offsetTop,
 				duration = 500,
 				fps = 50,
 				interval = 1000/fps,
 				scrollPageY = setInterval(function(){
-
+					/** 
+					 * Объявление переменных:
+					 *
+					 * scrolled (тип: number) - Положение области просмотра окна браузера относительно левого верхнего угла страницы
+					 * needToScroll (тип: number) - Расстояние, на которое необходимо прокрутить страницу относительно ее текущего положения
+					 * scrollStep (тип: number) - Шаг прокрутки страницы на текущем кадре в пикселях.
+					 */
 					var scrolled = window.pageYOffset || document.documentElement.scrollTop,
 						needToScroll = (scrollTopValue-scrolled),
+						scrollStep = (Math.abs(needToScroll) != 2)
+							? needToScroll/3
+							: needToScroll;
 
-						scrollStep = (Math.abs(needToScroll) != 2) ? needToScroll/3 : needToScroll;
-
-						window.scrollBy(0,scrollStep);
-
-					if (scrollTopValue == scrolled) clearInterval(scrollPageY);
+					// Проверка расстояния, на которое необходимо прокрутить страницу на равенство 0 (нулю)
+					(needToScroll == 0)
+						// Выход из интервальной функции, если расстояние, на которое необходимо прокрутить страницу = 0
+						? clearInterval(scrollPageY)
+						// Вызов метода "Прокрутки относительно текущего положения" объекта "window"
+						: window.scrollBy(0,scrollStep);
 
 				}, interval);
 			
 			// Запрет на переход по ссылке
 			return false;
-		});
-
-	var sectionContacts = document.getElementById('contacts'),
-		formSendMail = sectionContacts.getElementsByClassName('subsection-sendMail'),
-		userMessage = document.getElementsByName('userMessage');
-		
-		document.getElementsByName('userMessage').click = function(){
-			alert('userMessage');
 		};
-		
-	
+
+
+
+	document.getElementById("showMap").onclick = function(){
+		//
+		document.getElementById("popupWindow-map").style.display = 'block';
+		//
+		return false;
+	};
+
+
+
+	var formSendMail = document.getElementById('sendMail'),
+		userMessage = formSendMail.querySelector('textarea'),
+		userMessageHeight = +getComputedStyle(userMessage).height.match(/.*[^px]/);
+/*
+		userMessage.onkeyup = function(){
+			var textareaHeight = +getComputedStyle(this).height.match(/.*[^px]/),
+				textareaPaddingTop = +getComputedStyle(this).paddingTop.match(/.*[^px]/),
+				textareaPaddingBottom = +getComputedStyle(this).paddingBottom.match(/.*[^px]/),
+				textareaInnerHeight = userMessageHeight+textareaPaddingTop+textareaPaddingBottom;
+
+			alert (this.scrollHeight +' > '+ textareaInnerHeight);
+			if ( this.scrollHeight > textareaInnerHeight ) {
+				this.scrollHeight = textareaInnerHeight;
+				this.style.height = this.scrollHeight-textareaPaddingTop-textareaPaddingBottom+'px';
+			} else {
+				
+			}
+		};*/
 
 });
 
