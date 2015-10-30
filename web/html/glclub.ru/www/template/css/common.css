@@ -797,10 +797,15 @@ button.rounded .title {
 #contacts .separator.-phone .icon {
 	background-position:-304px -176px;
 }
-#contacts .subsection-phone .tel {
+#contacts .subsection-phone .tel,
+#contacts .subsection-phone .tel a {
 	font-size:1.6666em;
 	line-height:1.5em;
+	color:#F8F8F9;
+	font-style:normal;
+	text-decoration:none;
 }
+
 #contacts .separator.-envelope .icon {
 	background-position:-304px -219px;
 }

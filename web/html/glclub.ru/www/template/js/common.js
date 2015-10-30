@@ -194,24 +194,21 @@ $(document).ready( function(){
 		// Установка обработчика события клика по пункту главного меню
 		.onclick = function(event){
 			// Сворачивание панели навигации, если она развернута
-			if ( slideNavPannel.enable == true ) slideNavPannel.hide();
+			
 			
 			/** 
 			 * Объявление переменных:
 			 *
 			 * anchor (тип: string) - Строка, содержащая ссылку на якорь 
 			 * scrollTopValue (тип: number) - Расстояние от верхнего края окна браузера до верхней границы якоря
-			 * duration (тип: number) - Длительность анимации (в мс.)
-			 * fps (тип: number) - Частотность кадров анимации в секунду
-			 * interval (тип: number) - Скорость смены кадров (в мс.)
+			 * interval (тип: number) - Частота смены кадров (в секунду)
 			 * scrollPageY - Функция смены положения области просмотра браузера относительно его текущего положения
 			 */
 			//var anchor = this.attr('href'),
 			var anchor = event.target.getAttribute('href'),
 				scrollTopValue = document.getElementById( anchor.match(/[^#].*/) ).offsetTop,
-				duration = 500,
-				fps = 50,
-				interval = 1000/fps,
+				interval = 1000/100,
+				scrollStatus = null,
 				scrollPageY = setInterval(function(){
 					/** 
 					 * Объявление переменных:
@@ -227,14 +224,19 @@ $(document).ready( function(){
 							: needToScroll;
 
 					// Проверка расстояния, на которое необходимо прокрутить страницу на равенство 0 (нулю)
-					(needToScroll == 0)
+					if (needToScroll == 0) {
 						// Выход из интервальной функции, если расстояние, на которое необходимо прокрутить страницу = 0
-						? clearInterval(scrollPageY)
+						scrollStatus = 'done';
+									if ( slideNavPannel.enable == true & scrollStatus == 'done' ) slideNavPannel.hide();
+
+						clearInterval(scrollPageY);
 						// Вызов метода "Прокрутки относительно текущего положения" объекта "window"
-						: window.scrollBy(0,scrollStep);
+					} else {
+						window.scrollBy(0,scrollStep);
+					}
 
 				}, interval);
-			
+
 			// Запрет на переход по ссылке
 			return false;
 		};
@@ -252,12 +254,12 @@ $(document).ready( function(){
 
 	var formSendMail = document.getElementById('sendMail'),
 		userMessage = formSendMail.querySelector('textarea'),
-		userMessageHeight = +getComputedStyle(userMessage).height.match(/.*[^px]/);
+		userMessageHeight = parseInt(getComputedStyle(userMessage).height);
 /*
 		userMessage.onkeyup = function(){
-			var textareaHeight = +getComputedStyle(this).height.match(/.*[^px]/),
-				textareaPaddingTop = +getComputedStyle(this).paddingTop.match(/.*[^px]/),
-				textareaPaddingBottom = +getComputedStyle(this).paddingBottom.match(/.*[^px]/),
+			var textareaHeight = parseInt(getComputedStyle(this).height),
+				textareaPaddingTop = parseInt(getComputedStyle(this).paddingTop),
+				textareaPaddingBottom = parseInt(getComputedStyle(this).paddingBottom),
 				textareaInnerHeight = userMessageHeight+textareaPaddingTop+textareaPaddingBottom;
 
 			alert (this.scrollHeight +' > '+ textareaInnerHeight);
