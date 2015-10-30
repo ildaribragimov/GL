@@ -191,6 +191,7 @@ input,
 textarea,
 button {	
 	border:0;
+	display:block;
 }
 input,
 textarea {
@@ -200,6 +201,10 @@ textarea {
 	padding:0.9444em 1.1111em;
 	line-height:1.6666em;
 }
+input {
+	height:1.6666em;
+	overflow-y:hidden;
+}
 textarea {
 	min-width:100%;
 	max-width:100%;
@@ -208,9 +213,22 @@ textarea {
 }
 
 /* Default Button Style */
+.element-button.centered .button-wrapper,
+.element-button.centered button {
+	float:left;
+	position:relative;
+}
+.button-wrapper {
+	padding-top:0.3333em;
+	padding-bottom:0.3333em;	
+}
+.element-button.centered .button-wrapper {
+	left:50%;
+}
+.element-button.centered button {
+	left:-50%;
+}
 button {
-	margin-top:0.3333em;
-	margin-bottom:0.3333em;
 	border-width:2px;
 	border-style:solid;
 	border-radius:4px;
@@ -813,6 +831,10 @@ button.rounded .title {
 #contacts .subsection-sendMail form button .icon.plane {
 	margin-left:1.1111em;
 	margin-right:-0.1111em;
+}
+#contacts .subsection-sendMail form#sendMail .button-wrapper {
+	padding-top:0;
+	padding-bottom:0;
 }
 #contacts .subsection-sendMail button {
 	border-color:#3b876f;

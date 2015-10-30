@@ -33,11 +33,16 @@
 					<div class="subsection-address adr">
 						<p><span class="country-name"><span class="value-title" title="Россия"></span></span> <span class="region"><span class="value-title" title="Республика Татарстан"></span></span> <span class="locality">Набережные Челны</span>, <span class="street-address">пр. Чулман, 37/04</span>, <span class="extended-address">цокольный этаж</span>.</p>
 						<form>
-							<button id="showMap">
-								<span class="icon -s showMap"></span>
-								<span class="title">Посмотреть на карте</span>
-								<span class="clr"></span>
-							</button>
+							<div class="element-button centered">
+								<div class="button-wrapper">
+									<button id="showMap">
+										<span class="icon -s showMap"></span>
+										<span class="title">Посмотреть на карте</span>
+										<span class="clr"></span>
+									</button>
+								</div>
+								<div class="clr"></div>
+							</div>
 						</form>
 					</div>
 					<h2>Хотите забронировать номер?</h2>
@@ -77,11 +82,14 @@
 									</div>
 								</div>
 								<div class="formElement">
-									<div class="element-button disabled">
-										<button class="rounded">
-											<span class="icon -s plane"></span>
-											<span class="clr"></span>
-										</button>
+									<div class="element-button disabled centered">
+										<div class="button-wrapper">
+											<button class="rounded">
+												<span class="icon -s plane"></span>
+												<span class="clr"></span>
+											</button>
+										</div>
+										<div class="clr"></div>
 									</div>
 								</div>
 							</div>
