@@ -63,7 +63,7 @@
 					</div>
 				</div>
 				<div class="subsection-sendMail">
-					<form id="sendMail" name="sendMail" method="post">
+					<form id="sendMail" name="sendMail" action="/" method="post" accept-charset="utf-8" autocomplete="on" novalidate>
 						<div class="form-wrapper">
 							<div class="form-content">
 								<div class="formElement">
@@ -78,7 +78,7 @@
 								</div>
 								<div class="formElement">
 									<div class="element-field">
-										<textarea name="userMessage" placeholder="Напишите свой отзыв здесь..." rows="3" required ></textarea>
+										<textarea name="userMessage" placeholder="Напишите сообщение здесь..." rows="3" required ></textarea>
 									</div>
 								</div>
 								<div class="formElement">
