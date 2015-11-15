@@ -8,44 +8,80 @@ include "configuration.php";
  * Класс рассылки писем
  *
  * Свойства:
- * options (тип: array) - массив опций отправки писем
+ * options (тип: array) - Массив опций отправки писем
+ * result (тип: array) - Объект сообщений об результе операции отправки письма
  *
  * Методы:
  * setOptions - Переопределяет опции по умолчанию
- * sendMail - Отправляет письма.
+ * setResult - Генерация содержимого объекта сообщений об результатах операции отправки письма
+ * getResult - Возвращает объект сообщений об результатах операции отправки письма
+ * sendMail - Отправляет письма
  */
 class Email {
-	
 	/**
 	 * Опции отправки письма
 	 */
-	public $options = array(
+	private $options = array(
 		'siteName' => SITE_NAME,
 		'siteEmail' => SITE_EMAIL,
 		'adminEmails' => ADMIN_EMAILS,
 		'sendFromSite' => SEND_FROM_SITE,
 		'replyToSite' => REPLY_TO_SITE,
 		'template' => TEMPLATE,
-		'subject' => SUBJECT
+		'subject' => SUBJECT,
+		'successReport' => SUCCESS_REPORT,
+		'failReport' => FAIL_REPORT
 	);
-	
+
 	/**
-	 * 
+	 * Объект сообщений об результе операции отправки письма
 	 */
-	public $result = array(
-		'type' => '',
-		'report' => ''
+	private $result = array(
+		'type' => 'fail',
+		'report' => FAIL_REPORT
 	);
+
+	public function __construct() {
+		//$this->options = array_replace($this->options, $userOptions);
+		//$this->result['report'] = $this->options['failReport'];
+    }
+	
+	public function __set($name, $value) {
+		$this->$name = array_replace($this->$name, $value);
+    }
+
 
 	/**
 	 * Метод переопределяет опции отправки письма
 	 *
 	 * Параметры:
 	 * - $userOptions (тип: array) - Ассоциативный массив переопределяемых параметров опций отправки письма
-	 */
+	 
 	public function setOptions($userOptions){
 		// Переопределение опций новым массивом после слияния путём замещения при совпадении имен ключей элементов
 		$this->options = array_replace($this->options, $userOptions);
+	}*/
+
+	/**
+	 * Метод генерирует содержимое объекта сообщений об результатах операции отправки письма
+	 *
+	 * Параметры:
+	 * - $result (тип: array) - Ассоциативный массив сообщений об результе операции отправки письма
+	 
+	private function setResult($result){
+		// Замещение содержимого объекта результата операции отправки письма на новое содержимое
+		$this->result = array_replace($this->result, $result);
+	}*/
+
+	/**
+	 * Метод возвращает объект сообщений об результатах операции отправки письма
+	 *
+	 * Возвращаемое значение: 
+	 * $this->result (тип: array) - Ассоциативный массив сообщений об результе операции отправки письма
+	 */
+	public function getResult(){
+		// Возврат ассоциативного массива сообщений об результе операции отправки письма
+		return $this->result;
 	}
 
 	/**
@@ -57,13 +93,6 @@ class Email {
 	private function checkData($data){
 		
 	}
-
-	/**
-	 *
-	 */
-	private function getResult(){
-		
-	}
 	
 	/**
 	 * Метод отправляет письма
@@ -73,7 +102,7 @@ class Email {
 	 */
 	public function sendMail($data){
 		// Проверка данных пользователя
-		//$this->checkData($data);
+		$this->checkData($data);
 
 		/**
 		 * Генерация данных для отправки письма
@@ -106,10 +135,16 @@ class Email {
 		$headers  = "MIME-Version: 1.0\r\n";
 		// Добавление заголовка "Тип пиьсма" и "Кодировка"
 		$headers .= "Content-type: text/html; charset=utf-8\r\n";
-		// Добавление заголовка "От кого"
-		$headers .= ( $this->options['sendFromSite'] )
-			? "From: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n"
-			: "From: =?utf-8?B?".base64_encode($data["userName"]["value"])."?= <".$data["userEmail"]["value"].">\r\n";
+		// Добавление заголовка "От имени кого"
+		if ( $this->options['sendFromSite'] ) {
+			// Добавление заголовка "От имени кого отправленно письмо"
+			$headers .= "From: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n";
+		} else {
+			// Добавление заголовка "От имени кого отправленно письмо"
+			$headers .= "From: =?utf-8?B?".base64_encode($data["userName"]["value"])."?= <".$data["userEmail"]["value"].">\r\n";
+			// Добавление заголовка "Кто отправил письмо"
+			$headers .= "Sender: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n";
+		}
 		// Добавление заголовка "Кому ответить"
 		$headers .= ( $this->options['replyToSite'] )
 			? "Reply-To: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n"
@@ -118,17 +153,15 @@ class Email {
 		/**
 		 * Проверка состояния отправки
 		 */
-		
-			if ( mail($this->options['adminEmails'], $subject, $message, $headers) ) {
-				echo 'Ваше письмо отправленно!';
-			} else {
-				echo 'Письмо не отправлено! Попробуйте еще раз!';
-			}
-		
-		return true;
+		if ( mail($this->options['adminEmails'], $subject, $message, $headers) ) {
+			$this->result = array(
+				'type' => 'success',
+				'report' => $this->options['successReport']
+			);
+		}
 
 		// Вывод сообщения о результате операции отправки письма
-		//$this->getResult();
+		return $this->result;
 	}
 }
 ?>
@@ -162,42 +195,18 @@ class Email {
 			// Создание экземпляра класса "Email"
 			$sendMail = new Email();
 
-			$sendMail->setOptions(array(
+			$sendMail->options = array(
 				'template'=>'newMail',
 				'subject' => 'Письмо с сайта "GL"'
-			));
+			);
 			
 			// Вызов метода "sendMail" для отправки письма
-			if ( $sendMail->sendMail($data) ) {
-				echo 'Success';
-			} else {
-				echo 'Fail';
-			}
+			$resultMessage = $sendMail->sendMail($data);
+			
+			echo '<pre>';
+			print_r($resultMessage);
+			echo '<pre>';
 		}
-		
-		$e = new Email();
-		$u = new Email();
-		
-		$e->setOptions( array(
-			'template'=>'newMail',
-			'subject' => 'Письмо с сайта "GL"'
-			)
-		);
-		$u->setOptions( array(
-			'template'=>'newReview',
-			'subject' => 'Новый отзыв о сауне'
-			)
-		);
-		
-		echo '<pre>';
-		print_r($e->options);
-		echo '</pre>';
-
-		echo '<pre>';
-		print_r($u->options);
-		echo '</pre>';
-		
-		
 		?>
 		<form id="sendMail" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="post" accept-charset="utf-8" autocomplete="on" novalidate>
 			<div>
