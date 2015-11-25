@@ -4,7 +4,7 @@
  */
 
 // Подключение файла конфигурации сайта
-include "configuration.php";
+//include "configuration.php";
 
 // Скрипт отправки писем с сайта
 //include "includes/tools/sendMail.php";
