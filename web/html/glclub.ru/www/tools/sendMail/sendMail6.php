@@ -73,22 +73,59 @@ class Email {
 		$counter = 0;
 		// Перебор элементов массива
 		foreach ( $data as $key => $value ) {
+			// Определение/Сброс переменной текста сообщения о результате проверки данных
+			$errorMsg = '';
 			// Условие на соответствие значнию элемента массива пустому значению
 			if ( empty($value['value']) )
 			// Если значение ПУСТОЕ
 			{
 				// Формирование сообщения об ошибке
 				$errorMsg = 'Поле "'.$value['label'].'" не должно быть пустым!';
+				/*
 				// Добавление нового элемента в массив сообщений о результатах проверки данных
 				$report['report'][$counter++] = $errorMsg;
 				// Прерывание выполнения текущей итерации
 				continue;
+				*/
 			} 
 			// Если значение НЕ ПУСТОЕ
 			else {
-				//
-				
+				// Проверка переданного значения поля на соответствие присвоенному типу поля
+				switch ( $value['type'] ) {
+					// Если тип поля "ИМЯ ПОЛЬЗОВАТЕЛЯ"
+					case "name":
+						//
+						
+						// Прерывание выполнения конструкции SWITCH
+						break;
+					// Если тип поля "E-mail"
+					case "email":
+						//
+						if ( !filter_var($value['value'], FILTER_VALIDATE_EMAIL) ) {
+							// Формирование сообщения об ошибке
+							$errorMsg = 'E-mail указан не верно!';
+						};
+						// Прерывание выполнения конструкции SWITCH
+						break;
+					// Если тип поля "Текст"
+					case "text":
+						//
+						
+						// Прерывание выполнения конструкции SWITCH
+						break;
+					// Если тип поля не зарегистрированн/идентифицирован/определен
+					// default:
+				}
 			}
+			
+			
+			// Добавление нового элемента в массив сообщений о результатах проверки данных
+			if ( !empty($errorMsg) ) {
+				// Добавление нового элемента в массив сообщений о результатах проверки данных
+				$report['report'][$counter] = $errorMsg;
+			}
+			// 
+			$counter++;
 		}
 		// Условие на соответствие масиива сообщений о результатах проверки данных пустому значению
 		if ( !empty($report) ) {
@@ -179,10 +216,17 @@ class Email {
 		<meta name="viewport" content="width=device-width, initial-scale=0.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 		<meta charset="utf-8">
         <title>Типовой шаблон страницы на HTML5 - html5.tpl</title>
+		<style>
+			.captchaCheck {
+				position:absolute;
+				top:-10000px;
+				display:none;
+			}
+		</style>
 	</head>
     <body>
 		<?php
-		if ( !empty($_POST) && isset($_POST['sendMail']) ) {
+		if ( !empty($_POST) && isset($_POST['sendMail']) && empty($_POST['captchaCode']) ) {
 			// Получение данных пользователя и генерация массива данных для отправки письма
 			$data = array(
 				'userName' => array(
@@ -226,6 +270,10 @@ class Email {
 			</div>
 			<div>
 				<textarea name="userMessage" placeholder="Напишите сообщение здесь..." rows="3" required="required" ></textarea>
+			</div>
+			<div class="captchaCheck">
+				<img class="captchaImg" src="" alt="" title="" >
+				<input name="captchaCode" placeholder="Введите код здесь..." type="text" required="required" >
 			</div>
 			<div>
 				<button name="sendMail" class="rounded">Отправить</button>
