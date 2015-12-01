@@ -19,6 +19,6 @@ define('SEND_FROM_SITE', false);
 define('REPLY_TO_SITE', false);
 define('TEMPLATE', 'default');
 define('SUBJECT', 'You have a mail from your website!');
-define('SUCCESS_REPORT', 'Ваше письмо отправленно! Благодарим вас за обращение!');
+define('SUCCESS_REPORT', 'Ваше письмо отправлено! Благодарим вас за обращение!');
 define('FAIL_REPORT', 'Ошибка отправки письма! Попробуйте позже!');
 ?>
