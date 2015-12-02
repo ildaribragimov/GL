@@ -22,7 +22,7 @@ class CCheckMail {
 		
 		$host = substr (strstr ($email, '@'), 1);
 		
-		if ( getmxrr ($host, $mxhosts[0], $mxhosts[1]) == true ) {
+		if ( getmxrr ($host, $mxhosts[0], $mxhosts[1]) ) {
 			array_multisort ($mxhosts[1], $mxhosts[0]);
 		} else {
 			$mxhosts[0] = $host;
@@ -43,7 +43,7 @@ class CCheckMail {
 		while (!$result && $id < count ($mxhosts[0])) {
 			if ( function_exists ("fsockopen") ) {
 				if ( DEBUG_OK ) {
-					print_r ($id . " " . $mxhosts[0][$id]);
+					print_r ($id . " -> " . $mxhosts[0][$id]);
 				}
 		 
 				if ( $connection = fsockopen ($mxhosts[0][$id], $port, $errno, $error, $this->timeout) ) {
@@ -87,17 +87,15 @@ class CCheckMail {
 					}
 					fputs ($connection,"QUIT\r\n");
 					fclose ($connection);
-					if ( $result ) {
-						return true;
-					}
 				}
 			} else {
 				break;
 			}
+			
 			$id++;
 		}
 		
-		return false;
+		return $result;
 	}
 
 }
@@ -107,7 +105,7 @@ class CCheckMail {
 
 header('Content-Type: text/html; charset=utf-8');
 
-$str='iibragimov844@gmail.com';
+$str='iibragimov8444@gmail.com';
 $alter=new CCheckMail ();
 
 echo '<pre>';
