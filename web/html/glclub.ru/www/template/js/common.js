@@ -1,8 +1,10 @@
+// Явное указание на режим строгого соответствия современному стандарту
 "use strict";
 
+// Исполнение скрипта при готовности DOM-структуры документа
 //function ready() {
-
-$(document).ready( function(){
+$.documentReady(function() {
+//$(document).ready( function(){
 
 	/**
 	 * Объявление глобальных переменных

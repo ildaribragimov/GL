@@ -9,6 +9,7 @@ include "sendMail.php";
 		<meta name="viewport" content="width=device-width, initial-scale=0.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 		<meta charset="utf-8">
         <title>Типовой шаблон страницы на HTML5 - html5.tpl</title>
+		<script defer src="js/jquery.document.ready.js"></script>
 		<style>
 			.captchaCheck {
 				position:absolute;
@@ -16,6 +17,7 @@ include "sendMail.php";
 				display:none;
 			}
 		</style>
+		<script defer src="js/ajax.js" type="text/javascript"></script>
 	</head>
     <body>
 
