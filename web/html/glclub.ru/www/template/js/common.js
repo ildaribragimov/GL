@@ -2,9 +2,7 @@
 "use strict";
 
 // Исполнение скрипта при готовности DOM-структуры документа
-//function ready() {
 $.documentReady(function() {
-//$(document).ready( function(){
 
 	/**
 	 * Объявление глобальных переменных
@@ -274,5 +272,3 @@ $.documentReady(function() {
 		};*/
 
 });
-
-//} document.addEventListener("DOMContentLoaded", ready);
