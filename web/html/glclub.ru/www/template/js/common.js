@@ -2,9 +2,7 @@
 "use strict";
 
 // Исполнение скрипта при готовности DOM-структуры документа
-//function ready() {
 $.documentReady(function() {
-//$(document).ready( function(){
 
 	/**
 	 * Объявление глобальных переменных
@@ -111,6 +109,7 @@ $.documentReady(function() {
 	 * Объект выезжающей панели навигации
 	 *
 	 * Свойства объекта:
+	 * * elements (тип: Array) - Массив селекторов элементов, над которыми будут проходить манипуляции
 	 * * enable (тип: Boolean) - Состояние панели навигации (false - свернута; true - развернута)
 	 *
 	 * Методы объекта:
@@ -118,21 +117,23 @@ $.documentReady(function() {
 	 * * hide - Метод сворачивает панель
 	 */
 	var slideNavPannel = {
+		elements: ["#page-wrapper", "#topPannel", ".burgerButton", "#mainMenu"],
 		enable: false,
 		show: function(){
-			// Получение ссылки на набор элементов
-			$('#page-wrapper, #topPannel, .burgerButton, #mainMenu')
+			this.elements.forEach( function( item, i, elements ){
 				// Переключение занчения атрибута class, выбранных эелементов
-				.addClass('menu-enabled');
+				document.querySelector(item).classList.add('menu-enabled');
+			});
 			// Блокировка прокрутки страницы
 			disableScroll();
 			// Изменение статуса состояния панели навигации
 			this.enable = true;
 		},
 		hide: function(){
-			$('#page-wrapper, #topPannel, .burgerButton, #mainMenu')
+			this.elements.forEach( function( item, i, elements ){
 				// Переключение занчения атрибута class, выбранных эелементов
-				.removeClass('menu-enabled');
+				document.querySelector(item).classList.remove('menu-enabled');
+			});
 			// Активация прокрутки страницы
 			enableScroll();
 			// Изменение статуса состояния панели навигации
@@ -140,7 +141,8 @@ $.documentReady(function() {
 		}
 	};
 	/* ====================================================== */
-
+	
+	
 
 	/* ======================================================== *
 	 * ==== Установка высоты секции "НОМЕРА" равной        ==== *
