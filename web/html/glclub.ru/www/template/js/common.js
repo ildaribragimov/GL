@@ -255,11 +255,11 @@ $.documentReady(function() {
 	};
 
 
-
+	/*
 	var formSendMail = document.getElementById('sendMail'),
 		userMessage = formSendMail.querySelector('textarea'),
 		userMessageHeight = parseInt(getComputedStyle(userMessage).height);
-/*
+
 		userMessage.onkeyup = function(){
 			var textareaHeight = parseInt(getComputedStyle(this).height),
 				textareaPaddingTop = parseInt(getComputedStyle(this).paddingTop),
@@ -276,5 +276,3 @@ $.documentReady(function() {
 		};*/
 
 });
-
-//} document.addEventListener("DOMContentLoaded", ready);
