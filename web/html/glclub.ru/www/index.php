@@ -32,15 +32,6 @@
 		<link href="template/css/normalize.css" rel="stylesheet" type="text/css">
 		<link href="template/css/fonts.css" rel="stylesheet" type="text/css">
         <link href="template/css/common.css" rel="stylesheet" type="text/css">
-		<!--
-		<script defer src="template/js/jqlite.1.1.1.min.js" type="text/javascript"></script>
-		-->
-		<!--
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		-->
-		<!--
-		<script src="template/js/jquery.easing.1.3.min.js" type="text/javascript"></script>
-		-->
 		<script defer src="template/js/common.js" type="text/javascript"></script>		
     </head>
     <body>
