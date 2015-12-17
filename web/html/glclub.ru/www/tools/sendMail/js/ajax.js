@@ -2,14 +2,6 @@
 "use strict";
 
 // Исполнение скрипта при готовности DOM-структуры документа
-
-//function ready() {}
-
 $.documentReady(function () {
-  alert('hi');
+	alert('hi');
 });
-
-
-
-//
-//document.addEventListener("DOMContentLoaded", ready);
