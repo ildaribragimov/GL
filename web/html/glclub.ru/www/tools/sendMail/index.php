@@ -17,7 +17,7 @@ include "sendMail.php";
 				display:none;
 			}
 		</style>
-		<script defer src="js/ajax.js" type="text/javascript"></script>
+		<script defer src="js/formsFieldsValidate.js" type="text/javascript"></script>
 	</head>
     <body>
 
@@ -78,15 +78,15 @@ include "sendMail.php";
 		}
 		?>
 
-		<form id="sendMail" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="post" accept-charset="utf-8" autocomplete="on" novalidate>
+		<form name="sendMail" id="sendMail" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="post" accept-charset="utf-8" autocomplete="on" novalidate>
 			<div>
 				<input name="userName" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required="required" value="<?php echo $data['userName']['value']; ?>">
 			</div>
 			<div>
-				<input name="userEmail" placeholder="E-mail" type="text" required="required" value="<?php echo $data['userEmail']['value']; ?>">
+				<input name="userEmail" placeholder="E-mail" type="email" required="required" value="<?php echo $data['userEmail']['value']; ?>">
 			</div>
 			<div>
-				<input name="userPhone" placeholder="+7 (xxx) xxx-xx-xx" type="text" pattern="+7 ([0-9]{3,6}) [0-9]{1,3}-[0-9]{2}-[0-9]{2}" required="required" value="<?php echo $data['userPhone']['value']; ?>">
+				<input name="userPhone" placeholder="+7 (xxx) xxx-xx-xx" type="tel" pattern="+7 ([0-9]{3,6}) [0-9]{1,3}-[0-9]{2}-[0-9]{2}" required="required" value="<?php echo $data['userPhone']['value']; ?>">
 			</div>
 			<div>
 				<textarea name="userMessage" placeholder="Напишите сообщение здесь..." rows="3" required="required" ><?php echo $data['userMessage']['value']; ?></textarea>
@@ -99,5 +99,28 @@ include "sendMail.php";
 				<button name="sendMail" class="rounded">Отправить</button>
 			</div>
 		</form>
+		<form name="sendReview" id="sendReview" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="post" accept-charset="utf-8" autocomplete="on" novalidate>
+			<div>
+				<input name="userName" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required="required" value="<?php echo $data['userName']['value']; ?>">
+			</div>
+			<div>
+				<select name="roomNuber">
+					<option value="0">Номера, в которых отдыхали...</option>
+					<option value="1">Нью Йорк</option>
+					<option value="2">Япония</option>
+				</select>
+			</div>
+			<div>
+				<textarea name="userMessage" placeholder="Напишите сообщение здесь..." rows="3" required="required" ><?php echo $data['userMessage']['value']; ?></textarea>
+			</div>
+			<div class="captchaCheck">
+				<img class="captchaImg" src="" alt="" title="" >
+				<input name="captchaCode" placeholder="Введите код здесь..." type="text" required="required" >
+			</div>
+			<div>
+				<button name="sendReview" class="rounded">Отправить</button>
+			</div>
+		</form>
+
 	</body>
 </html>
