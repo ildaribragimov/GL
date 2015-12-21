@@ -12,10 +12,10 @@
 		<h1>Здравстувйте, уважаемый управляющий клуба!</h1>
 		<table>
 			<tr>
-				<td>Посетитель по имени <b><?php echo $data["userName"]["value"]; ?></b> написал вам сообщение:</td>
+				<td>Посетитель по имени <b><?php echo $data["name"]; ?></b> написал вам сообщение:</td>
 			</tr>
 			<tr>
-				<td><q><?php echo $data["userMessage"]["value"]; ?></q></td>
+				<td><q><?php echo $data["message"]; ?></q></td>
 			</tr>
 			<tr>
 				<td>Сообщение было написано <?php echo strftime("%d.%m.%Y в %H:%M"); ?></td>
