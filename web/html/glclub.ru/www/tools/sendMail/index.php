@@ -22,93 +22,88 @@ include "sendMail.php";
     <body>
 
 		<?php
+        // Уничтожении переменной "$userData", если она есть
+		unset($userData);
         // Если массив переданных формой пользовательских данных не пустой
         // И Если этот массив содержит элемент с ключом "sendMail"
-		if ( !empty($_POST) && isset($_POST['sendMail']) ) {
+		if ( !empty($_POST) && $_POST['send'] == 'mail' ) {
 			// Создание экземпляра класса "Email"
 			$sendMail = new Email();
             // Передача индивидеальных параметров формы "Отправить письмо"
             $sendMail->options = array(
                 'subject' => 'Письмо с сайта "GL"'
             );                
-			// Отправка письма и получение результирующего сообщения
+			// Отправка письма и получение результата отправки
 			$result = $sendMail->sendMail();
-
+            // Получение массива системных сообщений
             $resultMsg = $result['result'];
+            // Получение массива пользовательских данных
             $userData = $result['userData'];
 			// Если операция отправки письма прошла успешно
 			if ( $resultMsg['type'] == 'success' ) {
-				// Перебор элементов массива
-				foreach ($userData as $key => &$value) {
-					// Удаление (Сброс) массива переданных значений
-					$value['value'] = '';
-				}
-				// Уничтожении ссылки на последний элемент массива переданых данных
-				unset($value);
+                // Уничтожении переменной "$userData", если она есть
+                unset($userData);
 			}
-
 			// Вывод результирующего сообщения
 			echo '<pre>';
 			print_r($resultMsg);
-			echo '<pre>';
+			echo '</pre>';
 		}
 		?>
 		<form name="sendMail" id="sendMail" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="post" accept-charset="utf-8" autocomplete="on" novalidate>
 			<div>
-				<input name="name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required="required" value="<?php echo $userData['name']['value']; ?>">
+				<input name="name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required="required" value="<?php echo $userData['name']; ?>">
 			</div>
 			<div>
-				<input name="email" placeholder="E-mail" type="email" required="required" value="<?php echo $userData['email']['value']; ?>">
+				<input name="email" placeholder="E-mail" type="email" required="required" value="<?php echo $userData['email']; ?>">
 			</div>
 			<div>
-				<input name="phone" placeholder="+7 (xxx) xxx-xx-xx" type="tel" pattern="+7 ([0-9]{3,6}) [0-9]{1,3}-[0-9]{2}-[0-9]{2}" required="required" value="<?php echo $userData['phone']['value']; ?>">
+				<input name="phone" placeholder="+7 (xxx) xxx-xx-xx" type="tel" pattern="+7 ([0-9]{3,6}) [0-9]{1,3}-[0-9]{2}-[0-9]{2}" required="required" value="<?php echo $userData['phone']; ?>">
 			</div>
 			<div>
-				<textarea name="message" placeholder="Напишите сообщение здесь..." rows="3" required="required" ><?php echo $userData['message']['value']; ?></textarea>
+				<textarea name="message" placeholder="Напишите сообщение здесь..." rows="3" required="required" ><?php echo $userData['message']; ?></textarea>
 			</div>
 			<div class="captchaCheck">
 				<img class="captchaImg" src="" alt="" title="" >
 				<input name="captcha" class="captchaCode" placeholder="Введите код здесь..." type="text" required="required" >
 			</div>
 			<div>
-				<button name="sendMail" class="rounded">Отправить</button>
+				<button name="send" class="rounded" value="mail">Отправить</button>
 			</div>
 		</form>
 
 		<?php
+        // Уничтожении переменной "$userData", если она есть
+		unset($userData);
         // Если массив переданных формой пользовательских данных не пустой
         // И Если этот массив содержит элемент с ключом "sendReview"
-		if ( !empty($_POST) && isset($_POST['sendReview']) ) {
+		if ( !empty($_POST) && $_POST['send'] == 'review' ) {
 			// Создание экземпляра класса "Email"
 			$sendReview = new Email();
             // Передача индивидеальных параметров формы "Отправить письмо"
             $sendReview->options = array(
                 'subject' => 'Новый отзыв от посетителя сайта "GL"'
             );
-			// Отправка письма и получение результирующего сообщения
+			// Отправка письма и получение результата отправки
 			$result = $sendReview->sendMail();
-
+            // Получение массива системных сообщений
             $resultMsg = $result['result'];
+            // Получение массива пользовательских данных
             $userData = $result['userData'];
 			// Если операция отправки письма прошла успешно
 			if ( $resultMsg['type'] == 'success' ) {
-				// Перебор элементов массива
-				foreach ($userData as $key => &$value) {
-					// Удаление (Сброс) массива переданных значений
-					$value['value'] = '';
-				}
-				// Уничтожении ссылки на последний элемент массива переданых данных
-				unset($value);
+                // Уничтожении переменной "$userData", если она есть
+                unset($userData);
 			}
 			// Вывод результирующего сообщения
 			echo '<pre>';
 			print_r($resultMsg);
-			echo '<pre>';
+			echo '</pre>';
 		}
 		?>
 		<form name="sendReview" id="sendReview" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="post" accept-charset="utf-8" autocomplete="on" novalidate>
 			<div>
-				<input name="name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required="required" value="<?php echo $userData['name']['value']; ?>">
+				<input name="name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required="required" value="<?php echo $userData['name']; ?>">
 			</div>
 			<div>
 				<select name="roomNuber" multiple>
@@ -118,14 +113,14 @@ include "sendMail.php";
 				</select>
 			</div>
 			<div>
-				<textarea name="message" placeholder="Напишите сообщение здесь..." rows="3" required="required" ><?php echo $userData['message']['value']; ?></textarea>
+				<textarea name="message" placeholder="Напишите сообщение здесь..." rows="3" required="required" ><?php echo $userData['message']; ?></textarea>
 			</div>
 			<div class="captchaCheck">
 				<img class="captchaImg" src="" alt="" title="" >
 				<input name="captcha" class="captchaCode" placeholder="Введите код здесь..." type="text" required="required" >
 			</div>
 			<div>
-				<button name="sendReview" class="rounded">Отправить</button>
+				<button name="send" class="rounded" value="review">Отправить</button>
 			</div>
 		</form>
 
