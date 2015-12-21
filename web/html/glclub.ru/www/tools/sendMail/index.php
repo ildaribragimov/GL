@@ -17,79 +17,54 @@ include "sendMail.php";
 				display:none;
 			}
 		</style>
-		<script defer src="js/formsFieldsValidate.js" type="text/javascript"></script>
+		
 	</head>
     <body>
 
 		<?php
+        // Если массив переданных формой пользовательских данных не пустой
+        // И Если этот массив содержит элемент с ключом "sendMail"
 		if ( !empty($_POST) && isset($_POST['sendMail']) ) {
-			// Получение данных пользователя и генерация массива данных для отправки письма
-			$data = array(
-				'userName' => array(
-					'type' => 'name',
-					'label' => 'Имя пользователя',
-					'value' => htmlspecialchars($_POST['name'])
-				),
-				'userEmail' => array(
-					'type' => 'email',
-					'label' => 'E-mail пользователя',
-					'value' => $_POST['email']
-				),
-				'userPhone' => array(
-					'type' => 'phone',
-					'label' => 'Телефон пользователя',
-					'value' => $_POST['phone']
-				),
-				'userMessage' => array(
-					'type' => 'text',
-					'label' => 'Сообщение пользователя',
-					'value' => htmlspecialchars($_POST['message'])
-				),
-				'captchaCode' => array(
-					'type' => 'captcha',
-					'label' => 'Код captcha',
-					'value' => htmlspecialchars($_POST['captcha'])
-				)
-			);
-
 			// Создание экземпляра класса "Email"
 			$sendMail = new Email();
-			// Передача индивидеальных параметров формы
-			$sendMail->options = array(
-				'subject' => 'Письмо с сайта "GL"'
-			);
+            // Передача индивидеальных параметров формы "Отправить письмо"
+            $sendMail->options = array(
+                'subject' => 'Письмо с сайта "GL"'
+            );                
 			// Отправка письма и получение результирующего сообщения
-			$resultMessage = $sendMail->sendMail($data);
-			
-			// Условие на соответствие состояния отправки письма успешному результату
-			if ( $resultMessage['type'] == 'success' ) {
+			$result = $sendMail->sendMail();
+
+            $resultMsg = $result['result'];
+            $userData = $result['userData'];
+			// Если операция отправки письма прошла успешно
+			if ( $resultMsg['type'] == 'success' ) {
 				// Перебор элементов массива
-				foreach ($data as $key => &$value) {
+				foreach ($userData as $key => &$value) {
 					// Удаление (Сброс) массива переданных значений
 					$value['value'] = '';
 				}
 				// Уничтожении ссылки на последний элемент массива переданых данных
 				unset($value);
 			}
+
 			// Вывод результирующего сообщения
 			echo '<pre>';
-			print_r($resultMessage);
+			print_r($resultMsg);
 			echo '<pre>';
 		}
 		?>
-
 		<form name="sendMail" id="sendMail" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="post" accept-charset="utf-8" autocomplete="on" novalidate>
 			<div>
-				<input name="name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required="required" value="<?php echo $data['name']['value']; ?>">
+				<input name="name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required="required" value="<?php echo $userData['name']['value']; ?>">
 			</div>
 			<div>
-				<input name="email" placeholder="E-mail" type="email" required="required" value="<?php echo $data['email']['value']; ?>">
+				<input name="email" placeholder="E-mail" type="email" required="required" value="<?php echo $userData['email']['value']; ?>">
 			</div>
 			<div>
-				<input name="phone" placeholder="+7 (xxx) xxx-xx-xx" type="tel" pattern="+7 ([0-9]{3,6}) [0-9]{1,3}-[0-9]{2}-[0-9]{2}" required="required" value="<?php echo $data['phone']['value']; ?>">
+				<input name="phone" placeholder="+7 (xxx) xxx-xx-xx" type="tel" pattern="+7 ([0-9]{3,6}) [0-9]{1,3}-[0-9]{2}-[0-9]{2}" required="required" value="<?php echo $userData['phone']['value']; ?>">
 			</div>
 			<div>
-				<textarea name="message" placeholder="Напишите сообщение здесь..." rows="3" required="required" ><?php echo $data['message']['value']; ?></textarea>
+				<textarea name="message" placeholder="Напишите сообщение здесь..." rows="3" required="required" ><?php echo $userData['message']['value']; ?></textarea>
 			</div>
 			<div class="captchaCheck">
 				<img class="captchaImg" src="" alt="" title="" >
@@ -99,9 +74,41 @@ include "sendMail.php";
 				<button name="sendMail" class="rounded">Отправить</button>
 			</div>
 		</form>
+
+		<?php
+        // Если массив переданных формой пользовательских данных не пустой
+        // И Если этот массив содержит элемент с ключом "sendReview"
+		if ( !empty($_POST) && isset($_POST['sendReview']) ) {
+			// Создание экземпляра класса "Email"
+			$sendReview = new Email();
+            // Передача индивидеальных параметров формы "Отправить письмо"
+            $sendReview->options = array(
+                'subject' => 'Новый отзыв от посетителя сайта "GL"'
+            );
+			// Отправка письма и получение результирующего сообщения
+			$result = $sendReview->sendMail();
+
+            $resultMsg = $result['result'];
+            $userData = $result['userData'];
+			// Если операция отправки письма прошла успешно
+			if ( $resultMsg['type'] == 'success' ) {
+				// Перебор элементов массива
+				foreach ($userData as $key => &$value) {
+					// Удаление (Сброс) массива переданных значений
+					$value['value'] = '';
+				}
+				// Уничтожении ссылки на последний элемент массива переданых данных
+				unset($value);
+			}
+			// Вывод результирующего сообщения
+			echo '<pre>';
+			print_r($resultMsg);
+			echo '<pre>';
+		}
+		?>
 		<form name="sendReview" id="sendReview" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="post" accept-charset="utf-8" autocomplete="on" novalidate>
 			<div>
-				<input name="name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required="required" value="<?php echo $data['name']['value']; ?>">
+				<input name="name" placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$" required="required" value="<?php echo $userData['name']['value']; ?>">
 			</div>
 			<div>
 				<select name="roomNuber" multiple>
@@ -111,7 +118,7 @@ include "sendMail.php";
 				</select>
 			</div>
 			<div>
-				<textarea name="message" placeholder="Напишите сообщение здесь..." rows="3" required="required" ><?php echo $data['message']['value']; ?></textarea>
+				<textarea name="message" placeholder="Напишите сообщение здесь..." rows="3" required="required" ><?php echo $userData['message']['value']; ?></textarea>
 			</div>
 			<div class="captchaCheck">
 				<img class="captchaImg" src="" alt="" title="" >
