@@ -51,7 +51,8 @@ class Email {
 	 * Конструктор класса
 	 */
 	public function __construct() {
-        $this->postData = $this->getPostData();
+        // Переопределение свойства "$postData" класса
+        $this->postData = ( !empty($_POST) ) ? $_POST : '';
     }
 
 	/**
@@ -102,10 +103,8 @@ class Email {
 			// Установка номера предпочтения записи
 			$weight = 10;
 		}
-
 		// Определение начального положения счетчика итераций цикла WHILE
 		$id = 0;
-
 		// Перебор элементов массива MX-записей, пока результат проверки не равен "TRUE"
 		while ( !$result && $id < count ($mxhosts) ) {
 			// Условие на наличие функции "fsockopen" (пользовательской или встроенной)
@@ -149,7 +148,6 @@ class Email {
 						}
 					}
 				}
-
 				// Запись прощающегося заголовка проверочного письма в поток
 				fputs ($connection,"QUIT\r\n");
 				// Закрытие соединения
@@ -161,40 +159,6 @@ class Email {
 		// Выход из метода и возврат значения результата проверки данных
 		return $result;
 	}
-
-    /**
-     * Метод формирует и возвращает объект пользовательских данных, переданных формой
-     */
-    private function getPostData(){
-        // Формированеи и возвращение объекта пользовательских данных
-        return array(
-            'userName' => array(
-                'type' => 'name',
-                'label' => 'Имя пользователя',
-                'value' => $_POST['name']
-            ),
-            'userEmail' => array(
-                'type' => 'email',
-                'label' => 'E-mail пользователя',
-                'value' => $_POST['email']
-            ),
-            'userPhone' => array(
-                'type' => 'phone',
-                'label' => 'Телефон пользователя',
-                'value' => $_POST['phone']
-            ),
-            'userMessage' => array(
-                'type' => 'message',
-                'label' => 'Сообщение пользователя',
-                'value' => $_POST['message']
-            ),
-            'captchaCode' => array(
-                'type' => 'captcha',
-                'label' => 'Код captcha',
-                'value' => $_POST['captcha']
-            )
-        );
-    }
 
 	/**
 	 * Метод проверяет полученные от пользователя данные на корректность и допустимость
@@ -215,24 +179,23 @@ class Email {
 			// Определение/Сброс переменной текста сообщения о результате проверки данных
 			$errorMsg = '';
 			// Условие на соответствие значния элемента массива пустому значению
-			if ( empty($value['value']) && $value['type'] != "captcha" )
-			// Если значение ПУСТОЕ
+			if ( empty($value) && $key != 'captcha' )
+			// Если значение ПУСТОЕ И ключ элемента массива не "captcha"
 			{
 				// Формирование сообщения об ошибке
-				//$errorMsg = 'Поле "'.$value['label'].'" не должно быть пустым!';
                 $errorMsg = 'Поле не должно быть пустым!';
                 
 			} 
-			// Если значение НЕ ПУСТОЕ
+			// Если значение НЕ ПУСТОЕ ИЛИ 
 			else {
 				// Проверка переданного значения поля на соответствие присвоенному типу поля
-				switch ( $value['type'] ) {
+				switch ( $key ) {
 					// Если тип поля "ИМЯ ПОЛЬЗОВАТЕЛЯ"
 					case "name":
 						// Регулярное вырожение для проверки Имени пользователя
 						$regExp = '/(^[а-яА-ЯёЁ\s]*$)/ui';
 						// Условие на соответствие значния элемента регулярному выражению
-						if ( !filter_var(htmlspecialchars($value['value']), FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => $regExp))) ) {
+						if ( !filter_var(htmlspecialchars($value), FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => $regExp))) ) {
 							// Формирование сообщения об ошибке
 							$errorMsg = 'Имя должно состоять только из букв русского алфавита!';
 						}
@@ -242,12 +205,12 @@ class Email {
 					// Если тип поля "E-mail"
 					case "email":
 						// Если не удовлетворено условие на соответствие значния элемента типу "E-mail", т.е. значние не прошло проверку на валидацию
-						if ( !filter_var($value['value'], FILTER_VALIDATE_EMAIL) ) {
+						if ( !filter_var($value, FILTER_VALIDATE_EMAIL) ) {
 							// Формирование сообщения об ошибке
 							$errorMsg = 'E-mail указан не верно!';
 						}
-						// Если получен отрицательный результат проверки E-mail пользователя на существование
-						if ( !$this->checkEmailExist($value['value']) ) {
+						// Иначе Если получен отрицательный результат проверки E-mail пользователя на существование
+						elseif ( !$this->checkEmailExist($value) ) {
 							// Формирование сообщения об ошибке
 							$errorMsg = 'E-mail не существует!';
 						}
@@ -259,7 +222,7 @@ class Email {
 						// Регулярное вырожение для проверки номера телефона
 						$regExp = '/\+7\s{0,1}\(\d{3,6}\)\s{0,1}\d{1,3}\-{0,1}\d{2}-{0,1}\d{2}\b/';
 						// Условие на соответствие значния элемента регулярному выражению
-						if ( !filter_var($value['value'], FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => $regExp))) ) {
+						if ( !filter_var($value, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => $regExp))) ) {
 							// Формирование сообщения об ошибке
 							$errorMsg = 'Номер телефона указан не верно!';
 						};
@@ -271,7 +234,7 @@ class Email {
 						// Регулярное вырожение для проверки номера телефона
 						$regExp = '/([\<\>]|script|style)/ui';
 						// Условие на соответствие значния элемента регулярному выражению
-						if ( filter_var(htmlspecialchars($value['value']), FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => $regExp))) ) {
+						if ( filter_var(htmlspecialchars($value), FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => $regExp))) ) {
 							// Формирование сообщения об ошибке
 							$errorMsg = 'Вводите только текст! HTML-теги недопустимы!';
 						};
@@ -281,7 +244,7 @@ class Email {
 					// Если тип поля не "Captcha"
 					case "captcha":
 						// Условие на соответствие значния поля не пустому значению
-						if ( !empty(htmlspecialchars($value['value'])) ) {
+						if ( !empty($value) ) {
 							// Удаление (Сброс) содержимого массива
 							$report = '';
 							// Формирование сообщения об ошибке
@@ -363,14 +326,14 @@ class Email {
 				$headers .= "From: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n";
 			} else {
 				// Добавление заголовка "От имени кого отправленно письмо"
-				$headers .= "From: =?utf-8?B?".base64_encode($this->postData["userName"]["value"])."?= <".$this->postData["userEmail"]["value"].">\r\n";
+				$headers .= "From: =?utf-8?B?".base64_encode($this->postData["name"])."?= <".$this->postData["email"].">\r\n";
 				// Добавление заголовка "Кто отправил письмо"
 				$headers .= "Sender: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n";
 			}
 			// Добавление заголовка "Кому ответить"
 			$headers .= ( $this->options['replyToSite'] )
 				? "Reply-To: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n"
-				: "Reply-To: =?utf-8?B?".base64_encode($this->postData["userName"]["value"])."?= <".$this->postData["userEmail"]["value"].">\r\n";
+				: "Reply-To: =?utf-8?B?".base64_encode($this->postData["name"])."?= <".$this->postData["email"].">\r\n";
 
 			// Генерация темы письма
 			$subject = $this->postData['subject'] = '=?utf-8?b?'.base64_encode($this->options['subject']).'?=';
