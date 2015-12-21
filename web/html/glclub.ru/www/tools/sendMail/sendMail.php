@@ -43,9 +43,15 @@ class Email {
 	);
 
 	/**
+	 * Объект данных пользователя, переданных HTML-формой. По умолчанию задано пустое значение
+     */
+    private $postData = '';
+    
+	/**
 	 * Конструктор класса
 	 */
 	public function __construct() {
+        $this->postData = $this->getPostData();
     }
 
 	/**
@@ -155,7 +161,41 @@ class Email {
 		// Выход из метода и возврат значения результата проверки данных
 		return $result;
 	}
-	
+
+    /**
+     * Метод формирует и возвращает объект пользовательских данных, переданных формой
+     */
+    private function getPostData(){
+        // Формированеи и возвращение объекта пользовательских данных
+        return array(
+            'userName' => array(
+                'type' => 'name',
+                'label' => 'Имя пользователя',
+                'value' => $_POST['name']
+            ),
+            'userEmail' => array(
+                'type' => 'email',
+                'label' => 'E-mail пользователя',
+                'value' => $_POST['email']
+            ),
+            'userPhone' => array(
+                'type' => 'phone',
+                'label' => 'Телефон пользователя',
+                'value' => $_POST['phone']
+            ),
+            'userMessage' => array(
+                'type' => 'message',
+                'label' => 'Сообщение пользователя',
+                'value' => $_POST['message']
+            ),
+            'captchaCode' => array(
+                'type' => 'captcha',
+                'label' => 'Код captcha',
+                'value' => $_POST['captcha']
+            )
+        );
+    }
+
 	/**
 	 * Метод проверяет полученные от пользователя данные на корректность и допустимость
 	 *
@@ -179,7 +219,9 @@ class Email {
 			// Если значение ПУСТОЕ
 			{
 				// Формирование сообщения об ошибке
-				$errorMsg = 'Поле "'.$value['label'].'" не должно быть пустым!';
+				//$errorMsg = 'Поле "'.$value['label'].'" не должно быть пустым!';
+                $errorMsg = 'Поле не должно быть пустым!';
+                
 			} 
 			// Если значение НЕ ПУСТОЕ
 			else {
@@ -190,7 +232,7 @@ class Email {
 						// Регулярное вырожение для проверки Имени пользователя
 						$regExp = '/(^[а-яА-ЯёЁ\s]*$)/ui';
 						// Условие на соответствие значния элемента регулярному выражению
-						if ( !filter_var($value['value'], FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => $regExp))) ) {
+						if ( !filter_var(htmlspecialchars($value['value']), FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => $regExp))) ) {
 							// Формирование сообщения об ошибке
 							$errorMsg = 'Имя должно состоять только из букв русского алфавита!';
 						}
@@ -225,11 +267,11 @@ class Email {
 						break;
 
 					// Если тип поля "Текст"
-					case "text":
+					case "message":
 						// Регулярное вырожение для проверки номера телефона
 						$regExp = '/([\<\>]|script|style)/ui';
 						// Условие на соответствие значния элемента регулярному выражению
-						if ( filter_var($value['value'], FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => $regExp))) ) {
+						if ( filter_var(htmlspecialchars($value['value']), FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => $regExp))) ) {
 							// Формирование сообщения об ошибке
 							$errorMsg = 'Вводите только текст! HTML-теги недопустимы!';
 						};
@@ -239,7 +281,7 @@ class Email {
 					// Если тип поля не "Captcha"
 					case "captcha":
 						// Условие на соответствие значния поля не пустому значению
-						if ( !empty($value['value']) ) {
+						if ( !empty(htmlspecialchars($value['value'])) ) {
 							// Удаление (Сброс) содержимого массива
 							$report = '';
 							// Формирование сообщения об ошибке
@@ -252,7 +294,6 @@ class Email {
 					// default:
 				}
 			}
-			
 			
 			// Добавление нового элемента в массив сообщений о результатах проверки данных
 			if ( !empty($errorMsg) ) {
@@ -306,9 +347,9 @@ class Email {
 	 * Возвращаемое значение:
 	 * - $this->result (тип: object) - Объект сообщений об результе операции отправки письма
 	 */
-	public function sendMail($data){
+	public function sendMail(){
 		// Проверка данных пользователя
-		if ( $this->checkData($data) ) {
+		if ( $this->checkData($this->postData) ) {
 			/**
 			 * Генерация заголовков, отправляемого письма
 			 */
@@ -322,19 +363,19 @@ class Email {
 				$headers .= "From: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n";
 			} else {
 				// Добавление заголовка "От имени кого отправленно письмо"
-				$headers .= "From: =?utf-8?B?".base64_encode($data["userName"]["value"])."?= <".$data["userEmail"]["value"].">\r\n";
+				$headers .= "From: =?utf-8?B?".base64_encode($this->postData["userName"]["value"])."?= <".$this->postData["userEmail"]["value"].">\r\n";
 				// Добавление заголовка "Кто отправил письмо"
 				$headers .= "Sender: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n";
 			}
 			// Добавление заголовка "Кому ответить"
 			$headers .= ( $this->options['replyToSite'] )
 				? "Reply-To: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n"
-				: "Reply-To: =?utf-8?B?".base64_encode($data["userName"]["value"])."?= <".$data["userEmail"]["value"].">\r\n";
+				: "Reply-To: =?utf-8?B?".base64_encode($this->postData["userName"]["value"])."?= <".$this->postData["userEmail"]["value"].">\r\n";
 
 			// Генерация темы письма
-			$subject = $data['subject'] = '=?utf-8?b?'.base64_encode($this->options['subject']).'?=';
+			$subject = $this->postData['subject'] = '=?utf-8?b?'.base64_encode($this->options['subject']).'?=';
 			// Подключение шаблона E-mail-письма (содержимого письма)
-			$message = $this->loadTemplate($this->options['template'], $data);
+			$message = $this->loadTemplate($this->options['template'], $this->postData);
 					
 			/**
 			 * Проверка состояния отправки
@@ -347,8 +388,11 @@ class Email {
 			}
 		}
 
-		// Вывод сообщения о результате операции отправки письма
-		return $this->result;
+		// Возвращение массива сообщений о результате операции отправки письма И массива данных пользователя
+		return array(
+            'result' => $this->result,
+            'userData' => $this->postData
+        );
 	}
 }
 ?>
