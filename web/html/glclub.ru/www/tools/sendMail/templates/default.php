@@ -3,7 +3,6 @@
  * Шаблон стандартного E-mail письма
  */
 ?>
-
 <html>
 	<head>
 		<title><?php echo $data['subject']; ?></title>
