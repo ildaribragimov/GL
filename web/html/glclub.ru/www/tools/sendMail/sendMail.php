@@ -1,9 +1,8 @@
 <?php
 // Подключение файла конфигурации класса "SendMail"
 include "configuration.php";
-?>
 
-<?php
+
 /**
  * Класс рассылки писем
  *
@@ -176,10 +175,17 @@ class Email {
 		$counter = 0;
 		// Перебор элементов массива
 		foreach ( $data as $key => $value ) {
+            // Фильтрация массива данных формы от системных данных формы.
+            if ( in_array( $key, array('captcha', 'submit') ) )
+            // Если название ключа элемента массива равно "captcha" или "submit" 
+            {
+                // Прерывание текущей итерации цикла и переход к следующей
+                continue;
+            }
 			// Определение/Сброс переменной текста сообщения о результате проверки данных
 			$errorMsg = '';
 			// Условие на соответствие значния элемента массива пустому значению
-			if ( empty($value) && $key != 'captcha' )
+			if ( empty($value) )
 			// Если значение ПУСТОЕ И ключ элемента массива не "captcha"
 			{
 				// Формирование сообщения об ошибке
@@ -240,24 +246,11 @@ class Email {
 						};
 						// Прерывание выполнения конструкции SWITCH
 						break;
-					
-					// Если тип поля не "Captcha"
-					case "captcha":
-						// Условие на соответствие значния поля не пустому значению
-						if ( !empty($value) ) {
-							// Удаление (Сброс) содержимого массива
-							$report = '';
-							// Формирование сообщения об ошибке
-							$errorMsg = $this->options['failReport'];
-						}
-						// Прерывание выполнения конструкции SWITCH
-						break;
 
 					// Если тип поля не зарегистрированн/идентифицирован/определен
 					// default:
 				}
 			}
-			
 			// Добавление нового элемента в массив сообщений о результатах проверки данных
 			if ( !empty($errorMsg) ) {
 				// Добавление нового элемента в массив сообщений о результатах проверки данных
@@ -276,7 +269,28 @@ class Email {
 		// Выход из метода и возврат значения результата проверки данных
 		return true;
 	}
-	
+
+	/**
+	 * Метод проверяет пользователя по тестам Тьюринга
+	 *
+	 * Возвращаемое значение:
+	 * - true/false (тип: boolean) - если проверка прошла успешно (true), иначе (false)
+	 */
+    private function checkUserOnTuringTests(){
+        /**
+         * Тест №1 "Скрытое поле"
+         */ 
+        // Если системное скрытое поле "captcha" всё же не пустое
+        if ( !empty($this->postData['captcha']) ) {
+            // Замена заначений объекта сообщений об результе операции отправки письма на сообщение о результатах проверки
+			$this->result['report'] = $this->options['failReport'];
+            // Выход из метода и возврат значения результата проверки
+			return false;
+        }
+        // Выход из метода и возврат значения результата проверки данных
+        return true;
+    }
+
 	/**
 	 * Метод подключения шаблона, отправляемого E-mail-письма
 	 *
@@ -300,57 +314,53 @@ class Email {
 		return $buffer;
 	}
 
-	
 	/**
 	 * Метод отправляет письма
-	 *
-	 * Параметры:
-	 * - $data (тип: array) - Ассоциативный массив отправляемых данных, переданных формой
 	 *
 	 * Возвращаемое значение:
 	 * - $this->result (тип: object) - Объект сообщений об результе операции отправки письма
 	 */
-	public function sendMail(){
-		// Проверка данных пользователя
-		if ( $this->checkData($this->postData) ) {
-			/**
-			 * Генерация заголовков, отправляемого письма
-			 */
-			// Добавление заголовка "MIME-Version"
-			$headers  = "MIME-Version: 1.0\r\n";
-			// Добавление заголовка "Тип пиьсма" и "Кодировка"
-			$headers .= "Content-type: text/html; charset=utf-8\r\n";
-			// Добавление заголовка "От имени кого"
-			if ( $this->options['sendFromSite'] ) {
-				// Добавление заголовка "От имени кого отправленно письмо"
-				$headers .= "From: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n";
-			} else {
-				// Добавление заголовка "От имени кого отправленно письмо"
-				$headers .= "From: =?utf-8?B?".base64_encode($this->postData["name"])."?= <".$this->postData["email"].">\r\n";
-				// Добавление заголовка "Кто отправил письмо"
-				$headers .= "Sender: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n";
-			}
-			// Добавление заголовка "Кому ответить"
-			$headers .= ( $this->options['replyToSite'] )
-				? "Reply-To: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n"
-				: "Reply-To: =?utf-8?B?".base64_encode($this->postData["name"])."?= <".$this->postData["email"].">\r\n";
-
-			// Генерация темы письма
-			$subject = $this->postData['subject'] = '=?utf-8?b?'.base64_encode($this->options['subject']).'?=';
-			// Подключение шаблона E-mail-письма (содержимого письма)
-			$message = $this->loadTemplate($this->options['template'], $this->postData);
-					
-			/**
-			 * Проверка состояния отправки
-			 */
-			if ( mail($this->options['adminEmails'], $subject, $message, $headers) ) {
-				$this->result = array(
-					'type' => 'success',
-					'report' => $this->options['successReport']
-				);
-			}
-		}
-
+	public function sendMail() {
+        // Если проверка пользователя по тестам Тьюринга прошла успешно
+        if ( $this->checkUserOnTuringTests() ) {
+            // Если проверка данных пользователя прошла успешно
+            if ( $this->checkData($this->postData) ) {
+                /**
+                 * Генерация заголовков, отправляемого письма
+                 */
+                // Добавление заголовка "MIME-Version"
+                $headers  = "MIME-Version: 1.0\r\n";
+                // Добавление заголовка "Тип пиьсма" и "Кодировка"
+                $headers .= "Content-type: text/html; charset=utf-8\r\n";
+                // Добавление заголовка "От имени кого"
+                if ( $this->options['sendFromSite'] ) {
+                    // Добавление заголовка "От имени кого отправленно письмо"
+                    $headers .= "From: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n";
+                } else {
+                    // Добавление заголовка "От имени кого отправленно письмо"
+                    $headers .= "From: =?utf-8?B?".base64_encode($this->postData["name"])."?= <".$this->postData["email"].">\r\n";
+                    // Добавление заголовка "Кто отправил письмо"
+                    $headers .= "Sender: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n";
+                }
+                // Добавление заголовка "Кому ответить"
+                $headers .= ( $this->options['replyToSite'] )
+                    ? "Reply-To: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n"
+                    : "Reply-To: =?utf-8?B?".base64_encode($this->postData["name"])."?= <".$this->postData["email"].">\r\n";
+                // Генерация темы письма
+                $subject = $this->postData['subject'] = '=?utf-8?b?'.base64_encode($this->options['subject']).'?=';
+                // Подключение шаблона E-mail-письма (содержимого письма)
+                $message = $this->loadTemplate($this->options['template'], $this->postData);
+                /**
+                 * Проверка состояния отправки
+                 */
+                if ( mail($this->options['adminEmails'], $subject, $message, $headers) ) {
+                    $this->result = array(
+                        'type' => 'success',
+                        'report' => $this->options['successReport']
+                    );
+                }
+            }
+        }
 		// Возвращение массива сообщений о результате операции отправки письма И массива данных пользователя
 		return array(
             'result' => $this->result,
