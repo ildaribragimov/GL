@@ -17,10 +17,11 @@ include "sendMail.php";
 				display:none;
 			}
 		</style>
-		
+		<!--
+        <script defer src="js/formsFieldsValidate.js"></script>
+        -->
 	</head>
     <body>
-
 		<?php
         // Уничтожении переменной "$userData", если она есть
 		unset($userData);
@@ -123,6 +124,5 @@ include "sendMail.php";
 				<button name="submit" class="rounded" value="sendReview">Отправить</button>
 			</div>
 		</form>
-
 	</body>
 </html>
