@@ -26,7 +26,7 @@ include "sendMail.php";
 		unset($userData);
         // Если массив переданных формой пользовательских данных не пустой
         // И Если этот массив содержит элемент с ключом "sendMail"
-		if ( !empty($_POST) && $_POST['send'] == 'mail' ) {
+		if ( !empty($_POST) && $_POST['submit'] == 'sendMail' ) {
 			// Создание экземпляра класса "Email"
 			$sendMail = new Email();
             // Передача индивидеальных параметров формы "Отправить письмо"
@@ -68,7 +68,7 @@ include "sendMail.php";
 				<input name="captcha" class="captchaCode" placeholder="Введите код здесь..." type="text" required="required" >
 			</div>
 			<div>
-				<button name="send" class="rounded" value="mail">Отправить</button>
+				<button name="submit" class="rounded" value="sendMail">Отправить</button>
 			</div>
 		</form>
 
@@ -77,7 +77,7 @@ include "sendMail.php";
 		unset($userData);
         // Если массив переданных формой пользовательских данных не пустой
         // И Если этот массив содержит элемент с ключом "sendReview"
-		if ( !empty($_POST) && $_POST['send'] == 'review' ) {
+		if ( !empty($_POST) && $_POST['submit'] == 'sendReview' ) {
 			// Создание экземпляра класса "Email"
 			$sendReview = new Email();
             // Передача индивидеальных параметров формы "Отправить письмо"
@@ -120,7 +120,7 @@ include "sendMail.php";
 				<input name="captcha" class="captchaCode" placeholder="Введите код здесь..." type="text" required="required" >
 			</div>
 			<div>
-				<button name="send" class="rounded" value="review">Отправить</button>
+				<button name="submit" class="rounded" value="sendReview">Отправить</button>
 			</div>
 		</form>
 
