@@ -304,15 +304,25 @@ class Email {
 	/**
 	 * Метод отправляет письма
 	 *
-	 * Параметры:
-	 * - $data (тип: array) - Ассоциативный массив отправляемых данных, переданных формой
-	 *
 	 * Возвращаемое значение:
 	 * - $this->result (тип: object) - Объект сообщений об результе операции отправки письма
 	 */
 	public function sendMail(){
+        /**
+         * Фильтрация массива переданных формой данных от системных данных формы
+         */
+        // Создание нового массива для отфильстрованных данных переданной формы
+        $data = array();
+        // Перебор массива, переданных формой, данных в цикле
+        foreach( $this->postData as $key => $value ) {
+            // Если название ключа элемента массива не равно "captcha" или "submit" 
+            if ( !in_array( $key, array('captcha', 'submit') ) ) {
+                // Добавление элемента в новый массив
+                $data[$key] = $value;
+            }
+        }
 		// Проверка данных пользователя
-		if ( $this->checkData($this->postData) ) {
+		if ( $this->checkData($data) ) {
 			/**
 			 * Генерация заголовков, отправляемого письма
 			 */
@@ -326,20 +336,18 @@ class Email {
 				$headers .= "From: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n";
 			} else {
 				// Добавление заголовка "От имени кого отправленно письмо"
-				$headers .= "From: =?utf-8?B?".base64_encode($this->postData["name"])."?= <".$this->postData["email"].">\r\n";
+				$headers .= "From: =?utf-8?B?".base64_encode($data["name"])."?= <".$data["email"].">\r\n";
 				// Добавление заголовка "Кто отправил письмо"
 				$headers .= "Sender: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n";
 			}
 			// Добавление заголовка "Кому ответить"
 			$headers .= ( $this->options['replyToSite'] )
 				? "Reply-To: =?utf-8?B?".base64_encode($this->options['siteName'])."?= <".$this->options['siteEmail'].">\r\n"
-				: "Reply-To: =?utf-8?B?".base64_encode($this->postData["name"])."?= <".$this->postData["email"].">\r\n";
-
+				: "Reply-To: =?utf-8?B?".base64_encode($data["name"])."?= <".$data["email"].">\r\n";
 			// Генерация темы письма
-			$subject = $this->postData['subject'] = '=?utf-8?b?'.base64_encode($this->options['subject']).'?=';
+			$subject = $data['subject'] = '=?utf-8?b?'.base64_encode($this->options['subject']).'?=';
 			// Подключение шаблона E-mail-письма (содержимого письма)
-			$message = $this->loadTemplate($this->options['template'], $this->postData);
-					
+			$message = $this->loadTemplate($this->options['template'], $data);
 			/**
 			 * Проверка состояния отправки
 			 */
@@ -350,11 +358,10 @@ class Email {
 				);
 			}
 		}
-
 		// Возвращение массива сообщений о результате операции отправки письма И массива данных пользователя
 		return array(
             'result' => $this->result,
-            'userData' => $this->postData
+            'userData' => $data
         );
 	}
 }
