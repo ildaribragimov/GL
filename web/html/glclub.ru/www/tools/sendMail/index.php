@@ -1,5 +1,5 @@
 <?php
-// Подключение бтблиотеки "SendMail", отправляющей письмо с сайта
+// Подключение библиотеки "SendMail", отправляющей письмо с сайта
 include "sendMail.php";
 ?>
 
@@ -10,6 +10,7 @@ include "sendMail.php";
 		<meta charset="utf-8">
         <title>Типовой шаблон страницы на HTML5 - html5.tpl</title>
 		<script defer src="js/jquery.document.ready.js"></script>
+        <script defer src="js/prototypesExt.js"></script>
 		<style>
 			.captchaCheck {
 				position:absolute;
@@ -17,9 +18,9 @@ include "sendMail.php";
 				display:none;
 			}
 		</style>
-		<!--
+		<!-- -->
         <script defer src="js/formsFieldsValidate.js"></script>
-        -->
+        
 	</head>
     <body>
 		<?php
