@@ -12,18 +12,75 @@ $.documentReady(function () {
      * * form (тип: object) - Ссылка на объект формы, которую необходимо предварительно проверить перед отправкой
      */
     function FormExt(form) {
-        // Ссылка на объект формы
-        var form = form;
+        /**
+         * Объявление переменных
+         */
+        var form = form, // Ссылка на объект формы
+            elements = form.elements; // Ссылка на коллекцию элементов формы
 
         /**
-         * Функция Проверяет пуста ли форма
+         * Метод Распределяет коллекцию элементов формы на две группы: Поля ввода информации; Кнопки действий
+         *
+         * Параметры:
+         * * elementsType (тип: string) - Название типа элементов, которые необходимо получить
+         */
+        function elementsFilter() {
+            // Объявление массива значений атрибута "type" кнопок действий формы
+            var buttonsTypes = ['button', 'submit', 'reset'];
+            // Обход коллекции элементов формы в цикле
+            for (var i = 0; i < elements.length; i++) {
+                if ( buttonsTypes.in_array(elements[i].type) ) {
+                    
+                } else {
+                    
+                }
+            }
+        }
+        
+        
+        /*
+  function showCount() {
+    result.innerHTML = this.value.length;
+  }
+
+
+  var form = document.forms[0],
+      elem = form.elements;
+  
+  alert(elem.length);
+  
+  for (var i=0; i < elem.length; i++) {
+    
+    elem[i].onkeyup = elem[i].oninput = function () {
+        result.innerHTML = this.value.length;
+    };
+    
+    elem[i].onpropertychange = function() {
+      if (event.propertyName == "value") result.innerHTML = this.value.length;
+    };
+    
+    elem[i].oncut = function() {
+      setTimeout(function(){result.innerHTML = this.value.length;}, 0); // на момент oncut значение еще старое
+    };
+  
+  }
+  */
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /**
+         * Метод проверяет пуста ли форма
          *
          * Возвращаемое значение:
          * * false/true (тип: boolean) - "ДА" (если форма имеет хотя бы одно незаполненное поле) / "НЕТ" (Если форма заполнена полностью)
          */
         function isFormEmpty() {
-            // Объявление переменных:
-            var elements = form.elements; // Коллекция объектов элементов формы
             // Обход коллеции объектов в массиве
             for (var e = 0; e < elements.length; e++) {
                 // Объявление переменных:
@@ -170,9 +227,6 @@ $.documentReady(function () {
             
         }
         
-        // Назначение обработчика событий изменения содержимого элементов формы
-        form.
-        
         // Назначение обработчика события отправки формы на сервер
         form.addEventListener("submit", function(event) {
 			// Если предварительная проверка данных формы прошла успешно
@@ -187,6 +241,7 @@ $.documentReady(function () {
 			}
         });
         
+        // Назначение обработчиков событий изменения содержимого эелементов формы
         
         
     }
