@@ -10,6 +10,7 @@ include "sendMail.php";
 		<meta charset="utf-8">
         <title>Типовой шаблон страницы на HTML5 - html5.tpl</title>
 		<script defer src="js/jquery.document.ready.js"></script>
+        <script defer src="js/crossFixs.js"></script>
         <script defer src="js/prototypesExt.js"></script>
 		<style>
 			.captchaCheck {
@@ -18,9 +19,10 @@ include "sendMail.php";
 				display:none;
 			}
 		</style>
-		<!-- -->
+        <script defer src="js/formClass.js"></script>
+		<!--
         <script defer src="js/formsFieldsValidate.js"></script>
-        
+        -->
 	</head>
     <body>
 		<?php
