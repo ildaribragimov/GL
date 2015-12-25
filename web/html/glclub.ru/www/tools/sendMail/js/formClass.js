@@ -16,8 +16,9 @@ $.documentReady(function () {
          * Объявление переменных
          */
         var form = form, // Ссылка на объект формы
-            elements = form.elements; // Ссылка на коллекцию элементов формы
-
+            elements = form.elements,
+            buttons = form.querySelectorAll('[type="button"], [type="submit"], [type="reset"]'); // Ссылка на коллекцию элементов формы
+        alert();
         /**
          * Метод Распределяет коллекцию элементов формы на две группы: Поля ввода информации; Кнопки действий
          *
