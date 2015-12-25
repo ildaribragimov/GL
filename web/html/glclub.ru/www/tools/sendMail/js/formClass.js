@@ -17,64 +17,9 @@ $.documentReady(function () {
          */
         var form = form, // Ссылка на объект формы
             elements = form.elements,
-            buttons = form.querySelectorAll('[type="button"], [type="submit"], [type="reset"]'); // Ссылка на коллекцию элементов формы
-        alert();
-        /**
-         * Метод Распределяет коллекцию элементов формы на две группы: Поля ввода информации; Кнопки действий
-         *
-         * Параметры:
-         * * elementsType (тип: string) - Название типа элементов, которые необходимо получить
-         */
-        function elementsFilter() {
-            // Объявление массива значений атрибута "type" кнопок действий формы
-            var buttonsTypes = ['button', 'submit', 'reset'];
-            // Обход коллекции элементов формы в цикле
-            for (var i = 0; i < elements.length; i++) {
-                if ( buttonsTypes.in_array(elements[i].type) ) {
-                    
-                } else {
-                    
-                }
-            }
-        }
-        
-        
-        /*
-  function showCount() {
-    result.innerHTML = this.value.length;
-  }
-
-
-  var form = document.forms[0],
-      elem = form.elements;
-  
-  alert(elem.length);
-  
-  for (var i=0; i < elem.length; i++) {
-    
-    elem[i].onkeyup = elem[i].oninput = function () {
-        result.innerHTML = this.value.length;
-    };
-    
-    elem[i].onpropertychange = function() {
-      if (event.propertyName == "value") result.innerHTML = this.value.length;
-    };
-    
-    elem[i].oncut = function() {
-      setTimeout(function(){result.innerHTML = this.value.length;}, 0); // на момент oncut значение еще старое
-    };
-  
-  }
-  */
-        
-        
-        
-        
-        
-        
-        
-        
-        
+            buttons = form.querySelectorAll('button, [type="button"], [type="submit"], [type="reset"]'), // Ссылка на коллекцию элементов формы
+            fields = elements.array_diff(buttons); // Массив отфильтрованных (от кнопок действий) элементов формы
+                
         /**
          * Метод проверяет пуста ли форма
          *
@@ -83,10 +28,15 @@ $.documentReady(function () {
          */
         function isFormEmpty() {
             // Обход коллеции объектов в массиве
-            for (var e = 0; e < elements.length; e++) {
+            for (var f = 0; f < fields.length; f++) {
                 // Объявление переменных:
-                var value = elements[e].value, // Содержимое элемента формы
-                    valueLength = value.length; // Количество символов в элементе формы
+                var name = fields[f].name,
+                    value = fields[f].value; // Содержимое элемента формы
+                // Если тип элемента формы - captcha
+                if ( ~name.toLowerCase().indexOf('captcha') ) {
+                    // Прерывание выполнения текущей итерации и переход к следующей итерации
+                    continue;
+                }
                 // Если содержимое элемента формы пустое
                 if ( value == '' ) {
                     // Возвращение результата "Да, форма либо пуста, либо не все элементы заполнены"
@@ -224,7 +174,7 @@ $.documentReady(function () {
         // Если содержимое хотя бы одного элемента формы пустое
         if ( isFormEmpty() ) {
             // Вызов функции деактивации кнопок отправки формы, отмены и сброса ее содержимого
-            //enableFormActions(false);
+            enableFormActions(false);
             
         }
         
