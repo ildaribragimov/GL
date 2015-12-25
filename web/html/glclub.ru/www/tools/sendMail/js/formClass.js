@@ -29,16 +29,13 @@ $.documentReady(function () {
         function isFormEmpty() {
             // Обход коллеции объектов в массиве
             for (var f = 0; f < fields.length; f++) {
-                // Объявление переменных:
-                var name = fields[f].name,
-                    value = fields[f].value; // Содержимое элемента формы
                 // Если тип элемента формы - captcha
-                if ( ~name.toLowerCase().indexOf('captcha') ) {
+                if ( ~fields[f].name.toLowerCase().indexOf('captcha') ) {
                     // Прерывание выполнения текущей итерации и переход к следующей итерации
                     continue;
                 }
                 // Если содержимое элемента формы пустое
-                if ( value == '' ) {
+                if ( fields[f].value == '' ) {
                     // Возвращение результата "Да, форма либо пуста, либо не все элементы заполнены"
                     return true;
                 }
@@ -54,7 +51,6 @@ $.documentReady(function () {
          * * state (тип: boolean) - статус доступности кнопок действий формы: true - кнопки доступны; false - кнопки не доступны.
          */
         function enableFormActions(state) {
-            alert(buttons.length);
             // Обход коллекции кнопок действий в цикле
             for ( var b = 0; b < buttons.length; b++ ) {
                 // Переключаем атрибут "disabled" в завсисимости от готовности формы к проверке
