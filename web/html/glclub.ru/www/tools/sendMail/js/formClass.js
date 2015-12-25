@@ -48,36 +48,19 @@ $.documentReady(function () {
         }
 
         /**
-         * Функция активирует/деактивирует кнопки действий формы в зависимости от готовности формы к проверке содержимого
+         * Метод активирует/деактивирует кнопки действий формы в зависимости от готовности формы к проверке содержимого
          *
          * Параметры:
-         * * state (тип: boolean) - статус доступност икнопок действий формы: true - кнопки доступны; false - кнопки не доступны.
+         * * state (тип: boolean) - статус доступности кнопок действий формы: true - кнопки доступны; false - кнопки не доступны.
          */
         function enableFormActions(state) {
-            // Получение коллекций элементов "button" и "input"
-            var buttons = form.getElementsByTagName('button'),
-                inputs = form.getElementsByTagName('input');
-            // Объявление массива значений атрибута "type" элементов, котрые необходимо деактивировать
-            var buttonsTypes = ['button', 'submit', 'reset'];
-            // Обход коллекции "buttons" в цикле
+            alert(buttons.length);
+            // Обход коллекции кнопок действий в цикле
             for ( var b = 0; b < buttons.length; b++ ) {
-                // Если значение атрибута "type" текущего элемента коллекции (массива) присутствует в массиве искомых типов кнопок
-                if ( buttonsTypes.in_array(buttons[b].type) ) {
-                    // Переключаем атрибут "disabled" в завсисимости от готовности формы к проверке
-                    ( state )
-                        ? buttons[b].removeAttribute('disabled') // Удаляем атрибут "disabled"
-                        : buttons[b].setAttribute('disabled','') // Устанавливаем атрибут "disabled"
-                }
-            }
-            // Обход коллекции "inputs" в цикле
-            for ( var i = 0; i < inputs.length; i++ ) {
-                // Если значение атрибута "type" текущего элемента коллекции (массива) присутствует в массиве искомых типов кнопок
-                if ( buttonsTypes.in_array(inputs[i].type) ) {
-                    // Переключаем атрибут "disabled" в завсисимости от готовности формы к проверке
-                    ( state )
-                        ? inputs[i].removeAttribute('disabled') // Удаляем атрибут "disabled"
-                        : inputs[i].setAttribute('disabled','') // Устанавливаем атрибут "disabled"
-                }
+                // Переключаем атрибут "disabled" в завсисимости от готовности формы к проверке
+                ( state )
+                    ? buttons[b].removeAttribute('disabled') // Удаляем атрибут "disabled"
+                    : buttons[b].setAttribute('disabled','') // Устанавливаем атрибут "disabled"
             }
         }
 
@@ -173,9 +156,8 @@ $.documentReady(function () {
 
         // Если содержимое хотя бы одного элемента формы пустое
         if ( isFormEmpty() ) {
-            // Вызов функции деактивации кнопок отправки формы, отмены и сброса ее содержимого
+            // Вызов метода деактивации кнопок действий формы
             enableFormActions(false);
-            
         }
         
         // Назначение обработчика события отправки формы на сервер
