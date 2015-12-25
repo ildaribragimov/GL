@@ -62,4 +62,24 @@ function array_diff()
     }        
     return retArr;
 }
+
+<form>
+  <input type="text" value="1 инпут">
+  <input type="text" value="2 инпут">
+  <input type="text" value="3 инпут">
+  <input type="text" value="4 инпут">
+  <button type="submit">Отправить кнопка</button>
+  <input type="submit" value="Отправить">
+  <input type="reset" value="Сброс">
+</form>
+
+<script>
+var form = document.forms[0],
+    buttons = form.querySelectorAll('[type="button"], [type="submit"], [type="reset"]');
+    
+    alert('всего кнопок = '+buttons.length);
+    alert('всего полей = '+fields.length);
+    
+</script>
+
 */
