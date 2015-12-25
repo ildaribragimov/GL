@@ -70,6 +70,7 @@ include "sendMail.php";
 			<div class="captchaCheck">
 				<img class="captchaImg" src="" alt="" title="" >
 				<input name="captcha" class="captchaCode" placeholder="Введите код здесь..." type="text" required="required" >
+                <span class="element-tooltip">Оставьте поле пустым, если не видите картинку с кодом!</span>
 			</div>
 			<div>
 				<button name="submit" class="rounded" value="sendMail">Отправить</button>
@@ -122,6 +123,7 @@ include "sendMail.php";
 			<div class="captchaCheck">
 				<img class="captchaImg" src="" alt="" title="" >
 				<input name="captcha" class="captchaCode" placeholder="Введите код здесь..." type="text" required="required" >
+                <span class="element-tooltip">Оставьте поле пустым, если не видите картинку с кодом!</span>
 			</div>
 			<div>
 				<button name="submit" class="rounded" value="sendReview">Отправить</button>
