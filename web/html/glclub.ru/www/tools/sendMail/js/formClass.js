@@ -68,29 +68,28 @@ $.documentReady(function () {
          */
         function checkFormData() {
             // Объявление переменных:
-            var elements = form.elements, // Коллекция объектов элементов формы
-                logMsgs = [], // Массив сообщений об ошибках
+            var logMsgs = [], // Массив сообщений об ошибках
                 result = {
                     type: 'success',
                     report: ['Проверка данных прошла успешно!']
                 };
             // Обход коллеции объектов в массиве
-            for (var e = 0; e < elements.length; e++) {
+            for (var f = 0; f < fields.length; f++) {
                 // Объявление переменных:
-                var tagName = elements[e].tagName.toLowerCase(), // Название тега элемента формы
-                    name = elements[e].name, // Значение атрибута "name" элемента формы
-                    type = elements[e].type, // Значение атрибута "type" элемента формы
-                    value = elements[e].value; // Содержимое элемента формы
+                var tagName = fields[f].tagName.toLowerCase(), // Название тега элемента формы
+                    name = fields[f].name, // Значение атрибута "name" элемента формы
+                    type = fields[f].type, // Значение атрибута "type" элемента формы
+                    value = fields[f].value; // Содержимое элемента формы
 
-                // Если тип элемента формы - button/input или captcha
-                if ( type == 'submit' || ~name.toLowerCase().indexOf('captcha') ) {
+                // Если тип элемента формы - captcha
+                if ( ~name.toLowerCase().indexOf('captcha') ) {
                     // Прерывание выполнения текущей итерации и переход к следующей итерации
                     continue;
                 }
                 // Если содержимое элемента формы пустое
                 if ( value == '' ) {
                     // Формирование сообщения об ошибке
-                    logMsgs[e] = 'Поле не должно быть пустым!';
+                    logMsgs[f] = 'Поле не должно быть пустым!';
                     // Прерывание выполнения текущей итерации и переход к следующей итерации
                     continue;
                 }
@@ -102,7 +101,7 @@ $.documentReady(function () {
                         // Если совпадения найдены
                         if ( regExp.exec(value) == null) {
                             // Формирование сообщения об ошибке
-                            logMsgs[e] = 'Имя должно состоять только из букв русского алфавита!';
+                            logMsgs[f] = 'Имя должно состоять только из букв русского алфавита!';
                         }
                         // Прерывание выполнения конструкции "switch"
                         break;
@@ -112,7 +111,7 @@ $.documentReady(function () {
                         // Если совпадения найдены
                         if ( regExp.exec(value) == null) {
                             // Формирование сообщения об ошибке
-                            logMsgs[e] = 'E-mail указан не верно!';
+                            logMsgs[f] = 'E-mail указан не верно!';
                         }
                         // Прерывание выполнения конструкции "switch"
                         break;
@@ -122,7 +121,7 @@ $.documentReady(function () {
                         // Если совпадения найдены
                         if ( regExp.exec(value) == null) {
                             // Формирование сообщения об ошибке
-                            logMsgs[e] = 'Номер телефона указан не верно!';
+                            logMsgs[f] = 'Номер телефона указан не верно!';
                         }
                         // Прерывание выполнения конструкции "switch"
                         break;
@@ -132,7 +131,7 @@ $.documentReady(function () {
                         // Если совпадения найдены
                         if ( regExp.exec(value) !== null) {
                             // Формирование сообщения об ошибке
-                            logMsgs[e] = 'Вводите только текст! HTML-теги недопустимы!';
+                            logMsgs[f] = 'Вводите только текст! HTML-теги недопустимы!';
                         }
                         // Прерывание выполнения конструкции "switch"
                         break;
@@ -150,33 +149,53 @@ $.documentReady(function () {
             return result;
         }
 
-        // Если содержимое хотя бы одного элемента формы пустое
-        if ( isFormEmpty() ) {
-            // Вызов метода деактивации кнопок действий формы
-            enableFormActions(false);
-        }
+        // Вызов метода деактивации кнопок действий формы, если содержимое хотя бы одного элемента формы пустое
+        enableFormActions( !isFormEmpty() );
         
         // Назначение обработчика события отправки формы на сервер
         form.addEventListener("submit", function(event) {
 			// Если предварительная проверка данных формы прошла успешно
-			if ( checkFormData(this).type == 'success' ) {
+			if ( checkFormData().type == 'success' ) {
 				alert ('Данные формы корректны!');
 				// Вызов функции проверки пользователя по тесту Тьюринга
 				//turingTest(this);
 			} else {
-				alert ('Данные формы НЕ корректны!');
+                alert ('Данные формы НЕ корректны!');
     			// Отмена действия по умолчанию браузера на событие
                 preventDefault(event);
 			}
         });
         
         // Назначение обработчиков событий изменения содержимого эелементов формы
-        
-        
+        for (var f = 0; f < fields.length; f++) {
+            // Если тип элемента формы - captcha
+            if ( ~fields[f].name.toLowerCase().indexOf('captcha') ) {
+                // Прерывание выполнения текущей итерации и переход к следующей итерации
+                continue;
+            }
+            // Назначение обработчика событий "onkeyup", "oninput", "onchange" 
+            fields[f].onkeyup = fields[f].oninput = fields[f].onchange = function () {
+                // Вызов метода проверки заполненности всех полей формы с последующей активацией/деактивацией кнопок действий формы
+                enableFormActions( !isFormEmpty() );
+            };
+            // Назначение обработчика событий "onchange" для IE 8-
+            fields[f].onpropertychange = function() {
+                // Если имя изменённого свойства (атрибута) - "value"
+                if (event.propertyName == "value") {
+                    // Вызов метода проверки заполненности всех полей формы с последующей активацией/деактивацией кнопок действий формы
+                    enableFormActions( !isFormEmpty() );
+                }
+            };
+            // Назначние обработчика события "oncut"
+            fields[f].oncut = function() {
+                // Вызов метода проверки заполненности всех полей формы с последующей активацией/деактивацией кнопок действий формы
+                setTimeout( enableFormActions( !isFormEmpty() ), 0); // на момент oncut значение еще старое
+            };
+        }
     }
- 
+    /* Конец класса проверки и отправки форм на сервер */
+
+    // Созданеи экземпляров объекта FormExt форм
     var sendMailForm = new FormExt( document.getElementById('sendMail') ),
         sendReviewForm = new FormExt( document.getElementById('sendReview'));
-    
-
 });
