@@ -30,7 +30,8 @@ class Email {
 		'template' => TEMPLATE,
 		'subject' => SUBJECT,
 		'successReport' => SUCCESS_REPORT,
-		'failReport' => FAIL_REPORT
+		'failReport' => FAIL_REPORT,
+        'requiredFields' => ''
 	);
 
 	/**
@@ -173,25 +174,25 @@ class Email {
 		$report = '';
 		// Определение начального положения счетчика итераций цикла FOREACH
 		$counter = 0;
+        // Получение массива имен полей, обязательных для заполнения
+        $requiredFields = explode(",", str_replace(" ", "", $this->options['requiredFields']));
 		// Перебор элементов массива
 		foreach ( $data as $key => $value ) {
             // Фильтрация массива данных формы от системных данных формы.
-            if ( in_array( $key, array('captcha', 'submit') ) )
-            // Если название ключа элемента массива равно "captcha" или "submit" 
-            {
+            if ( in_array( $key, array('captcha', 'submit', 'reset') ) ) {
                 // Прерывание текущей итерации цикла и переход к следующей
                 continue;
             }
 			// Определение/Сброс переменной текста сообщения о результате проверки данных
 			$errorMsg = '';
-			// Условие на соответствие значния элемента массива пустому значению
-			if ( empty($value) )
-			// Если значение ПУСТОЕ И ключ элемента массива не "captcha"
-			{
-				// Формирование сообщения об ошибке
-                $errorMsg = 'Поле не должно быть пустым!';
-                
-			} 
+			// Если значение элемента ПУСТОЕ
+			if ( empty($value) ) {
+                // Если элемент обязателен для заполнения
+                if ( in_array( $key, $requiredFields ) ) {
+                    // Формирование сообщения об ошибке
+                    $errorMsg = 'Поле не должно быть пустым!';                    
+                }
+			}
 			// Если значение НЕ ПУСТОЕ ИЛИ 
 			else {
 				// Проверка переданного значения поля на соответствие присвоенному типу поля
@@ -306,7 +307,7 @@ class Email {
 		// Включение буферизации вывода
 		ob_start();
 		// Подключение файла шаблона E-mail письма
-		include "templates/".$tplName.".php";
+		include "emailTpl/".$tplName.".php";
 		// Вывод содержимого буфера в переменную
 		$buffer = ob_get_contents();
 		// Отключение буферизации вывода и очищение буфера вывода
