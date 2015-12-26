@@ -34,7 +34,7 @@ $.documentReady(function () {
                     continue;
                 }
                 // Если содержимое элемента формы пустое
-                if ( fields[f].value == '' ) {
+                if ( fields[f].value == '' && fields[f].hasAttribute('required') ) {
                     // Возвращение результата "Да, форма либо пуста, либо не все элементы заполнены"
                     return true;
                 }
