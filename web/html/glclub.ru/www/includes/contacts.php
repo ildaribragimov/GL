@@ -82,7 +82,7 @@
 									</div>
 								</div>
 								<div class="formElement">
-									<div class="element-button disabled centered">
+									<div class="element-button centered">
 										<div class="button-wrapper">
 											<button class="rounded">
 												<span class="icon -s plane"></span>

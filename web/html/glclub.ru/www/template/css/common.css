@@ -381,8 +381,8 @@ button.rounded .title {
 .icon.plane {
 	background-position:-424px -176px;
 }
-.element-button.disabled .icon.plane,
-.element-button.disabled button:hover .icon.plane {
+.element-button button[disabled] .icon.plane,
+.element-button button[disabled]:hover .icon.plane {
 	background-position:-384px -216px;
 }
 .element-button button:hover .icon.plane {
@@ -844,8 +844,8 @@ button.rounded .title {
 #contacts .subsection-sendMail button {
 	border-color:#3b876f;
 }
-#contacts .subsection-sendMail .element-button.disabled button,
-#contacts .subsection-sendMail .element-button.disabled form button:hover {
+#contacts .subsection-sendMail .element-button button[disabled],
+#contacts .subsection-sendMail .element-button button[disabled]:hover {
 	border-color:#e8e5e2;
 	background:none;
 	box-shadow:0 0 15px rgba(0, 0, 0, 0.05) inset;
