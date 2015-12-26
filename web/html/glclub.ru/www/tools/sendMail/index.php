@@ -20,9 +20,7 @@ include "sendMail.php";
 			}
 		</style>
         <script defer src="js/formClass.js"></script>
-		<!--
-        <script defer src="js/formsFieldsValidate.js"></script>
-        -->
+        <!-- -->
 	</head>
     <body>
 		<?php
@@ -35,7 +33,8 @@ include "sendMail.php";
 			$sendMail = new Email();
             // Передача индивидеальных параметров формы "Отправить письмо"
             $sendMail->options = array(
-                'subject' => 'Письмо с сайта "GL"'
+                'subject' => 'Письмо с сайта "GL"',
+                'requiredFields' => 'name, email, message'
             );                
 			// Отправка письма и получение результата отправки
 			$result = $sendMail->sendMail();
