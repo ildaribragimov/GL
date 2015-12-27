@@ -9,7 +9,7 @@
 /**
  * Global elements styles
  */
- .logo,
+.logo,
 .icon,
 .section-content ul li,
 .radioItem a,
@@ -480,7 +480,7 @@ button.rounded .title {
 	z-index:12;
 }
 #rooms .roomsItem.-newYork {
-	left:0;
+	left:0%;
 	background-image:url("../../media/rooms/new_york/medium/CK1A9261.jpg");
 }
 #rooms .roomsItem.-japan {
@@ -967,10 +967,15 @@ button.rounded .title {
     right:0;
     content: "";
 }
+.burgerButton .icon {
+    padding:0.4444em;
+}
+.burgerButton .icon:hover {
+    cursor: pointer;
+}
 .burgerButton .icon span {
     position:relative;
     top:10px;
-    
 }
 .burgerButton .icon span:before {
     top:-8px;
