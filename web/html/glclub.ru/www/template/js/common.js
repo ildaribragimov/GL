@@ -4,14 +4,7 @@
 // Исполнение скрипта при готовности DOM-структуры документа
 $.documentReady(function() {
 
-	/* ==== Решение "preventDefault.js"========================== *
-	 * ==== Отмена действия по умолчанию браузера на событие ==== *
-	 * ========================================================== */
-	function preventDefault(event) { event = event || window.event; event.preventDefault ? event.preventDefault() : event.returnValue = false; }
-	/* ========================================================== */
-
-
-	/* ==== Решение "disable(enable)Scroll.js" ========= *
+    /* ==== Решение "disable(enable)Scroll.js" ========= *
 	 * ==== Блокировка/Активация прокрутки страницы ==== *
 	 * ================================================= */
 	var keys = {32: 1, 33: 1, 34: 1, 35: 1, 36: 1, 37: 1, 38: 1, 39: 1, 40: 1};
@@ -20,8 +13,8 @@ $.documentReady(function() {
 	function enableScroll() { if (window.removeEventListener) { window.removeEventListener('DOMMouseScroll', preventDefault, false); } window.onwheel = null; window.onmousewheel = document.onmousewheel = null; window.ontouchmove = null; document.onkeydown = null; }
 	/* ============== */
 
-	
-	
+
+
 	/**
 	 * Объявление глобальных переменных
 	 *
@@ -29,11 +22,34 @@ $.documentReady(function() {
 	 * $_roomsItems (тип: object) - Объект элементов секции "НОМЕРА"
 	 * $_mainMenu (тип: object) - Ссылка на DOM-элемент с id "mainMenu"
 	 * $_topPannel (тип: object) - Ссылка на DOM-элемент с id "topPannel"
+     * touchDevice (тип: boolean) - Подтверждение, что экран устройства пользователя - сенсорный
+     * 
 	 */
 	var viewport = document.documentElement,
 		$_roomsItems = document.querySelectorAll('.roomsItems, .roomsItem'),
 		$_mainMenu = document.getElementById('mainMenu'),
-		$_topPannel = document.getElementById('topPannel');
+		$_topPannel = document.getElementById('topPannel'),
+        touchDevice = isTouchDevice(),
+        clickEvent = ( touchDevice ) ? 'touchend': 'click';
+
+
+	/* ================================================================== *
+	 * ==== Проверка сенсорный ли тип экрана устройства пользователя ==== *
+	 * ================================================================== */
+    /**
+     * Функция проверяет поддерживает ли экран события сенсорных прикосновений
+     *
+     * Возвращаемое значение:
+     * true/false (тип: boolean) - Да (если события поддерживаются); Нет (Если собития не поддерживаниюся)
+     *
+     * Примечание:
+     * * Кроссбраузерное решение с поддержкой IE 8-
+     * * Используется в случаях, когда обработчик события назначен как через "on"событие, так и через "addEventListener"
+     */
+    function isTouchDevice() {
+        return ('ontouchstart' in window) || ('onmsgesturechange' in window);
+    };
+    /* ================================================================== */
 
 
 	/* ====================================================== *
@@ -105,7 +121,24 @@ $.documentReady(function() {
 	};
 
 
+    // Получение ссылки на элемент видимой иконки "Показать меню"
+	$_topPannel.querySelector('.burgerButton .icon')
+        // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
+        .addEventListener( 'click', function(event) {
+			// Отображение списка пунктов меню для свернутой панели навигации (только для мобильных устройств)
+			if ( getComputedStyle($_mainMenu).display == 'none' ) $_mainMenu.style.display = 'block';
+			// Проверка состояния панели навигации
+			( slideNavPannel.enable == true )
+				// Вызов метода "Сворачивания панели", если панель развернута
+				? slideNavPannel.hide()
+				// Вызов метода "Разворачивания панели", если панель свернута
+				: slideNavPannel.show();
+	        // Отмена действия по умолчанию браузера на событие
+            preventDefault(event);
+        });
 
+    
+/*    
 	// Получение ссылки на элемент видимой иконки "Показать меню"
 	$_topPannel.querySelector('.burgerButton .icon')
 		// Установка обработчика события клика по кнопке "Показать/Скрыть меню"
@@ -124,7 +157,7 @@ $.documentReady(function() {
 			// Запрет на переход по ссылке
 			return false;
 		};
-
+*/
 
 
 	// Получение ссылки на пункты главного меню
