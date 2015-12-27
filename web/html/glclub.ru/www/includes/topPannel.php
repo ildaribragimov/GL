@@ -20,7 +20,7 @@
 		</div>
 		<div class="burgerButton">
 			<div class="burgerButton-wrapper">
-				<a class="icon -s" href="/" target="_self"><span></span></a>
+				<div class="icon -s"><span></span></div>
 			</div>
 		</div>
 		<div class="clr"></div>
