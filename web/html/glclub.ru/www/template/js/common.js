@@ -29,8 +29,7 @@ $.documentReady(function() {
 		$_roomsItems = document.querySelectorAll('.roomsItems, .roomsItem'),
 		$_mainMenu = document.getElementById('mainMenu'),
 		$_topPannel = document.getElementById('topPannel'),
-        touchDevice = isTouchDevice(),
-        clickEvent = ( touchDevice ) ? 'touchend': 'click';
+        touchDevice = isTouchDevice();
 
 
     /* ================================================================== *
@@ -143,29 +142,6 @@ $.documentReady(function() {
 				// Вызов метода "Разворачивания панели", если панель свернута
 				: slideNavPannel.show();
         }, false);
-
-    
-/*    
-	// Получение ссылки на элемент видимой иконки "Показать меню"
-	$_topPannel.querySelector('.burgerButton .icon')
-		// Установка обработчика события клика по кнопке "Показать/Скрыть меню"
-		.onclick = function(){
-			// Отображение списка пунктов меню для свернутой панели навигации (только для мобильных устройств)
-			//alert($_mainMenu.display);
-			if ( getComputedStyle($_mainMenu).display == 'none' ) $_mainMenu.style.display = 'block';
-			//if ( $('#mainMenu').css({'display':'none'}) ) $('#mainMenu').css({'display':'block'});
-			// Проверка состояния панели навигации
-			( slideNavPannel.enable == true )
-				// Вызов метода "Сворачивания панели", если панель развернута
-				? slideNavPannel.hide()
-				// Вызов метода "Разворачивания панели", если панель свернута
-				: slideNavPannel.show();
-			
-			// Запрет на переход по ссылке
-			return false;
-		};
-*/
-
 
 	// Получение ссылки на пункты главного меню
 	$_mainMenu.querySelector('ul')
