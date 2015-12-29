@@ -33,7 +33,7 @@ $.documentReady(function() {
         clickEvent = ( touchDevice ) ? 'touchend': 'click';
 
 
-	/* ================================================================== *
+    /* ================================================================== *
 	 * ==== Проверка сенсорный ли тип экрана устройства пользователя ==== *
 	 * ================================================================== */
     /**
@@ -67,7 +67,7 @@ $.documentReady(function() {
 	 * * hide - Метод сворачивает панель
 	 */
 	var slideNavPannel = {
-		elements: ["#page-wrapper", "#topPannel", ".burgerButton", "#mainMenu"],
+        elements: ["#page-wrapper", "#topPannel", ".burgerButton"],
 		enable: false,
 		show: function(){
 			this.elements.forEach( function( item, i, elements ){
@@ -124,18 +124,25 @@ $.documentReady(function() {
     // Получение ссылки на элемент видимой иконки "Показать меню"
 	$_topPannel.querySelector('.burgerButton .icon')
         // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
+        .addEventListener( 'touchend', function(event) {
+            // Отмена действия по умолчанию браузера на событие
+            preventDefault(event);
+            event.target.click();
+        }, false);
+    
+    // Получение ссылки на элемент видимой иконки "Показать меню"
+	$_topPannel.querySelector('.burgerButton .icon')
+        // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
         .addEventListener( 'click', function(event) {
-			// Отображение списка пунктов меню для свернутой панели навигации (только для мобильных устройств)
-			if ( getComputedStyle($_mainMenu).display == 'none' ) $_mainMenu.style.display = 'block';
+            // Отмена действия по умолчанию браузера на событие
+            preventDefault(event);
 			// Проверка состояния панели навигации
 			( slideNavPannel.enable == true )
 				// Вызов метода "Сворачивания панели", если панель развернута
 				? slideNavPannel.hide()
 				// Вызов метода "Разворачивания панели", если панель свернута
 				: slideNavPannel.show();
-	        // Отмена действия по умолчанию браузера на событие
-            preventDefault(event);
-        });
+        }, false);
 
     
 /*    
