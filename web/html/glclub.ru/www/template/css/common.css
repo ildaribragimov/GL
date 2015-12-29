@@ -451,6 +451,7 @@ button.rounded .title {
 /* Section "Rooms" */
 #rooms {
 	padding:0;
+    background-color:#625C5A;
 }
 #rooms .section-wrapper {
 	margin:0;
@@ -480,7 +481,7 @@ button.rounded .title {
 	z-index:12;
 }
 #rooms .roomsItem.-newYork {
-	left:0%;
+	left:0;
 	background-image:url("../../media/rooms/new_york/medium/CK1A9261.jpg");
 }
 #rooms .roomsItem.-japan {
@@ -1105,7 +1106,7 @@ button.rounded .title {
 		display:block;
 	}
 	#mainMenu {
-		display:none;
+		/*display:none;*/
 		top:60px;
 		left:0;
 		width:240px;
