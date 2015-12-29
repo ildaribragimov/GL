@@ -29,7 +29,6 @@
         <![endif]-->
 		<script defer src="template/js/jquery.document.ready.js" type="text/javascript"></script>
         <script defer src="template/js/crossFixs.js" type="text/javascript"></script>
-		<script defer src="template/js/classList.min.js" type="text/javascript"></script>
 		<link href="template/css/normalize.css" rel="stylesheet" type="text/css">
 		<link href="template/css/fonts.css" rel="stylesheet" type="text/css">
         <link href="template/css/common.css" rel="stylesheet" type="text/css">
