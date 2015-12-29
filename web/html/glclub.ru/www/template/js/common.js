@@ -19,14 +19,14 @@ $.documentReady(function() {
 	 * Объявление глобальных переменных
 	 *
 	 * viewport (тип: object) - Объект области просмотра браузера
-	 * $_roomsItems (тип: object) - Объект элементов секции "НОМЕРА"
+	 * $_roomsItems (тип: object) - Объект элементов секции "НОМЕРА" (блоков НОМЕР 1, НОМЕР 2)
 	 * $_mainMenu (тип: object) - Ссылка на DOM-элемент с id "mainMenu"
 	 * $_topPannel (тип: object) - Ссылка на DOM-элемент с id "topPannel"
      * touchDevice (тип: boolean) - Подтверждение, что экран устройства пользователя - сенсорный
      * 
 	 */
 	var viewport = document.documentElement,
-		$_roomsItems = document.querySelectorAll('.roomsItems, .roomsItem'),
+        $_roomsItems = document.querySelectorAll('.roomsItem'),
 		$_mainMenu = document.getElementById('mainMenu'),
 		$_topPannel = document.getElementById('topPannel'),
         touchDevice = isTouchDevice();
@@ -69,20 +69,20 @@ $.documentReady(function() {
         elements: ["#page-wrapper", "#topPannel", ".burgerButton"],
 		enable: false,
 		show: function(){
-			this.elements.forEach( function( item, i, elements ){
+            for (var i = 0; i < this.elements.length; i++ ) {
 				// Переключение занчения атрибута class, выбранных эелементов
-				document.querySelector(item).classList.add('menu-enabled');
-			});
+				document.querySelector(this.elements[i]).classList.add('menu-enabled');                
+            }
 			// Блокировка прокрутки страницы
 			disableScroll();
 			// Изменение статуса состояния панели навигации
 			this.enable = true;
 		},
 		hide: function(){
-			this.elements.forEach( function( item, i, elements ){
+            for (var i = 0; i < this.elements.length; i++ ) {
 				// Переключение занчения атрибута class, выбранных эелементов
-				document.querySelector(item).classList.remove('menu-enabled');
-			});
+				document.querySelector(this.elements[i]).classList.remove('menu-enabled');                
+            }
 			// Активация прокрутки страницы
 			enableScroll();
 			// Изменение статуса состояния панели навигации
@@ -98,11 +98,15 @@ $.documentReady(function() {
 	 * ==== высоте видимой области просмотра окна браузера ==== *
 	 * ======================================================== */
 	function setRoomsItemsViewportHeight() {
+        // Определение переменной, хранящей значение высоты области просмотра барузера
+        var viewportHeight = viewport.clientHeight+'px';
 		// Обход массива элементов "$_roomsItems"
-		for (var i = 0; i < $_roomsItems.length; i++) {
-			// Установка высоты равной высоте объекта "viewport"
-			$_roomsItems[i].style.height = viewport.clientHeight+'px';
+		for (var r = 0; r < $_roomsItems.length; r++) {
+			// Установка элементу высоты равной высоте объекта "viewport"
+			$_roomsItems[r].style.height = viewportHeight;
 		};
+        // Установка элементу высоты равной высоте объекта "viewport"
+        document.querySelector('.roomsItems').style.height = viewportHeight;
 	};
 	/* ======================================================== */
 	
