@@ -28,6 +28,7 @@ $.documentReady(function() {
         $_roomsItems = document.querySelectorAll('.roomsItem'),
 		$_mainMenu = document.getElementById('mainMenu'),
 		$_topPannel = document.getElementById('topPannel'),
+        $_sticker = document.querySelector('.sticker'),
         touchDevice = isTouchDevice();
 
 
@@ -122,19 +123,51 @@ $.documentReady(function() {
 	};
 
 
-    // Получение ссылки на элемент ".roomsItems" - контейнера НОМЕРОВ (списка НОМЕРОВ)
+    /* ============================================ *
+     * ==== Решение "Блок презентации НОМЕРОВ" ==== *
+     * ============================================ */
+    /**
+     * Объявление переменных:
+     *
+     * * $_rooms (тип: object) - Ссылка на первый элемента с классом "roomsItems"
+     */
+    var $_rooms = document.querySelector('.roomsItems');
+    /*
     document.querySelector('.roomsItems')
-        // Назначние обработчика события "НАВЕДЕНИЕ МЫШИ" на дочерних элементах
         .onmouseover = function(event){
-            // Увеличение ширины блока НОМЕРА
-            //event.target.parentNode
-        };
-    // Получение ссылки на элемент ".roomsItems" - контейнера НОМЕРОВ (списка НОМЕРОВ)
-    document.querySelector('.roomsItems')
-        .onmouseout = function(event){
-            // Уменьшение ширины блока НОМЕРА
-            //event.target.parentNode
-        };
+        // Кроссбраузерное получение объекта события
+        event = event || window.event;
+        
+        var elem = event.target.parentNode;
+
+        elem.style.width = elem.offsetWidth * 1.1 + 'px';
+    };*/
+    
+    $_rooms.onmouseover = $_rooms.onmouseout = function(event){
+        // Кроссбраузерное получение объекта события
+        event = event || window.event;
+        //
+        var elem = event.target.parentNode;
+        //
+        
+        if (event.type == 'mouseover') {
+            elem.style.width = elem.offsetWidth * 1.1 + 'px';
+            /*$_sticker.style.marginLeft = ($_roomsItems.getIndex(elem) == 0)
+                ? elem.offsetWidth * 0.1 +'px'
+                : -(elem.offsetWidth * 0.1) +'px';
+                */
+            $_sticker.style.marginLeft = (($_roomsItems.getIndex(elem) == 0) ? '+' : '-') + elem.offsetWidth * 0.1 +'px';
+        } else {
+            elem.style.width = elem.style.width = '';
+            $_sticker.style.marginLeft = '';
+        }
+        /*
+        elem.style.width = (event.type == 'mouseover')
+            ? elem.offsetWidth * 1.1 + 'px'
+            : elem.style.width = '';
+            */
+    }
+    /* ============================================ */
 
 
     // Получение ссылки на элемент видимой иконки "Показать меню"
@@ -207,4 +240,36 @@ $.documentReady(function() {
 			return false;
 		};
 
+    
+    
+        
+        
+        	/*
+	var formSendMail = document.getElementById('sendMail'),
+		userMessage = formSendMail.querySelector('textarea'),
+		userMessageHeight = parseInt(getComputedStyle(userMessage).height);
+
+		userMessage.onkeyup = function(){
+			var textareaHeight = parseInt(getComputedStyle(this).height),
+				textareaPaddingTop = parseInt(getComputedStyle(this).paddingTop),
+				textareaPaddingBottom = parseInt(getComputedStyle(this).paddingBottom),
+				textareaInnerHeight = userMessageHeight+textareaPaddingTop+textareaPaddingBottom;
+
+			alert (this.scrollHeight +' > '+ textareaInnerHeight);
+			if ( this.scrollHeight > textareaInnerHeight ) {
+				this.scrollHeight = textareaInnerHeight;
+				this.style.height = this.scrollHeight-textareaPaddingTop-textareaPaddingBottom+'px';
+			} else {
+				
+			}
+		};
+        
+        	document.getElementById("showMap").onclick = function(){
+		//
+		document.getElementById("popupWindow-map").style.display = 'block';
+		//
+		return false;
+	};
+    
+    */
 });
