@@ -122,6 +122,21 @@ $.documentReady(function() {
 	};
 
 
+    // Получение ссылки на элемент ".roomsItems" - контейнера НОМЕРОВ (списка НОМЕРОВ)
+    document.querySelector('.roomsItems')
+        // Назначние обработчика события "НАВЕДЕНИЕ МЫШИ" на дочерних элементах
+        .onmouseover = function(event){
+            // Увеличение ширины блока НОМЕРА
+            //event.target.parentNode
+        };
+    // Получение ссылки на элемент ".roomsItems" - контейнера НОМЕРОВ (списка НОМЕРОВ)
+    document.querySelector('.roomsItems')
+        .onmouseout = function(event){
+            // Уменьшение ширины блока НОМЕРА
+            //event.target.parentNode
+        };
+
+
     // Получение ссылки на элемент видимой иконки "Показать меню"
 	$_topPannel.querySelector('.burgerButton .icon')
         // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
@@ -151,7 +166,6 @@ $.documentReady(function() {
 	$_mainMenu.querySelector('ul')
 		// Установка обработчика события клика по пункту главного меню
 		.onclick = function(event){
-			// Сворачивание панели навигации, если она развернута
 			/** 
 			 * Объявление переменных:
 			 *
@@ -160,11 +174,9 @@ $.documentReady(function() {
 			 * interval (тип: number) - Частота смены кадров (в секунду)
 			 * scrollPageY - Функция смены положения области просмотра браузера относительно его текущего положения
 			 */
-			//var anchor = this.attr('href'),
 			var anchor = event.target.getAttribute('href'),
 				scrollTopValue = document.getElementById( anchor.match(/[^#].*/) ).offsetTop,
 				interval = 1000/100,
-				scrollStatus = null,
 				scrollPageY = setInterval(function(){
 					/** 
 					 * Объявление переменных:
@@ -181,13 +193,12 @@ $.documentReady(function() {
 
 					// Проверка расстояния, на которое необходимо прокрутить страницу на равенство 0 (нулю)
 					if (needToScroll == 0) {
-						// Выход из интервальной функции, если расстояние, на которое необходимо прокрутить страницу = 0
-						scrollStatus = 'done';
-									if ( slideNavPannel.enable == true & scrollStatus == 'done' ) slideNavPannel.hide();
-
+                        // Сворачивание панели навигации, если она развернута
+                        if ( slideNavPannel.enable == true ) slideNavPannel.hide();
+                        // Выход из интервальной функции
 						clearInterval(scrollPageY);
-						// Вызов метода "Прокрутки относительно текущего положения" объекта "window"
 					} else {
+                        // Вызов метода "Прокрутки относительно текущего положения" объекта "window"
 						window.scrollBy(0,scrollStep);
 					}
 
