@@ -14,7 +14,6 @@ $.documentReady(function() {
 	/* ============== */
 
 
-
 	/**
 	 * Объявление глобальных переменных
 	 *
@@ -90,8 +89,7 @@ $.documentReady(function() {
 		}
 	};
 	/* ====================================================== */
-	
-	
+
 
 	/* ======================================================== *
 	 * ==== Установка высоты секции "НОМЕРА" равной        ==== *
@@ -109,10 +107,10 @@ $.documentReady(function() {
         document.querySelector('.roomsItems').style.height = viewportHeight;
 	};
 	/* ======================================================== */
-	
+
+
 	// Вызов функции "Установка высоты секции "НОМЕРА" равной высоте видимой области просмотра окна браузера
 	setRoomsItemsViewportHeight();
-
 
 
 	// Переопределение высоты секции "НОМЕРА" при изменении размера окна
@@ -127,16 +125,17 @@ $.documentReady(function() {
     // Получение ссылки на элемент видимой иконки "Показать меню"
 	$_topPannel.querySelector('.burgerButton .icon')
         // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
-        .addEventListener( 'touchend', function(event) {
+        .onTouchEnd = function(event) {
             // Отмена действия по умолчанию браузера на событие
             preventDefault(event);
             event.target.click();
-        }, false);
-    
+        };
+
+
     // Получение ссылки на элемент видимой иконки "Показать меню"
 	$_topPannel.querySelector('.burgerButton .icon')
         // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
-        .addEventListener( 'click', function(event) {
+        .onclick = function(event) {
             // Отмена действия по умолчанию браузера на событие
             preventDefault(event);
 			// Проверка состояния панели навигации
@@ -145,7 +144,8 @@ $.documentReady(function() {
 				? slideNavPannel.hide()
 				// Вызов метода "Разворачивания панели", если панель свернута
 				: slideNavPannel.show();
-        }, false);
+        };
+
 
 	// Получение ссылки на пункты главного меню
 	$_mainMenu.querySelector('ul')
@@ -192,39 +192,8 @@ $.documentReady(function() {
 					}
 
 				}, interval);
-
 			// Запрет на переход по ссылке
 			return false;
 		};
-
-
-
-	document.getElementById("showMap").onclick = function(){
-		//
-		document.getElementById("popupWindow-map").style.display = 'block';
-		//
-		return false;
-	};
-
-
-	/*
-	var formSendMail = document.getElementById('sendMail'),
-		userMessage = formSendMail.querySelector('textarea'),
-		userMessageHeight = parseInt(getComputedStyle(userMessage).height);
-
-		userMessage.onkeyup = function(){
-			var textareaHeight = parseInt(getComputedStyle(this).height),
-				textareaPaddingTop = parseInt(getComputedStyle(this).paddingTop),
-				textareaPaddingBottom = parseInt(getComputedStyle(this).paddingBottom),
-				textareaInnerHeight = userMessageHeight+textareaPaddingTop+textareaPaddingBottom;
-
-			alert (this.scrollHeight +' > '+ textareaInnerHeight);
-			if ( this.scrollHeight > textareaInnerHeight ) {
-				this.scrollHeight = textareaInnerHeight;
-				this.style.height = this.scrollHeight-textareaPaddingTop-textareaPaddingBottom+'px';
-			} else {
-				
-			}
-		};*/
 
 });
