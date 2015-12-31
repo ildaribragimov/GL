@@ -2,15 +2,15 @@
 "use strict";
 
 // Исполнение скрипта при готовности DOM-структуры документа
-$.documentReady(function() {
+function ready() {
 
     /* ==== Решение "disable(enable)Scroll.js" ========= *
 	 * ==== Блокировка/Активация прокрутки страницы ==== *
 	 * ================================================= */
 	var keys = {32: 1, 33: 1, 34: 1, 35: 1, 36: 1, 37: 1, 38: 1, 39: 1, 40: 1};
-	function preventDefaultForScrollKeys(event) { if (keys[event.keyCode]) { preventDefault(event); return false; } }
-	function disableScroll() { if (window.addEventListener) { window.addEventListener('DOMMouseScroll', preventDefault, false); } window.onwheel = preventDefault; window.onmousewheel = document.onmousewheel = preventDefault; window.ontouchmove  = preventDefault; document.onkeydown  = preventDefaultForScrollKeys; }
-	function enableScroll() { if (window.removeEventListener) { window.removeEventListener('DOMMouseScroll', preventDefault, false); } window.onwheel = null; window.onmousewheel = document.onmousewheel = null; window.ontouchmove = null; document.onkeydown = null; }
+	function preventDefaultForScrollKeys(event) { if (keys[event.keyCode]) { event.preventDefault(); return false; } }
+	function disableScroll() { if (window.addEventListener) { window.addEventListener('DOMMouseScroll', function(event){event.preventDefault();}, false); } window.onwheel = function(event){event.preventDefault();}; window.onmousewheel = document.onmousewheel = function(event){event.preventDefault();}; window.ontouchmove  = function(event){event.preventDefault();}; document.onkeydown  = preventDefaultForScrollKeys; }
+	function enableScroll() { if (window.removeEventListener) { window.removeEventListener('DOMMouseScroll', function(event){event.preventDefault();}, false); } window.onwheel = null; window.onmousewheel = document.onmousewheel = null; window.ontouchmove = null; document.onkeydown = null; }
 	/* ============== */
 
 
@@ -144,8 +144,6 @@ $.documentReady(function() {
     };*/
     
     $_rooms.onmouseover = $_rooms.onmouseout = function(event){
-        // Кроссбраузерное получение объекта события
-        event = event || window.event;
         //
         var elem = event.target.parentNode;
         //
@@ -169,7 +167,7 @@ $.documentReady(function() {
     }
     /* ============================================ */
 
-
+/*
     // Получение ссылки на элемент видимой иконки "Показать меню"
 	$_topPannel.querySelector('.burgerButton .icon')
         // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
@@ -177,7 +175,15 @@ $.documentReady(function() {
             // Отмена действия по умолчанию браузера на событие
             preventDefault(event);
             event.target.click();
-        };
+        };*/
+        // Получение ссылки на элемент видимой иконки "Показать меню"
+	$_topPannel.querySelector('.burgerButton .icon')
+        // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
+        .addEventListener('touchend', function(event) {
+            // Отмена действия по умолчанию браузера на событие
+            event.preventDefault();
+            event.target.click();
+        });
 
 
     // Получение ссылки на элемент видимой иконки "Показать меню"
@@ -185,7 +191,7 @@ $.documentReady(function() {
         // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
         .onclick = function(event) {
             // Отмена действия по умолчанию браузера на событие
-            preventDefault(event);
+            event.preventDefault();
 			// Проверка состояния панели навигации
 			( slideNavPannel.enable == true )
 				// Вызов метода "Сворачивания панели", если панель развернута
@@ -218,7 +224,7 @@ $.documentReady(function() {
 					 * needToScroll (тип: number) - Расстояние, на которое необходимо прокрутить страницу относительно ее текущего положения
 					 * scrollStep (тип: number) - Шаг прокрутки страницы на текущем кадре в пикселях.
 					 */
-					var scrolled = window.pageYOffset || document.documentElement.scrollTop,
+					var scrolled = window.pageYOffset,
 						needToScroll = (scrollTopValue-scrolled),
 						scrollStep = (Math.abs(needToScroll) != 2)
 							? needToScroll/3
@@ -272,4 +278,6 @@ $.documentReady(function() {
 	};
     
     */
-});
+} // function ready()
+
+document.addEventListener("DOMContentLoaded", ready, false);
