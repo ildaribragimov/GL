@@ -132,51 +132,24 @@ function ready() {
      * * $_rooms (тип: object) - Ссылка на первый элемента с классом "roomsItems"
      */
     var $_rooms = document.querySelector('.roomsItems');
-    /*
-    document.querySelector('.roomsItems')
-        .onmouseover = function(event){
-        // Кроссбраузерное получение объекта события
-        event = event || window.event;
-        
-        var elem = event.target.parentNode;
-
-        elem.style.width = elem.offsetWidth * 1.1 + 'px';
-    };*/
-    
-    $_rooms.onmouseover = $_rooms.onmouseout = function(event){
-        //
-        var elem = event.target.parentNode;
-        //
-        
-        if (event.type == 'mouseover') {
-            elem.style.width = elem.offsetWidth * 1.1 + 'px';
-            /*$_sticker.style.marginLeft = ($_roomsItems.getIndex(elem) == 0)
-                ? elem.offsetWidth * 0.1 +'px'
-                : -(elem.offsetWidth * 0.1) +'px';
-                */
-            $_sticker.style.marginLeft = (($_roomsItems.getIndex(elem) == 0) ? '+' : '-') + elem.offsetWidth * 0.1 +'px';
-        } else {
-            elem.style.width = elem.style.width = '';
-            $_sticker.style.marginLeft = '';
+    // Назначение обработчика события "mouseover" на блоках НОМЕРОВ 
+    $_rooms.addEventListener('mouseover', /*$_rooms.onmouseout =*/ function(event){
+        // Объявление перменной, содержащей ссылку на текущий элемент фазы всплытия
+        var type = event.type,
+            target = event.target;
+        // 
+        alert(target.tagName);
+        while(target != this){
+            if(target.classList.contains('roomsItem')){
+            }
+            target = target.parentNode;
         }
-        /*
-        elem.style.width = (event.type == 'mouseover')
-            ? elem.offsetWidth * 1.1 + 'px'
-            : elem.style.width = '';
-            */
-    }
+        
+    }, true);
     /* ============================================ */
 
-/*
+
     // Получение ссылки на элемент видимой иконки "Показать меню"
-	$_topPannel.querySelector('.burgerButton .icon')
-        // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
-        .onTouchEnd = function(event) {
-            // Отмена действия по умолчанию браузера на событие
-            preventDefault(event);
-            event.target.click();
-        };*/
-        // Получение ссылки на элемент видимой иконки "Показать меню"
 	$_topPannel.querySelector('.burgerButton .icon')
         // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
         .addEventListener('touchend', function(event) {
