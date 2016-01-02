@@ -126,30 +126,69 @@ function ready() {
     /* ============================================ *
      * ==== Решение "Блок презентации НОМЕРОВ" ==== *
      * ============================================ */
-    /**
-     * Объявление переменных:
-     *
-     * * $_rooms (тип: object) - Ссылка на первый элемента с классом "roomsItems"
-     */
-    var $_rooms = document.querySelector('.roomsItems');
-    // Назначение обработчика события "mouseover" на блоках НОМЕРОВ 
-    $_rooms.addEventListener('mouseover', /*$_rooms.onmouseout =*/ function(event){
-        // Объявление перменной, содержащей ссылку на текущий элемент фазы всплытия
+    // Объявление переменных:
+    var $_rooms = document.querySelector('.roomsItems'), // Ссылка на первый элемента с классом "roomsItems"
+        currentRoom = null; // Переменная, в котрую будет записываться ссылка на текущий блок НОМЕРА
+    
+    // Назначение обработчика событиям "mouseover" и "mouseout"
+    $_rooms.onmouseover = $_rooms.onmouseout = function(event){
+        if(currentRoom){return;}
+        
+        // Объявляем переменную, сожержащую ссылку на текущий элемент в фазе всплытия 
         var type = event.type,
             target = event.target;
         // 
-        alert(target.tagName);
         while(target != this){
+            // Если значение атрибута "class" текущего элемента содержит имя css-класса "roomsItem"
             if(target.classList.contains('roomsItem')){
+                // Объявление переменных
+                var step = target.offsetWidth * 0.1, // Шаг сдвига блока в пикселях без указания единицы измерения
+                    targetIndex = $_roomsItems.getIndex(target), // Индекс целевого элемента в коллекции НОМЕРОВ
+                    interval = 1000/25, // Частота кадров в секунду (1000мс=1сек; 25 - кол-во кадров анимации)
+                    animate = setInterval(function(){
+                        
+                    },interval);
+                //
+                switch(type){
+                    case 'mouseover':
+                        alert('mouseover on '+target.className);
+                        //target.style.width = target.offsetWidth + step + 'px';
+                        //$_sticker.style.marginLeft = ((targetIndex === 0) ? '+' : '-') + step +'px';
+                        // выход из конструкции "switch"
+                        break;
+                    case 'mouseout':
+                        alert('mouseout from '+target.className);
+                        //target.style.width = $_sticker.style.marginLeft = '';
+                        /*
+                        for(var r = 0; r < $_roomsItems.length; r++){
+                            if(r != targetIndex){
+                                $_roomsItems[r].style.width = $_sticker.style.marginLeft = '';
+                            }
+                        }
+                        */
+                        // выход из конструкции "switch"
+                        break;
+                }
+                // Приостанавливанием выполнение текущей итерации и выходим из цикла "while"
+                break;
             }
+            // Переходим к родителю элемента
             target = target.parentNode;
         }
-        
-    }, true);
+    };
     /* ============================================ */
+    
 
-
+/*
     // Получение ссылки на элемент видимой иконки "Показать меню"
+	$_topPannel.querySelector('.burgerButton .icon')
+        // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
+        .onTouchEnd = function(event) {
+            // Отмена действия по умолчанию браузера на событие
+            preventDefault(event);
+            event.target.click();
+        };*/
+        // Получение ссылки на элемент видимой иконки "Показать меню"
 	$_topPannel.querySelector('.burgerButton .icon')
         // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
         .addEventListener('touchend', function(event) {
