@@ -969,6 +969,7 @@ button.rounded .title {
     content: "";
 }
 .burgerButton .icon {
+    background: none;
     padding:0.4444em;
 }
 .burgerButton .icon:hover {
