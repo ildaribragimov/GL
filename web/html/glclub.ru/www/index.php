@@ -15,7 +15,7 @@
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         <script defer src="template/js/prototypesExt.js" type="text/javascript"></script>
-        <script defer src="template/js/support-IE9+.js" type="text/javascript"></script>
+        <script defer src="template/js/support.js" type="text/javascript"></script>
 		<link href="template/css/normalize.css" rel="stylesheet" type="text/css">
 		<link href="template/css/fonts.css" rel="stylesheet" type="text/css">
         <link href="template/css/common.css" rel="stylesheet" type="text/css">
