@@ -126,56 +126,28 @@ function ready() {
     /* ============================================ *
      * ==== Решение "Блок презентации НОМЕРОВ" ==== *
      * ============================================ */
+    // Функция анимации
+    function animate(el, action){
+        switch(action){
+            case 'show':
+                el.style.backgroundColor = 'pink';
+                break;
+            case 'hide':
+                el.style.backgroundColor = '';
+                break;
+        }
+    }
+
+    // Функция-обработчик событий "mouseout" и "mouseover"
+    function emulateMOverMOut(event){ var a=event.type, b=event.target; if(b==this || (a=='mouseout' && !cursorOn) || (a=='mouseover' && cursorOn)){return;} var c=event.relatedTarget, d=(a=='mouseover')?b:c, f=(a=='mouseover')?c:b, g=(a=='mouseover')?'show':'hide', k='.'+animatedElClass.replace(' ','.'); if(!cursorOn){ var l=d.parent(k); if(d.classList.contains('animated')){cursorOn=d;}else if(l){cursorOn=l;} animate(cursorOn, g); return; } if(d && (l==cursorOn)){return;} animate(cursorOn, g); cursorOn = null; }
+
     // Объявление переменных:
     var $_rooms = document.querySelector('.roomsItems'), // Ссылка на первый элемента с классом "roomsItems"
-        currentRoom = null; // Переменная, в котрую будет записываться ссылка на текущий блок НОМЕРА
+        animatedElClass = 'roomsItem', // CSS-класс анимируемого элемента
+        cursorOn = null; // Переменная, в котрую будет записываться ссылка на элемент, над которым находится курсор в текущий момент
     
     // Назначение обработчика событиям "mouseover" и "mouseout"
-    $_rooms.onmouseover = $_rooms.onmouseout = function(event){
-        if(currentRoom){return;}
-        
-        // Объявляем переменную, сожержащую ссылку на текущий элемент в фазе всплытия 
-        var type = event.type,
-            target = event.target;
-        // 
-        while(target != this){
-            // Если значение атрибута "class" текущего элемента содержит имя css-класса "roomsItem"
-            if(target.classList.contains('roomsItem')){
-                // Объявление переменных
-                var step = target.offsetWidth * 0.1, // Шаг сдвига блока в пикселях без указания единицы измерения
-                    targetIndex = $_roomsItems.getIndex(target), // Индекс целевого элемента в коллекции НОМЕРОВ
-                    interval = 1000/25, // Частота кадров в секунду (1000мс=1сек; 25 - кол-во кадров анимации)
-                    animate = setInterval(function(){
-                        
-                    },interval);
-                //
-                switch(type){
-                    case 'mouseover':
-                        alert('mouseover on '+target.className);
-                        //target.style.width = target.offsetWidth + step + 'px';
-                        //$_sticker.style.marginLeft = ((targetIndex === 0) ? '+' : '-') + step +'px';
-                        // выход из конструкции "switch"
-                        break;
-                    case 'mouseout':
-                        alert('mouseout from '+target.className);
-                        //target.style.width = $_sticker.style.marginLeft = '';
-                        /*
-                        for(var r = 0; r < $_roomsItems.length; r++){
-                            if(r != targetIndex){
-                                $_roomsItems[r].style.width = $_sticker.style.marginLeft = '';
-                            }
-                        }
-                        */
-                        // выход из конструкции "switch"
-                        break;
-                }
-                // Приостанавливанием выполнение текущей итерации и выходим из цикла "while"
-                break;
-            }
-            // Переходим к родителю элемента
-            target = target.parentNode;
-        }
-    };
+    $_rooms.onmouseout = $_rooms.onmouseover = emulateMOverMOut;
     /* ============================================ */
     
 
