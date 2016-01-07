@@ -139,7 +139,7 @@ function ready() {
     }
 
     // Функция-обработчик событий "mouseout" и "mouseover"
-    function emulateMOverMOut(event){ var a=event.type, b=event.target; if(b==this || (a=='mouseout' && !cursorOn) || (a=='mouseover' && cursorOn)){return;} var c=event.relatedTarget, d=(a=='mouseover')?b:c, f=(a=='mouseover')?c:b, g=(a=='mouseover')?'show':'hide', k='.'+animatedElClass.replace(' ','.'); if(!cursorOn){ var l=d.parent(k); if(d.classList.contains('animated')){cursorOn=d;}else if(l){cursorOn=l;} animate(cursorOn, g); return; } if(d && (l==cursorOn)){return;} animate(cursorOn, g); cursorOn = null; }
+    function emulateMOverMOut(event){var target = event.target; if(target == this){return;} var type = event.type, relatedTarget = event.relatedTarget, animatedElCssClass = '.'+animatedElClass.replace(' ', '.'), targetParent = target.parent(animatedElCssClass), relatedTargetParent = relatedTarget.parent(animatedElCssClass); if( targetParent || relatedTargetParent ){target = (target.tagName == 'A') ? toString.call(target): target; relatedTarget = (relatedTarget.tagName == 'A') ? toString.call(relatedTarget): relatedTarget; if( targetParent == relatedTargetParent || target == relatedTargetParent || relatedTarget == targetParent ){return;}target = targetParent || target;} if( target.classList.contains(animatedElClass) ){var action = (type == 'mouseover')? 'show': 'hide'; cursorOn = ( cursorOn == null || cursorOn != target ) ? target: null; animate(target, action);}}
 
     // Объявление переменных:
     var $_rooms = document.querySelector('.roomsItems'), // Ссылка на первый элемента с классом "roomsItems"
