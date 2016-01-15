@@ -151,16 +151,7 @@ function ready() {
     /* ============================================ */
     
 
-/*
     // Получение ссылки на элемент видимой иконки "Показать меню"
-	$_topPannel.querySelector('.burgerButton .icon')
-        // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
-        .onTouchEnd = function(event) {
-            // Отмена действия по умолчанию браузера на событие
-            preventDefault(event);
-            event.target.click();
-        };*/
-        // Получение ссылки на элемент видимой иконки "Показать меню"
 	$_topPannel.querySelector('.burgerButton .icon')
         // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
         .addEventListener('touchend', function(event) {
