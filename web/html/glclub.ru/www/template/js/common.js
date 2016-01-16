@@ -4,16 +4,6 @@
 // Исполнение скрипта при готовности DOM-структуры документа
 function ready() {
 
-    /* ==== Решение "disable(enable)Scroll.js" ========= *
-	 * ==== Блокировка/Активация прокрутки страницы ==== *
-	 * ================================================= */
-	var keys = {32: 1, 33: 1, 34: 1, 35: 1, 36: 1, 37: 1, 38: 1, 39: 1, 40: 1};
-	function preventDefaultForScrollKeys(event) { if (keys[event.keyCode]) { event.preventDefault(); return false; } }
-	function disableScroll() { if (window.addEventListener) { window.addEventListener('DOMMouseScroll', function(event){event.preventDefault();}, false); } window.onwheel = function(event){event.preventDefault();}; window.onmousewheel = document.onmousewheel = function(event){event.preventDefault();}; window.ontouchmove  = function(event){event.preventDefault();}; document.onkeydown  = preventDefaultForScrollKeys; }
-	function enableScroll() { if (window.removeEventListener) { window.removeEventListener('DOMMouseScroll', function(event){event.preventDefault();}, false); } window.onwheel = null; window.onmousewheel = document.onmousewheel = null; window.ontouchmove = null; document.onkeydown = null; }
-	/* ============== */
-
-
 	/**
 	 * Объявление глобальных переменных
 	 *
@@ -153,17 +143,16 @@ function ready() {
 
     // Получение ссылки на элемент видимой иконки "Показать меню"
 	$_topPannel.querySelector('.burgerButton .icon')
-        // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
+        // Назначение обработчика события татча по кнопке "Показать/Скрыть меню"
         .addEventListener('touchend', function(event) {
             // Отмена действия по умолчанию браузера на событие
             event.preventDefault();
+            // Вызов события "onclick"
             event.target.click();
         });
-
-
     // Получение ссылки на элемент видимой иконки "Показать меню"
 	$_topPannel.querySelector('.burgerButton .icon')
-        // Назначение обработчика события клика (татча) по кнопке "Показать/Скрыть меню"
+        // Назначение обработчика события клика по кнопке "Показать/Скрыть меню"
         .onclick = function(event) {
             // Отмена действия по умолчанию браузера на событие
             event.preventDefault();
@@ -175,54 +164,29 @@ function ready() {
 				: slideNavPannel.show();
         };
 
-    
-    /* ============================================== *
-     * ==== Решение "Плавная прогрутка до якоря" ==== *
-     * ============================================== */
+
 	// Получение ссылки на пункты главного меню
 	$_mainMenu.querySelector('ul')
-		// Установка обработчика события клика по пункту главного меню
-		.onclick = function(event){
-			/** 
-			 * Объявление переменных:
-			 *
-			 * anchor (тип: string) - Строка, содержащая ссылку на якорь 
-			 * scrollTopValue (тип: number) - Расстояние от верхнего края окна браузера до верхней границы якоря
-			 * interval (тип: number) - Частота смены кадров (в секунду)
-			 * scrollPageY - Функция смены положения области просмотра браузера относительно его текущего положения
-			 */
-			var anchor = event.target.getAttribute('href'),
-				scrollTopValue = document.getElementById( anchor.match(/[^#].*/) ).offsetTop,
-				interval = 1000/100,
-				scrollPageY = setInterval(function(){
-					/** 
-					 * Объявление переменных:
-					 *
-					 * scrolled (тип: number) - Положение области просмотра окна браузера относительно левого верхнего угла страницы
-					 * needToScroll (тип: number) - Расстояние, на которое необходимо прокрутить страницу относительно ее текущего положения
-					 * scrollStep (тип: number) - Шаг прокрутки страницы на текущем кадре в пикселях.
-					 */
-					var scrolled = window.pageYOffset,
-						needToScroll = (scrollTopValue-scrolled),
-						scrollStep = (Math.abs(needToScroll) != 2)
-							? needToScroll/3
-							: needToScroll;
+        // Назначение обработчика события татча по пункту главного меню
+        .addEventListener('touchend', function(event) {
+            // Отмена действия по умолчанию браузера на событие
+            event.preventDefault();
+            // Вызов события "onclick"
+            event.target.click();
+        });
+	// Получение ссылки на пункты главного меню
+	$_mainMenu.querySelector('ul')
+        // Назначение обработчика события клика (татча) по пункту главного меню
+        .addEventListener('click', function(event) {
+            // Отмена действия по умолчанию браузера на событие
+            event.preventDefault();
+            // Вызов функции готового решения "плавная прокрутка страницы до якоря"
+            scrollingToAnchor(event, function(){
+                // Сворачивание панели навигации, если она развернута
+                if ( slideNavPannel.enable == true ) { slideNavPannel.hide(); }
+            });
+        });
 
-					// Проверка расстояния, на которое необходимо прокрутить страницу на равенство 0 (нулю)
-					if (needToScroll == 0) {
-                        // Сворачивание панели навигации, если она развернута
-                        if ( slideNavPannel.enable == true ) slideNavPannel.hide();
-                        // Выход из интервальной функции
-						clearInterval(scrollPageY);
-					} else {
-                        // Вызов метода "Прокрутки относительно текущего положения" объекта "window"
-						window.scrollBy(0,scrollStep);
-					}
-
-				}, interval);
-			// Запрет на переход по ссылке
-			return false;
-		};
 
     
     
