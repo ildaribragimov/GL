@@ -394,6 +394,25 @@ button.rounded .title {
 .formElement.hover .icon.showMap {
 	background-position:-384px -176px;
 }
+.-cash .icon {
+    background-position:-224px -176px;
+}
+.-info .icon {
+    background-position:-264px -176px;
+}
+.-quotes .icon {
+    background-position:-224px -216px;
+}
+.-comment .icon {
+    background-position:-264px -216px;
+}
+.-phone .icon {
+    background-position:-304px -176px;
+}
+.-mapPoint .icon {
+    background-position:-344px -176px;
+}
+
 /* ================ */
 
 
@@ -598,14 +617,8 @@ button.rounded .title {
 #about .section-content {
 	text-align:left;
 }
-#about header .separator .icon {
-	background-position:-264px -176px;
-}
 
 /* Section "Send Review" & "Contacts" */
-#sendReview header .separator .icon {
-	background-position:-264px -216px;
-}
 #sendReview form,
 #contacts .subsection-address form {
 	padding-top:0;
@@ -641,9 +654,6 @@ button.rounded .title {
 }
 
 /* Sections "Prices" */
-#prices header .separator .icon {
-	background-position:-224px -176px;
-}
 #prices .priceLabel {
 	max-width:440px;
 	padding:0.8333em 1.1111em;
@@ -681,9 +691,6 @@ button.rounded .title {
 }
 
 /* Sections "Reviews" */
-#reviews header .separator .icon {
-	background-position:-224px -216px;
-}
 #reviews .reviewsItems {
 	margin-top:0.8333em;
 	margin-bottom:1.6666em;
@@ -792,17 +799,11 @@ button.rounded .title {
 	background-size:cover;
 	background-position:center;
 }
-#contacts header .separator .icon {
-	background-position:-344px -176px;
-}
 #contacts .section-content .separator {
     margin-top: 0;
 }
 #contacts .subsection-address button:hover .icon.showMap {
 	background-position:-384px -176px;
-}
-#contacts .separator.-phone .icon {
-	background-position:-304px -176px;
 }
 #contacts .subsection-phone .tel,
 #contacts .subsection-phone .tel a {
