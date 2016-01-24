@@ -10,7 +10,7 @@
 		<!-- Шапка секции - Начало -->
 		<header>
 			<h2>Приезжайте отдохнуть</h2>
-			<div class="separator">
+			<div class="separator -mapPoint">
 				<div class="separator-wrapper">
 					<div class="separator-content">
 						<hr>

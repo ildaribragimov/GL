@@ -14,7 +14,7 @@
 			<h2>А что вы думаете о нас?</h2>
 			-->
 			<h2>Поделитесь впечатлением</h2>
-			<div class="separator">
+			<div class="separator -comment">
 				<div class="separator-wrapper">
 					<div class="separator-content">
 						<hr>
