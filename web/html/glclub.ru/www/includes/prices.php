@@ -10,7 +10,7 @@
 		<!-- Шапка секции - Начало -->
 		<header>
 			<h2>Цены</h2>
-			<div class="separator">
+			<div class="separator -cash">
 				<div class="separator-wrapper">
 					<div class="separator-content">
 						<hr>

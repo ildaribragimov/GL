@@ -10,7 +10,7 @@
 		<!-- Шапка секции - Начало -->
 		<header>
 			<h2>О клубе</h2>
-			<div class="separator">
+			<div class="separator -info">
 				<div class="separator-wrapper">
 					<div class="separator-content">
 						<hr>
