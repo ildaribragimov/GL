@@ -68,8 +68,8 @@
 			// Вставка всплывающего окна "Google-карта"
 			include "includes/popupWindow-map.php";
 		?>
-		<!--
+		
 		<script src="template/js/modulargrid.js" type="text/javascript"></script>
-		-->
+		<!---->
     </body>
 </html>
