@@ -412,7 +412,10 @@ button.rounded .title {
 .-mapPoint .icon {
     background-position:-344px -176px;
 }
-
+.icon.-envelope,
+.-envelope .icon {
+	background-position:-304px -216px;
+}
 /* ================ */
 
 
@@ -620,6 +623,7 @@ button.rounded .title {
 
 /* Section "Send Review" & "Contacts" */
 #sendReview form,
+#contacts .subsection-phone form,
 #contacts .subsection-address form {
 	padding-top:0;
 }
@@ -627,11 +631,13 @@ button.rounded .title {
 	padding-bottom:0;
 }
 #sendReview button,
+#contacts .subsection-phone button,
 #contacts .subsection-address button {
 	border-color:#e9bdac;
 	color:#e9bdac;
 }
 #sendReview button:hover,
+#contacts .subsection-phone button:hover,
 #contacts .subsection-address button:hover {
 	background:#e9bdac;
 	color:#5d463a;
@@ -814,9 +820,6 @@ button.rounded .title {
 	text-decoration:none;
 }
 
-#contacts .separator.-envelope .icon {
-	background-position:-304px -219px;
-}
 #contacts .subsection-sendMail form {
 	max-width:640px;
 }
