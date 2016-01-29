@@ -49,8 +49,8 @@
 				include "includes/reviews.php";
 				// Вставка секции "Добавить отзыв"
 				include "includes/sendReview.php";
-				// Вставка секции "Контакты"
-				include "includes/contacts2.php";
+				// Вставка секции "Забронировать номер"
+				include "includes/reserveRoom.php";
 			?>
 			<!-- Подвал страницы - Начало -->
 			<!--
