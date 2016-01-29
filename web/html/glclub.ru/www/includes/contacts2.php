@@ -30,14 +30,15 @@
 					<div>
 						<span class="category"><span class="value-title" title="Сауна"></span></span><span class="category"><span class="value-title" title="Баня"></span></span><span class="fn org"><span class="value-title" title="GL"></span></span>
 					</div>
-					<div class="subsection-address adr">
-						<p><span class="country-name"><span class="value-title" title="Россия"></span></span> <span class="region"><span class="value-title" title="Республика Татарстан"></span></span> <span class="locality">Набережные Челны</span>, <span class="street-address">пр. Чулман, 37/04</span>, <span class="extended-address">цокольный этаж</span>.</p>
+                    <p>Интересуют дополнительные услуги? &nbsp; Или у вас к нам коммерческое предложение?<br>
+					Свяжитесь с нами! &nbsp; Мы открыты и для новых друзей!</p>
+                    <div class="subsection-phone">
+						<p><span class="tel">+7 (963) 122 55 08</span></p>
 						<form>
 							<div class="element-button centered">
 								<div class="button-wrapper">
-									<button id="showMap">
-										<span class="icon -s showMap"></span>
-										<span class="title">Посмотреть на карте</span>
+									<button>
+										<span class="title">Написать письмо</span>
 										<span class="clr"></span>
 									</button>
 								</div>
@@ -56,11 +57,10 @@
 						</div>
 						<div class="clr"></div>
 					</div>
-					<p>Интересуют дополнительные услуги? &nbsp; Или у вас к нам коммерческое предложение?<br>
-					Свяжитесь с нами! &nbsp; Мы открыты и для новых друзей!</p>
-					<div class="subsection-phone">
-						<p><span class="tel">+7 (963) 122 55 08</span></p>
+					<div class="subsection-address adr">
+						<p><span class="country-name"><span class="value-title" title="Россия"></span></span> <span class="region"><span class="value-title" title="Республика Татарстан"></span></span> <span class="locality">Набережные Челны</span>, <span class="street-address">пр. Чулман, 37/04</span>, <span class="extended-address">цокольный этаж</span>.</p>
 					</div>
+					
 				</div>
 				<div class="subsection-sendMail">
 					<form id="sendMail" name="sendMail" action="/" method="post" accept-charset="utf-8" autocomplete="on" novalidate>
