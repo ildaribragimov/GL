@@ -608,15 +608,17 @@ button:hover .icon.-envelope {
 }
 
 
-/* Sections "About" & "Send Review" & "Contacts" */
+/* Sections "About" & "Send Review" & "Reserve Room" & "Contacts" */
 #sendReview,
 #about,
+#reserveRoom,
 #contacts {
 	background-color: #625c5a;
 	color: #f8f8f9;
 }
 #sendReview header .separator hr,
 #about header .separator hr,
+#reserveRoom .separator hr,
 #contacts .separator hr {
 	background-color:#e9bdac;
 }
@@ -635,15 +637,11 @@ button:hover .icon.-envelope {
 #sendReview form {
 	padding-bottom:0;
 }
-#sendReview button,
-#contacts .subsection-phone button,
-#contacts .subsection-address button {
+button.-pink {
 	border-color:#e9bdac;
 	color:#e9bdac;
 }
-#sendReview button:hover,
-#contacts .subsection-phone button:hover,
-#contacts .subsection-address button:hover {
+button.-pink:hover {
 	background:#e9bdac;
 	color:#5d463a;
 }
@@ -802,6 +800,65 @@ button:hover .icon.-envelope {
 	width:inherit;
 	height:inherit;
 	position:relative;
+}
+
+/* Sections "reserveRoom" */
+#reserveRoom {
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;    
+}
+#reserveRoom .section-content .separator {
+    margin-top: 0;
+}
+#reserveRoom .subsection-phone .tel,
+#reserveRoom .subsection-phone .tel a {
+	font-size:1.6666em;
+	line-height:1.5em;
+	color:#F8F8F9;
+	font-style:normal;
+	text-decoration:none;
+}
+#reserveRoom .subsection-reserve form {
+	max-width:640px;
+}
+#reserveRoom .subsection-reserve form .form-wrapper {
+	padding:1em;
+	border-radius:5px;
+	box-shadow:0 5px 20px rgba(0, 0, 0, 0.25);
+	background-image:url(../img/bg1.png);
+}
+#reserveRoom .subsection-reserve form .form-content {
+	border:1px solid #d9d5d3;
+	padding:0.7777em 1.0555em;
+}
+#reserveRoom .subsection-reserve form .form-content,
+#reserveRoom .subsection-reserve form input,
+#reserveRoom .subsection-reserve form textarea {
+	background-color:#f8f8f9;
+}
+
+#reserveRoom .subsection-reserve form input,
+#reserveRoom .subsection-reserve form textarea {
+	text-align:center;
+	color:#625c5a;
+}
+#reserveRoom .subsection-reserve form button .icon.plane {
+	margin-left:1.1111em;
+	margin-right:-0.1111em;
+}
+#reserveRoom .subsection-reserve form#sendMail .button-wrapper {
+	padding-top:0;
+	padding-bottom:0;
+}
+#reserveRoom .subsection-reserve button {
+	border-color:#3b876f;
+}
+#reserveRoom .subsection-reserve .element-button button[disabled],
+#reserveRoom .subsection-reserve .element-button button[disabled]:hover {
+	border-color:#e8e5e2;
+	background:none;
+	box-shadow:0 0 15px rgba(0, 0, 0, 0.05) inset;
 }
 
 /* Sections "Contacts" */
@@ -1098,6 +1155,7 @@ button:hover .icon.-envelope {
 	.content-wrapper {
 		width:960px;
 	}
+    #reserveRoom,
 	#contacts {
 		background-image:url(../../media/contacts/contacts_bg.jpg);
 	}
@@ -1108,6 +1166,7 @@ button:hover .icon.-envelope {
 	.section-wrapper {
 		width:auto;
 	}
+    #reserveRoom,
 	#contacts {
 		background-image:url(../../media/contacts/contacts_bg_tablet.jpg);
 	}
@@ -1176,6 +1235,7 @@ button:hover .icon.-envelope {
 	.switchers ul {
 		padding:0;
 	}
+    #reserveRoom,
 	#contacts {
 		background-image:url(../../media/contacts/contacts_bg_mobile.jpg);
 	}
