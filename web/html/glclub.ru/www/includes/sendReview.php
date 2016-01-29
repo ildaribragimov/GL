@@ -36,7 +36,7 @@
 				<form>
 					<div class="element-button centered">
 						<div class="button-wrapper">
-							<button>
+							<button class="-pink">
 								<span class="title">Добавить отзыв</span>
 								<span class="clr"></span>
 							</button>

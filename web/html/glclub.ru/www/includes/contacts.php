@@ -35,7 +35,7 @@
 						<form>
 							<div class="element-button centered">
 								<div class="button-wrapper">
-									<button id="showMap">
+									<button id="showMap" class="-pink">
 										<span class="icon -s showMap"></span>
 										<span class="title">Посмотреть на карте</span>
 										<span class="clr"></span>
