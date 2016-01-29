@@ -412,7 +412,12 @@ button.rounded .title {
 .-mapPoint .icon {
     background-position:-344px -176px;
 }
-.icon.-envelope,
+button .icon.-envelope {
+    background-position:-624px -216px;
+}
+button:hover .icon.-envelope {
+    background-position:-584px -216px;
+}
 .-envelope .icon {
 	background-position:-304px -216px;
 }
