@@ -1,6 +1,6 @@
 <?php 
 /**
- * Описание шаблона вывода секции "Контакты"
+ * Описание шаблона вывода секции "Забронировать номер"
  */
 ?>
 
@@ -9,7 +9,7 @@
 	<div class="section-wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
-			<h2>Хотите забронировать номер?</h2>
+			<h2>Бронируйте номер заранее</h2>
             <div class="separator -phone">
 				<div class="separator-wrapper">
 					<div class="separator-content">
