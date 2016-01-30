@@ -22,8 +22,8 @@
         <!-- Подключение готового решения "Блокировка прокрутки страницы" -->
         <script defer src="<?php echo $gitPath."Actions/disableScroll/standart/disableScroll.min.js";?>" type="text/javascript"></script>
         <!-- Подключние готового решения "Плавная прокрутка до якоря" -->
-        <script defer src="<?php echo $gitPath."Actions/scrollingToAnchor/standart/scrollingToAnchor.min.js";?>" type="text/javascript"></script>
-        <!-- Подключение поддержки метода classList для браузера IE 9 -->
+         <script defer src="<?php echo $gitPath."Actions/scrollingToAnchor/standart/scrollingToAnchor.js";?>" type="text/javascript"></script>
+        <!-- Подключение поддержки метода "classList" для браузера IE 9 -->
         <script defer src="<?php echo $gitPath."Browsers_Supports/IE9-/classList/object.classList.min.js";?>" type="text/javascript"></script>
         <!-- Подключение полифилла "getIndex" для получения обеспечения работы полифилла поиска родителя -->
         <script defer src="<?php echo $gitPath."Prop%26Meth_Extensions/object.getIndex/Object.getIndex.polyfill.min.js";?>" type="text/javascript"></script>
@@ -51,6 +51,8 @@
 				include "includes/sendReview.php";
 				// Вставка секции "Забронировать номер"
 				include "includes/reserveRoom.php";
+                // Вставка секции "Отправить пиьмо"
+				include "includes/sendMail.php";
 			?>
 			<!-- Подвал страницы - Начало -->
 			<!--
@@ -68,8 +70,8 @@
 			// Вставка всплывающего окна "Google-карта"
 			include "includes/popupWindow-map.php";
 		?>
-		
+		<!--
 		<script src="template/js/modulargrid.js" type="text/javascript"></script>
-		<!---->
+		-->
     </body>
 </html>
