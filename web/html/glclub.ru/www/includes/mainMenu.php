@@ -19,7 +19,10 @@
             <li class="menuItem">
 				<a href="#reviews" target="_self">Отзывы</a>
 			</li>
-			<li class="menuItem">
+            <li class="menuItem">
+				<a href="#reserveRoom" target="_self">Бронь номеров</a>
+			</li>
+            <li class="menuItem">
 				<a href="#contacts" target="_self">Контакты</a>
 			</li>
 		</ul>
