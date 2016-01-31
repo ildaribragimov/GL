@@ -4,7 +4,8 @@
  */
 ?>
 
-<section id="sendReview">
+<section id="sendReview" class="-beige">
+    <div class="sectionSeparator"><hr></div>
 	<a name="sendReview"></a>
 	<div class="section-wrapper">
 		<!-- Шапка секции - Начало -->
@@ -35,7 +36,7 @@
 				Поделитесь своим впечатлением.</p>
                 <div class="element-button centered">
                     <div class="button-wrapper">
-                        <button class="-pink">
+                        <button class="-green">
                             <span class="title">Добавить отзыв</span>
                             <span class="clr"></span>
                         </button>

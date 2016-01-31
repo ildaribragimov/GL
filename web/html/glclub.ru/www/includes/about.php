@@ -4,7 +4,7 @@
  */
 ?>
 
-<section id="about">
+<section id="about" class="-withBg">
 	<a name="about"></a>
 	<div class="section-wrapper">
 		<!-- Шапка секции - Начало -->

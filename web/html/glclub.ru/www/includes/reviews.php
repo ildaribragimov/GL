@@ -4,7 +4,7 @@
  */
 ?>
 
-<section id="reviews">
+<section id="reviews" class="-beige">
 	<a name="reviews"></a>
 	<div class="section-wrapper">
 		<!-- Шапка секции - Начало -->
