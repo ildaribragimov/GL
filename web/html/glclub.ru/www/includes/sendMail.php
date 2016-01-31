@@ -28,17 +28,15 @@
 			<div class="content-wrapper">
 				<p>Интересуют дополнительные услуги? &nbsp; Или у вас к нам коммерческое предложение?<br>
 				Свяжитесь с нами! &nbsp; Мы открыты и для новых друзей!</p>
-                <form>
-                    <div class="element-button centered">
-                        <div class="button-wrapper">
-                            <button class="-pink">
-                                <span class="title">Написать письмо</span>
-                                <span class="clr"></span>
-                            </button>
-                        </div>
-                        <div class="clr"></div>
+                <div class="element-button centered">
+                    <div class="button-wrapper">
+                        <button class="-pink">
+                            <span class="title">Написать письмо</span>
+                            <span class="clr"></span>
+                        </button>
                     </div>
-                </form>
+                    <div class="clr"></div>
+                </div>
             </div>
 		</div>
 		<!-- Содержимое секции - Конец -->

@@ -33,17 +33,15 @@
 			<div class="content-wrapper">
 				<p>Вы уже отдыхали у нас? &nbsp; У вас есть предложения по улучшению сервиса?<br>
 				Поделитесь своим впечатлением.</p>
-				<form>
-					<div class="element-button centered">
-						<div class="button-wrapper">
-							<button class="-pink">
-								<span class="title">Добавить отзыв</span>
-								<span class="clr"></span>
-							</button>
-						</div>
-						<div class="clr"></div>
-					</div>
-				</form>
+                <div class="element-button centered">
+                    <div class="button-wrapper">
+                        <button class="-pink">
+                            <span class="title">Добавить отзыв</span>
+                            <span class="clr"></span>
+                        </button>
+                    </div>
+                    <div class="clr"></div>
+                </div>
 			</div>
 		</div>
 		<!-- Содержимое секции - Конец -->
