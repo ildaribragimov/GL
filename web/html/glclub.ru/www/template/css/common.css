@@ -334,14 +334,31 @@ button.rounded .title {
 .separator .icon {
 	float:left;
 }
+.sectionSeparator hr,
+.separator hr {
+    border:0;
+}
 .separator hr {
 	margin:1.1666em 0 1.2777em;
 	width:3.8888em;
 	height:1px;
-	border:0;
 }
 .separator .icon {
 	margin: 10px 13px 11px 13px;
+}
+.sectionSeparator {
+    position:absolute;
+    width:100%;
+    margin-top:-1.6666em;
+}
+.sectionSeparator,
+.sectionSeparator hr {
+    height:2px;
+}
+.sectionSeparator hr {
+    width:80%;
+    margin:0 auto;
+    background-color:#6FA491;
 }
 /* ================ */
 
@@ -423,6 +440,46 @@ button:hover .icon.-envelope {
 }
 /* ================ */
 
+
+
+/**
+ * Sections Color Schemes
+ */
+section.-withBg,
+section.-grey,
+section.-green {
+    color:#f8f8f9;
+}
+section.-withBg,
+section.-grey {
+    background-color:#625c5a;
+}
+section.-withBg {
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;
+}
+section.-beige {
+    background-color:#daccc0;
+    color:#625c5a;
+}
+section.-green {
+    background-color:#6fa491;
+}
+
+section.-beige .separator hr,
+section.-grey .separator hr {
+    background-color:#6fa491;
+}
+section.-withBg .separator hr,
+section.-grey .separator hr {
+	background-color:#e9bdac;
+}
+section.-green hr,
+section.-green .separator hr {
+    background-color:#daccc0;
+}
+/* ================ */
 
 
 /**
@@ -607,22 +664,6 @@ button:hover .icon.-envelope {
 	background-position:-17px -16px;
 }
 
-
-/* Sections "About" & "Send Review" & "Reserve Room" & "Contacts" */
-#sendReview,
-#about,
-#reserveRoom,
-#contacts {
-	background-color: #625c5a;
-	color: #f8f8f9;
-}
-#sendReview header .separator hr,
-#about header .separator hr,
-#reserveRoom .separator hr,
-#contacts .separator hr {
-	background-color:#e9bdac;
-}
-
 /* Section "About" */
 #about .section-content {
 	text-align:left;
@@ -637,22 +678,15 @@ button.-pink:hover {
 	background:#e9bdac;
 	color:#5d463a;
 }
-#contacts .subsection-sendMail button:hover {
+button.-green {
 	border-color:#3b876f;
+	color:#3b876f;
+}
+button.-green:hover {
 	background:#3b876f;
 	color:#f8f8f9;
 }
 
-/* Sections "Prices" & "Reviews" */
-#prices,
-#reviews {
-	background-color:#daccc0;
-	color:#625c5a;
-}
-#prices header .separator hr,
-#reviews header .separator hr {
-	background-color:#6fa491;
-}
 
 /* Sections "Prices" */
 #prices .priceLabel {
@@ -795,11 +829,6 @@ button.-pink:hover {
 }
 
 /* Sections "reserveRoom" */
-#reserveRoom {
-	background-repeat:no-repeat;
-	background-size:cover;
-	background-position:center;    
-}
 #reserveRoom .section-content .separator {
     margin-top: 0;
 }
@@ -854,11 +883,6 @@ button.-pink:hover {
 }
 
 /* Sections "Contacts" */
-#contacts {
-	background-repeat:no-repeat;
-	background-size:cover;
-	background-position:center;
-}
 #contacts .section-content .separator {
     margin-top: 0;
 }
@@ -906,15 +930,21 @@ button.-pink:hover {
 	padding-top:0;
 	padding-bottom:0;
 }
+/*
 #contacts .subsection-sendMail button {
 	border-color:#3b876f;
+}
+#contacts .subsection-sendMail button:hover {
+	background:#3b876f;
+	color:#f8f8f9;
 }
 #contacts .subsection-sendMail .element-button button[disabled],
 #contacts .subsection-sendMail .element-button button[disabled]:hover {
 	border-color:#e8e5e2;
 	background:none;
 	box-shadow:0 0 15px rgba(0, 0, 0, 0.05) inset;
-}
+}*/
+
 /* ================ */
 
 
@@ -1147,7 +1177,7 @@ button.-pink:hover {
 	.content-wrapper {
 		width:960px;
 	}
-    #reserveRoom {
+    #about {
 		background-image:url(../../media/contacts/contacts_bg.jpg);
 	}
 }
@@ -1157,7 +1187,7 @@ button.-pink:hover {
 	.section-wrapper {
 		width:auto;
 	}
-    #reserveRoom {
+    #about {
 		background-image:url(../../media/contacts/contacts_bg_tablet.jpg);
 	}
 	
@@ -1225,7 +1255,7 @@ button.-pink:hover {
 	.switchers ul {
 		padding:0;
 	}
-    #reserveRoom {
+    #about {
 		background-image:url(../../media/contacts/contacts_bg_mobile.jpg);
 	}
 	#reviews .arrows {
