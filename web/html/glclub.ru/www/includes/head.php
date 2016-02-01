@@ -7,21 +7,19 @@
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<?php
-    $gitPath = "http://raw.githubusercontent.com/ildaribragimov/Design_Patterns/master/www/libraries/JavaScript/";
-?>
+
 <!-- Подключение полифиллов работы с массивами (объяктами) -->
-<script defer src="<?php echo $gitPath."prototypesExt.js";?>" type="text/javascript"></script>
+<script defer src="template/js/prototypesExt.js" type="text/javascript"></script>
 <!-- Подключение готового решения "Блокировка прокрутки страницы" -->
-<script defer src="<?php echo $gitPath."Actions/disableScroll/standart/disableScroll.min.js";?>" type="text/javascript"></script>
+<script defer src="template/js/disableScroll.min.js" type="text/javascript"></script>
 <!-- Подключние готового решения "Плавная прокрутка до якоря" -->
- <script defer src="<?php echo $gitPath."Actions/scrollingToAnchor/standart/scrollingToAnchor.js";?>" type="text/javascript"></script>
+ <script defer src="template/js/scrollingToAnchor.min.js" type="text/javascript"></script>
 <!-- Подключение поддержки метода "classList" для браузера IE 9 -->
-<script defer src="<?php echo $gitPath."Browsers_Supports/IE9-/classList/object.classList.min.js";?>" type="text/javascript"></script>
+<script defer src="template/js/object.classList.min.js" type="text/javascript"></script>
 <!-- Подключение полифилла "getIndex" для получения обеспечения работы полифилла поиска родителя -->
-<script defer src="<?php echo $gitPath."Prop%26Meth_Extensions/object.getIndex/Object.getIndex.polyfill.min.js";?>" type="text/javascript"></script>
+<script defer src="template/js/Object.getIndex.polyfill.min.js" type="text/javascript"></script>
 <!-- Подключание полифилла "Поиск родителя по селектору" -->
-<script defer src="<?php echo $gitPath."Prop%26Meth_Extensions/object.parent/Object.parent.polyfill.min.js";?>" type="text/javascript"></script>
+<script defer src="template/js/Object.parent.polyfill.min.js" type="text/javascript"></script>
 
 <link href="template/css/normalize.css" rel="stylesheet" type="text/css">
 <link href="template/css/fonts.css" rel="stylesheet" type="text/css">
