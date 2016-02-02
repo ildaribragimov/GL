@@ -989,9 +989,14 @@ button.-green:hover {
 }
 #topPannel ul,
 #topPannel ul li,
+#mainMenu .mainMenu-wrapper,
 #mainMenu ul,
 #mainMenu ul li {
 	float:left;
+}
+#mainMenu .mainMenu-wrapper,
+#mainMenu ul {
+    position:relative;
 }
 #topPannel a,
 #topPannel span,
@@ -1118,12 +1123,15 @@ button.-green:hover {
 /* Main menu */
 #mainMenu {
 	top:0;
-	left:50%;
+    width:100%;
 	position:fixed;
 	z-index:101;
 }
 #mainMenu .mainMenu-wrapper {
-	margin-left:-50%;
+    left:50%;
+}
+.mainMenu-wrapper ul {
+    left:-50%;
 }
 #mainMenu .menuItem {
 	padding-top:0;
@@ -1201,12 +1209,14 @@ button.-green:hover {
 		display:block;
 	}
 	#mainMenu {
-		/*display:none;*/
 		top:60px;
 		left:0;
-		width:240px;
 		z-index:2;
 	}
+    #mainMenu,
+    #mainMenu ul li.menuItem {
+        width:240px;
+    }
 	#mainMenu .mainMenu-wrapper {
 		margin-left:0;
 	}
