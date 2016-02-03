@@ -20,6 +20,8 @@
 <script defer src="template/js/Object.getIndex.polyfill.min.js" type="text/javascript"></script>
 <!-- Подключание полифилла "Поиск родителя по селектору" -->
 <script defer src="template/js/Object.parent.polyfill.min.js" type="text/javascript"></script>
+<!-- Подключание плагина "Плагина создания "Всплывающего окна" -->
+<script defer src="template/js/plugin.popupWindow.js" type="text/javascript"></script>
 
 <link href="template/css/normalize.css" rel="stylesheet" type="text/css">
 <link href="template/css/fonts.css" rel="stylesheet" type="text/css">

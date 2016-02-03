@@ -4,7 +4,7 @@
  */
 ?>
 
-<div id="popupWindow-map" class="popupWindow">
+<div class="popupWindow">
 	<div class="popupWindow-wrapper">
 		<div class="popupWindow-content">
 			<div class="windowNavPan">
