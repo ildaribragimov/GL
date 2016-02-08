@@ -30,20 +30,18 @@ function popUp(name, options) {
      ** parentElem (тип: object) - Ссылка на родильский элемент текущего создаваемого элемента
      */
     var htmlTree = ["popupWindow", "wrapper", "content"],
-        parentElem = null,
-        popupWindow = null;
-
-    //
+        parentElem = null;
+    // Построение HTML-конструкции всплывающего окна в цикле
     for (var t = 0; t < htmlTree.length; t++) {
         // Создание нового тега "div"
         var elem = document.createElement('div');
         // Если текущий элемент - первый
         if ( t == 0 ) {
-            // Добавление к элементу атрибута "id"
-            elem.setAttribute("id", name);   
+            // Создание переменной и присвоение ей ссылки на корневой HTML-элемент конструкции всплывающего окна
+            var popup = elem;
         }
         // Добавление к элементу атрибута "class"
-        elem.setAttribute("class", "popupWindow");
+        elem.setAttribute("class", htmlTree[t]);
         // Если создаваемый эелемент имеет родителя
         if ( parentElem ) {
             // Вставляем текущий элемент в конец родительского
@@ -52,11 +50,13 @@ function popUp(name, options) {
         // Назначаем текущий элемент в качестве родительс кого для следующего элемента
         parentElem = elem;
     }
-    
-    console.log('Создан объект '+name);
+    // Добавление к корневому элементу атрибута "id" со значением "name"
+    popup.setAttribute("id", name);
+    // Вставляем HTML-конструкцию всплывающего окна в конец элемента "body"
+    document.querySelector("body").appendChild(popup);
 }
 
 // Создание экземпляра объекта "Всплывающее окно" с ID 
 var googleMap = new popUp("googleMap", {navigation:"minimal"});
 
-alert(googleMap.innerHTML );
+console.log(document.querySelector("#googleMap").innerHTML );
