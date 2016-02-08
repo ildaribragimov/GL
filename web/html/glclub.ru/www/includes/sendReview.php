@@ -4,7 +4,8 @@
  */
 ?>
 
-<section id="sendReview">
+<section id="sendReview" class="-beige">
+    <div class="sectionSeparator"><hr></div>
 	<a name="sendReview"></a>
 	<div class="section-wrapper">
 		<!-- Шапка секции - Начало -->
@@ -33,17 +34,15 @@
 			<div class="content-wrapper">
 				<p>Вы уже отдыхали у нас? &nbsp; У вас есть предложения по улучшению сервиса?<br>
 				Поделитесь своим впечатлением.</p>
-				<form>
-					<div class="element-button centered">
-						<div class="button-wrapper">
-							<button>
-								<span class="title">Добавить отзыв</span>
-								<span class="clr"></span>
-							</button>
-						</div>
-						<div class="clr"></div>
-					</div>
-				</form>
+                <div class="element-button centered">
+                    <div class="button-wrapper">
+                        <button class="-green">
+                            <span class="title">Добавить отзыв</span>
+                            <span class="clr"></span>
+                        </button>
+                    </div>
+                    <div class="clr"></div>
+                </div>
 			</div>
 		</div>
 		<!-- Содержимое секции - Конец -->

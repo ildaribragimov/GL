@@ -334,31 +334,14 @@ button.rounded .title {
 .separator .icon {
 	float:left;
 }
-.sectionSeparator hr,
-.separator hr {
-    border:0;
-}
 .separator hr {
 	margin:1.1666em 0 1.2777em;
 	width:3.8888em;
 	height:1px;
+	border:0;
 }
 .separator .icon {
 	margin: 10px 13px 11px 13px;
-}
-.sectionSeparator {
-    position:absolute;
-    width:100%;
-    margin-top:-1.6666em;
-}
-.sectionSeparator,
-.sectionSeparator hr {
-    height:2px;
-}
-.sectionSeparator hr {
-    width:80%;
-    margin:0 auto;
-    background-color:#6FA491;
 }
 /* ================ */
 
@@ -466,23 +449,7 @@ section.-beige {
 section.-green {
     background-color:#6fa491;
 }
-section.-cacao {
-    background-color:#bea692;
-}
-section.-beige .separator hr,
-section.-grey .separator hr {
-    background-color:#6fa491;
-}
-section.-withBg .separator hr,
-section.-grey .separator hr {
-	background-color:#e9bdac;
-}
-section.-green hr,
-section.-green .separator hr {
-    background-color:#daccc0;
-}
 /* ================ */
-
 
 /**
  * Popup Windows styles
@@ -501,21 +468,21 @@ section.-green .separator hr {
 .popupWindow.open {
 	display:block;
 }
-.popupWindow > .wrapper {
+.popupWindow-wrapper {
 	padding:2.2222em 1.6666em;
 	position:relative;
 }
-.popupWindow > .content {
+.popupWindow-content {
 	border-radius:5px;
 	background-color:#f8f8f9;
 	box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.25);
 	position:relative;
 }
-.closeWindow > .icon {
+.closeWindow .icon {
 	background-position: -320px -256px;
 }
-.closeWindow:hover > .icon,
-.closeWindow:active > .icon {
+.closeWindow:hover .icon,
+.closeWindow:active .icon {
 	background-position: -368px -256px;
 }
 
@@ -666,6 +633,22 @@ section.-green .separator hr {
 	background-position:-17px -16px;
 }
 
+
+/* Sections "About" & "Send Review" & "Reserve Room" & "Contacts" */
+#sendReview,
+#about,
+#reserveRoom,
+#contacts {
+	background-color: #625c5a;
+	color: #f8f8f9;
+}
+#sendReview header .separator hr,
+#about header .separator hr,
+#reserveRoom .separator hr,
+#contacts .separator hr {
+	background-color:#e9bdac;
+}
+
 /* Section "About" */
 #about .section-content {
 	text-align:left;
@@ -689,6 +672,19 @@ button.-green:hover {
 	color:#f8f8f9;
 }
 
+
+/* Sections "Prices" & "Reviews" */
+#prices,
+#reviews,
+#contacts {
+	background-color:#daccc0;
+	color:#625c5a;
+}
+#prices header .separator hr,
+#reviews header .separator hr,
+#contacts header .separator hr {
+	background-color:#6fa491;
+}
 
 /* Sections "Prices" */
 #prices .priceLabel {
@@ -831,6 +827,11 @@ button.-green:hover {
 }
 
 /* Sections "reserveRoom" */
+#reserveRoom {
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;    
+}
 #reserveRoom .section-content .separator {
     margin-top: 0;
 }
@@ -885,6 +886,11 @@ button.-green:hover {
 }
 
 /* Sections "Contacts" */
+#contacts {
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+}
 #contacts .section-content .separator {
     margin-top: 0;
 }
@@ -932,7 +938,6 @@ button.-green:hover {
 	padding-top:0;
 	padding-bottom:0;
 }
-/*
 #contacts .subsection-sendMail button {
 	border-color:#3b876f;
 }
@@ -945,8 +950,7 @@ button.-green:hover {
 	border-color:#e8e5e2;
 	background:none;
 	box-shadow:0 0 15px rgba(0, 0, 0, 0.05) inset;
-}*/
-
+}
 /* ================ */
 
 
@@ -991,14 +995,9 @@ button.-green:hover {
 }
 #topPannel ul,
 #topPannel ul li,
-#mainMenu .mainMenu-wrapper,
 #mainMenu ul,
 #mainMenu ul li {
 	float:left;
-}
-#mainMenu .mainMenu-wrapper,
-#mainMenu ul {
-    position:relative;
 }
 #topPannel a,
 #topPannel span,
@@ -1125,15 +1124,12 @@ button.-green:hover {
 /* Main menu */
 #mainMenu {
 	top:0;
-    width:100%;
+	left:50%;
 	position:fixed;
 	z-index:101;
 }
 #mainMenu .mainMenu-wrapper {
-    left:50%;
-}
-.mainMenu-wrapper ul {
-    left:-50%;
+	margin-left:-50%;
 }
 #mainMenu .menuItem {
 	padding-top:0;
@@ -1187,7 +1183,7 @@ button.-green:hover {
 	.content-wrapper {
 		width:960px;
 	}
-    #about {
+    #reserveRoom {
 		background-image:url(../../media/contacts/contacts_bg.jpg);
 	}
 }
@@ -1197,7 +1193,7 @@ button.-green:hover {
 	.section-wrapper {
 		width:auto;
 	}
-    #about {
+    #reserveRoom {
 		background-image:url(../../media/contacts/contacts_bg_tablet.jpg);
 	}
 	
@@ -1211,14 +1207,12 @@ button.-green:hover {
 		display:block;
 	}
 	#mainMenu {
+		/*display:none;*/
 		top:60px;
 		left:0;
+		width:240px;
 		z-index:2;
 	}
-    #mainMenu,
-    #mainMenu ul li.menuItem {
-        width:240px;
-    }
 	#mainMenu .mainMenu-wrapper {
 		margin-left:0;
 	}
@@ -1267,7 +1261,7 @@ button.-green:hover {
 	.switchers ul {
 		padding:0;
 	}
-    #about {
+    #reserveRoom {
 		background-image:url(../../media/contacts/contacts_bg_mobile.jpg);
 	}
 	#reviews .arrows {
