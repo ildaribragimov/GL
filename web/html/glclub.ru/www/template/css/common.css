@@ -466,7 +466,9 @@ section.-beige {
 section.-green {
     background-color:#6fa491;
 }
-
+section.-cacao {
+    background-color:#bea692;
+}
 section.-beige .separator hr,
 section.-grey .separator hr {
     background-color:#6fa491;

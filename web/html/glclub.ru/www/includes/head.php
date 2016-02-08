@@ -10,6 +10,10 @@
 
 <!-- Подключение полифиллов работы с массивами (объяктами) -->
 <script defer src="template/js/prototypesExt.js" type="text/javascript"></script>
+<!-- Подключение полифилла оптимальной анимации -->
+<script defer src="template/js/requestAnimationFrame.polyfill.min.js" type="text/javascript"></script>
+<!-- Подключение полифилла анимации, расширяющего существющие методы объектов -->
+<script defer src="template/js/animate.polyfill.min.js" type="text/javascript"></script>
 <!-- Подключение готового решения "Блокировка прокрутки страницы" -->
 <script defer src="template/js/disableScroll.min.js" type="text/javascript"></script>
 <!-- Подключние готового решения "Плавная прокрутка до якоря" -->
@@ -21,7 +25,7 @@
 <!-- Подключание полифилла "Поиск родителя по селектору" -->
 <script defer src="template/js/Object.parent.polyfill.min.js" type="text/javascript"></script>
 <!-- Подключание плагина "Плагина создания "Всплывающего окна" -->
-<script defer src="template/js/plugin.popupWindow.js" type="text/javascript"></script>
+<script defer src="template/js/plugin.popUp.js" type="text/javascript"></script>
 
 <link href="template/css/normalize.css" rel="stylesheet" type="text/css">
 <link href="template/css/fonts.css" rel="stylesheet" type="text/css">
