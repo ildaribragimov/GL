@@ -950,6 +950,19 @@ button.-green:hover {
 /* ================ */
 
 
+/* Section "Map" */
+#map {
+    padding:0;
+}
+#map > .section-wrapper {
+    margin:0;
+}
+#map .map-content {
+    height:50vh;
+}
+/* ================ */
+
+
 /**
  * Main navigation pannel "topPannel"
  */
