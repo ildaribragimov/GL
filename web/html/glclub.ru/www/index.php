@@ -29,8 +29,12 @@
 				include "includes/reviews.php";
 				// Вставка секции "Добавить отзыв"
 				include "includes/sendReview.php";
-				// Вставка секции "Контакты"
+				// Вставка секции "Забронировать номер"
+				include "includes/reserveRoom.php";
+                // Вставка секции "Отправить пиьмо"
 				include "includes/contacts.php";
+                // Вставка секции "Карта проезда"
+				include "includes/map.php";
 			?>
 			<!-- Подвал страницы - Начало -->
 			<!--
@@ -45,8 +49,6 @@
 			include "includes/topPannel.php";
 			// Вставка главного меню
 			include "includes/mainMenu.php";
-			// Вставка всплывающего окна "Google-карта"
-			include "includes/popupWindow-map.php";
 		?>
 		<!--
 		<script src="template/js/modulargrid.js" type="text/javascript"></script>
