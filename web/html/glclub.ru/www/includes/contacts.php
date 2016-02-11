@@ -22,7 +22,7 @@
 			</div>
 		</header>
 		<!-- Шапка секции - Конец -->
-		
+
 		<!-- Содержимое секции - Начало -->
 		<div class="section-content">
 			<div class="content-wrapper">
@@ -38,9 +38,6 @@
                         </div>
                         <div class="clr"></div>
                     </div>
-                </div>
-                <div class="subsection-map">
-                     
                 </div>
             </div>
 		</div>
