@@ -8,12 +8,16 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<!-- Подключение полифиллов работы с массивами (объяктами) -->
-<script defer src="template/js/prototypesExt.js" type="text/javascript"></script>
+<!-- Подключение функции "in_array" для поиска элемента в массиве (коллекции элементов) -->
+<script defer src="template/js/Function.in_array.min.js" type="text/javascript"></script>
+<!-- Подключение функции "array_diff" для вычисления расхождение массивов (коллекций элементов) -->
+<script defer src="template/js/Function.array_diff.min.js" type="text/javascript"></script>
+
 <!-- Подключение полифилла оптимальной анимации -->
 <script defer src="template/js/requestAnimationFrame.polyfill.min.js" type="text/javascript"></script>
-<!-- Подключение полифилла анимации, расширяющего существющие методы объектов -->
-<script defer src="template/js/animate.polyfill.min.js" type="text/javascript"></script>
+<!-- Подключение функции "animate" для выолнения анимации -->
+<script defer src="template/js/Function.animate.js" type="text/javascript"></script>
+
 <!-- Подключение готового решения "Блокировка прокрутки страницы" -->
 <script defer src="template/js/disableScroll.min.js" type="text/javascript"></script>
 <!-- Подключние готового решения "Плавная прокрутка до якоря" -->
@@ -21,9 +25,9 @@
 <!-- Подключение поддержки метода "classList" для браузера IE 9 -->
 <script defer src="template/js/object.classList.min.js" type="text/javascript"></script>
 <!-- Подключение полифилла "getIndex" для получения обеспечения работы полифилла поиска родителя -->
-<script defer src="template/js/Object.getIndex.polyfill.min.js" type="text/javascript"></script>
+<script defer src="template/js/Function.getIndex.min.js" type="text/javascript"></script>
 <!-- Подключание полифилла "Поиск родителя по селектору" -->
-<script defer src="template/js/Object.parent.polyfill.min.js" type="text/javascript"></script>
+<script defer src="template/js/Function.parent.min.js" type="text/javascript"></script>
 <!-- Подключание плагина "Плагина создания "Всплывающего окна" -->
 <script defer src="template/js/plugin.popUp.js" type="text/javascript"></script>
 
