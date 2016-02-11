@@ -33,6 +33,8 @@
 				include "includes/reserveRoom.php";
                 // Вставка секции "Отправить пиьмо"
 				include "includes/contacts.php";
+                // Вставка секции "Карта проезда"
+				include "includes/map.php";
 			?>
 			<!-- Подвал страницы - Начало -->
 			<!--
