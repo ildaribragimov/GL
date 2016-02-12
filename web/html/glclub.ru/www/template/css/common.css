@@ -117,6 +117,14 @@ h2 {
 	font-size:2.6666em;
 	line-height:1.25em;
 }
+h3 {
+	margin-top:1.25em;
+	margin-bottom:1.25em;
+	padding-left:1.1111em;
+	padding-right:1.1111em;
+	font-size:2em;
+	line-height:1.25em;    
+}
 h4 {
 	margin-top:1.5em;
 	margin-bottom:1em;
@@ -482,53 +490,6 @@ section.-green .separator hr {
     background-color:#daccc0;
 }
 /* ================ */
-
-
-/**
- * Popup Windows styles
- */
-/* general styles */
-.popupWindow {
-	top:0;
-	left:0;
-	width:100vw;
-	height:100vh;
-	position:fixed;
-	background-color:rgba(0, 0, 0, 0.5);
-	z-index:200;
-	display:none;
-}
-.popupWindow.open {
-	display:block;
-}
-.popupWindow > .wrapper {
-	padding:2.2222em 1.6666em;
-	position:relative;
-}
-.popupWindow > .content {
-	border-radius:5px;
-	background-color:#f8f8f9;
-	box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.25);
-	position:relative;
-}
-.closeWindow > .icon {
-	background-position: -320px -256px;
-}
-.closeWindow:hover > .icon,
-.closeWindow:active > .icon {
-	background-position: -368px -256px;
-}
-
-/* "Show Map" window styles */
-#popupWindow-map .windowNavPan {
-	padding:0.7777em;
-	position:absolute;
-	top:0;
-	right:0;
-	z-index:250;
-}
-/* ================ */
-
 
 
 /**
@@ -1169,6 +1130,55 @@ button.-green:hover {
 #mainMenu a:hover {
 	text-decoration:underline;
 }
+/* ================ */
+
+
+
+/**
+ * Popup styles
+ */
+/* Theme Styles begin */
+.popup {
+	background-color:rgba(0, 0, 0, 0.5); /* Back layer background */
+}
+.popup .centered > .wrapper > .container {
+    margin:1.6666em 2.2222em;
+	border-radius:5px;
+	background-color:#f8f8f9;
+	box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.25);
+}
+/* Popup Header */
+.popup .header {
+    color:#b1a8a6;
+}
+/* --- */
+/* Popup Controls Pannel */
+.popup .controls {
+    padding:0.8333em 0;    
+}
+.popup .controls > a {
+    margin:0 0.8333em;
+}
+.popup .controls .icon {
+    background-image:url(../img/sprite_min.svg);
+	background-repeat:no-repeat;
+    width:32px;
+    height:32px;
+}
+/* Popup Close Button */
+.popup .controls > .close > .icon {
+	background-position: -320px -256px;
+}
+.popup .controls > .close:hover > .icon,
+.popup .controls > .close:active > .icon {
+	background-position: -368px -256px;
+}
+/* --- */
+/* Popup Content */
+.popup .content {
+    clear:both;
+}
+/* --- */
 /* ================ */
 
 
