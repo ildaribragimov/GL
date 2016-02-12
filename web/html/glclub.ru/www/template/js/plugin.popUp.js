@@ -54,7 +54,7 @@ function popUp(name, options) {
             self.close();
         });
         // Вставка текстового содержимого в элемент кнопки "Закрыть"
-        close.innerHTML = '<span class="icon -m">X</span>';        
+        close.innerHTML = '<span class="icon -m"></span>';        
         // Вставка в корневой элемент кнопки "Закрыть окно"
         controls.appendChild(close);
         // Возвращение HTML-конструкции созданной панели
