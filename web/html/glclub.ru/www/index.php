@@ -50,6 +50,7 @@
 			// Вставка главного меню
 			include "includes/mainMenu.php";
 		?>
+        <script defer src="template/js/post-load.js" type="text/javascript"></script>
 		<!--
 		<script src="template/js/modulargrid.js" type="text/javascript"></script>
 		-->
