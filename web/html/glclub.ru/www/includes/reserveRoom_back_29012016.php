@@ -34,7 +34,7 @@
                     <form>
                         <div class="element-button centered">
                             <div class="button-wrapper">
-                                <button class="-pink">
+                                <button class="-pink" value="reserveRoom">
                                     <span class="title">Забронировать номер</span>
                                     <span class="clr"></span>
                                 </button>

@@ -36,7 +36,7 @@
 				Поделитесь своим впечатлением.</p>
                 <div class="element-button centered">
                     <div class="button-wrapper">
-                        <button class="-green">
+                        <button class="-green" value="sendReview">
                             <span class="title">Добавить отзыв</span>
                             <span class="clr"></span>
                         </button>

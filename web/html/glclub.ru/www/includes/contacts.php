@@ -31,7 +31,7 @@
                     Свяжитесь с нами! &nbsp; Мы открыты и для новых друзей!</p>
                     <div class="element-button centered">
                         <div class="button-wrapper">
-                            <button class="-pink">
+                            <button class="-pink" value="sendMail">
                                 <span class="title">Написать письмо</span>
                                 <span class="clr"></span>
                             </button>
