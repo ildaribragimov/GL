@@ -1,0 +1,53 @@
+.popup,
+.popup > .wrapper {
+	width:100vw;
+	height:100vh;    
+}
+.popup > .wrapper,
+.popup > .wrapper > .centered,
+.popup .centered > .wrapper,
+.popup .centered > .wrapper > .container {
+    position:relative;
+}
+.popup .centered > .wrapper,
+.popup .centered > .wrapper > .container {
+    float:left;
+}
+.popup {
+	top:0;
+	left:0;
+	position:fixed;
+	z-index:200;
+    display:none; /* The popup is closed by default */
+}
+.popup.opened { /* If popup is opened */
+	display:block;
+}
+.popup > .wrapper { /* The Floating Popup Vertical Centering */
+    display:table-cell;
+    vertical-align:middle;
+}
+/* The Floating Popup Horizontal Centering */
+.popup > .wrapper > .centered {
+    width:100%;
+}
+.popup .centered > .wrapper {
+    left:50%;
+}
+.popup .centered > .wrapper > .container {
+    left:-50%;
+}
+/* --- */
+/* The Floating Popup Controls Pannel */
+.popup .controls {
+    position:absolute;
+    top:0;
+    right:0;
+}
+.popup .controls > a {
+    float:right;
+}
+.popup .controls .icon {
+    display:block;
+}
+/* --- */
