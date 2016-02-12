@@ -33,6 +33,7 @@
 
 <link href="template/css/normalize.css" rel="stylesheet" type="text/css">
 <link href="template/css/fonts.css" rel="stylesheet" type="text/css">
+<link href="template/css/plugin.popUp.css" rel="stylesheet" type="text/css">
 <link href="template/css/common.css" rel="stylesheet" type="text/css">
 
 <script defer src="template/js/common.js" type="text/javascript"></script>
