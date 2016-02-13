@@ -1275,6 +1275,11 @@ button.-green:hover {
 		padding-left:0.6666em;
 		padding-right:0.6666em;
 	}
+    h3 {
+        font-size: 1.875em;
+        padding-left:0.8em;
+		padding-right:0.8em;
+    }
 	h4 {
 		padding-left:0.9em;
 		padding-right:0.9em;
@@ -1302,6 +1307,9 @@ button.-green:hover {
 	#topPannel .logo.-small {
 		background-size: 39.1072em;
 	}
+    .popup .centered > .wrapper > .container {
+        margin:0.3125em;
+    }
 }
 
 /* For Smartphone (Landscape orientation) users (If window width > 640 px and < 768 px) */
