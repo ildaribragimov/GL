@@ -39,6 +39,17 @@
                         <div class="clr"></div>
                     </div>
                 </div>
+                <div class="vCard">
+					<div>
+						<span class="category"><span class="value-title" title="Сауна"></span></span><span class="category"><span class="value-title" title="Баня"></span></span><span class="fn org"><span class="value-title" title="GL"></span></span>
+					</div>
+					<div class="subsection-address adr">
+						<p><span class="country-name"><span class="value-title" title="Россия"></span></span> <span class="region"><span class="value-title" title="Республика Татарстан"></span></span><span class="locality"><span class="value-title" title="Набережные Челны"></span></span><span class="street-address"><span class="value-title" title="пр. Чулман, 37/04"></span></span><span class="extended-address"><span class="value-title" title="цокольный этаж"></span></span></p>
+					</div>
+					<div class="subsection-phone tel">
+						<span class="value-title" title="+7 (963) 122 55 08"></span>
+					</div>
+				</div>
             </div>
 		</div>
 		<!-- Содержимое секции - Конец -->
