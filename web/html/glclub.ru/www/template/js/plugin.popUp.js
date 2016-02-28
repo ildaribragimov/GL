@@ -2,7 +2,7 @@
 "use strict";
 
 /**
- * Плагин создания "Всплывающего окна"
+ * Объект "Всплывающее окно"
  *
  * Свойства объекта:
  * * name (тип: string) - Имя всплывающего окна. Будет использовано в значении атрибута ID конструкции
@@ -13,17 +13,22 @@
  * * * navigation (тип: string) - Тип навигационной панели. Может принимать значения: "standart", "minimal".
  *
  * Методы объекта:
- * * show - Метод разворачивает панель
- * * hide - Метод сворачивает панель
+ * * createPopup (тип: private) - Создаёт HTML-конструкцию окна
+ * * createHeader (тип: private) - Создает HTML-конструкцию заголовка окна
+ * * createContlols (тип: private) - Создает HTML-конструкцию панели основной навигации окна
+ * * createСontent (тип: private) - Созадет HTML-конструкцию содержательной части окна и вставляет в нее содержимое
+ * * open (тип: public) - Открывает всплывающее окно
+ * * close (тип: public) - Закрывает всплывающее окно
+ * * setСontent (тип: public) - Вставляет с замещением в содержательную часть окна содержимое
  */
 function popUp(name, options) {
     // Сохранение ссылки на объект в переменной
     var self = this;
-    // Назначение значений по умолчанию параметрам параметрам окна, если они не были переданы в вызове
+    // Назначение значений по умолчанию параметрам объекта окна, если они не были переданы в вызове
     options = options || new Object;
     options.type = options.type || "alert";
     options.header = options.header || null;
-    options.data = options.data || "Данные не были переданы!";
+    options.content = options.content || "<p>Содержимое окна не было передано!</p>";
     options.navigation = options.navigation || "standart";
 
 
@@ -86,19 +91,19 @@ function popUp(name, options) {
 
 
     /**
-     * Метод "setData" созадет HTML-конструкцию содержательной части окна и вставляет в нее данные, полученные при вызове плагина
+     * Метод "createСontent" созадет HTML-конструкцию содержательной части окна и вставляет в нее содержимое, полученные при вызове плагина
      *
      * Возвращаемое значение:
      * * content (тип: object) - HTML-конструкция содержательной части окна
      */
-    function setData(){
-        // Создание корневого элемента содержимого окна
+    function createСontent(){
+        // Создание корневого элемента содержательной части окна
         var content = document.createElement('div');
         // Добавление к элементу атрибута "class"
         content.setAttribute("class", "content");
-        // Вставка в корневой элемент данных, полученных при вызове плагина
-        content.innerHTML = options.data;
-        // Возвращение HTML-конструкции содержимого окна
+        // Вызов метода вставки контента в содержательную часть
+        content.innerHTML = options.content;
+        // Возвращение HTML-конструкции содержательной части окна
         return content;
     }
 
@@ -141,7 +146,7 @@ function popUp(name, options) {
                 // Вызов метода генерации заголовочной панели окна и втавка его в конец родительского
                 parentElem.appendChild(createHeader());
                 // Вызов метода генерации HTML-конструкции содержимого окна и вставки полученных данных
-                parentElem.appendChild(setData());
+                parentElem.appendChild(createСontent());
             }
         }
         // Добавление к корневому элементу атрибута "id" со значением "name"
@@ -161,6 +166,7 @@ function popUp(name, options) {
      * Метод "open" открывает всплывающее окно
      */
     this.open = function() {
+        // Добавление CSS-класса "opened" корневому элементу окна
         popup.classList.add("opened");
     };
 
@@ -169,7 +175,22 @@ function popUp(name, options) {
      * Метод "close" закрывает всплывающее окно
      */
     this.close = function() {
+        // Удаление CSS-класса "opened" у корневого элемента окна
         popup.classList.remove("opened");
     };
+
+
+    /**
+     * Метод "setСontent" вставляет с замещением в содержательную часть окна содержимое, переданное в параметре
+     *
+     * Возвращаемое значение:
+     * * content (тип: object/string) - объект(строка), который необходимо вставить в содержательную часть окна
+     */
+    this.setСontent = function(content){
+        // Вставка в корневой элемент данных, полученных при вызове плагина
+        popup.querySelector(".content").innerHTML = content;
+    }
     
+    // Возвращаем объект всплывающего окна
+    return popup;
 }
