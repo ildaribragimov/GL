@@ -21,7 +21,7 @@
 <!-- Подключение готового решения "Блокировка прокрутки страницы" -->
 <script defer src="template/js/disableScroll.min.js" type="text/javascript"></script>
 <!-- Подключние готового решения "Плавная прокрутка до якоря" -->
- <script defer src="template/js/scrollingToAnchor.min.js" type="text/javascript"></script>
+<script defer src="template/js/scrollingToAnchor.min.js" type="text/javascript"></script>
 <!-- Подключение поддержки метода "classList" для браузера IE 9 -->
 <script defer src="template/js/object.classList.min.js" type="text/javascript"></script>
 <!-- Подключение полифилла "getIndex" для получения обеспечения работы полифилла поиска родителя -->
