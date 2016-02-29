@@ -16,10 +16,24 @@
     width:100%;
 	position:fixed;
 	z-index:200;
-    display:none; /* The popup is closed by default */
+    /*display:none; /* The popup is closed by default */
+    opacity:0;
+    visibility:hidden;
+	-webkit-transition:opacity 0.2s, visibility 0s linear 0.2s;
+    -moz-transition:opacity 0.2s, visibility 0s linear 0.2s;
+    -ms-transition:opacity 0.2s, visibility 0s linear 0.2s;
+    -o-transition:opacity 0.2s, visibility 0s linear 0.2s;
+    transition:opacity 0.2s, visibility 0s linear 0.2s;
 }
 .popup.opened { /* If popup is opened */
-	display:block;
+	/*display:block;*/
+    opacity: 1;
+    visibility:visible;
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -ms-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
 }
 /* --- */
 
