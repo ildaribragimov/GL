@@ -19,15 +19,43 @@ function animate(element, properties, options, callback){
     options.duration = options.duration || 1000;
     callback = callback || null;
     /**
-     * Объявление перменных
+     * Объявление переменных
      *
      * * self (тип: object) - Ссылка на анимируемый элемент
      * * elementStyle (тип: object) - Объект CSS-свойств анимируемого элемента
      * * elementProperties (тип: Object) - Объект анимируемых CSS-свойств элемента
+     * * timing (тип: string) - временная функция, вычисляющая состояние анимации по текущему времени
      */
     var self = element,
         elementStyle = getComputedStyle(self),
-        elementProperties = new Object;
+        elementProperties = new Object,
+        timing = function(){
+            // Выполнение анимации по преопределенным функциям анимации
+            switch (options.easingFunc){
+                case "linear":
+                    return "timeFraction";
+                case "easeInQuad":
+                    return "Math.pow(timeFraction, 2)";
+                case "easeOutQuad":
+                    return "1 - Math.pow(1 - timeFraction, 2)";
+                case "easeInOutQuad":
+                    return "(timeFraction < 0.5) ? (Math.pow(2 * timeFraction, 2) / 2) : (( 2 - Math.pow(2 * (1 - timeFraction), 2) ) / 2)";
+                case "easeInCubic":
+                    return "Math.pow(timeFraction, 3)";
+                case "easeOutCubic":
+                    return "1 - Math.pow(1 - timeFraction, 3)";
+                case "easeInOutCubic":
+                    return "(timeFraction < 0.5) ? (Math.pow(2 * timeFraction, 3) / 2) : (( 2 - Math.pow(2 * (1 - timeFraction), 3) ) / 2)";
+                case "easeInQuint":
+                    return "Math.pow(timeFraction, 5)";
+                case "easeOutQuint":
+                    return "1 - Math.pow(1 - timeFraction, 5)";
+                case "easeInOutQuint":
+                    return "(timeFraction < 0.5) ? (Math.pow(2 * timeFraction, 5) / 2) : (( 2 - Math.pow(2 * (1 - timeFraction), 5) ) / 2)";
+            }
+            // Если функция пользовательская
+            return "options.easingFunc(timeFraction)";
+        }();
     // Перебор анимирумых свойств объекта в цикле
     for(var property in properties){
         // Если текущее свойство является собственным (не унаследованным)
@@ -44,46 +72,16 @@ function animate(element, properties, options, callback){
             elementProperties[property].unit = properties[property].toString().substr(elementProperties[property].endingValue.toString().length);
         }
     }
-    // Метод временной функций, вычисляющей состояние анимации по текущему времени
-    function timing(timeFraction){
-        // Выполнение анимации по преопределенным функциям анимации
-        switch (options.easingFunc){
-            case 'linear':
-                return timeFraction;
-            case 'easeInQuad':
-                return Math.pow(timeFraction, 2);
-            case 'easeOutQuad':
-                return 1 - Math.pow(1 - timeFraction, 2);
-            case 'easeInOutQuad':
-                return (timeFraction < 0.5) ? (Math.pow(2 * timeFraction, 2) / 2) : (( 2 - Math.pow(2 * (1 - timeFraction), 2) ) / 2);
-            case 'easeInCubic':
-                return Math.pow(timeFraction, 3);
-            case 'easeOutCubic':
-                return 1 - Math.pow(1 - timeFraction, 3);
-            case 'easeInOutCubic':
-                return (timeFraction < 0.5) ? (Math.pow(2 * timeFraction, 3) / 2) : (( 2 - Math.pow(2 * (1 - timeFraction), 3) ) / 2);
-            case 'easeInQuint':
-                return Math.pow(timeFraction, 5);
-            case 'easeOutQuint':
-                return 1 - Math.pow(1 - timeFraction, 5);
-            case 'easeInOutQuint':
-                return (timeFraction < 0.5) ? (Math.pow(2 * timeFraction, 5) / 2) : (( 2 - Math.pow(2 * (1 - timeFraction), 5) ) / 2);
-        }
-        // Если функция пользовательская
-        return options.easingFunc(timeFraction);
-    }
     // Метод анимации в момент timeFraction по заданной временной функции
     function draw(timeFraction) {
-        // Получение состояния анимации по текущему времени
-        var progress = timing(timeFraction);
         // Перебор анимирумых свойств объекта в цикле
         for(var property in properties){
             // Если текущее свойство является собственным (не унаследованным)
             if (properties.hasOwnProperty(property)) {
                 // Изменение значений CSS-свойств элемента
-                self.style[property] = elementProperties[property].startingValue + progress * elementProperties[property].deltaValue+elementProperties[property].unit;
+                self.style[property] = elementProperties[property].startingValue + eval(timing) * elementProperties[property].deltaValue+elementProperties[property].unit;
             }
-        }   
+        }
     }
     // Метод с рекурсивным вызовом самого себя в зависимости от тех.возможностей браузера
     function animate(time){
