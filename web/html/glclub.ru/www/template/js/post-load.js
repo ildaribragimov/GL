@@ -21,26 +21,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         /**
          * Метод "open" открывает всплывающее окно
-         */
+         
         this.open = function() {
             // Установка начальной прозрачности всплывающему окну
-            //popup.style.opacity = 0;
+            popup.style.opacity = 0;
             // Вызов метода "open" родительского класса
             parentOpen.call(this);
             // Анимация элемента всплывающего окна - "появление"
             animate(popup, {opacity:1}, {duration:200});
-        };
+        };*/
         
         /**
          * Метод "close" закрывает всплывающее окно
-         */
+         
         this.close = function() {
             // Анимация элемента всплывающего окна - "растворение"
             animate(popup, {opacity:0}, {duration:200}, function(){
                 // Вызов метода "close" родительского класса
                 parentClose.call(this);
             });
-        };
+        };*/
         
     }
 

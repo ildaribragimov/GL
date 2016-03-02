@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
          */
         this.open = function() {
             // Установка начальной прозрачности всплывающему окну
-            popup.style.opacity = 0;
+            //popup.style.opacity = 0;
             // Вызов метода "open" родительского класса
             parentOpen.call(this);
             // Анимация элемента всплывающего окна - "появление"
