@@ -43,19 +43,16 @@ body {
 }
 #page-wrapper,
 #topPannel {
-	-webkit-transition:0.25s;
-    -moz-transition:0.25s;
-    -ms-transition:0.25s;
-    -o-transition:0.25s;
-	transition:0.25s;
+    margin-left:0px;
+    -webkit-transition:margin-left 0.25s ease;
+    -moz-transition:margin-left 025s ease;
+    -ms-transition:margin-left 0.25s ease;
+    -o-transition:margin-left 0.25s ease;
+    transition:margin-left 0.25s ease;
 }
 #page-wrapper.menu-enabled,
 #topPannel.menu-enabled {
-    -webkit-transform: translateX(240px); /** Chrome & Safari **/
-    -moz-transform: translateX(240px); /** Firefox **/
-    -ms-transform: translateX(240px); /* Для IE */
-    -o-transform: translateX(240px); /** Opera **/
-	transform:translateX(240px);
+    margin-left:240px;
 }
 
 /* Sections */
