@@ -16,22 +16,17 @@
     width:100%;
 	position:fixed;
 	z-index:200;
-    visibility:hidden; /* The popup is closed by default */
     opacity:0;
-	-webkit-transition:opacity 0.2s, visibility 0s linear 0.2s;
-    -moz-transition:opacity 0.2s, visibility 0s linear 0.2s;
-    -ms-transition:opacity 0.2s, visibility 0s linear 0.2s;
-    -o-transition:opacity 0.2s, visibility 0s linear 0.2s;
-    transition:opacity 0.2s, visibility 0s linear 0.2s;
+    visibility:hidden; /* The popup is closed by default */
+	-webkit-transition:visibility 0s, opacity 0.25s linear;
+    -moz-transition:visibility 0s, opacity 0.25s linear;
+    -ms-transition:visibility 0s, opacity 0.25s linear;
+    -o-transition:visibility 0s, opacity 0.25s linear;
+    transition:visibility 0s, opacity 0.25s linear;
 }
 .popup.opened { /* If popup is opened */
     opacity: 1;
     visibility:visible;
-    -webkit-transition-delay: 0s;
-    -moz-transition-delay: 0s;
-    -ms-transition-delay: 0s;
-    -o-transition-delay: 0s;
-    transition-delay: 0s;
 }
 /* --- */
 
