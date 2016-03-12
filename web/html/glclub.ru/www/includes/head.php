@@ -7,6 +7,7 @@
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+<link rel="icon" href="/template/img/favicon.ico" type="image/x-icon">
 
 <!-- Подключение функции "in_array" для поиска элемента в массиве (коллекции элементов) -->
 <script defer src="template/js/Function.in_array.min.js" type="text/javascript"></script>
