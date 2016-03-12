@@ -1,48 +1,8 @@
 // Явное указание на режим строгого соответствия современному стандарту
 "use strict";
 
-// Исполнение скрипта при готовности DOM-структуры документа
-document.addEventListener("DOMContentLoaded", function(event) {
-
-    /**
-     * Создание объекта всплывающих окон на основе родительского класса "popUp" 
-     */
-    function glPopUp(name, options) {
-        /**
-         * Объявление переменных:
-         *
-         * * popup (тип: object) - рбъект всплывающего окна, унаследованный от рродительского класса "PopUp"
-         * * parentOpen (тип: function) - Метод "open" родительского класса
-         * * parentClose (тип: function) - Метод "close" родительского класса
-         */
-        var popup = popUp.apply(this, arguments),
-            parentOpen = this.open,
-            parentClose = this.close;
-
-        /**
-         * Метод "open" открывает всплывающее окно
-         
-        this.open = function() {
-            // Установка начальной прозрачности всплывающему окну
-            popup.style.opacity = 0;
-            // Вызов метода "open" родительского класса
-            parentOpen.call(this);
-            // Анимация элемента всплывающего окна - "появление"
-            animate(popup, {opacity:1}, {duration:200});
-        };*/
-        
-        /**
-         * Метод "close" закрывает всплывающее окно
-         
-        this.close = function() {
-            // Анимация элемента всплывающего окна - "растворение"
-            animate(popup, {opacity:0}, {duration:200}, function(){
-                // Вызов метода "close" родительского класса
-                parentClose.call(this);
-            });
-        };*/
-        
-    }
+// Исполнение скрипта после полной загрузки страницы
+window.onload = function(){
 
     /**
      * Объявление переменных
@@ -50,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
      * * sendReviewPopup (тип: object) - Экземпляр объекта модального окна "Добавления отзыва"
      * * sendMailPopup (тип: object) - Экземпляр объекта модального окна "Отправки письма"
      */
-    var sendReviewPopup = new glPopUp("sendReview", {type: "alert", header: "Отправить отзыв", content:"<p>Это всплывающее окно с формой отправки отзыва!</p>", navigation:"minimal"}),
-        sendMailPopup = new glPopUp("sendMail", {type: "alert", header: "Отправить письмо", content:"<p>Это всплывающее окно с формой отправки письма с сайта!</p>", navigation:"minimal"});
+    var sendReviewPopup = new popUp("sendReview", {type: "alert", header: "Отправить отзыв", content:"<p>Это всплывающее окно с формой отправки отзыва!</p>", navigation:"minimal"}),
+        sendMailPopup = new popUp("sendMail", {type: "alert", header: "Отправить письмо", content:"<p>Это всплывающее окно с формой отправки письма с сайта!</p>", navigation:"minimal"});
 
     // Получение ссылки на элемент вызывающий окно "sendReview"
     document.querySelector('button[value="sendReview"]')
@@ -97,4 +57,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         });
 
-});
+};
