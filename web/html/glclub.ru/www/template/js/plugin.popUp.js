@@ -5,6 +5,7 @@
  * Объект "Всплывающее окно"
  *
  * Свойства объекта:
+ * * popup (тип: public) - Объект всплывающего окна
  * * name (тип: string) - Имя всплывающего окна. Будет использовано в значении атрибута ID конструкции
  * * options (тип: object) - Объект параметров всплывающего окна. Содержит слудующие параметры:
  * * * type (тип: string) - Тип всплывающего окна. может принимать значения: "alert", "confirm", "prompt"
@@ -22,6 +23,8 @@
  * * setСontent (тип: public) - Вставляет с замещением в содержательную часть окна содержимое
  */
 function popUp(name, options) {
+    // Назначение значения по умолчанию свойству всплывающего окна
+    this.popup = null;
     // Сохранение ссылки на объект в переменной
     var self = this;
     // Назначение значений по умолчанию параметрам объекта окна, если они не были переданы в вызове
@@ -30,8 +33,6 @@ function popUp(name, options) {
     options.header = options.header || null;
     options.content = options.content || "<p>Содержимое окна не было передано!</p>";
     options.navigation = options.navigation || "standart";
-
-
     /**
      * Метод "createContlols" создает HTML-конструкцию панели основной навигации окна
      *
@@ -65,8 +66,6 @@ function popUp(name, options) {
         // Возвращение HTML-конструкции созданной панели
         return controls;
     }
-
-
     /**
      * Метод "createHeader" создает HTML-конструкцию заголовка окна
      *
@@ -88,8 +87,6 @@ function popUp(name, options) {
         // Возвращение HTML-конструкции заголовка окна
         return header;
     }
-
-
     /**
      * Метод "createСontent" созадет HTML-конструкцию содержательной части окна и вставляет в нее содержимое, полученные при вызове плагина
      *
@@ -106,8 +103,6 @@ function popUp(name, options) {
         // Возвращение HTML-конструкции содержательной части окна
         return content;
     }
-
-
     /**
      * Метод "createPopup" создаёт HTML-конструкцию окна
      *
@@ -155,42 +150,32 @@ function popUp(name, options) {
         return popup;
     }
 
-
     // Создание HTML-конструкции всплывающего окна
-    var popup = createPopup();
+    this.popup = createPopup();
     // Вставка HTML-конструкции окна в конец элемента "body"
-    document.querySelector("body").appendChild(popup);
-
-
+    document.querySelector("body").appendChild(this.popup);
     /**
      * Метод "open" открывает всплывающее окно
      */
     this.open = function() {
         // Добавление CSS-класса "opened" корневому элементу окна
-        popup.classList.add("opened");
+        self.popup.classList.add("opened");
     };
-
-
     /**
      * Метод "close" закрывает всплывающее окно
      */
     this.close = function() {
         // Удаление CSS-класса "opened" у корневого элемента окна
-        popup.classList.remove("opened");
+        self.popup.classList.remove("opened");
     };
-
-
     /**
      * Метод "setСontent" вставляет с замещением в содержательную часть окна содержимое, переданное в параметре
      *
      * Возвращаемое значение:
      * * content (тип: object/string) - объект(строка), который необходимо вставить в содержательную часть окна
      */
-    this.setСontent = function(content){
+    this.setContent = function(content){
         // Вставка в корневой элемент данных, полученных при вызове плагина
-        popup.querySelector(".content").innerHTML = content;
+        self.popup.querySelector(".content").innerHTML = content;
     }
-    
-    // Возвращаем объект всплывающего окна
-    return popup;
 }
