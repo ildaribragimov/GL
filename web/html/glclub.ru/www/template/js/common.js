@@ -98,8 +98,13 @@ function ready() {
      * Установка высоты секции "Карта проезда" равной 1/2 высоты видимой области просмотра окна браузера
      */
     function setMapSectionHeight() {
-        // Установка элементу высоты равной 1/2 высоты области просмотра браузера
-        document.querySelector('#map').style.height = viewport.clientHeight/2+'px';
+        // Сохранение в переменную ссылки на узел с ID "map"
+        var mapContainer = document.querySelector('#map');
+        // Проверка, присутствует ли узел с ID "map"
+        if (mapContainer){
+            // Установка элементу высоты равной 1/2 высоты области просмотра браузера
+            mapContainer.style.height = viewport.clientHeight/2+'px';            
+        }
     }
 
     // Вызов функции "Установка высоты секции "Карта проезда"
