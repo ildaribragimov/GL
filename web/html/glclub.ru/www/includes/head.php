@@ -14,11 +14,6 @@
 <!-- Подключение функции "array_diff" для вычисления расхождение массивов (коллекций элементов) -->
 <script defer src="template/js/Function.array_diff.min.js" type="text/javascript"></script>
 
-<!-- Подключение полифилла оптимальной анимации -->
-<script defer src="template/js/requestAnimationFrame.polyfill.min.js" type="text/javascript"></script>
-<!-- Подключение функции "animate" для выолнения анимации -->
-<script defer src="template/js/Function.animate.js" type="text/javascript"></script>
-
 <!-- Подключение готового решения "Блокировка прокрутки страницы" -->
 <script defer src="template/js/disableScroll.min.js" type="text/javascript"></script>
 <!-- Подключние готового решения "Плавная прокрутка до якоря" -->
