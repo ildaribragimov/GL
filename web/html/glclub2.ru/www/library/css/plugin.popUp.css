@@ -1,0 +1,68 @@
+.popup,
+.popup .centered > .wrapper {
+	height:100vh;
+}
+.popup > .wrapper,
+.popup > .wrapper > .centered,
+.popup .centered > .wrapper,
+.popup .centered > .wrapper > .container {
+    position:relative;
+}
+
+/* The Popup Back Layer */
+.popup {
+	top:0;
+	left:0;
+    width:100%;
+	position:fixed;
+	z-index:200;
+    opacity:0;
+    visibility:hidden; /* The popup is closed by default */
+	-webkit-transition:visibility 0s, opacity 0.25s linear;
+    -moz-transition:visibility 0s, opacity 0.25s linear;
+    -ms-transition:visibility 0s, opacity 0.25s linear;
+    -o-transition:visibility 0s, opacity 0.25s linear;
+    transition:visibility 0s, opacity 0.25s linear;
+}
+.popup.opened { /* If popup is opened */
+    opacity: 1;
+    visibility:visible;
+}
+/* --- */
+
+/* The Floating Popup Centering */
+/* Horizontal */
+.popup > .wrapper,
+.popup > .wrapper > .centered {
+    float:left;
+}
+.popup > .wrapper {
+    left:50%;
+}
+.popup > .wrapper > .centered {
+    left:-50%;
+}
+/* Vertical */
+.popup .centered > .wrapper {
+    display:table-cell;
+    vertical-align:middle;
+}
+/* --- */
+
+/* The Popup Container */
+.popup .centered > .wrapper > .container {
+    display:inline-block;
+}
+/* The Popup Controls Pannel */
+.popup .controls {
+    position:absolute;
+    top:0;
+    right:0;
+}
+.popup .controls > a {
+    float:right;
+}
+.popup .controls .icon {
+    display:block;
+}
+/* --- */
