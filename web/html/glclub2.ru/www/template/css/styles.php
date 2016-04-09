@@ -2,32 +2,28 @@
 // Объявление перменной пути к корневой директории сайта
 $_root = $_SERVER['DOCUMENT_ROOT'];
 // Имя генерируемого файла JS-скрипта
-$_filename = "scripts.js";
+$_filename = "styles.css";
 // Путь до генерируемого файла JS-скрипта
-$_filePath = "/template/js/";
+$_filePath = "/template/css/";
 
 // Подключение файла опций загрузки
 include_once $_root."/config.php";
 
-function getJSFilesContent($path, $files) {
-    $fileContent = '// Явное указание на режим строгого соответствия современному стандарту
-"use strict";
-// Исполнение скрипта при готовности DOM-структуры документа
-document.addEventListener("DOMContentLoaded", function() {';
+function getCSSFilesContent($path, $files) {
+    $fileContent = '';
     
     foreach ($files as $value) {
         // получает содержимое файла в строку
         $file = $path.$value;
         $handle = fopen($file, "r");
-        $fileContent .= str_replace('"use strict";', '', fread($handle, filesize($file)) );
+        $fileContent .= fread($handle, filesize($file));
         fclose($handle);
     }
-    $fileContent .= '});';
     
     return $fileContent;
 }
 
-function getJSFileContent($file) {
+function getCSSFileContent($file) {
     // Проверяем наличие указанного файла
     if (file_exists($file)) {
         // Получаем содержимое файла в виде строки
@@ -36,13 +32,13 @@ function getJSFileContent($file) {
     return false;
 }
 
-function compareJSVersions($ver1, $ver2) {
+function compareCSSVersions($ver1, $ver2) {
     return md5($ver1) == md5($ver2);
 }
 
 if ( !file_exists($_root.$_filePath.$_filename) || !$config["cacheEnable"] ) {
-    $_NewFileContent = getJSFilesContent($_root, $config["scripts"]);
-    if ( !compareJSVersions(getJSFileContent($_root.$_filePath.$_filename), $_NewFileContent) ) {
+    $_NewFileContent = getCSSFilesContent($_root, $config["styles"]);
+    if ( !compareCSSVersions(getCSSFileContent($_root.$_filePath.$_filename), $_NewFileContent) ) {
         // открываем файл, если файл не существует, делается попытка создать его
         $file = fopen($_root.$_filePath.$_filename, "w");
         // записываем в файл текст
@@ -52,5 +48,5 @@ if ( !file_exists($_root.$_filePath.$_filename) || !$config["cacheEnable"] ) {
     }
 }
 
-echo '<script defer src="'.$_filePath.$_filename.'" type="text/javascript"></script>';
+echo '<link href="'.$_filePath.$_filename.'" rel="stylesheet" type="text/css">';
 ?>
