@@ -1,33 +1,30 @@
 <?php 
+$config["cacheEnable"] = false;
 /**
  * Файл опций
  */
 // Порядок загрузки CSS-стилей
-$cssLibrary = (object)array(
-    0 => "normalize.css",
+$config["styles"] = (object)array(
+    0 => "/library/css/normalize.css",
 
-    1 => "fonts.css",
-
-    2 => "plugin.popUp.css",
+    1 => "/library/css/plugin.popUp.css",
 );
 // Порядок загрузки JS-скриптов
-$jsLibrary = (object)array(
-    0 => "Function.setSizeFrom.min.js",
-    1 => "Function.in_array.min.js",
-    2 => "Function.array_diff.min.js",
-    3 => "Function.getIndex.min.js",
-    4 => "Function.parent.min.js",
+$config["scripts"] = array(
+    0 => "/library/js/Function.in_array.min.js",
+    1 => "/library/js/Function.array_diff.min.js",
+    2 => "/library/js/Function.getIndex.min.js",
+    3 => "/library/js/Function.parent.min.js",
 
-    5 => "object.classList.min.js",
-    6 => "disableScroll.min.js",
-    7 => "scrollingToAnchor.min.js",
+    4 => "/library/js/object.classList.min.js",
+    5 => "/library/js/setSizeFrom.min.js",
+    6 => "/library/js/disableScroll.min.js",
+    7 => "/library/js/scrollingToAnchor.min.js",
 
-    8 => "plugin.popUp.js",
-    
-    9 => "common.js",
+    8 => "/library/js/plugin.popUp.js",
 );
 // Порядок загрузки файлов секций
-$sections = (object)array(
+$config["sections"] = (object)array(
     0 => "rooms",
     1 => "prices",
     2 => "about",
