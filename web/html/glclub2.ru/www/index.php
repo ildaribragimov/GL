@@ -12,13 +12,14 @@
 		<meta charset="utf-8">
         <title>Типовой шаблон страницы на HTML5 - html5.tpl</title>
         <link rel="icon" href="/template/img/favicon.ico" type="image/x-icon">
-        <link href="template/css/styles.php" rel="stylesheet" type="text/css">
-        <script defer src="template/js/scripts.php" type="text/javascript"></script>
+        <?php
+            include_once "template/css/styles.php";
+            include_once "template/js/scripts.php";
+        ?>
     </head>
     <body>
 		<div id="page-wrapper">
 			<?php
-            include_once "template/signIn.php";
 			?>
 		</div>
 		<?php
