@@ -11,8 +11,8 @@ Options All -Indexes +FollowSymLinks
 
     ## Перенаправление на основной адрес страницы, если:
     # - адрес запрашиваемой страницы заканчивается на "/"
-    RewriteCond %{REQUEST_FILENAME} !-d [NC]
-    RewriteRule ^(.*)\/$ $1 [R=301,L]
+    #RewriteCond %{REQUEST_FILENAME} !-d [NC]
+    #RewriteRule ^(.*)\/$ $1 [R=301,L]
     # - адрес запрашиваемой страницы начинается с "www" (без учета регистра)
     RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
     RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
@@ -21,12 +21,12 @@ Options All -Indexes +FollowSymLinks
     RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule ^(.*)/index\.(html|php)$ /$1 [R=301,L]
     # - адрес запрашиваемой страницы заканчивается на ".(html|php)"
-    RewriteCond %{REQUEST_FILENAME}.html -f
-    RewriteRule ^.*$ $0.hmtl [L,QSA]
-    RewriteCond %{REQUEST_FILENAME}.php -f
-    RewriteRule ^.*$ $0.php [L,QSA]
-    RewriteCond %{THE_REQUEST} ([^\s]*)\.(html|php)(\?[^\s]*)?
-    RewriteRule (.*) %1 [R=301,L]
+    #RewriteCond %{REQUEST_FILENAME}.html -f
+    #RewriteRule ^.*$ $0.hmtl [L,QSA]
+    #RewriteCond %{REQUEST_FILENAME}.php -f
+    #RewriteRule ^.*$ $0.php [L,QSA]
+    #RewriteCond %{THE_REQUEST} ([^\s]*)\.(html|php)(\?[^\s]*)?
+    #RewriteRule (.*) %1 [R=301,L]
 </IfModule>
 
 ## Назначние высокого приоритета индексного файла .php
