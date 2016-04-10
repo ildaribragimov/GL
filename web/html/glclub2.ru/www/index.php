@@ -20,7 +20,30 @@
     <body>
 		<div id="page-wrapper">
 			<?php
+				// Вставка секции "Номера"
+				include "includes/rooms.php";
+				// Вставка секции "Цены"
+				include "includes/prices.php";
+				// Вставка секции "О клубе"
+				include "includes/about.php";
+				// Вставка секции "Отзывы"
+				include "includes/reviews.php";
+				// Вставка секции "Добавить отзыв"
+				include "includes/sendReview.php";
+				// Вставка секции "Забронировать номер"
+				include "includes/reserveRoom.php";
+                // Вставка секции "Отправить пиьмо"
+				include "includes/contacts.php";
+                // Вставка секции "Карта проезда"
+				include "includes/map.php";
 			?>
+			<!-- Подвал страницы - Начало -->
+			<!--
+			<footer>
+				&copy; Copyright Ильдар Ибрагимов
+			</footer>
+			-->
+			<!-- Подвал страницы - Конец -->
 		</div>
 		<?php
 		?>

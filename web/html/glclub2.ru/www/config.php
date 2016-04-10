@@ -5,9 +5,31 @@ $config["cacheEnable"] = false;
  */
 // Порядок загрузки CSS-стилей
 $config["styles"] = (object)array(
-    0 => "/library/css/normalize.css",
+    //0 => "/library/css/normalize.css",
 
-    1 => "/library/css/plugin.popUp.css",
+    1 => "/template/normalize/html/html.css",
+    2 => "/template/template/html/html.css",
+
+    3 => "/template/normalize/body/body.css",
+    4 => "/template/standart/body/body.css",
+    5 => "/template/template/body/body.css",
+
+    6 => "/template/standart/page-wrapper/page-wrapper.css",
+    7 => "/template/template/page-wrapper/page-wrapper.css",
+
+    8 => "/template/normalize/section/section.css",
+    9 => "/template/standart/section/section.css",
+    10 => "/template/template/section/section.css",
+    11 => "/template/standart/section/_no-padding/section_no-padding.css",
+    12 => "/template/standart/section/_background/section_background_image.css",
+    13 => "/template/theme/section/_color-theme/section_color-theme.css",
+
+    14 => "/template/template/section-wrapper/section-wrapper.css",
+    15 => "/template/standart/section-wrapper/_no-margin/section-wrapper_no-margin.css",
+
+    16 => "/template/template/section-about/section-about.css",
+    
+    17 => "/library/css/plugin.popUp.css",
 );
 // Порядок загрузки JS-скриптов
 $config["scripts"] = array(

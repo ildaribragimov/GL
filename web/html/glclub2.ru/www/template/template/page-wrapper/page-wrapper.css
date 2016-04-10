@@ -1,0 +1,12 @@
+.page-wrapper {
+	box-shadow:0 0 30px rgba(0, 0, 0, 0.5);
+	z-index:5;
+}
+.page-wrapper {
+    margin-left:0px;
+    -webkit-transition:margin-left 0.25s ease;
+    -moz-transition:margin-left 025s ease;
+    -ms-transition:margin-left 0.25s ease;
+    -o-transition:margin-left 0.25s ease;
+    transition:margin-left 0.25s ease;
+}
