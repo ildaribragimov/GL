@@ -8,7 +8,7 @@
 	<a name="prices"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
-		<header>
+		<header class="section__header">
 			<h2>Цены</h2>
 			<div class="separator -cash">
 				<div class="separator-wrapper">

@@ -8,7 +8,7 @@
 	<a name="about"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
-		<header>
+		<header class="section__header">
 			<h2>О клубе</h2>
 			<div class="separator -info">
 				<div class="separator-wrapper">

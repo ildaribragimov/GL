@@ -13,27 +13,29 @@ $config["styles"] = (object)array(
     3 => "/template/normalize/body/body.css",
     4 => "/template/standart/body/body.css",
     5 => "/template/template/body/body.css",
-
-    6 => "/template/standart/page-wrapper/page-wrapper.css",
-    7 => "/template/template/page-wrapper/page-wrapper.css",
-
-    8 => "/template/normalize/section/section.css",
-    9 => "/template/standart/section/section.css",
-    10 => "/template/template/section/section.css",
-    11 => "/template/standart/section/_no-padding/section_no-padding.css",
-    12 => "/template/standart/section/_background/section_background_image.css",
-    13 => "/template/theme/section/_color-theme/section_color-theme.css",
-
-    14 => "/template/template/section/__wrapper/section__wrapper.css",
-    15 => "/template/standart/section/__content/section__content.css",
-    16 => "/template/standart/section/__wrapper/_no-margin/section__wrapper_no-margin.css",
     
-    17 => "/template/normalize/a/a.css",
-
-    18 => "/template/template/section-about/section-about.css",
-    19 => "/template/template/map/__content/map__content.css",
+    6 => "/template/normalize/a/a.css",
     
-    20 => "/library/css/plugin.popUp.css",
+    7 => "/template/normalize/header/header.css",
+
+    8 => "/template/standart/page-wrapper/page-wrapper.css",
+    9 => "/template/template/page-wrapper/page-wrapper.css",
+
+    10 => "/template/normalize/section/section.css",
+    11 => "/template/standart/section/section.css",
+    12 => "/template/template/section/section.css",
+    13 => "/template/standart/section/_no-padding/section_no-padding.css",
+    14 => "/template/standart/section/_background/section_background_image.css",
+    15 => "/template/theme/section/_color-theme/section_color-theme.css",
+
+    16 => "/template/template/section/__wrapper/section__wrapper.css",
+    17 => "/template/standart/section/__content/section__content.css",
+    18 => "/template/standart/section/__wrapper/_no-margin/section__wrapper_no-margin.css",
+
+    19 => "/template/template/section-about/section-about.css",
+    20 => "/template/template/map/__content/map__content.css",
+    
+    21 => "/library/css/plugin.popUp.css",
 );
 // Порядок загрузки JS-скриптов
 $config["scripts"] = array(

@@ -9,7 +9,7 @@
 	<a name="sendReview"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
-		<header>
+		<header class="section__header">
 			<!--
 			<h2>Хотите поделиться впечатлением?</h2>
 			<h2>А что вы думаете о нас?</h2>

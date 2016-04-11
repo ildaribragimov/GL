@@ -8,7 +8,7 @@
 	<a name="contacts"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
-		<header>
+		<header class="section__header">
 			<h2>Остались вопросы?</h2>
 			<div class="separator -envelope">
 				<div class="separator-wrapper">

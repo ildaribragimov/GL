@@ -8,7 +8,7 @@
 	<a name="reserveRoom"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
-		<header>
+		<header class="section__header">
             <h2>Бронируйте номер заранее</h2>
             <div class="separator -phone">
 				<div class="separator-wrapper">
