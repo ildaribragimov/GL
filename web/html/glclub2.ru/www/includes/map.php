@@ -4,10 +4,10 @@
  */
 ?>
 
-<section id="map" class="section_color-theme_beige section_no-padding">
-	<div class="section-wrapper section-wrapper_no-margin">
+<section id="map" class="map section_color-theme_beige section_no-padding">
+	<div class="section__wrapper section__wrapper_no-margin">
 		<!-- Содержимое секции - Начало -->
-		<div class="section__section-content">
+		<div class="section__content">
             <?php
                 // Вставка шаблона вывода карты Google
                 //include "includes/googleMap.php";

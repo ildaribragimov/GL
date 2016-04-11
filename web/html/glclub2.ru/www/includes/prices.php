@@ -6,7 +6,7 @@
 
 <section id="prices" class="section_color-theme_beige">
 	<a name="prices"></a>
-	<div class="section__section-wrapper">
+	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
 			<h2>Цены</h2>
@@ -24,7 +24,7 @@
 		<!-- Шапка секции - Конец -->
 		
 		<!-- Содержимое секции - Начало -->
-		<div class="section__section-content">
+		<div class="section__content">
 			<div class="content-wrapper">
 				<div class="collumns -two">
 					<div class="col">

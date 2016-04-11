@@ -6,7 +6,7 @@
 
 <section id="reserveRoom" class="section_color-theme_green">
 	<a name="reserveRoom"></a>
-	<div class="section__section-wrapper">
+	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
             <h2>Бронируйте номер заранее</h2>
@@ -24,7 +24,7 @@
 		<!-- Шапка секции - Конец -->
 		
 		<!-- Содержимое секции - Начало -->
-		<div class="section__section-content">
+		<div class="section__content">
 			<div class="content-wrapper">
                 <p>Уточнить состояние номеров на желаемое вами дату и время посещения <br>вы можете по телефону!</p>
                 <div class="subsection-phone">

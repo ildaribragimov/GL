@@ -7,7 +7,7 @@
 <section id="sendReview" class="section_color-theme_beige">
     <div class="sectionSeparator"><hr></div>
 	<a name="sendReview"></a>
-	<div class="section__section-wrapper">
+	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
 			<!--
@@ -30,7 +30,7 @@
 		<!-- Шапка секции - Конец -->
 		
 		<!-- Содержимое секции - Начало -->
-		<div class="section__section-content">
+		<div class="section__content">
 			<div class="content-wrapper">
 				<p>Вы уже отдыхали у нас? &nbsp; У вас есть предложения по улучшению сервиса?<br>
 				Поделитесь своим впечатлением.</p>

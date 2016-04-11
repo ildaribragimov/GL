@@ -6,9 +6,9 @@
 
 <section id="rooms" class="section_no-padding section_color-theme_grey">
 	<a name="rooms"></a>
-	<div class="section__section-wrapper">
+	<div class="section__wrapper">
 		<!-- Содержимое секции - Начало -->
-		<div class="section__section-content">
+		<div class="section__content">
 			<div class="roomsItems">
 				<div class="roomsItem -newYork">
 					<a href="/index.php?room_number=1">

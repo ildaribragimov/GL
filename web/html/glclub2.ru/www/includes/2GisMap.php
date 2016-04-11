@@ -50,4 +50,4 @@
             .bindPopup(baloon);
     });
 </script>
-<div id="2GisMap" class="map-content"></div>
+<div id="2GisMap" class="map__content"></div>

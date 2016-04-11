@@ -6,7 +6,7 @@
 
 <section id="contacts" class="section_color-theme_grey">
 	<a name="contacts"></a>
-	<div class="section__section-wrapper">
+	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
 			<h2>Остались вопросы?</h2>
@@ -24,7 +24,7 @@
 		<!-- Шапка секции - Конец -->
 
 		<!-- Содержимое секции - Начало -->
-		<div class="section__section-content">
+		<div class="section__content">
 			<div class="content-wrapper">
                 <div class="subsection-sendMail">
                     <p>Интересуют дополнительные услуги? &nbsp; Или у вас к нам коммерческое предложение?<br>

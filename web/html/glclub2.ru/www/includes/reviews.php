@@ -6,7 +6,7 @@
 
 <section id="reviews" class="section_color-theme_beige">
 	<a name="reviews"></a>
-	<div class="section__section-wrapper">
+	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
 			<h2>Отзывы гостей о нас</h2>
@@ -25,7 +25,7 @@
 		<!-- Шапка секции - Конец -->
 
 		<!-- Содержимое секции - Начало -->
-		<div class="section__section-content">
+		<div class="section__content">
 			<div class="reviewsItems">
 				<div class="reviewsItems-wrapper">
 					<!--
