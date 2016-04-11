@@ -7,6 +7,10 @@
     color: #f8f8f9;
 }
 .section_color-theme_grey {
-    color: #f8f8f9;
     background-color: #625c5a;
+    color: #f8f8f9;
+}
+.section_color-theme_cacao {
+    background-color: #bea692;
+    color: #625c5a;
 }
