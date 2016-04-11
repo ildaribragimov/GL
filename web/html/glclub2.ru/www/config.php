@@ -63,7 +63,7 @@ $config["styles"] = array(
 
     "/template/standart/separator/separator.css",
     "/template/template/separator/separator.css",
-    "/template/standart/separator/_align/separator_align_center.css",
+    "/template/standart/separator/_align/separator_align.css",
     "/template/standart/separator/__wrapper/separator__wrapper.css",
     "/template/standart/separator/__content/separator__content.css",
     "/template/standart/separator/__line/separator__line.css",
