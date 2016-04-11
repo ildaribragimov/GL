@@ -23,6 +23,12 @@ body {
     line-height: 1.6666em;
 	text-align: center;
 }
+a {
+    background-color: transparent;
+}
+header {
+    display: block;
+}
 #page-wrapper {
 	width:100%;
 	overflow-x:hidden;
@@ -79,11 +85,30 @@ section {
 .section__wrapper_no-margin {
     margin: 0;
 }
+.h {
+    font-family: 'PT Serif', 'Times New Roman';
+    font-weight: normal;
+}
+.h_lev_2 {
+    margin-top: 1.25em;
+    margin-bottom: 0.9375em;
+    padding-left: 0.8333em;
+    padding-right: 0.8333em;
+    font-size: 2.6666em;
+    line-height: 1.25em;
+}
+.separator {
+    overflow: hidden;
+}
+.separator {
+    margin: -0.8333em auto 0;
+    height: 2.5em;
+}
+.header__separator {
+    margin-bottom: 2.5em;
+}
 .section-about {
     background-image: url(../../media/contacts/contacts_bg_tablet.jpg);
-}
-.map__content {
-	height: 50vh;
 }
 .popup,
 .popup .centered > .wrapper {

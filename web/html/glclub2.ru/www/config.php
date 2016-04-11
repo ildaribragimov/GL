@@ -34,11 +34,15 @@ $config["styles"] = (object)array(
 
     19 => "/template/template/h/h.css",
     20 => "/template/template/h/_lev/_lev_2.css",
+
+    21 => "/template/standart/separator/separator.css",
+    22 => "/template/template/separator/separator.css",
+    23 => "/template/template/header/__separator/header__separator.css",
+
+    24 => "/template/template/section-about/section-about.css",
+    25 => "/template/template/map/__content/map__content.css",
     
-    21 => "/template/template/section-about/section-about.css",
-    22 => "/template/template/map/__content/map__content.css",
-    
-    23 => "/library/css/plugin.popUp.css",
+    25 => "/library/css/plugin.popUp.css",
 );
 // Порядок загрузки JS-скриптов
 $config["scripts"] = array(

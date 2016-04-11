@@ -10,7 +10,7 @@
 		<!-- Шапка секции - Начало -->
 		<header class="section__header">
 			<h2 class="h h_lev_2">Отзывы гостей о нас</h2>
-			<div class="separator -quotes">
+			<div class="separator header__separator -quotes">
 				<div class="separator-wrapper">
 					<div class="separator-content">
 						<hr>

@@ -10,7 +10,7 @@
 		<!-- Шапка секции - Начало -->
 		<header class="section__header">
 			<h2 class="h h_lev_2">Остались вопросы?</h2>
-			<div class="separator -envelope">
+			<div class="separator header__separator -envelope">
 				<div class="separator-wrapper">
 					<div class="separator-content">
 						<hr>

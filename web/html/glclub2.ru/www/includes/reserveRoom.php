@@ -10,7 +10,7 @@
 		<!-- Шапка секции - Начало -->
 		<header class="section__header">
             <h2 class="h h_lev_2">Бронируйте номер заранее</h2>
-            <div class="separator -phone">
+            <div class="separator header__separator -phone">
 				<div class="separator-wrapper">
 					<div class="separator-content">
 						<hr>
