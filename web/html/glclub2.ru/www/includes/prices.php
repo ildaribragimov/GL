@@ -10,9 +10,9 @@
 		<!-- Шапка секции - Начало -->
 		<header class="section__header">
 			<h2 class="h h_lev_2">Цены</h2>
-			<div class="separator header__separator -cash">
-				<div class="separator-wrapper">
-					<div class="separator-content">
+			<div class="separator separator_align_center header__separator -cash">
+				<div class="separator__wrapper">
+					<div class="separator__content">
 						<hr>
 						<div class="icon -s"></div>
 						<hr>

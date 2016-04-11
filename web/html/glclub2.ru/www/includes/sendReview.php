@@ -15,9 +15,9 @@
 			<h2>А что вы думаете о нас?</h2>
 			-->
 			<h2 class="h h_lev_2">Поделитесь впечатлением</h2>
-			<div class="separator header__separator -comment">
-				<div class="separator-wrapper">
-					<div class="separator-content">
+			<div class="separator separator_align_center header__separator -comment">
+				<div class="separator__wrapper">
+					<div class="separator__content">
 						<hr>
 						<div class="icon -s">
 						</div>

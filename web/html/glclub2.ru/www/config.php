@@ -37,12 +37,15 @@ $config["styles"] = (object)array(
 
     21 => "/template/standart/separator/separator.css",
     22 => "/template/template/separator/separator.css",
-    23 => "/template/template/header/__separator/header__separator.css",
+    23 => "/template/standart/separator/_align/separator_align_center.css",
+    24 => "/template/standart/separator/__wrapper/separator__wrapper.css",
+    25 => "/template/standart/separator/__content/separator__content.css",
+    26 => "/template/template/header/__separator/header__separator.css",
 
-    24 => "/template/template/section-about/section-about.css",
-    25 => "/template/template/map/__content/map__content.css",
+    27 => "/template/template/section-about/section-about.css",
+    28 => "/template/template/map/__content/map__content.css",
     
-    25 => "/library/css/plugin.popUp.css",
+    29 => "/library/css/plugin.popUp.css",
 );
 // Порядок загрузки JS-скриптов
 $config["scripts"] = array(
