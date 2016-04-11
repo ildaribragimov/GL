@@ -26,10 +26,77 @@ body {
 a {
     background-color: transparent;
 }
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
 header {
     display: block;
 }
-#page-wrapper {
+.icon {
+    background-repeat: no-repeat;
+    display: block;
+}
+.icon_size_x16 {
+	width:16px;
+	height:16px;
+}
+.icon_size_x24 {
+	width:24px;
+	height:24px;
+}
+.icon_size_x32 {
+	width:32px;
+	height:32px;
+}
+.icon_size_x48 {
+	width:48px;
+	height:48px;
+}
+.icon_size_x64 {
+	width:64px;
+	height:64px;
+}
+.icon_size_x128 {
+	width:128px;
+	height:128px;
+}
+.icon_size_x256 {
+	width:256px;
+	height:256px;
+}
+.icon {
+    background-image: url(../img/sprite_min.svg);
+}
+.icon_cash {
+    background-position:-224px -176px;
+}
+.icon_comment {
+    background-position:-264px -216px;
+}
+.icon_envelope {
+    background-position:-304px -216px;
+}
+.icon_info {
+    background-position:-264px -176px;
+}
+.icon_map {
+    background-position:-344px -216px;
+}
+.icon_map-point {
+    background-position:-344px -176px;
+}
+.icon_phone {
+    background-position:-304px -176px;
+}
+.icon_plane {
+    background-position:-424px -176px;
+}
+.icon_quotes {
+    background-position:-224px -216px;
+}
+.page-wrapper {
 	width:100%;
 	overflow-x:hidden;
 	position:relative;
@@ -73,8 +140,12 @@ section {
     color: #f8f8f9;
 }
 .section_color-theme_grey {
-    color: #f8f8f9;
     background-color: #625c5a;
+    color: #f8f8f9;
+}
+.section_color-theme_cacao {
+    background-color: #bea692;
+    color: #625c5a;
 }
 .section__wrapper {
 	margin-bottom:3.333em;
@@ -121,6 +192,28 @@ section {
 .separator_align_center .separator__content {
     float: left;
     left: -50%;
+}
+.separator__line {
+    height: 1px;
+    border: 0;
+    float: left;
+}
+.separator__line {
+    margin: 1.1666em 0 1.2777em;
+    width: 3.8888em;
+}
+.section_color-theme_beige .separator__line {
+    background-color: #6fa491;
+}
+.section_color-theme_grey .separator__line {
+    background-color: #e9bdac;
+}
+.section_color-theme_green .separator__line {
+    background-color: #daccc0;
+}
+.separator__icon {
+    margin: 10px 13px 11px 13px;
+    float: left;
 }
 .header__separator {
     margin-bottom: 2.5em;

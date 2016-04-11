@@ -4,48 +4,67 @@ $config["cacheEnable"] = false;
  * Файл опций
  */
 // Порядок загрузки CSS-стилей
-$config["styles"] = (object)array(
+$config["styles"] = array(
     //0 => "/library/css/normalize.css",
 
-    1 => "/template/normalize/html/html.css",
-    2 => "/template/template/html/html.css",
+    "/template/normalize/html/html.css",
+    "/template/template/html/html.css",
 
-    3 => "/template/normalize/body/body.css",
-    4 => "/template/standart/body/body.css",
-    5 => "/template/template/body/body.css",
+    "/template/normalize/body/body.css",
+    "/template/standart/body/body.css",
+    "/template/template/body/body.css",
     
-    6 => "/template/normalize/a/a.css",
+    "/template/normalize/a/a.css",
+    "/template/normalize/hr/hr.css",
     
-    7 => "/template/normalize/header/header.css",
-
-    8 => "/template/standart/page-wrapper/page-wrapper.css",
-    9 => "/template/template/page-wrapper/page-wrapper.css",
-
-    10 => "/template/normalize/section/section.css",
-    11 => "/template/standart/section/section.css",
-    12 => "/template/template/section/section.css",
-    13 => "/template/standart/section/_no-padding/section_no-padding.css",
-    14 => "/template/standart/section/_background/section_background_image.css",
-    15 => "/template/theme/section/_color-theme/section_color-theme.css",
-
-    16 => "/template/template/section/__wrapper/section__wrapper.css",
-    17 => "/template/standart/section/__content/section__content.css",
-    18 => "/template/standart/section/__wrapper/_no-margin/section__wrapper_no-margin.css",
-
-    19 => "/template/template/h/h.css",
-    20 => "/template/template/h/_lev/_lev_2.css",
-
-    21 => "/template/standart/separator/separator.css",
-    22 => "/template/template/separator/separator.css",
-    23 => "/template/standart/separator/_align/separator_align_center.css",
-    24 => "/template/standart/separator/__wrapper/separator__wrapper.css",
-    25 => "/template/standart/separator/__content/separator__content.css",
-    26 => "/template/template/header/__separator/header__separator.css",
-
-    27 => "/template/template/section-about/section-about.css",
-    28 => "/template/template/map/__content/map__content.css",
+    "/template/normalize/header/header.css",
     
-    29 => "/library/css/plugin.popUp.css",
+    "/template/standart/icon/icon.css",
+    "/template/standart/icon/_size/icon_size.css",
+
+    "/template/template/icon/icon.css",
+    "/template/template/icon/_cash/icon_cash.css",
+    "/template/template/icon/_comment/icon_comment.css",
+    "/template/template/icon/_envelope/icon_envelope.css",
+    "/template/template/icon/_info/icon_info.css",
+    "/template/template/icon/_map/icon_map.css",
+    "/template/template/icon/_map-point/icon_map-point.css",
+    "/template/template/icon/_phone/icon_phone.css",
+    "/template/template/icon/_plane/icon_plane.css",
+    "/template/template/icon/_quotes/icon_quotes.css",
+
+    "/template/standart/page-wrapper/page-wrapper.css",
+    "/template/template/page-wrapper/page-wrapper.css",
+
+    "/template/normalize/section/section.css",
+    "/template/standart/section/section.css",
+    "/template/template/section/section.css",
+    "/template/standart/section/_no-padding/section_no-padding.css",
+    "/template/standart/section/_background/section_background_image.css",
+    "/template/theme/section/_color-theme/section_color-theme.css",
+
+    "/template/template/section/__wrapper/section__wrapper.css",
+    "/template/standart/section/__content/section__content.css",
+    "/template/standart/section/__wrapper/_no-margin/section__wrapper_no-margin.css",
+
+    "/template/template/h/h.css",
+    "/template/template/h/_lev/_lev_2.css",
+
+    "/template/standart/separator/separator.css",
+    "/template/template/separator/separator.css",
+    "/template/standart/separator/_align/separator_align_center.css",
+    "/template/standart/separator/__wrapper/separator__wrapper.css",
+    "/template/standart/separator/__content/separator__content.css",
+    "/template/standart/separator/__line/separator__line.css",
+    "/template/template/separator/__line/separator__line.css",
+    "/template/theme/separator/__line/separator__line.css",
+    "/template/template/separator/__icon/separator__icon.css",
+    "/template/template/header/__separator/header__separator.css",
+
+    "/template/template/section-about/section-about.css",
+    "/template/template/map/__content/map__content.css",
+
+    "/library/css/plugin.popUp.css",
 );
 // Порядок загрузки JS-скриптов
 $config["scripts"] = array(

@@ -15,13 +15,12 @@
 			<h2>А что вы думаете о нас?</h2>
 			-->
 			<h2 class="h h_lev_2">Поделитесь впечатлением</h2>
-			<div class="separator separator_align_center header__separator -comment">
+			<div class="separator separator_align_center header__separator">
 				<div class="separator__wrapper">
 					<div class="separator__content">
-						<hr>
-						<div class="icon -s">
-						</div>
-						<hr>
+						<hr class="separator__line">
+						<div class="separator__icon icon icon_size_x24 icon_comment"></div>
+						<hr class="separator__line">
 					</div>
 				</div>
 			</div>
