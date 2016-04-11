@@ -6,7 +6,7 @@
 
 <section id="reviews" class="section_color-theme_beige">
 	<a name="reviews"></a>
-	<div class="section-wrapper">
+	<div class="section__section-wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
 			<h2>Отзывы гостей о нас</h2>

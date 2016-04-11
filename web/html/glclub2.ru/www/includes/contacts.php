@@ -6,7 +6,7 @@
 
 <section id="contacts" class="section_color-theme_grey">
 	<a name="contacts"></a>
-	<div class="section-wrapper">
+	<div class="section__section-wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
 			<h2>Остались вопросы?</h2>

@@ -6,7 +6,7 @@
 
 <section id="reserveRoom" class="section_color-theme_green">
 	<a name="reserveRoom"></a>
-	<div class="section-wrapper">
+	<div class="section__section-wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
             <h2>Бронируйте номер заранее</h2>

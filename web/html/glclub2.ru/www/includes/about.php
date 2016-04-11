@@ -6,7 +6,7 @@
 
 <section id="about" class="section_color-theme_grey section_background_image section-about">
 	<a name="about"></a>
-	<div class="section-wrapper">
+	<div class="section__section-wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
 			<h2>О клубе</h2>

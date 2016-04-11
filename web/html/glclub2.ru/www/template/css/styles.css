@@ -70,10 +70,10 @@ section {
     color: #f8f8f9;
     background-color: #625c5a;
 }
-.section-wrapper {
+.section__section-wrapper {
 	margin-bottom:3.333em;
 }
-.section-wrapper_no-margin {
+.section__section-wrapper_no-margin {
     margin: 0;
 }
 .section-about {

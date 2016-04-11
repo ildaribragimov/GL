@@ -7,7 +7,7 @@
 <section id="sendReview" class="section_color-theme_beige">
     <div class="sectionSeparator"><hr></div>
 	<a name="sendReview"></a>
-	<div class="section-wrapper">
+	<div class="section__section-wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
 			<!--

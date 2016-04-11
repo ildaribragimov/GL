@@ -6,7 +6,7 @@
 
 <section id="prices" class="section_color-theme_beige">
 	<a name="prices"></a>
-	<div class="section-wrapper">
+	<div class="section__section-wrapper">
 		<!-- Шапка секции - Начало -->
 		<header>
 			<h2>Цены</h2>
