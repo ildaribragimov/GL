@@ -72,6 +72,10 @@ $config["styles"] = array(
     "/template/template/separator/__icon/separator__icon.css",
     "/template/template/header/__separator/header__separator.css",
 
+    "/template/standart/controls/_align/controls_align.css",
+    "/template/standart/controls/__wrapper/controls__wrapper.css",
+    "/template/standart/controls/__content/controls__content.css",
+    
     "/template/template/phone-number/phone-number.css",
     "/template/standart/phone-number/__link/phone-number__link.css",
     "/template/template/phone-number/__link/phone-number__link.css",

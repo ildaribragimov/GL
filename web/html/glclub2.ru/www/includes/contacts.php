@@ -30,14 +30,15 @@
                 <div class="subsection-sendMail">
                     <p>Интересуют дополнительные услуги? &nbsp; Или у вас к нам коммерческое предложение?<br>
                     Свяжитесь с нами! &nbsp; Мы открыты и для новых друзей!</p>
-                    <div class="element-button centered">
-                        <div class="button-wrapper">
-                            <button class="-pink" value="sendMail">
-                                <span class="title">Написать письмо</span>
-                                <span class="clr"></span>
-                            </button>
+                    <div class="controls controls_feedback controls_align_center">
+                        <div class="controls__wrapper">
+                            <div class="controls__content">
+                                <button class="-pink" value="sendMail">
+                                    <span class="title">Написать письмо</span>
+                                    <span class="clr"></span>
+                                </button>
+                            </div>
                         </div>
-                        <div class="clr"></div>
                     </div>
                 </div>
                 <div class="vCard">

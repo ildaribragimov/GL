@@ -280,6 +280,25 @@ section {
 .header__separator {
     margin-bottom: 2.5em;
 }
+.controls_align_center::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.controls__wrapper {
+    position: relative;
+}
+.controls_align_center .controls__wrapper {
+    float: left;
+    left: 50%;
+}
+.controls__content {
+    position: relative;
+}
+.controls_align_center .controls__content {
+    float: left;
+    left: -50%;
+}
 .phone-number {
     font-size: 1.6666em;
     line-height: 1.5em;

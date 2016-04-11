@@ -34,14 +34,15 @@
 			<div class="content__wrapper">
 				<p>Вы уже отдыхали у нас? &nbsp; У вас есть предложения по улучшению сервиса?<br>
 				Поделитесь своим впечатлением.</p>
-                <div class="element-button centered">
-                    <div class="button-wrapper">
-                        <button class="-green" value="sendReview">
-                            <span class="title">Добавить отзыв</span>
-                            <span class="clr"></span>
-                        </button>
+                <div class="controls controls_feedback controls_align_center">
+                    <div class="controls__wrapper">
+                        <div class="controls__content">
+                            <button class="-green" value="sendReview">
+                                <span class="title">Добавить отзыв</span>
+                                <span class="clr"></span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="clr"></div>
                 </div>
 			</div>
 		</div>
