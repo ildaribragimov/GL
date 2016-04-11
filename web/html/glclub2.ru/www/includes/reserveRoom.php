@@ -28,9 +28,7 @@
 		<div class="section__content">
 			<div class="content__wrapper">
                 <p>Уточнить состояние номеров на желаемое вами дату и время посещения <br>вы можете по телефону!</p>
-                <div class="subsection-phone">
-                    <p><span class="tel">+7 (963) 122 55 08</span></p>
-                </div>
+                <p class="phone-number"><a class="phone-number__link" href="tel:+7 (963) 122 55 08" target="_blank">+7 (963) 122 55 08</a></p>
 			</div>
 		</div>
 		<!-- Содержимое секции - Конец -->

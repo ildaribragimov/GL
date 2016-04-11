@@ -280,7 +280,15 @@ section {
 .header__separator {
     margin-bottom: 2.5em;
 }
-.section_about {
+.phone-number {
+    font-size: 1.6666em;
+    line-height: 1.5em;
+}.phone-number__link {
+    font-style: normal;
+    text-decoration: none;
+}.phone-number__link {
+    color: #F8F8F9;
+}.section_about {
     background-image: url(../../media/contacts/contacts_bg_tablet.jpg);
 }
 .map__content {
