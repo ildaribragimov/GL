@@ -1,0 +1,12 @@
+.button__icon {
+    margin-left:1em;
+	float:left;
+}
+.button__icon {
+	margin-top:0.5555em;
+	margin-bottom:0.5555em;    
+}
+.button_rounded .button__icon {
+	margin-top:1em;
+	margin-bottom:1em;
+}

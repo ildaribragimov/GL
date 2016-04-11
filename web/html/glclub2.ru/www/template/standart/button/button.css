@@ -1,0 +1,20 @@
+button,
+.button {
+    border: 0;
+    border-style: solid;
+    background: none;
+    display: block;
+}
+button,
+.button {
+    border-width: 2px;
+    border-radius: 4px;
+    padding-left: 0;
+    padding-right: 1em;
+}
+button::after,
+.button::after {
+    content: '';
+    display: block;
+    clear: both;
+}

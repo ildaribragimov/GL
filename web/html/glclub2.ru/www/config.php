@@ -13,19 +13,26 @@ $config["styles"] = array(
     "/template/normalize/body/body.css",
     "/template/standart/body/body.css",
     "/template/template/body/body.css",
-    
+
     "/template/normalize/a/a.css",
     "/template/template/p/p.css",
     "/template/standart/p/__link/p__link.css",
     "/template/template/p/__link/p__link.css",
     "/template/normalize/hr/hr.css",
-    
+
+    "/template/normalize/button/button.css",
+    "/template/standart/button/button.css",
+    "/template/standart/button/_rounded/button_rounded.css",
+    "/template/standart/button/__title/button__title.css",
+    "/template/standart/button/__icon/button__icon.css",
+    "/template/theme/button/_color-theme/button_color-theme.css",
+
     "/template/standart/collumns/collumns.css",
     "/template/standart/collumns/__col/collumns__col.css",
     "/template/template/collumns/__col/collumns__col.css",
-    
+
     "/template/normalize/header/header.css",
-    
+
     "/template/standart/icon/icon.css",
     "/template/standart/icon/_size/icon_size.css",
 
@@ -75,6 +82,7 @@ $config["styles"] = array(
     "/template/standart/controls/_align/controls_align.css",
     "/template/standart/controls/__wrapper/controls__wrapper.css",
     "/template/standart/controls/__content/controls__content.css",
+    "/template/template/controls/__content/controls__content.css",
     
     "/template/template/phone-number/phone-number.css",
     "/template/standart/phone-number/__link/phone-number__link.css",

@@ -33,9 +33,8 @@
                     <div class="controls controls_feedback controls_align_center">
                         <div class="controls__wrapper">
                             <div class="controls__content">
-                                <button class="-pink" value="sendMail">
-                                    <span class="title">Написать письмо</span>
-                                    <span class="clr"></span>
+                                <button class="button button_color-theme_pink" value="sendMail">
+                                    <span class="button__title">Написать письмо</span>
                                 </button>
                             </div>
                         </div>

@@ -1,0 +1,12 @@
+.button__title {
+    margin-left:1em;
+	float:left;
+}
+.button__title {
+	margin-top:0.3888em;
+	margin-bottom:0.3888em;
+}
+.button_rounded .button__title {
+    margin-top:0.8333em;
+	margin-bottom:0.8333em;
+}

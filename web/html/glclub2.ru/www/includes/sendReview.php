@@ -37,9 +37,8 @@
                 <div class="controls controls_feedback controls_align_center">
                     <div class="controls__wrapper">
                         <div class="controls__content">
-                            <button class="-green" value="sendReview">
-                                <span class="title">Добавить отзыв</span>
-                                <span class="clr"></span>
+                            <button class="button button_color-theme_green" value="sendReview">
+                                <span class="button__title">Добавить отзыв</span>
                             </button>
                         </div>
                     </div>

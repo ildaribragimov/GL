@@ -1,0 +1,8 @@
+.button_color-theme_pink {
+    border-color: #e9bdac;
+    color: #e9bdac;
+}
+.button_color-theme_pink:hover {
+	background:#e9bdac;
+	color:#5d463a;
+}
