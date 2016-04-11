@@ -32,10 +32,13 @@ $config["styles"] = (object)array(
     17 => "/template/standart/section/__content/section__content.css",
     18 => "/template/standart/section/__wrapper/_no-margin/section__wrapper_no-margin.css",
 
-    19 => "/template/template/section-about/section-about.css",
-    20 => "/template/template/map/__content/map__content.css",
+    19 => "/template/template/h/h.css",
+    20 => "/template/template/h/_lev/_lev_2.css",
     
-    21 => "/library/css/plugin.popUp.css",
+    21 => "/template/template/section-about/section-about.css",
+    22 => "/template/template/map/__content/map__content.css",
+    
+    23 => "/library/css/plugin.popUp.css",
 );
 // Порядок загрузки JS-скриптов
 $config["scripts"] = array(
