@@ -24,12 +24,13 @@ $config["styles"] = (object)array(
     12 => "/template/standart/section/_background/section_background_image.css",
     13 => "/template/theme/section/_color-theme/section_color-theme.css",
 
-    14 => "/template/template/section-wrapper/section-wrapper.css",
-    15 => "/template/standart/section-wrapper/_no-margin/section-wrapper_no-margin.css",
+    14 => "/template/template/section/__section-wrapper/section__section-wrapper.css",
+    15 => "/template/standart/section/__section-content/section__section-content.css",
+    16 => "/template/standart/section/__section-wrapper/_no-margin/section__section-wrapper_no-margin.css",
 
-    16 => "/template/template/section-about/section-about.css",
+    17 => "/template/template/section-about/section-about.css",
     
-    17 => "/library/css/plugin.popUp.css",
+    18 => "/library/css/plugin.popUp.css",
 );
 // Порядок загрузки JS-скриптов
 $config["scripts"] = array(

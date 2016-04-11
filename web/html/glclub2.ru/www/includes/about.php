@@ -25,7 +25,7 @@
 		<!-- Шапка секции - Конец -->
 		
 		<!-- Содержимое секции - Начало -->
-		<div class="section-content">
+		<div class="section__section-content">
 			<div class="content-wrapper">
 				<div class="collumns -two">
 					<div class="col">

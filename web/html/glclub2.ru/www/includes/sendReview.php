@@ -30,7 +30,7 @@
 		<!-- Шапка секции - Конец -->
 		
 		<!-- Содержимое секции - Начало -->
-		<div class="section-content">
+		<div class="section__section-content">
 			<div class="content-wrapper">
 				<p>Вы уже отдыхали у нас? &nbsp; У вас есть предложения по улучшению сервиса?<br>
 				Поделитесь своим впечатлением.</p>

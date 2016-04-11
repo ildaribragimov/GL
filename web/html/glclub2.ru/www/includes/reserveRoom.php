@@ -24,7 +24,7 @@
 		<!-- Шапка секции - Конец -->
 		
 		<!-- Содержимое секции - Начало -->
-		<div class="section-content">
+		<div class="section__section-content">
 			<div class="content-wrapper">
                 <p>Уточнить состояние номеров на желаемое вами дату и время посещения <br>вы можете по телефону!</p>
                 <div class="subsection-phone">

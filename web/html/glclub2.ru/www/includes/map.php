@@ -7,7 +7,7 @@
 <section id="map" class="section_color-theme_beige section_no-padding">
 	<div class="section-wrapper section-wrapper_no-margin">
 		<!-- Содержимое секции - Начало -->
-		<div class="section-content">
+		<div class="section__section-content">
             <?php
                 // Вставка шаблона вывода карты Google
                 //include "includes/googleMap.php";

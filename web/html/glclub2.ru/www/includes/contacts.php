@@ -24,7 +24,7 @@
 		<!-- Шапка секции - Конец -->
 
 		<!-- Содержимое секции - Начало -->
-		<div class="section-content">
+		<div class="section__section-content">
 			<div class="content-wrapper">
                 <div class="subsection-sendMail">
                     <p>Интересуют дополнительные услуги? &nbsp; Или у вас к нам коммерческое предложение?<br>
