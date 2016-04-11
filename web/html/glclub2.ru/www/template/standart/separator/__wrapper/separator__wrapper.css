@@ -1,0 +1,7 @@
+.separator__wrapper {
+    position: relative;    
+}
+.separator_align_center .separator__wrapper {
+    float: left;
+    left: 50%;
+}

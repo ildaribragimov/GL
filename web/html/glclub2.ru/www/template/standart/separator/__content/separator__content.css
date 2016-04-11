@@ -1,0 +1,7 @@
+.separator__content {
+    position: relative;    
+}
+.separator_align_center .separator__content {
+    float: left;
+    left: -50%;
+}
