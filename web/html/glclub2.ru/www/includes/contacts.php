@@ -18,7 +18,6 @@
 						<hr>
 					</div>
 				</div>
-				<div class="clr"></div>
 			</div>
 		</header>
 		<!-- Шапка секции - Конец -->
