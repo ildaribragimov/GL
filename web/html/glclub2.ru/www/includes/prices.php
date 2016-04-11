@@ -9,28 +9,30 @@
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
 		<header class="section__header">
-			<h2 class="h h_lev_2">Цены</h2>
-			<div class="separator separator_align_center header__separator">
-				<div class="separator__wrapper">
-					<div class="separator__content">
-						<hr class="separator__line">
-						<div class="separator__icon icon icon_size_x24 icon_cash"></div>
-						<hr class="separator__line">
-					</div>
-				</div>
-			</div>
+            <div class="header__wrapper">
+                <h2 class="h h_lev_2">Цены</h2>
+                <div class="separator separator_align_center header__separator">
+                    <div class="separator__wrapper">
+                        <div class="separator__content">
+                            <hr class="separator__line">
+                            <div class="separator__icon icon icon_size_x24 icon_cash"></div>
+                            <hr class="separator__line">
+                        </div>
+                    </div>
+                </div>
+            </div>
 		</header>
 		<!-- Шапка секции - Конец -->
 		
 		<!-- Содержимое секции - Начало -->
 		<div class="section__content">
-			<div class="content-wrapper">
+			<div class="content__wrapper">
 				<div class="collumns -two">
 					<div class="col">
 						<div class="priceLabel">
 							<div class="priceLabel-wrapper">
 								<div class="priceLabel-content">
-									<h4>Нью-Йорк</h4>
+									<h4 class="h h_lev_4">Нью-Йорк</h4>
 									<div class="price">
 										<span class="cost">1 300</span>
 										<span class="currency">руб/час</span>
@@ -50,7 +52,7 @@
 						<div class="priceLabel">
 							<div class="priceLabel-wrapper">
 								<div class="priceLabel-content">
-									<h4>Япония</h4>
+									<h4 class="h h_lev_4">Токио</h4>
 									<div class="price">
 										<span class="cost">1 000</span>
 										<span class="currency">руб/час</span>

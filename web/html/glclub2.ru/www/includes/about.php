@@ -9,22 +9,24 @@
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
 		<header class="section__header">
-			<h2 class="h h_lev_2">О клубе</h2>
-			<div class="separator separator_align_center header__separator">
-				<div class="separator__wrapper">
-					<div class="separator__content">
-						<hr class="separator__line">
-						<div class="separator__icon icon icon_size_x24 icon_info"></div>
-						<hr class="separator__line">
-					</div>
-				</div>
-			</div>
+            <div class="header__wrapper">
+                <h2 class="h h_lev_2">О клубе</h2>
+                <div class="separator separator_align_center header__separator">
+                    <div class="separator__wrapper">
+                        <div class="separator__content">
+                            <hr class="separator__line">
+                            <div class="separator__icon icon icon_size_x24 icon_info"></div>
+                            <hr class="separator__line">
+                        </div>
+                    </div>
+                </div>
+            </div>
 		</header>
 		<!-- Шапка секции - Конец -->
 		
 		<!-- Содержимое секции - Начало -->
 		<div class="section__content">
-			<div class="content-wrapper">
+			<div class="content__wrapper">
 				<div class="collumns -two">
 					<div class="col">
 						<p>Роскошное и стильное место, которое отвечает запросам самых взыскательных посетителей.</p>

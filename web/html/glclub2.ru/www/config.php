@@ -15,6 +15,9 @@ $config["styles"] = array(
     "/template/template/body/body.css",
     
     "/template/normalize/a/a.css",
+    "/template/template/p/p.css",
+    "/template/standart/p/__link/p__link.css",
+    "/template/template/p/__link/p__link.css",
     "/template/normalize/hr/hr.css",
     
     "/template/normalize/header/header.css",
@@ -47,8 +50,11 @@ $config["styles"] = array(
     "/template/standart/section/__content/section__content.css",
     "/template/standart/section/__wrapper/_no-margin/section__wrapper_no-margin.css",
 
+    "/template/standart/header/__wrapper/header__wrapper.css",
+    "/template/standart/content/__wrapper/content__wrapper.css",
+    
     "/template/template/h/h.css",
-    "/template/template/h/_lev/_lev_2.css",
+    "/template/template/h/_lev/_lev.css",
 
     "/template/standart/separator/separator.css",
     "/template/template/separator/separator.css",

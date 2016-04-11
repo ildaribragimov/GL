@@ -9,16 +9,18 @@
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
 		<header class="section__header">
-			<h2 class="h h_lev_2">Отзывы гостей о нас</h2>
-			<div class="separator separator_align_center header__separator">
-				<div class="separator__wrapper">
-					<div class="separator__content">
-						<hr class="separator__line">
-						<div class="separator__icon icon icon_size_x24 icon_quotes"></div>
-						<hr class="separator__line">
-					</div>
-				</div>
-			</div>
+            <div class="header__wrapper">
+                <h2 class="h h_lev_2">Отзывы гостей о нас</h2>
+                <div class="separator separator_align_center header__separator">
+                    <div class="separator__wrapper">
+                        <div class="separator__content">
+                            <hr class="separator__line">
+                            <div class="separator__icon icon icon_size_x24 icon_quotes"></div>
+                            <hr class="separator__line">
+                        </div>
+                    </div>
+                </div>
+            </div>
 		</header>
 		<!-- Шапка секции - Конец -->
 
@@ -40,7 +42,7 @@
 							<div class="photo" style="background-image:url(media/reviews/review2.jpg);">
 								<a href="/" target="_blank" title="Посетить страницу профиля гостя в соц.сети"></a>
 							</div>
-							<h4 class="name"><a href="/" target="_blank" title="Посетить страницу профиля гостя в соц.сети">Александр Григоров</a></h4>
+							<h4 class="h h_lev_4 name"><a class="h__link" href="/" target="_blank" title="Посетить страницу профиля гостя в соц.сети">Александр Григоров</a></h4>
 						</div>
 						<div class="separator">
 							<div class="separator-wrapper">
@@ -49,7 +51,7 @@
 						</div>
 						<div class="reviewContent">
 							<p>Отмечал день рождения. Классная сауна для больших компаний. Интерьер - супер!<br> Как будто и не в бане вовсе. Были друзья из Москвы, тоже оценили, сказали, что уровень высокий.<br> Жена тоже будет отмечать в GL. Спасибо за отлично проделанную работу администрации!</p>
-							<p class="rooms">Отдыхал в <a href="/" target="_self">Нью-Йорк</a>, <a href="/" target="_self">Япония</a></p>
+							<p class="rooms">Отдыхал в <a class="p__link" href="/" target="_self">Нью-Йорк</a>, <a class="p__link" href="/" target="_self">Токио</a></p>
 						</div>
 					</div>
 					<!--
