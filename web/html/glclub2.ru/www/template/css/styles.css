@@ -69,18 +69,47 @@ button,
     background: none;
     display: block;
 }
-button::after,
-.button::after {
-    content: '';
-    display: block;
-    clear: both;
-}
 button,
 .button {
     border-width: 2px;
     border-radius: 4px;
     padding-left: 0;
     padding-right: 1em;
+}
+button::after,
+.button::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.button_rounded {
+    border-radius:32px;
+	margin-top:0.0555em;
+	margin-bottom:0.0555em;
+}
+.button__title {
+    margin-left:1em;
+	float:left;
+}
+.button__title {
+	margin-top:0.3888em;
+	margin-bottom:0.3888em;
+}
+.button_rounded .button__title {
+    margin-top:0.8333em;
+	margin-bottom:0.8333em;
+}
+.button__icon {
+    margin-left:1em;
+	float:left;
+}
+.button__icon {
+	margin-top:0.5555em;
+	margin-bottom:0.5555em;    
+}
+.button_rounded .button__icon {
+	margin-top:1em;
+	margin-bottom:1em;
 }
 .button_color-theme_pink {
     border-color: #e9bdac;
@@ -353,6 +382,10 @@ section {
 .controls_align_center .controls__content {
     float: left;
     left: -50%;
+}
+.controls__content {
+	padding-top:0.3333em;
+	padding-bottom:0.3333em;
 }
 .phone-number {
     font-size: 1.6666em;
