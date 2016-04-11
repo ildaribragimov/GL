@@ -27,11 +27,13 @@ $config["styles"] = (object)array(
     14 => "/template/template/section/__wrapper/section__wrapper.css",
     15 => "/template/standart/section/__content/section__content.css",
     16 => "/template/standart/section/__wrapper/_no-margin/section__wrapper_no-margin.css",
-
-    17 => "/template/template/section-about/section-about.css",
-    18 => "/template/template/map/__content/map__content.css",
     
-    19 => "/library/css/plugin.popUp.css",
+    17 => "/template/normalize/a/a.css",
+
+    18 => "/template/template/section-about/section-about.css",
+    19 => "/template/template/map/__content/map__content.css",
+    
+    20 => "/library/css/plugin.popUp.css",
 );
 // Порядок загрузки JS-скриптов
 $config["scripts"] = array(
