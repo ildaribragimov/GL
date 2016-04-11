@@ -1,0 +1,12 @@
+.collumns__col {
+    float:left;
+}
+.collumns_number_2 .collumns__col {
+    width:50%;
+}
+.collumns_number_3 .collumns__col {
+    width:33.3333%;
+}
+.collumns_number_4 .collumns__col {
+    width:25%;
+}

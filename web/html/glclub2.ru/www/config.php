@@ -20,6 +20,10 @@ $config["styles"] = array(
     "/template/template/p/__link/p__link.css",
     "/template/normalize/hr/hr.css",
     
+    "/template/standart/collumns/collumns.css",
+    "/template/standart/collumns/__col/collumns__col.css",
+    "/template/template/collumns/__col/collumns__col.css",
+    
     "/template/normalize/header/header.css",
     
     "/template/standart/icon/icon.css",
