@@ -1,4 +1,5 @@
 .separator_align_center::after {
     content: '';
+    display: block;
     clear: both;
 }
