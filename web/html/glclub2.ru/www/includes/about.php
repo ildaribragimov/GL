@@ -4,7 +4,7 @@
  */
 ?>
 
-<section id="about" class="section_color-theme_grey section_background_image section-about">
+<section id="about" class="section_about section_color-theme_grey section_background_image">
 	<a name="about"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
@@ -27,17 +27,16 @@
 		<!-- Содержимое секции - Начало -->
 		<div class="section__content">
 			<div class="content__wrapper">
-				<div class="collumns -two">
-					<div class="col">
+				<div class="collumns collumns_number_2">
+					<div class="collumns__col">
 						<p>Роскошное и стильное место, которое отвечает запросам самых взыскательных посетителей.</p>
 						<p>Отличный сервис, идеальная чистота, продуманные интерьеры — мы предусмотрели каждый ваш каприз и сделали наш банный комплекс настоящим оазисом в мире волнений и ежедневной суеты.</p>
 					</div>
-					<div class="col">
+					<div class="collumns__col">
 						<p>Мы рады видеть вас, поэтому создали для своих посетителей отличные условия для комфортного отдыха.</p>
 						<p>Мы уверены, время, проведенное у нас доставит Вам удовольствие!</p>
 						<p>Остановив свой выбор на нашей сауне, вы получите максимальный уровень комфорта и удовольствия.</p>
 					</div>
-					<div class="clr"></div>
 				</div>
 			</div>
 		</div>

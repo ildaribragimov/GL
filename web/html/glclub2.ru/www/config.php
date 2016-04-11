@@ -52,6 +52,7 @@ $config["styles"] = array(
 
     "/template/template/section/__wrapper/section__wrapper.css",
     "/template/standart/section/__content/section__content.css",
+    "/template/template/section/__content/section__content.css",
     "/template/standart/section/__wrapper/_no-margin/section__wrapper_no-margin.css",
 
     "/template/standart/header/__wrapper/header__wrapper.css",
@@ -71,7 +72,8 @@ $config["styles"] = array(
     "/template/template/separator/__icon/separator__icon.css",
     "/template/template/header/__separator/header__separator.css",
 
-    "/template/template/section-about/section-about.css",
+    "/template/template/section/_about/section_about.css",
+
     "/template/template/map/__content/map__content.css",
 
     "/library/css/plugin.popUp.css",

@@ -43,6 +43,25 @@ hr {
     box-sizing: content-box;
     height: 0;
 }
+.collumns::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.collumns__col {
+    float:left;
+}
+.collumns_number_2 .collumns__col {
+    width:50%;
+}
+.collumns_number_3 .collumns__col {
+    width:33.3333%;
+}
+.collumns_number_4 .collumns__col {
+    width:25%;
+}.collumns__col {
+    margin-top:-0.8333em;
+}
 header {
     display: block;
 }
@@ -165,6 +184,12 @@ section {
 .section__content {
     position: relative;
 }
+.section__content {
+    position: relative;
+}
+.section_about .section__content {
+    text-align: left;
+}
 .section__wrapper_no-margin {
     margin: 0;
 }
@@ -255,7 +280,7 @@ section {
 .header__separator {
     margin-bottom: 2.5em;
 }
-.section-about {
+.section_about {
     background-image: url(../../media/contacts/contacts_bg_tablet.jpg);
 }
 .map__content {

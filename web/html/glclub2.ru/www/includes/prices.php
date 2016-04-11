@@ -27,8 +27,8 @@
 		<!-- Содержимое секции - Начало -->
 		<div class="section__content">
 			<div class="content__wrapper">
-				<div class="collumns -two">
-					<div class="col">
+				<div class="collumns collumns_number_2">
+					<div class="collumns__col">
 						<div class="priceLabel">
 							<div class="priceLabel-wrapper">
 								<div class="priceLabel-content">
@@ -48,7 +48,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col">
+					<div class="collumns__col">
 						<div class="priceLabel">
 							<div class="priceLabel-wrapper">
 								<div class="priceLabel-content">
@@ -68,7 +68,6 @@
 							</div>
 						</div>
 					</div>
-					<div class="clr"></div>
 				</div>
 				<p><cite><span class="footnote">*</span> — За каждого дополнительного гостя доплата составит 100 рублей в час !</cite></p>
 				<p>Так же в наличии всегда чистые простыни и полотенца, свежие банные веники (береза, дуб), средства гигиены (шампуни, мыло) и прочие банные принадлежности.</p>
