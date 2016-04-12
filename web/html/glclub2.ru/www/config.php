@@ -20,6 +20,13 @@ $config["styles"] = array(
     "/template/template/p/__link/p__link.css",
     "/template/normalize/hr/hr.css",
 
+    "/template/standart/list/list.css",
+    "/template/template/list/list.css",
+    "/template/standart/list/__item/list__item.css",
+    "/template/template/list/__item/list__item.css",
+    
+    "/template/template/footnote/__mark/footnote__mark.css",
+    
     "/template/normalize/button/button.css",
     "/template/standart/button/button.css",
     "/template/standart/button/_rounded/button_rounded.css",
@@ -66,7 +73,9 @@ $config["styles"] = array(
     "/template/standart/content/__wrapper/content__wrapper.css",
     
     "/template/template/h/h.css",
-    "/template/template/h/_lev/_lev.css",
+    "/template/template/h/_lev/h_lev.css",
+    "/template/standart/h/_no-padding/h_no-padding.css",
+    "/template/standart/h/__link/h__link.css",
 
     "/template/standart/separator/separator.css",
     "/template/template/separator/separator.css",
@@ -79,6 +88,18 @@ $config["styles"] = array(
     "/template/template/separator/__icon/separator__icon.css",
     "/template/template/header/__separator/header__separator.css",
 
+    "/template/template/price-card/price-card.css",
+    "/template/template/price-card/__wrapper/price-card__wrapper.css",
+    "/template/template/price-card/__content/price-card__content.css",
+    "/template/template/price-card/__h/price-card__h.css",
+    "/template/template/price-card/__options/price-card__options.css",
+    
+    "/template/template/price/price.css",
+    "/template/standart/price/__cost/price__cost.css",
+    "/template/template/price/__cost/price__cost.css",
+    "/template/standart/price/__currency/price__currency.css",
+    "/template/template/price/__currency/price__currency.css",
+    
     "/template/standart/controls/_align/controls_align.css",
     "/template/standart/controls/__wrapper/controls__wrapper.css",
     "/template/standart/controls/__content/controls__content.css",

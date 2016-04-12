@@ -29,47 +29,47 @@
 			<div class="content__wrapper">
 				<div class="collumns collumns_number_2">
 					<div class="collumns__col">
-						<div class="priceLabel">
-							<div class="priceLabel-wrapper">
-								<div class="priceLabel-content">
-									<h4 class="h h_lev_4">Нью-Йорк</h4>
-									<div class="price">
-										<span class="cost">1 300</span>
-										<span class="currency">руб/час</span>
+						<div class="price-card">
+							<div class="price-card__wrapper">
+								<div class="price-card__content">
+									<h4 class="h h_no-padding h_lev_4 price-card__h">Нью-Йорк</h4>
+									<div class="price-card__price price">
+										<span class="price__cost">1 300</span>
+										<span class="price__currency">руб/час</span>
 									</div>
-									<ul>
-										<li>Чистый бассейн (3 х 3 м.)</li>
-										<li><b>2 комнаты</b> отдыха</li>
-										<li>Спутниковое ТВ</li>
-										<li>Караоке</li>
-										<li>Стоимость часа учитывает компанию из <b>12 человек</b> <span class="footnote">*</span></li>
+									<ul class="price-card__options list">
+										<li class="list__item">Чистый бассейн (3 х 3 м.)</li>
+										<li class="list__item"><b>2 комнаты</b> отдыха</li>
+										<li class="list__item">Спутниковое ТВ</li>
+										<li class="list__item">Караоке</li>
+										<li class="list__item">Стоимость часа учитывает компанию из <b>12 человек</b> <span class="footnote">*</span></li>
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="collumns__col">
-						<div class="priceLabel">
-							<div class="priceLabel-wrapper">
-								<div class="priceLabel-content">
-									<h4 class="h h_lev_4">Токио</h4>
-									<div class="price">
-										<span class="cost">1 000</span>
-										<span class="currency">руб/час</span>
+						<div class="price-card">
+							<div class="price-card__wrapper">
+								<div class="price-card__content">
+									<h4 class="h h_no-padding h_lev_4 price-card__h">Токио</h4>
+									<div class="price-card__price price">
+										<span class="price__cost">1 000</span>
+										<span class="price__currency">руб/час</span>
 									</div>
-									<ul>
-										<li>Настоящая японская купель</li>
-										<li><b>1 комната</b> отдыха</li>
-										<li>Спутниковое ТВ</li>
-										<li>Караоке</li>
-										<li>Стоимость часа учитывает компанию из <b>6 человек</b> <span class="footnote">*</span></li>
+									<ul class="price-card__options list">
+										<li class="list__item">Настоящая японская купель</li>
+										<li class="list__item"><b>1 комната</b> отдыха</li>
+										<li class="list__item">Спутниковое ТВ</li>
+										<li class="list__item">Караоке</li>
+										<li class="list__item">Стоимость часа учитывает компанию из <b>6 человек</b> <span class="footnote">*</span></li>
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<p><cite><span class="footnote">*</span> — За каждого дополнительного гостя доплата составит 100 рублей в час !</cite></p>
+				<p><cite class="footnote"><span class="footnote__mark">*</span> — За каждого дополнительного гостя доплата составит 100 рублей в час !</cite></p>
 				<p>Так же в наличии всегда чистые простыни и полотенца, свежие банные веники (береза, дуб), средства гигиены (шампуни, мыло) и прочие банные принадлежности.</p>
 			</div>
 		</div>
