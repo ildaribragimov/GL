@@ -1,0 +1,7 @@
+.list__item {
+    padding-left: 1.1111em;
+    margin: 0.8333em 0;
+    background-position: -570px -262px;
+    background-image: url(../img/sprite_min.svg);
+    background-repeat: no-repeat;
+}
