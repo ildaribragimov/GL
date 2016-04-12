@@ -1,0 +1,10 @@
+.user__photo_size_x150 {
+    width: 150px;
+    height: 150px;
+    border-radius:75px;
+}
+.user__photo_size_x240 {
+    width: 240px;
+    height: 240px;
+    border-radius: 120px;
+}
