@@ -43,6 +43,28 @@ hr {
     box-sizing: content-box;
     height: 0;
 }
+.list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+}
+.list {
+    margin: 0.8333em 0 1.6666em;
+    padding-left: 2.2222em;
+}
+.list__item {
+}
+.list__item {
+    padding-left: 1.1111em;
+    margin: 0.8333em 0;
+    background-position: -570px -262px;
+    background-image: url(../img/sprite_min.svg);
+    background-repeat: no-repeat;
+}
+.footnote__mark {
+	color: #8d2b2e;
+}
 button,
 .button {
     color: inherit;
@@ -313,6 +335,16 @@ section {
 	font-size:1.6666em;
 	line-height:1.5em;
 }
+.h_no-padding {
+    padding: 0;
+}
+.h__link {
+	text-decoration:none;
+	color:inherit;
+}
+.h__link:hover {
+	text-decoration:underline;
+}
 .separator {
     overflow: hidden;
 }
@@ -363,6 +395,45 @@ section {
 }
 .header__separator {
     margin-bottom: 2.5em;
+}
+.price-card {
+    max-width: 440px;
+    padding: 0.8333em 1.1111em;
+    margin: 0.8333em auto 1.6666em;
+}
+.price-card__wrapper {
+    padding: 8px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #f2eee9;
+}
+.price-card__content {
+    border: 2px solid #daccc0;
+    padding: 0 1.6666em 1.1111em;
+}
+.price-card__h {
+    margin-top: 1.6666em;
+}
+.price-card__options {
+}
+.price {
+    margin-top: 1.6666em;
+    margin-bottom: 2.5em;
+    color: #3b876f;
+}
+.price__cost {
+    display: block;
+}
+.price__cost {
+    font-size: 4em;
+    line-height: 1.25em;
+}
+.price__currency {
+    display: block;
+}
+.price__currency {
+    font-size: 1.6666em;
+    line-height: 1.5em;
 }
 .controls_align_center::after {
     content: '';
