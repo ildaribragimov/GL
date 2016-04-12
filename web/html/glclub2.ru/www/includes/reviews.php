@@ -26,42 +26,36 @@
 
 		<!-- Содержимое секции - Начало -->
 		<div class="section__content">
-			<div class="reviewsItems">
-				<div class="reviewsItems-wrapper">
+			<div class="reviews">
+				<div class="reviews__wrapper">
 					<!--
-					<div class="reviewItem -beforeActiveReview">
-						<div class="author">
-							<div class="photo" style="background-image:url(media/reviews/review1.jpg);">
+					<div class="reviews__item reviews__item_prev">
+						<div class="review__author user">
+							<div class="user__photo" style="background-image:url(media/reviews/review1.jpg);">
 								<a href="/index.php?" ></a>
 							</div>
 						</div>
 					</div>
 					-->
-					<div class="reviewItem -active">
-						<div class="author">
-							<div class="photo" style="background-image:url(media/reviews/review2.jpg);">
+					<div class="reviews__item reviews__item_active review">
+						<div class="review__author user">
+							<div class="user__photo user__photo_size_x240" style="background-image:url(media/reviews/review2.jpg);">
 								<a href="/" target="_blank" title="Посетить страницу профиля гостя в соц.сети"></a>
 							</div>
-							<h4 class="h h_lev_4 name"><a class="h__link" href="/" target="_blank" title="Посетить страницу профиля гостя в соц.сети">Александр Григоров</a></h4>
+							<h4 class="user__name h h_lev_4"><a class="h__link" href="/" target="_blank" title="Посетить страницу профиля гостя в соц.сети">Александр Григоров</a></h4>
 						</div>
-						<div class="separator">
-							<div class="separator-wrapper">
-								<div class="separator-content"><hr></div>
-							</div>
-						</div>
-						<div class="reviewContent">
+						<div class="review__content">
 							<p>Отмечал день рождения. Классная сауна для больших компаний. Интерьер - супер!<br> Как будто и не в бане вовсе. Были друзья из Москвы, тоже оценили, сказали, что уровень высокий.<br> Жена тоже будет отмечать в GL. Спасибо за отлично проделанную работу администрации!</p>
-							<p class="rooms">Отдыхал в <a class="p__link" href="/" target="_self">Нью-Йорк</a>, <a class="p__link" href="/" target="_self">Токио</a></p>
+							<p>Отдыхал в <a class="p__link p__link_color_green" href="/" target="_self">Нью-Йорк</a>, <a class="p__link p__link_color_green" href="/" target="_self">Токио</a></p>
 						</div>
 					</div>
 					<!--
-					<div class="reviewItem -afterActiveReview">
+					<div class="reviews__item reviews__item_next">
 						<div class="author">
 							<div class="photo" style="background-image:url(media/reviews/review3.jpg);"></div>
 						</div>
 					</div>
 					-->
-					<div class="clr"></div>
 				</div>
 			</div>
 			<div class="switchers">

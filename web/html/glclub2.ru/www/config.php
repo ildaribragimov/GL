@@ -18,6 +18,7 @@ $config["styles"] = array(
     "/template/template/p/p.css",
     "/template/standart/p/__link/p__link.css",
     "/template/template/p/__link/p__link.css",
+    "/template/theme/p/__link/_color/p__link_color.css",
     "/template/normalize/hr/hr.css",
 
     "/template/standart/list/list.css",
@@ -104,6 +105,20 @@ $config["styles"] = array(
     "/template/standart/controls/__wrapper/controls__wrapper.css",
     "/template/standart/controls/__content/controls__content.css",
     "/template/template/controls/__content/controls__content.css",
+
+    "/template/template/reviews/reviews.css",
+    "/template/standart/reviews/__wrapper/reviews__wrapper.css",
+    "/template/template/reviews/__wrapper/reviews__wrapper.css",
+    "/template/template/reviews/__item/reviews__item.css",
+    "/template/template/reviews/__item/_active/reviews__item_active.css",
+    
+    "/template/standart/user/__photo/user__photo.css",
+    "/template/template/user/__photo/user__photo.css",
+    "/template/standart/user/__photo/_size/user__photo_size.css",
+    "/template/template/user/__photo/_size/user__photo_size.css",
+    "/template/template/user/__name/user__name.css",
+    "/template/standart/user/__link/user__link.css",
+    "/template/template/user/__link/user__link.css",
     
     "/template/template/phone-number/phone-number.css",
     "/template/standart/phone-number/__link/phone-number__link.css",
