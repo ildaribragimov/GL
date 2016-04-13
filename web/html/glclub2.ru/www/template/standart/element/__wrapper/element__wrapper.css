@@ -1,0 +1,7 @@
+.element__wrapper {
+    position: relative;
+}
+.element_align_center .element__wrapper {
+    float: left;
+    left: 50%;
+}
