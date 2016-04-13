@@ -1,0 +1,10 @@
+.link_block {
+	display:block;
+	width:inherit;
+	height:inherit;
+	position:relative;
+}
+.link_block,
+.link_block:hover {
+	text-decoration:none;
+}
