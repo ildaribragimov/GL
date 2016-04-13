@@ -1,0 +1,129 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?e0arlw');
+    src:    url('fonts/icomoon.eot?e0arlw#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?e0arlw') format('truetype'),
+        url('fonts/icomoon.woff?e0arlw') format('woff'),
+        url('fonts/icomoon.svg?e0arlw#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow_down:before {
+    content: "\61";
+}
+.icon-arrow_up:before {
+    content: "\1f32d";
+}
+.icon-arrow-left_default:before {
+    content: "\e902";
+}
+.icon-arrow-left_hover:before {
+    content: "\e903";
+}
+.icon-arrow-right_default:before {
+    content: "\e904";
+}
+.icon-arrow-right_hover:before {
+    content: "\e905";
+}
+.icon-burger-arrow:before {
+    content: "\e906";
+}
+.icon-burger-button:before {
+    content: "\e907";
+}
+.icon-cash:before {
+    content: "\e908";
+}
+.icon-close_default:before {
+    content: "\e909";
+}
+.icon-close_hover:before {
+    content: "\e90a";
+}
+.icon-comment:before {
+    content: "\e90b";
+}
+.icon-dot:before {
+    content: "\e90c";
+}
+.icon-dotted:before {
+    content: "\e90d";
+}
+.icon-envelope_default:before {
+    content: "\e90e";
+}
+.icon-envelope_hover:before {
+    content: "\e90f";
+}
+.icon-fail:before {
+    content: "\e910";
+}
+.icon-gallery:before {
+    content: "\e911";
+}
+.icon-info:before {
+    content: "\e912";
+}
+.icon-logo_medium:before {
+    content: "\e913";
+}
+.icon-logo_rus:before {
+    content: "\e914";
+}
+.icon-logo_small:before {
+    content: "\e915";
+}
+.icon-map:before {
+    content: "\e916";
+}
+.icon-map-point:before {
+    content: "\e917";
+}
+.icon-phone:before {
+    content: "\e918";
+}
+.icon-plane:before {
+    content: "\e919";
+}
+.icon-quotes:before {
+    content: "\e91a";
+}
+.icon-radio-button_default:before {
+    content: "\e91b";
+}
+.icon-radio-button_hover:before {
+    content: "\e91c";
+}
+.icon-social_facebook2:before {
+    content: "\e91d";
+}
+.icon-social_vk:before {
+    content: "\e91e";
+}
+.icon-social_vk2:before {
+    content: "\e91f";
+}
+.icon-success:before {
+    content: "\e920";
+}
+.icon-unknouwn-user:before {
+    content: "\e921";
+}
+
