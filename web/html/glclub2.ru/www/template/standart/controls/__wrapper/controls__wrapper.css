@@ -1,7 +1,3 @@
 .controls__wrapper {
     position: relative;
 }
-.controls_align_center .controls__wrapper {
-    float: left;
-    left: 50%;
-}

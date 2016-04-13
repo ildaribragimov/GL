@@ -1,7 +1,3 @@
 .controls__content {
     position: relative;
 }
-.controls_align_center .controls__content {
-    float: left;
-    left: -50%;
-}
