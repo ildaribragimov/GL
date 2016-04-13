@@ -1,0 +1,12 @@
+.radio-buttons__item {
+    border: 2px solid #6FA491;
+    border-radius: 8px;
+    width: 12px;
+    height: 12px;
+}
+.radio-buttons__item:hover {
+    background-color: #6FA491;
+}
+.radio-buttons_horiz .radio-buttons__item {
+    margin: 0.3888em 0.6666em;
+}

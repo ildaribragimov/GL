@@ -1,0 +1,6 @@
+.radio-buttons__item {
+    background: none;
+}
+.radio-buttons_horiz .radio-buttons__item {
+    float: left;
+}
