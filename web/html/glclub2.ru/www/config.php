@@ -15,11 +15,16 @@ $config["styles"] = array(
     "/template/template/body/body.css",
 
     "/template/normalize/a/a.css",
+    "/template/standart/link/link.css",
+    "/template/standart/link/_inverted/link_inverted.css",
+    "/template/standart/link/_block/link_block.css",
+    
     "/template/template/p/p.css",
-    "/template/standart/p/__link/p__link.css",
     "/template/template/p/__link/p__link.css",
-    "/template/theme/p/__link/_color/p__link_color.css",
+
     "/template/normalize/hr/hr.css",
+    
+    "/template/normalize/ul/ul.css",
 
     "/template/standart/list/list.css",
     "/template/template/list/list.css",
@@ -54,33 +59,27 @@ $config["styles"] = array(
     "/template/template/icon/_phone/icon_phone.css",
     "/template/template/icon/_plane/icon_plane.css",
     "/template/template/icon/_quotes/icon_quotes.css",
+    "/template/template/icon/_arrow-left/icon_arrow-left.css",
+    "/template/theme/icon/_arrow-left/icon_arrow-left.css",
+    "/template/template/icon/_arrow-right/icon_arrow-right.css",
+    "/template/theme/icon/_arrow-right/icon_arrow-right.css",
 
-    "/template/standart/page-wrapper/page-wrapper.css",
-    "/template/template/page-wrapper/page-wrapper.css",
-
-    "/template/normalize/section/section.css",
-    "/template/standart/section/section.css",
-    "/template/template/section/section.css",
-    "/template/standart/section/_no-padding/section_no-padding.css",
-    "/template/standart/section/_background/section_background_image.css",
-    "/template/theme/section/_color-theme/section_color-theme.css",
-
-    "/template/template/section/__wrapper/section__wrapper.css",
-    "/template/standart/section/__content/section__content.css",
-    "/template/template/section/__content/section__content.css",
-    "/template/standart/section/__wrapper/_no-margin/section__wrapper_no-margin.css",
-
-    "/template/standart/header/__wrapper/header__wrapper.css",
-    "/template/standart/content/__wrapper/content__wrapper.css",
+    "/template/standart/switchers/_radio-buttons/switchers_radio-buttons.css",
+    "/template/template/switchers/_radio-buttons/switchers_radio-buttons.css",
     
-    "/template/template/h/h.css",
-    "/template/template/h/_lev/h_lev.css",
-    "/template/standart/h/_no-padding/h_no-padding.css",
-    "/template/standart/h/__link/h__link.css",
+    "/template/template/arrow/arrow.css",
+    "/template/template/arrow/_left/arrow_left.css",
+    "/template/template/arrow/_right/arrow_right.css",
 
+    "/template/standart/radio-buttons/_horiz/radio-buttons_horiz.css",
+    "/template/standart/radio-buttons/__item/radio-buttons__item.css",
+    "/template/template/radio-buttons/__item/radio-buttons__item.css",
+    "/template/theme/radio-buttons/__item/radio-buttons__item.css",
+    "/template/template/radio-buttons/__item/_active/radio-buttons__item_active.css",
+    "/template/theme/radio-buttons/__item/_active/radio-buttons__item_active.css",
+    
     "/template/standart/separator/separator.css",
     "/template/template/separator/separator.css",
-    "/template/standart/separator/_align/separator_align.css",
     "/template/standart/separator/__wrapper/separator__wrapper.css",
     "/template/standart/separator/__content/separator__content.css",
     "/template/standart/separator/__line/separator__line.css",
@@ -88,6 +87,39 @@ $config["styles"] = array(
     "/template/theme/separator/__line/separator__line.css",
     "/template/template/separator/__icon/separator__icon.css",
     "/template/template/header/__separator/header__separator.css",
+
+    "/template/standart/page-wrapper/page-wrapper.css",
+    "/template/template/page-wrapper/page-wrapper.css",
+
+    "/template/normalize/section/section.css",
+    "/template/standart/section/section.css",
+    "/template/template/section/section.css",
+    "/template/standart/section/_background/section_background_image.css",
+    "/template/theme/section/_color-theme/section_color-theme.css",
+
+    "/template/template/section/__wrapper/section__wrapper.css",
+    "/template/standart/section/__content/section__content.css",
+    "/template/template/section/__content/section__content.css",
+    "/template/template/section/__separator/section__separator.css",
+    
+    "/template/template/rooms/rooms.css",
+    "/template/template/rooms/__item/rooms__item.css",
+    "/template/template/rooms/__item/_new-york/rooms__item_new-york.css",
+    "/template/template/rooms/__item/_tokyo/rooms__item_tokyo.css",
+    "/template/template/rooms/__item-link/rooms__item-link.css",
+    "/template/template/rooms/__item-number/rooms__item-number.css",
+    
+    "/template/template/sticker/sticker.css",
+    "/template/template/sticker/__wrapper/sticker__wrapper.css",
+    
+    "/template/template/progress-bar/progress-bar.css",
+    "/template/template/progress-bar/__track/progress-bar__track.css",
+
+    "/template/standart/header/__wrapper/header__wrapper.css",
+    "/template/standart/content/__wrapper/content__wrapper.css",
+    
+    "/template/template/h/h.css",
+    "/template/template/h/_lev/h_lev.css",
 
     "/template/template/price-card/price-card.css",
     "/template/template/price-card/__wrapper/price-card__wrapper.css",
@@ -101,7 +133,6 @@ $config["styles"] = array(
     "/template/standart/price/__currency/price__currency.css",
     "/template/template/price/__currency/price__currency.css",
     
-    "/template/standart/controls/_align/controls_align.css",
     "/template/standart/controls/__wrapper/controls__wrapper.css",
     "/template/standart/controls/__content/controls__content.css",
     "/template/template/controls/__content/controls__content.css",
@@ -117,11 +148,8 @@ $config["styles"] = array(
     "/template/standart/user/__photo/_size/user__photo_size.css",
     "/template/template/user/__photo/_size/user__photo_size.css",
     "/template/template/user/__name/user__name.css",
-    "/template/standart/user/__link/user__link.css",
-    "/template/template/user/__link/user__link.css",
     
     "/template/template/phone-number/phone-number.css",
-    "/template/standart/phone-number/__link/phone-number__link.css",
     "/template/template/phone-number/__link/phone-number__link.css",
     
     "/template/template/section/_about/section_about.css",
@@ -129,6 +157,12 @@ $config["styles"] = array(
     "/template/template/map/__content/map__content.css",
 
     "/library/css/plugin.popUp.css",
+    
+    "/template/standart/element/_align/element_align.css",
+    "/template/standart/element/_no-padding/element_no-padding.css",
+    "/template/standart/element/_no-margin/element_no-margin.css",
+    "/template/standart/element/__wrapper/element__wrapper.css",
+    "/template/standart/element/__content/element__content.css",
 );
 // Порядок загрузки JS-скриптов
 $config["scripts"] = array(

@@ -7,3 +7,9 @@
 .section_color-theme_green .separator__line {
     background-color: #daccc0;
 }
+.section__separator .separator__line {
+    height: 2px;
+    width: 80%;
+    margin: 0 auto;
+    float: none;
+}

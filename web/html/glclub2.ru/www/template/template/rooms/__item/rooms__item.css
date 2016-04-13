@@ -1,0 +1,15 @@
+.rooms__item {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: 11;
+    height: 100vh;
+}
+.rooms__item:hover,
+.rooms__item_active {
+	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.75);
+	z-index:12;
+}

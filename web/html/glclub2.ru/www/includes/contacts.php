@@ -11,9 +11,9 @@
 		<header class="section__header">
             <div class="header__wrapper">
                 <h2 class="h h_lev_2">Остались вопросы?</h2>
-                <div class="separator separator_align_center header__separator">
-                    <div class="separator__wrapper">
-                        <div class="separator__content">
+                <div class="separator element_align_center header__separator">
+                    <div class="separator__wrapper element__wrapper">
+                        <div class="separator__content element__content">
                             <hr class="separator__line">
                             <div class="separator__icon icon icon_size_x24 icon_envelope"></div>
                             <hr class="separator__line">
@@ -30,9 +30,9 @@
                 <div class="subsection-sendMail">
                     <p>Интересуют дополнительные услуги? &nbsp; Или у вас к нам коммерческое предложение?<br>
                     Свяжитесь с нами! &nbsp; Мы открыты и для новых друзей!</p>
-                    <div class="controls controls_feedback controls_align_center">
-                        <div class="controls__wrapper">
-                            <div class="controls__content">
+                    <div class="controls controls_feedback element_align_center">
+                        <div class="controls__wrapper element__wrapper">
+                            <div class="controls__content element__content">
                                 <button class="button button_color-theme_pink" value="sendMail">
                                     <span class="button__title">Написать письмо</span>
                                 </button>

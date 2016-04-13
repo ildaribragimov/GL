@@ -1,0 +1,40 @@
+.rooms__item-number {
+    top: 50%;
+	background:none;
+    position: absolute;
+}
+.rooms__item_new-york .rooms__item-number {
+    right: 50%;
+}
+.rooms__item_tokyo .rooms__item-number {
+    left: 50%;
+}
+.rooms__item_new-york .rooms__item-number::before,
+.rooms__item_tokyo .rooms__item-number::before {
+    margin-top: -50%;
+    border: 3px solid #f7da7e;
+    border-radius: 1.1111em;
+    padding-top: 0.3333em;
+    width: 2.0555em;
+    height: 1.7222em;
+    display: block;
+    position: relative;
+    color: #f7da7e;
+    font-family: 'PT Serif', 'Times New Roman';
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.25em;
+    text-align: center;
+}
+.rooms__item_new-york .rooms__item-number::before {
+    right: -50%;
+    content: '#1';
+}
+.rooms__item_tokyo .rooms__item-number::before {
+    left: -50%;
+    content: '#2';
+}
+.rooms__item-link:hover .rooms__item-number::before {
+	background-color:#f7da7e;
+	color:#5d463a;
+}

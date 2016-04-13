@@ -4,34 +4,28 @@
  */
 ?>
 
-<section id="rooms" class="section_no-padding section_color-theme_grey">
+<section id="rooms" class="element_no-padding section_color-theme_grey">
 	<a name="rooms"></a>
-	<div class="section__wrapper">
+	<div class="section__wrapper element_no-margin">
 		<!-- Содержимое секции - Начало -->
 		<div class="section__content">
-			<div class="roomsItems">
-				<div class="roomsItem -newYork">
-					<a href="/index.php?room_number=1">
-						<span class="room-number">
-							<span class="number-wrapper">#1</span>
-						</span>
+			<div class="rooms">
+				<div class="rooms__item rooms__item_new-york">
+					<a class="rooms__item-link" href="/index.php?room_number=1">
+						<span class="rooms__item-number"></span>
 					</a>
 				</div>
-				<div class="roomsItem -japan">
-					<a href="/index.php?room_number=2">
-						<span class="room-number">
-							<span class="number-wrapper">#2</span>
-						</span>
+				<div class="rooms__item rooms__item_tokyo">
+					<a class="rooms__item-link" href="/index.php?room_number=2">
+						<span class="rooms__item-number"></span>
 					</a>
 				</div>
-				<div class="clr"></div>
 			</div>
 			<div class="sticker">
-				<div class="sticker-wrapper">
-					<div class="progressBar">
-						<div class="track"></div>
+				<div class="sticker__wrapper">
+					<div class="progress-bar">
+						<div class="progress-bar__track"></div>
 					</div>
-					<div class="logo -big"></div>
 				</div>
 			</div>
 		</div>

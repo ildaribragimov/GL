@@ -1,0 +1,4 @@
+.section_reviews .arrow_left {
+    left: 25%;
+    left: calc( 0.5 * (50% - 200px) + 80px );
+}

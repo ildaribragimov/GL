@@ -1,0 +1,6 @@
+.section_color-theme_beige .radio-buttons__item {
+    border-color: #6FA491;
+}
+.section_color-theme_beige .radio-buttons__item:hover {
+    background-color: #6FA491;
+}

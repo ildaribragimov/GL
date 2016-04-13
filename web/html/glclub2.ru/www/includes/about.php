@@ -11,9 +11,9 @@
 		<header class="section__header">
             <div class="header__wrapper">
                 <h2 class="h h_lev_2">О клубе</h2>
-                <div class="separator separator_align_center header__separator">
-                    <div class="separator__wrapper">
-                        <div class="separator__content">
+                <div class="separator element_align_center header__separator">
+                    <div class="separator__wrapper element__wrapper">
+                        <div class="separator__content element__content">
                             <hr class="separator__line">
                             <div class="separator__icon icon icon_size_x24 icon_info"></div>
                             <hr class="separator__line">

@@ -1,0 +1,7 @@
+.progress-bar__track {
+    border: 0.3333em solid rgba(93, 70, 58, 0.15);
+    border: 0.3333em solid rgba(93, 70, 58, 1);
+    border-radius: 7.4444em;
+    width: 6.7777em;
+    height: 6.7777em;
+}

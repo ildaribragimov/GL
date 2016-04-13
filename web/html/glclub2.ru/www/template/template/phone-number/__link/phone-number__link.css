@@ -1,3 +1,6 @@
 .phone-number__link {
     color: #F8F8F9;
 }
+.phone-number__link:hover {
+    text-decoration: none;
+}
