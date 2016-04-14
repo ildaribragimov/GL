@@ -1,4 +1,4 @@
-.element_align_center::after {
+.element_centered::after {
     content: '';
     display: block;
     clear: both;

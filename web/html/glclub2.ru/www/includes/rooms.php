@@ -4,7 +4,7 @@
  */
 ?>
 
-<section id="rooms" class="element_no-padding section_color-theme_grey">
+<section id="rooms" class="section element_no-padding section_color-theme_grey">
 	<a name="rooms"></a>
 	<div class="section__wrapper element_no-margin">
 		<!-- Содержимое секции - Начало -->
@@ -26,6 +26,9 @@
 					<div class="progress-bar">
 						<div class="progress-bar__track"></div>
 					</div>
+                    <div class="logo logo_big">
+                        <a href="/" class="link link_block"><span class="icon icon_logo-big icon_size_x128"></span></a>
+                    </div>
 				</div>
 			</div>
 		</div>

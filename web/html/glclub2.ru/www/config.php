@@ -5,7 +5,7 @@ $config["cacheEnable"] = false;
  */
 // Порядок загрузки CSS-стилей
 $config["styles"] = array(
-    //0 => "/library/css/normalize.css",
+    "/template/css/fonts.css",
 
     "/template/normalize/html/html.css",
     "/template/template/html/html.css",
@@ -47,9 +47,11 @@ $config["styles"] = array(
     "/template/normalize/header/header.css",
 
     "/template/standart/icon/icon.css",
+    "/template/template/icon/icon.css",
+    "/template/theme/icon/icon.css",
+    
     "/template/standart/icon/_size/icon_size.css",
 
-    "/template/template/icon/icon.css",
     "/template/template/icon/_cash/icon_cash.css",
     "/template/template/icon/_comment/icon_comment.css",
     "/template/template/icon/_envelope/icon_envelope.css",
@@ -59,10 +61,11 @@ $config["styles"] = array(
     "/template/template/icon/_phone/icon_phone.css",
     "/template/template/icon/_plane/icon_plane.css",
     "/template/template/icon/_quotes/icon_quotes.css",
+    "/template/template/icon/_radio-button/icon_radio-button.css",
     "/template/template/icon/_arrow-left/icon_arrow-left.css",
-    "/template/theme/icon/_arrow-left/icon_arrow-left.css",
+    "/template/template/icon/_logo-big/icon_logo-big.css",
+    
     "/template/template/icon/_arrow-right/icon_arrow-right.css",
-    "/template/theme/icon/_arrow-right/icon_arrow-right.css",
 
     "/template/standart/switchers/_radio-buttons/switchers_radio-buttons.css",
     "/template/template/switchers/_radio-buttons/switchers_radio-buttons.css",
@@ -70,13 +73,11 @@ $config["styles"] = array(
     "/template/template/arrow/arrow.css",
     "/template/template/arrow/_left/arrow_left.css",
     "/template/template/arrow/_right/arrow_right.css",
+    "/template/template/arrow/__wrapper/arrow__wrapper.css",
 
     "/template/standart/radio-buttons/_horiz/radio-buttons_horiz.css",
     "/template/standart/radio-buttons/__item/radio-buttons__item.css",
     "/template/template/radio-buttons/__item/radio-buttons__item.css",
-    "/template/theme/radio-buttons/__item/radio-buttons__item.css",
-    "/template/template/radio-buttons/__item/_active/radio-buttons__item_active.css",
-    "/template/theme/radio-buttons/__item/_active/radio-buttons__item_active.css",
     
     "/template/standart/separator/separator.css",
     "/template/template/separator/separator.css",
@@ -91,13 +92,12 @@ $config["styles"] = array(
     "/template/standart/page-wrapper/page-wrapper.css",
     "/template/template/page-wrapper/page-wrapper.css",
 
-    "/template/normalize/section/section.css",
     "/template/standart/section/section.css",
     "/template/template/section/section.css",
-    "/template/standart/section/_background/section_background_image.css",
     "/template/theme/section/_color-theme/section_color-theme.css",
-
+    "/template/standart/section/__wrapper/section__wrapper.css",
     "/template/template/section/__wrapper/section__wrapper.css",
+    "/template/standart/section/__header/section__header.css",
     "/template/standart/section/__content/section__content.css",
     "/template/template/section/__content/section__content.css",
     "/template/template/section/__separator/section__separator.css",
@@ -111,9 +111,11 @@ $config["styles"] = array(
     
     "/template/template/sticker/sticker.css",
     "/template/template/sticker/__wrapper/sticker__wrapper.css",
-    
+
     "/template/template/progress-bar/progress-bar.css",
     "/template/template/progress-bar/__track/progress-bar__track.css",
+
+    "/template/template/logo/_big/logo_big.css",
 
     "/template/standart/header/__wrapper/header__wrapper.css",
     "/template/standart/content/__wrapper/content__wrapper.css",
@@ -158,7 +160,7 @@ $config["styles"] = array(
 
     "/library/css/plugin.popUp.css",
     
-    "/template/standart/element/_align/element_align.css",
+    "/template/standart/element/_centered/element_centered.css",
     "/template/standart/element/_no-padding/element_no-padding.css",
     "/template/standart/element/_no-margin/element_no-margin.css",
     "/template/standart/element/__wrapper/element__wrapper.css",

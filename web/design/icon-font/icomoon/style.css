@@ -30,18 +30,8 @@
 .icon-arrow_up:before {
     content: "\1f32d";
 }
-.icon-arrow-left_default:before {
-    content: "\e902";
-}
-.icon-arrow-left_hover:before {
-    content: "\e903";
-}
-.icon-arrow-right_default:before {
-    content: "\e904";
-}
-.icon-arrow-right_hover:before {
-    content: "\e905";
-}
+
+
 .icon-burger-arrow:before {
     content: "\e906";
 }
@@ -57,9 +47,7 @@
 .icon-close_hover:before {
     content: "\e90a";
 }
-.icon-comment:before {
-    content: "\e90b";
-}
+
 .icon-dot:before {
     content: "\e90c";
 }
@@ -102,9 +90,7 @@
 .icon-plane:before {
     content: "\e919";
 }
-.icon-quotes:before {
-    content: "\e91a";
-}
+
 .icon-radio-button_default:before {
     content: "\e91b";
 }

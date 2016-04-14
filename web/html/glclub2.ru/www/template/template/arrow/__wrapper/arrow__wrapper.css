@@ -1,0 +1,9 @@
+.arrow__wrapper {
+    position: relative;
+}
+.arrow_left .arrow__wrapper {
+    left:-50%;
+}
+.arrow_right .arrow__wrapper {
+    right:-50%;
+}

@@ -1,4 +1,3 @@
-.icon_size_x32 {
-	width:32px;
-	height:32px;
+.icon_size_x32::before {
+	font-size: 1.7777em;
 }

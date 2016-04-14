@@ -1,3 +1,3 @@
-.icon_phone {
-    background-position:-304px -176px;
+.icon_phone::before {
+    content: "\e918";
 }

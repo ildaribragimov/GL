@@ -4,14 +4,14 @@
  */
 ?>
 
-<section id="prices" class="section_color-theme_beige">
+<section id="prices" class="section section_color-theme_beige">
 	<a name="prices"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
-		<header class="section__header">
+		<header class="section__header header">
             <div class="header__wrapper">
                 <h2 class="h h_lev_2">Цены</h2>
-                <div class="separator element_align_center header__separator">
+                <div class="separator element_centered header__separator">
                     <div class="separator__wrapper element__wrapper">
                         <div class="separator__content element__content">
                             <hr class="separator__line">

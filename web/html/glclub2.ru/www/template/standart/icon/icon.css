@@ -1,4 +1,14 @@
-.icon {
-    background-repeat: no-repeat;
+.icon,
+.icon::before {
     display: block;
+}
+.icon::before {
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

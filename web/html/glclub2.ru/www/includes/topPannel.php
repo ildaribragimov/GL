@@ -3,8 +3,7 @@
  * Описание шаблона вывода секции "Основная панель навигации по сайту"
  */
 ?>
-
-<div id="topPannel">
+<div id="topPannel" class="top-pannel">
 	<div class="topPannel-wrapper">
 		<div class="socialLinks">
 			<ul>

@@ -1,3 +1,6 @@
-.section_reviews .icon_arrow-right {
-    right:-50%;
+.icon_arrow-right::before {
+    content: "\e904";
+}
+.link:hover .icon_arrow-right::before {
+    content: "\e905";
 }

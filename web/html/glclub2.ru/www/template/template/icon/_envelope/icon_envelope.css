@@ -1,3 +1,6 @@
-.icon_envelope {
-    background-position:-304px -216px;
+.icon_envelope::before {
+    content: "\e90f";
+}
+.link:hover .icon_envelope::before {
+    content: "\e90e";
 }

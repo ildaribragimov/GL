@@ -4,7 +4,7 @@
  */
 ?>
 
-<section id="map" class="map section_color-theme_beige element_no-padding">
+<section id="map" class="map section section_color-theme_beige element_no-padding">
 	<div class="section__wrapper element_no-margin">
 		<!-- Содержимое секции - Начало -->
 		<div class="section__content">

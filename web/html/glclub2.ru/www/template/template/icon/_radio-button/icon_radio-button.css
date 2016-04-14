@@ -1,0 +1,7 @@
+.icon_radio-button::before {
+    content: "\e91b";
+}
+.link:hover .icon_radio-button::before,
+.radio-buttons__item_active .icon_radio-button::before {
+    content: "\e91c";
+}

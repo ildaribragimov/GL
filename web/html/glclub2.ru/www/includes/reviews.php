@@ -4,14 +4,14 @@
  */
 ?>
 
-<section id="reviews" class="section_reviews section_color-theme_beige">
+<section id="reviews" class="section section_reviews section_color-theme_beige">
 	<a name="reviews"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
-		<header class="section__header">
+		<header class="section__header header">
             <div class="header__wrapper">
                 <h2 class="h h_lev_2">Отзывы гостей о нас</h2>
-                <div class="separator element_align_center header__separator">
+                <div class="separator element_centered header__separator">
                     <div class="separator__wrapper element__wrapper">
                         <div class="separator__content element__content">
                             <hr class="separator__line">
@@ -60,30 +60,38 @@
 			</div>
             <div class="switchers switchers_arrows">
                 <div class="arrow arrow_left">
-                    <a class="link link_block icon icon_arrow-left icon_size_x64" href="/index.php?review=1" target="_self" title="Отзыв от Мария Кривенкова"></a>
+                    <div class="arrow__wrapper">
+                        <a class="link link_block" href="/index.php?review=1" target="_self" title="Отзыв от Мария Кривенкова">
+                            <span class="icon icon_arrow-left icon_size_x64"></span>
+                        </a>
+                    </div>
                 </div>
                 <div class="arrow arrow_right">
-                    <a class="link link_block icon icon_arrow-right icon_size_x64" href="/index.php?review=3" target="_self" title="Отзыв от Виктор Щедрый"></a>
+                    <div class="arrow__wrapper">
+                        <a class="link link_block" href="/index.php?review=3" target="_self" title="Отзыв от Виктор Щедрый">
+                            <span class="icon icon_arrow-right icon_size_x64"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="switchers switchers_radio-buttons element_align_center">
+            <div class="switchers switchers_radio-buttons element_centered">
                 <div class="switchers__wrapper element__wrapper">
                     <div class="switchers__content element__content">
                         <ul class="radio-buttons_horiz">
                             <li class="radio-buttons__item">
-                                <a class="link link_block" href="/index.php?review=1" target="_self" title="Отзыв от Мария Кривенкова"></a>
+                                <a class="link link_block" href="/index.php?review=1" target="_self" title="Отзыв от Мария Кривенкова"><span class="icon icon_radio-button icon_size_x16"></span></a>
                             </li>
                             <li class="radio-buttons__item radio-buttons__item_active">
-                                <a class="link link_block" href="/index.php?review=2" target="_self" title="Отзыв от Александр Григоров"></a>
+                                <a class="link link_block" href="/index.php?review=2" target="_self" title="Отзыв от Александр Григоров"><span class="icon icon_radio-button icon_size_x16"></span></a>
                             </li>
                             <li class="radio-buttons__item">
-                                <a class="link link_block" href="/index.php?review=3" target="_self" title="Отзыв от Виктор Щедрый"></a>
+                                <a class="link link_block" href="/index.php?review=3" target="_self" title="Отзыв от Виктор Щедрый"><span class="icon icon_radio-button icon_size_x16"></span></a>
                             </li>
                             <li class="radio-buttons__item">
-                                <a class="link link_block" href="/index.php?review=4" target="_self" title="Отзыв от Антон Симаков"></a>
+                                <a class="link link_block" href="/index.php?review=4" target="_self" title="Отзыв от Антон Симаков"><span class="icon icon_radio-button icon_size_x16"></span></a>
                             </li>
                             <li class="radio-buttons__item">
-                                <a class="link link_block" href="/index.php?review=5" target="_self" title="Отзыв от Алексей Здоровов"></a>
+                                <a class="link link_block" href="/index.php?review=5" target="_self" title="Отзыв от Алексей Здоровов"><span class="icon icon_radio-button icon_size_x16"></span></a>
                             </li>
                         </ul>
                     </div>

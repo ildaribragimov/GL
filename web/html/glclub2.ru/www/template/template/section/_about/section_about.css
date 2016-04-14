@@ -1,3 +1,6 @@
 .section_about {
     background-image: url(../../media/contacts/contacts_bg_tablet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }

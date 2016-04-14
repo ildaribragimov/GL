@@ -4,14 +4,14 @@
  */
 ?>
 
-<section id="about" class="section_about section_color-theme_grey section_background_image">
+<section id="about" class="section section_about section_color-theme_grey section_background_image">
 	<a name="about"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
-		<header class="section__header">
+		<header class="section__header header">
             <div class="header__wrapper">
                 <h2 class="h h_lev_2">О клубе</h2>
-                <div class="separator element_align_center header__separator">
+                <div class="separator element_centered header__separator">
                     <div class="separator__wrapper element__wrapper">
                         <div class="separator__content element__content">
                             <hr class="separator__line">

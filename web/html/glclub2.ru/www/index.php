@@ -18,7 +18,7 @@
         ?>
     </head>
     <body>
-		<div id="page-wrapper">
+		<div class="page-wrapper">
 			<?php
 				// Вставка секции "Номера"
 				include "includes/rooms.php";
@@ -46,6 +46,10 @@
 			<!-- Подвал страницы - Конец -->
 		</div>
 		<?php
+			// Вставка верхней пенели навигации
+			include "includes/topPannel.php";
+			// Вставка главного меню
+			//include "includes/mainMenu.php";
 		?>
     </body>
 </html>

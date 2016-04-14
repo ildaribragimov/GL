@@ -1,28 +1,21 @@
-.icon_size_x16 {
-	width:16px;
-	height:16px;
+.icon_size_x16::before {
+	font-size: 0.8888em;
 }
-.icon_size_x24 {
-	width:24px;
-	height:24px;
+.icon_size_x24::before {
+	font-size: 1.3333em;
 }
-.icon_size_x32 {
-	width:32px;
-	height:32px;
+.icon_size_x32::before {
+	font-size: 1.7777em;
 }
-.icon_size_x48 {
-	width:48px;
-	height:48px;
+.icon_size_x48::before {
+	font-size: 2.6666em;
 }
-.icon_size_x64 {
-	width:64px;
-	height:64px;
+.icon_size_x64::before {
+	font-size: 3.5555em;
 }
-.icon_size_x128 {
-	width:128px;
-	height:128px;
+.icon_size_x128::before {
+	font-size: 7.1111em;
 }
-.icon_size_x256 {
-	width:256px;
-	height:256px;
+.icon_size_x256::before {
+	font-size: 14.2222em;
 }
