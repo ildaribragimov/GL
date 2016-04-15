@@ -4,7 +4,7 @@
  */
 ?>
 
-<section id="reserveRoom" class="section section_color-theme_green">
+<section id="reserveRoom" class="section section_theme_green">
 	<a name="reserveRoom"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->

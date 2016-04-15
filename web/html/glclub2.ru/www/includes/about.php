@@ -4,7 +4,7 @@
  */
 ?>
 
-<section id="about" class="section section_about section_color-theme_grey section_background_image">
+<section id="about" class="section section_about section_theme_grey section_background_image">
 	<a name="about"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->

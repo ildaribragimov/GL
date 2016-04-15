@@ -14,10 +14,13 @@ $config["styles"] = array(
     "/template/standart/body/body.css",
     "/template/template/body/body.css",
 
+    "/template/normalize/nav/nav.css",
+    "/template/normalize/menu/menu.css",
+
     "/template/normalize/a/a.css",
     "/template/standart/link/link.css",
-    "/template/standart/link/_inverted/link_inverted.css",
     "/template/standart/link/_block/link_block.css",
+    "/template/standart/link/_inverted/link_inverted.css",
     
     "/template/template/p/p.css",
     "/template/template/p/__link/p__link.css",
@@ -26,9 +29,10 @@ $config["styles"] = array(
     
     "/template/normalize/ul/ul.css",
 
+    "/template/standart/flow-cleaner/flow-cleaner.css",
+
     "/template/standart/list/list.css",
     "/template/template/list/list.css",
-    "/template/standart/list/__item/list__item.css",
     "/template/template/list/__item/list__item.css",
     
     "/template/template/footnote/__mark/footnote__mark.css",
@@ -38,7 +42,7 @@ $config["styles"] = array(
     "/template/standart/button/_rounded/button_rounded.css",
     "/template/standart/button/__title/button__title.css",
     "/template/standart/button/__icon/button__icon.css",
-    "/template/theme/button/_color-theme/button_color-theme.css",
+    "/template/theme/button/_theme/button_theme.css",
 
     "/template/standart/collumns/collumns.css",
     "/template/standart/collumns/__col/collumns__col.css",
@@ -48,7 +52,6 @@ $config["styles"] = array(
 
     "/template/standart/icon/icon.css",
     "/template/template/icon/icon.css",
-    "/template/theme/icon/icon.css",
     
     "/template/standart/icon/_size/icon_size.css",
 
@@ -64,9 +67,12 @@ $config["styles"] = array(
     "/template/template/icon/_radio-button/icon_radio-button.css",
     "/template/template/icon/_arrow-left/icon_arrow-left.css",
     "/template/template/icon/_logo-big/icon_logo-big.css",
+    "/template/template/icon/_logo-medium/icon_logo-medium.css",
+    "/template/template/icon/_social-vk/icon_social-vk.css",
     
     "/template/template/icon/_arrow-right/icon_arrow-right.css",
 
+    "/template/theme/switchers/switchers.css",
     "/template/standart/switchers/_radio-buttons/switchers_radio-buttons.css",
     "/template/template/switchers/_radio-buttons/switchers_radio-buttons.css",
     
@@ -81,6 +87,7 @@ $config["styles"] = array(
     
     "/template/standart/separator/separator.css",
     "/template/template/separator/separator.css",
+    "/template/theme/separator/separator.css",
     "/template/standart/separator/__wrapper/separator__wrapper.css",
     "/template/standart/separator/__content/separator__content.css",
     "/template/standart/separator/__line/separator__line.css",
@@ -94,7 +101,7 @@ $config["styles"] = array(
 
     "/template/standart/section/section.css",
     "/template/template/section/section.css",
-    "/template/theme/section/_color-theme/section_color-theme.css",
+    "/template/theme/section/_theme/section_theme.css",
     "/template/standart/section/__wrapper/section__wrapper.css",
     "/template/template/section/__wrapper/section__wrapper.css",
     "/template/standart/section/__header/section__header.css",
@@ -116,6 +123,7 @@ $config["styles"] = array(
     "/template/template/progress-bar/__track/progress-bar__track.css",
 
     "/template/template/logo/_big/logo_big.css",
+    "/template/template/logo/__wrapper/logo__wrapper.css",
 
     "/template/standart/header/__wrapper/header__wrapper.css",
     "/template/standart/content/__wrapper/content__wrapper.css",
@@ -158,8 +166,30 @@ $config["styles"] = array(
 
     "/template/template/map/__content/map__content.css",
 
-    "/library/css/plugin.popUp.css",
+    "/template/standart/top-pannel/top-pannel.css",
+    "/template/template/top-pannel/top-pannel.css",
+    "/template/standart/top-pannel/__wrapper/top-pannel__wrapper.css",
+    "/template/template/top-pannel/__wrapper/top-pannel__wrapper.css",
+    "/template/standart/top-pannel/__logo/top-pannel__logo.css",
+    "/template/template/top-pannel/__logo/top-pannel__logo.css",
+    "/template/standart/top-pannel/__menu/top-pannel__menu.css",
+    "/template/template/top-pannel/__link/top-pannel__link.css",
+    "/template/standart/top-pannel/__burger-button/top-pannel__burger-button.css",
+    "/template/template/top-pannel/__burger-button/top-pannel__burger-button.css",
+
+    "/template/template/burger-button/__wrapper/burger-button__wrapper.css",
+    "/template/standart/burger-button/__icon/burger-button__icon.css",
     
+    "/template/standart/menu/menu.css",
+    "/template/standart/menu/_main/menu_main.css",
+    "/template/template/menu/_social-links/menu_social-links.css",
+    "/template/standart/menu/__items/menu__items.css",
+    "/template/standart/menu/__item/menu__item.css",
+    "/template/template/menu/__item/menu__item.css",
+    "/template/template/menu/__link/menu__link.css",
+
+    "/library/css/plugin.popUp.css",
+
     "/template/standart/element/_centered/element_centered.css",
     "/template/standart/element/_no-padding/element_no-padding.css",
     "/template/standart/element/_no-margin/element_no-margin.css",
@@ -168,17 +198,19 @@ $config["styles"] = array(
 );
 // Порядок загрузки JS-скриптов
 $config["scripts"] = array(
-    0 => "/library/js/Function.in_array.min.js",
-    1 => "/library/js/Function.array_diff.min.js",
-    2 => "/library/js/Function.getIndex.min.js",
-    3 => "/library/js/Function.parent.min.js",
+    "/library/js/Function.in_array.min.js",
+    "/library/js/Function.array_diff.min.js",
+    "/library/js/Function.getIndex.min.js",
+    "/library/js/Function.parent.min.js",
 
-    4 => "/library/js/object.classList.min.js",
-    5 => "/library/js/setSizeFrom.min.js",
-    6 => "/library/js/disableScroll.min.js",
-    7 => "/library/js/scrollingToAnchor.min.js",
+    "/library/js/object.classList.min.js",
+    "/library/js/setSizeFrom.min.js",
+    "/library/js/disableScroll.min.js",
+    "/library/js/scrollingToAnchor.min.js",
 
-    8 => "/library/js/plugin.popUp.js",
+    "/template/template/rooms/rooms.js",
+    
+    "/library/js/plugin.popUp.js",
 );
 // Порядок загрузки файлов секций
 $config["sections"] = (object)array(

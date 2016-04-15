@@ -1,0 +1,6 @@
+.menu_horiz::after,
+.menu_horiz .menu__wrapper::after {
+    content: '';
+    display: block;
+    clear: both;
+}

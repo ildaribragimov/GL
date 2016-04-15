@@ -1,0 +1,7 @@
+.icon_logo-medium::before {
+    content: "\e915";
+}
+.top-pannel__logo .icon_logo-medium::before {
+    font-size: 3.3333em;
+    line-height: 0.6666em;
+}

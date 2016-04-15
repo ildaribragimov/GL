@@ -1,0 +1,87 @@
+.burger-button__icon {
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -ms-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+}
+.burger-button__icon {
+    padding: 0.4444em;
+    width: 24px;
+    height: 24px;
+}
+.burger-button__icon:hover {
+    cursor: pointer;
+}
+.burger-button__icon
+.burger-button__icon span::before,
+.burger-button__icon span::after {
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -ms-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+}
+.burger-button__icon span,
+.burger-button__icon span::before,
+.burger-button__icon span::after {
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #5d463a;
+}
+
+.burger-button__icon span {
+    position:relative;
+    top: 10px;
+}
+.burger-button__icon span:before,
+.burger-button__icon span:after {
+    position: absolute;
+    right: 0;
+    content: '';
+}
+.burger-button__icon span:before {
+    top: -8px;
+}
+.burger-button__icon span:after {
+    top: 8px;
+}
+
+
+.burger-button__icon:hover span:before,
+.burger-button__icon:hover span:after {
+    width:70%;
+}
+.burger-button__icon:hover span:before {
+	-webkit-transform-origin: right top;
+    -moz-transform-origin: right top;
+    -ms-transform-origin: right top;
+    -o-transform-origin: right top;
+    transform-origin: right top;
+    -webkit-transform: translate(2px, 10px) rotate(45deg); /** Chrome & Safari **/
+    -moz-transform: translate(2px, 10px) rotate(45deg); /** Firefox **/
+    -ms-transform: translate(2px, 10px) rotate(45deg); /* Для IE */
+    -o-transform: translate(2px, 10px) rotate(45deg); /** Opera **/
+    transform: translate(2px, 10px) rotate(45deg);
+}
+.burger-button__icon:hover span:after {
+    -webkit-transform-origin: right bottom;
+    -moz-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    -o-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: translate(2px, -10px) rotate(-45deg); /** Chrome & Safari **/
+    -moz-transform: translate(2px, -10px) rotate(-45deg); /** Firefox **/
+    -ms-transform: translate(2px, -10px) rotate(-45deg); /* Для IE */
+    -o-transform: translate(2px, -10px) rotate(-45deg); /** Opera **/
+    transform: translate(2px, -10px) rotate(-45deg);
+}
+.burger-button__icon:hover {
+    -webkit-transform: rotate(180deg); /** Chrome & Safari **/
+    -moz-transform: rotate(180deg); /** Firefox **/    
+    -ms-transform: rotate(180deg); /* Для IE */
+    -o-transform: rotate(180deg); /** Opera **/
+    transform: rotate(180deg);
+}

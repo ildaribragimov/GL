@@ -4,7 +4,7 @@
  */
 ?>
 
-<section id="prices" class="section section_color-theme_beige">
+<section id="prices" class="section section_theme_beige">
 	<a name="prices"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->

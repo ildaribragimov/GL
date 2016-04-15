@@ -1,0 +1,10 @@
+.top-pannel__wrapper {
+    margin:0 auto;
+	max-width:1280px;
+	position:relative;
+}
+.top-pannel__wrapper::after {
+    content: '';
+    display: block;
+    clear: both;
+}

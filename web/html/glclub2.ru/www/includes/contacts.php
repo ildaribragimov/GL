@@ -4,7 +4,7 @@
  */
 ?>
 
-<section id="contacts" class="section section_color-theme_grey">
+<section id="contacts" class="section section_theme_grey">
 	<a name="contacts"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
@@ -33,7 +33,7 @@
                     <div class="controls controls_feedback element_centered">
                         <div class="controls__wrapper element__wrapper">
                             <div class="controls__content element__content">
-                                <button class="button button_color-theme_pink" value="sendMail">
+                                <button class="button button_theme_pink" value="sendMail">
                                     <span class="button__title">Написать письмо</span>
                                 </button>
                             </div>

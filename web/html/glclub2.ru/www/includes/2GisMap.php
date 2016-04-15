@@ -3,7 +3,6 @@
  * Описание шаблона вывода карты Google
  */
 ?>
-
 <script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full&version=v2.2.2"></script>
 <script type="text/javascript">
     // Инициализация карты 2Gis

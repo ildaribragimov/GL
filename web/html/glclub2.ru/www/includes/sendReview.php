@@ -4,7 +4,7 @@
  */
 ?>
 
-<section id="sendReview" class="section_color-theme_beige">
+<section id="sendReview" class="section_theme_beige">
     <div class="section__separator separator"><hr class="separator__line"></div>
 	<a name="sendReview"></a>
 	<div class="section__wrapper">
@@ -33,7 +33,7 @@
                 <div class="controls controls_feedback element_centered">
                     <div class="controls__wrapper element__wrapper">
                         <div class="controls__content element__content">
-                            <button class="button button_color-theme_green" value="sendReview">
+                            <button class="button button_theme_green" value="sendReview">
                                 <span class="button__title">Добавить отзыв</span>
                             </button>
                         </div>

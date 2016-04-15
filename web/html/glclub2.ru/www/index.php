@@ -36,6 +36,8 @@
 				include "includes/contacts.php";
                 // Вставка секции "Карта проезда"
 				include "includes/map.php";
+                // Вставка верхней пенели навигации
+                include "includes/topPannel.php";
 			?>
 			<!-- Подвал страницы - Начало -->
 			<!--
@@ -46,10 +48,8 @@
 			<!-- Подвал страницы - Конец -->
 		</div>
 		<?php
-			// Вставка верхней пенели навигации
-			include "includes/topPannel.php";
 			// Вставка главного меню
-			//include "includes/mainMenu.php";
+			include "includes/mainMenu.php";
 		?>
     </body>
 </html>

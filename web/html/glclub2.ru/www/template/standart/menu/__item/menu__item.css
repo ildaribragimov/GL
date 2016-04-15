@@ -1,0 +1,4 @@
+.menu_horiz .menu__item,
+.menu_main .menu__item {
+    float: left;
+}

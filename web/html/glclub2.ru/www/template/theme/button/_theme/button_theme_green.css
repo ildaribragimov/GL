@@ -1,8 +1,8 @@
-.button_color-theme_green {
+.button_theme_green {
 	border-color:#3b876f;
 	color:#3b876f;
 }
-.button_color-theme_green:hover {
+.button_theme_green:hover {
 	background:#3b876f;
 	color:#f8f8f9;
 }

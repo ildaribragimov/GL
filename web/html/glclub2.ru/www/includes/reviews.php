@@ -4,7 +4,7 @@
  */
 ?>
 
-<section id="reviews" class="section section_reviews section_color-theme_beige">
+<section id="reviews" class="section section_reviews section_theme_beige">
 	<a name="reviews"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->

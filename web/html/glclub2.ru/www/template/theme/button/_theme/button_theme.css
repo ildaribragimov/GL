@@ -1,16 +1,16 @@
-.button_color-theme_pink {
+.button_theme_pink {
     border-color: #e9bdac;
     color: #e9bdac;
 }
-.button_color-theme_pink:hover {
+.button_theme_pink:hover {
 	background:#e9bdac;
 	color:#5d463a;
 }
-.button_color-theme_green {
+.button_theme_green {
 	border-color:#3b876f;
 	color:#3b876f;
 }
-.button_color-theme_green:hover {
+.button_theme_green:hover {
 	background:#3b876f;
 	color:#f8f8f9;
 }
