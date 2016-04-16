@@ -1,13 +1,13 @@
 <?php
 // Объявление перменной пути к корневой директории сайта
-$_root = $_SERVER['DOCUMENT_ROOT'];
+$_root = $_SERVER['DOCUMENT_ROOT']."/";
 // Имя генерируемого файла JS-скрипта
 $_filename = "styles.css";
 // Путь до генерируемого файла JS-скрипта
-$_filePath = "/template/css/";
+$_filePath = "template/css/";
 
 // Подключение файла опций загрузки
-include_once $_root."/config.php";
+include_once $_root."config.php";
 
 function getCSSFilesContent($path, $files) {
     $fileContent = '';

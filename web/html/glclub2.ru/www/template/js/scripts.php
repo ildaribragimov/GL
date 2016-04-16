@@ -1,13 +1,13 @@
 <?php
 // Объявление перменной пути к корневой директории сайта
-$_root = $_SERVER['DOCUMENT_ROOT'];
+$_root = $_SERVER['DOCUMENT_ROOT']."/";
 // Имя генерируемого файла JS-скрипта
 $_filename = "scripts.js";
 // Путь до генерируемого файла JS-скрипта
-$_filePath = "/template/js/";
+$_filePath = "template/js/";
 
 // Подключение файла опций загрузки
-include_once $_root."/config.php";
+include_once $_root."config.php";
 
 function getJSFilesContent($path, $files) {
     $fileContent = '// Явное указание на режим строгого соответствия современному стандарту

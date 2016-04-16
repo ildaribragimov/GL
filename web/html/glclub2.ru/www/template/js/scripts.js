@@ -34,6 +34,23 @@ var a={32:1,33:1,34:1,35:1,36:1,37:1,38:1,39:1,40:1};function b(d){if(a[d.keyCod
  * ==== Решение "Плавная прогрутка до якоря" ==== *
  * ============================================== */
 function scrollingToAnchor(e,a){a=a||null;var b=e.target.getAttribute("href"),b=document.getElementById(b.match(/[^#].*/));if(null===b)a&&a();else var c=document.documentElement,f=c.clientHeight,g=Math.max(document.body.scrollHeight,c.scrollHeight,document.body.offsetHeight,c.offsetHeight,document.body.clientHeight,c.clientHeight),h=b.offsetTop,k=setInterval(function(){var d=window.pageYOffset,b=g-(d+f),d=h-d,c=2!=Math.abs(d)?d/3:d;0==d||0>=b&&0>=b-c?(clearInterval(k),a&&a()):window.scrollBy(0,c)},1000/75)};
+// Плавная прокрутка страницы до якоря, при клике по пункту меню
+(function(menu){
+    // Назначение обработчика события татча по пунктам меню
+    menu.addEventListener('touchend', function(event) {
+        // Отмена действия по умолчанию браузера на событие
+        event.preventDefault();
+        // Вызов события "onclick"
+        event.target.click();
+    });
+    // Назначение обработчика события клика по пункту меню
+    menu.addEventListener('click', function(event) {
+        // Отмена действия по умолчанию браузера на событие
+        event.preventDefault();
+        // Вызов функции готового решения "плавная прокрутка страницы до якоря"
+        scrollingToAnchor(event);
+    });
+})(document.getElementById("main-menu"));
 // Установка высоты элементов слайдера ROOMS относительно области просмотра браузера
 (function(elements){
     setSizeFrom(elements, {height:100});

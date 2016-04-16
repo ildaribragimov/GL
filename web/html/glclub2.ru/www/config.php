@@ -208,6 +208,7 @@ $config["scripts"] = array(
     "/library/js/disableScroll.min.js",
     "/library/js/scrollingToAnchor.min.js",
 
+    "/template/template/menu/menu.js",
     "/template/template/rooms/rooms.js",
     
     "/library/js/plugin.popUp.js",
