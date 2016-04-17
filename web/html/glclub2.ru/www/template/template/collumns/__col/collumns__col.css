@@ -1,3 +1,21 @@
 .collumns__col {
     margin-top:-0.8333em;
 }
+/* For Smartphone (Landscape orientation) users (If window width > 640 px and < 768 px) */
+@media only screen and (min-width:641px) and (max-width:768px) {
+    .collumns__col {
+		width:50%;
+	}
+}
+/* For Smartphone (Landscape orientation) users (If window width < 640 px) */
+@media only screen and (max-width:640px) {
+    .collumns__col {
+		width:100%;
+	}
+}
+/* For Smartphone (Landscape orientation) users (If window width > 568 px and < 640 px) */
+@media only screen and (min-width:569px) and (max-width:640px) {
+    .section_prices .collumns__col {
+		width:50%;
+	}
+}

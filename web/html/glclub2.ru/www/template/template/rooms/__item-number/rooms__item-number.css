@@ -38,3 +38,9 @@
 	background-color:#f7da7e;
 	color:#5d463a;
 }
+/* For Smartphone (Landscape orientation) users (If window width < 640 px) */
+@media only screen and (max-width:640px) {
+    .rooms__item-number {
+		display:none;
+	}
+}

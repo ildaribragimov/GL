@@ -4,8 +4,8 @@
  */
 ?>
 
-<section id="map" class="map section section_theme_beige element_no-padding">
-	<div class="section__wrapper element_no-margin">
+<section id="map" class="map section section_map section_theme_beige">
+	<div class="section__wrapper">
 		<!-- Содержимое секции - Начало -->
 		<div class="section__content">
             <?php

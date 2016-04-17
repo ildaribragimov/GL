@@ -11,9 +11,9 @@
 		<header class="section__header header">
             <div class="header__wrapper">
                 <h2 class="h h_lev_2">Отзывы гостей о нас</h2>
-                <div class="separator element_centered header__separator">
-                    <div class="separator__wrapper element__wrapper">
-                        <div class="separator__content element__content">
+                <div class="separator header__separator">
+                    <div class="separator__wrapper">
+                        <div class="separator__content">
                             <hr class="separator__line">
                             <div class="separator__icon icon icon_size_x24 icon_quotes"></div>
                             <hr class="separator__line">
@@ -39,7 +39,7 @@
 					-->
 					<div class="reviews__item reviews__item_active review">
 						<div class="review__author user">
-							<div class="user__photo user__photo_size_x240" style="background-image:url(media/reviews/review2.jpg);">
+							<div class="user__photo" style="background-image:url(media/reviews/review2.jpg);">
 								<a href="/" target="_blank" title="Посетить страницу профиля гостя в соц.сети"></a>
 							</div>
 							<h4 class="user__name h h_lev_4"><a class="link_inverted" href="/" target="_blank" title="Посетить страницу профиля гостя в соц.сети">Александр Григоров</a></h4>
@@ -74,10 +74,10 @@
                     </div>
                 </div>
             </div>
-            <div class="switchers switchers_radio-buttons element_centered">
-                <div class="switchers__wrapper element__wrapper">
-                    <div class="switchers__content element__content">
-                        <ul class="radio-buttons_horiz">
+            <div class="switchers switchers_radio-buttons">
+                <div class="switchers__wrapper">
+                    <div class="switchers__content">
+                        <ul class="radio-buttons radio-buttons_horiz">
                             <li class="radio-buttons__item">
                                 <a class="link link_block" href="/index.php?review=1" target="_self" title="Отзыв от Мария Кривенкова"><span class="icon icon_radio-button icon_size_x16"></span></a>
                             </li>

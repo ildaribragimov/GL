@@ -1,0 +1,5 @@
+.menu_main .menu__content {
+    position: relative;
+    float: left;
+    left: -50%;
+}

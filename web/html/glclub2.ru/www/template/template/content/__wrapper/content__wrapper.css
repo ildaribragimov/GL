@@ -1,0 +1,6 @@
+/* For Desktop users (If window width >= 960 px) */
+@media only screen and (min-width:976px) {
+	.content__wrapper {
+		width:960px;
+	}
+}

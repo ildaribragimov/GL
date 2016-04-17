@@ -4,9 +4,9 @@
  */
 ?>
 
-<section id="rooms" class="section element_no-padding section_theme_grey">
+<section id="rooms" class="section section_rooms section_theme_grey">
 	<a name="rooms"></a>
-	<div class="section__wrapper element_no-margin">
+	<div class="section__wrapper">
 		<!-- Содержимое секции - Начало -->
 		<div class="section__content">
 			<div class="rooms">

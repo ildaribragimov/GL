@@ -4,3 +4,21 @@
     background-size: cover;
     background-position: center center;
 }
+/* For Desktop users (If window width >= 960 px) */
+@media only screen and (min-width:976px) {
+    .section_about {
+		background-image:url(../../media/contacts/contacts_bg.jpg);
+	}
+}
+/* For Tablet & Smartphone users (If window width < 960 px) */
+@media only screen and (max-width: 976px) {
+    .section_about {
+		background-image:url(../../media/contacts/contacts_bg_tablet.jpg);
+	}
+}
+/* For Smartphone users (If window width < 768 px) */
+@media only screen and (max-width:768px) {
+    .section_about {
+        background-image:url(../../media/contacts/contacts_bg_mobile.jpg);
+    }
+}

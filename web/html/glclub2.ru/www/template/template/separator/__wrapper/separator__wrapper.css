@@ -1,0 +1,7 @@
+.separator__wrapper {
+    position: relative;    
+}
+.header__separator .separator__wrapper {
+    float: left;
+    left: 50%;
+}

@@ -1,0 +1,7 @@
+/* For Tablet & Smartphone users (If window width < 960 px) */
+@media only screen and (max-width: 976px) {
+    .menu_main .menu__items {
+		float:none;
+		text-align:center;
+	}
+}

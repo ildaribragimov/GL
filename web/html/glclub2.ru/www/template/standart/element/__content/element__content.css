@@ -1,7 +1,0 @@
-.element__content {
-    position: relative;
-}
-.element_centered .element__content {
-    float: left;
-    left: -50%;
-}

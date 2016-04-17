@@ -1,7 +1,4 @@
-// Явное указание на режим строгого соответствия современному стандарту
-"use strict";
-// Исполнение скрипта при готовности DOM-структуры документа
-document.addEventListener("DOMContentLoaded", function() {
+"use strict"; document.addEventListener("DOMContentLoaded", function() {
 /**
  * Функция "in_array" 
  * Проверяет присутствует ли значение "needle" в искомом массиве (коллекции) "haystack"

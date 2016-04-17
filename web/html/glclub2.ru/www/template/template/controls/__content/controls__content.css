@@ -2,3 +2,8 @@
 	padding-top:0.3333em;
 	padding-bottom:0.3333em;
 }
+.controls_feedback .controls__content {
+    position: relative;
+    float: left;
+    left: -50%;
+}

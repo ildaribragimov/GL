@@ -2,3 +2,10 @@
     border: 2px solid #daccc0;
     padding: 0 1.6666em 1.1111em;
 }
+/* For Smartphone users (If window width < 768 px) */
+@media only screen and (max-width:768px) {
+    .price-card__content {
+    	padding-left:1.5em;
+		padding-right:1.5em;
+    }
+}

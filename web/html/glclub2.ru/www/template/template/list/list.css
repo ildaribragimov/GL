@@ -2,3 +2,9 @@
     margin: 0.8333em 0 1.6666em;
     padding-left: 2.2222em;
 }
+/* For Smartphone users (If window width < 768 px) */
+@media only screen and (max-width:768px) {
+    .list {
+        padding-left:1.5em;
+    }
+}

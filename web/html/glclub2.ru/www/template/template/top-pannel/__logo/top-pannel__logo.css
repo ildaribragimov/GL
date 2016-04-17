@@ -3,3 +3,15 @@
     padding-bottom: 0.5555em;
     left: 0;
 }
+/* For Tablet & Smartphone users (If window width < 960 px) */
+@media only screen and (max-width: 976px) {
+    .top-pannel__logo {
+		left:50%;
+	}
+}
+/* For Smartphone users (If window width < 768 px) */
+@media only screen and (max-width:768px) {
+    .top-pannel__logo {
+        /*background-size: 39.1072em;*/
+    }
+}

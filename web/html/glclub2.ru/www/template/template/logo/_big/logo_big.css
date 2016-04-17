@@ -3,3 +3,9 @@
     top: 0.6111em;
     left: 0.6111em;
 }
+/* For Smartphone users (If window width < 768 px) */
+@media only screen and (max-width:768px) {
+    .sticker .logo_big {
+		/*background-size:auto 17.3333em;*/
+	}
+}

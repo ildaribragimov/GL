@@ -1,3 +1,13 @@
 .section__wrapper {
 	margin-bottom:3.333em;
 }
+.section_rooms .section__wrapper,
+.section_map .section__wrapper {
+	margin:0;
+}
+/* For Tablet & Smartphone users (If window width < 960 px) */
+@media only screen and (max-width: 976px) {
+	.section__wrapper {
+		width:auto;
+	}
+}

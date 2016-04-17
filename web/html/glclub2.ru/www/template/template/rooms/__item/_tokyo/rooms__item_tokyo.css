@@ -2,3 +2,9 @@
     right: 0;
     background-image: url("../../media/rooms/japan/medium/CK1A9294.jpg");
 }
+/* For Desktop users (If window width <= 1280 px) */
+@media only screen and (max-width: 1296px) {
+	.rooms__item_tokyo {
+		background-image:url("../../media/rooms/japan/low/CK1A9294.jpg");
+	}
+}

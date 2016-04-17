@@ -4,16 +4,16 @@
  */
 ?>
 
-<section id="prices" class="section section_theme_beige">
+<section id="prices" class="section section_prices section_theme_beige">
 	<a name="prices"></a>
 	<div class="section__wrapper">
 		<!-- Шапка секции - Начало -->
 		<header class="section__header header">
             <div class="header__wrapper">
                 <h2 class="h h_lev_2">Цены</h2>
-                <div class="separator element_centered header__separator">
-                    <div class="separator__wrapper element__wrapper">
-                        <div class="separator__content element__content">
+                <div class="separator header__separator">
+                    <div class="separator__wrapper">
+                        <div class="separator__content">
                             <hr class="separator__line">
                             <div class="separator__icon icon icon_size_x24 icon_cash"></div>
                             <hr class="separator__line">
@@ -32,7 +32,7 @@
 						<div class="price-card">
 							<div class="price-card__wrapper">
 								<div class="price-card__content">
-									<h4 class="h element_no-padding h_lev_4 price-card__h">Нью-Йорк</h4>
+									<h4 class="h h_lev_4 price-card__h">Нью-Йорк</h4>
 									<div class="price-card__price price">
 										<span class="price__cost">1 300</span>
 										<span class="price__currency">руб/час</span>
@@ -52,7 +52,7 @@
 						<div class="price-card">
 							<div class="price-card__wrapper">
 								<div class="price-card__content">
-									<h4 class="h element_no-padding h_lev_4 price-card__h">Токио</h4>
+									<h4 class="h h_lev_4 price-card__h">Токио</h4>
 									<div class="price-card__price price">
 										<span class="price__cost">1 000</span>
 										<span class="price__currency">руб/час</span>

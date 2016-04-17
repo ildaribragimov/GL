@@ -1,0 +1,6 @@
+/* For Smartphone users (If window width < 768 px) */
+@media only screen and (max-width:768px) {
+    .radio-buttons {
+        padding:0;
+    }
+}

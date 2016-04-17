@@ -1,4 +1,4 @@
-.element_centered::after {
+.controls_feedback::after {
     content: '';
     display: block;
     clear: both;

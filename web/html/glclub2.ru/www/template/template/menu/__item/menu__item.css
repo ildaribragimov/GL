@@ -14,3 +14,19 @@
     border-right: 0;
     border-bottom: 0;
 }
+/* For Tablet & Smartphone users (If window width < 960 px) */
+@media only screen and (max-width: 976px) {
+    .menu_main .menu__item {
+        width:240px;
+    }
+    .menu_main .menu__item {
+		float:none;
+		text-align:center;
+	}
+    .menu_main .menu__item {
+		border-left:0;
+		border-right:0;
+		border-top:1px solid rgba(255, 255, 255, 0.2);
+		border-bottom:1px solid rgba(0, 0, 0, 0.1);
+	}
+}

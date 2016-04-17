@@ -1,0 +1,11 @@
+.menu_main .menu__wrapper {
+    position: relative;
+    float: left;
+    left: 50%;
+}
+/* For Tablet & Smartphone users (If window width < 960 px) */
+@media only screen and (max-width: 976px) {
+    .menu_main .menu__wrapper {
+        margin-left:0;
+    }
+}

@@ -2,3 +2,9 @@
     left: 0;
     background-image: url("../../media/rooms/new_york/medium/CK1A9261.jpg");
 }
+/* For Desktop users (If window width <= 1280 px) */
+@media only screen and (max-width: 1296px) {
+	.rooms__item_new-york {
+		background-image:url("../../media/rooms/new_york/low/CK1A9261.jpg");
+	}
+}

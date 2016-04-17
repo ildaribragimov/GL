@@ -4,3 +4,19 @@
     position: fixed;
     z-index: 101;
 }
+.menu_main::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+/* For Tablet & Smartphone users (If window width < 960 px) */
+@media only screen and (max-width: 976px) {
+    .menu_main {
+		top:60px;
+		left:0;
+		z-index:2;
+	}
+    .menu_main {
+        width:240px;
+    }
+}

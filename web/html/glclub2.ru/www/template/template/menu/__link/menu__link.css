@@ -4,3 +4,9 @@
     text-transform: uppercase;
     display: block;
 }
+/* For Tablet & Smartphone users (If window width < 960 px) */
+@media only screen and (max-width: 976px) {
+    .menu_main .menu__link {
+        color:#f7da7e;
+    }
+}

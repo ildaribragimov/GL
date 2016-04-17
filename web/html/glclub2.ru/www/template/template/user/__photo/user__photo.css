@@ -4,3 +4,17 @@
 	box-shadow:0 0 20px rgba(0, 0, 0, 0.25) inset;
 	background-color:rgba(84, 84, 84, 0.3);
 }
+.reviews__item_active .user__photo {
+    margin-bottom: 1.6666em;
+    width: 240px;
+    height: 240px;
+    border-radius: 120px;
+}
+/* For Smartphone (Landscape orientation) users (If window width < 640 px) */
+@media only screen and (max-width:640px) {
+    .reviews__item_active .user__photo {
+		width:150px;
+		height:150px;
+		border-radius:75px;
+	}
+}

@@ -1,7 +1,11 @@
 body {
 	background-color:#545456;
-}
-body {
     line-height: 1.6666em;
 	text-align: center;
+}
+/* For Smartphone users (If window width < 768 px) */
+@media only screen and (max-width:768px) {
+	body {
+		font-size:0.8888em;
+	}    
 }
