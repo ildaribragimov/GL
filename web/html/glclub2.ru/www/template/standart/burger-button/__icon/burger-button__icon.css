@@ -1,11 +1,4 @@
 .burger-button__icon {
-    -webkit-transition: 0.25s;
-    -moz-transition: 0.25s;
-    -ms-transition: 0.25s;
-    -o-transition: 0.25s;
-    transition: 0.25s;
-}
-.burger-button__icon {
     padding: 0.4444em;
     width: 24px;
     height: 24px;
@@ -31,7 +24,6 @@
     border-radius: 2px;
     background-color: #5d463a;
 }
-
 .burger-button__icon span {
     position:relative;
     top: 10px;
@@ -48,8 +40,6 @@
 .burger-button__icon span:after {
     top: 8px;
 }
-
-
 .slide-pannel_open .burger-button__icon span:before,
 .slide-pannel_open .burger-button__icon span:after {
     width:70%;
