@@ -27,7 +27,7 @@
 		<!-- Содержимое секции - Начало -->
 		<div class="section__content">
 			<div class="content__wrapper">
-				<div class="collumns collumns_number_2">
+				<div class="collumns">
 					<div class="collumns__col">
 						<div class="price-card">
 							<div class="price-card__wrapper">

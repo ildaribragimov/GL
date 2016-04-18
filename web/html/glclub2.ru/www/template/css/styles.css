@@ -143,16 +143,9 @@ button::after,
 }
 .collumns__col {
     float:left;
-}
-.collumns_number_2 .collumns__col {
     width:50%;
 }
-.collumns_number_3 .collumns__col {
-    width:33.3333%;
-}
-.collumns_number_4 .collumns__col {
-    width:25%;
-}.icon,
+.icon,
 .icon::before {
     display: block;
 }
@@ -167,13 +160,16 @@ button::after,
     -moz-osx-font-smoothing: grayscale;
 }
 .icon_size_x16::before {
-	font-size: 0.8888em;
+	/*font-size: 0.8888em;*/
+    font-size: 16px;
 }
 .icon_size_x24::before {
-	font-size: 1.3333em;
+	/*font-size: 1.3333em;*/
+    font-size: 24px;
 }
 .icon_size_x32::before {
-	font-size: 1.7777em;
+	/*font-size: 1.7777em;*/
+    font-size: 32px;
 }
 .icon_size_x48::before {
 	font-size: 2.6666em;
@@ -414,7 +410,6 @@ section {
   font-style: normal;
   font-weight: 400;
   src: local('Open Sans'), local('OpenSans'), url(../fonts/OpenSans-Regular.ttf) format('truetype');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* bold */
 @font-face {
@@ -422,7 +417,6 @@ section {
   font-style: normal;
   font-weight: 700;
   src: local('Open Sans Bold'), local('OpenSans-Bold'), url(../fonts/OpenSans-Bold.ttf) format('truetype');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* regular italic */
 @font-face {
@@ -430,7 +424,6 @@ section {
   font-style: italic;
   font-weight: 400;
   src: local('Open Sans Italic'), local('OpenSans-Italic'), url(../fonts/OpenSans-Italic.ttf) format('truetype');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* bold italic */
 @font-face {
@@ -438,7 +431,6 @@ section {
   font-style: italic;
   font-weight: 700;
   src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(../fonts/OpenSans-BoldItalic.ttf) format('truetype');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* Подключение шрифта PT Serif */
@@ -448,7 +440,6 @@ section {
   font-style: normal;
   font-weight: 400;
   src: local('PT Serif'), local('PTSerif-Regular'), url(/template/fonts/PT_Serif-Web-Regular.ttf) format('truetype');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* bold */
 @font-face {
@@ -456,7 +447,6 @@ section {
   font-style: normal;
   font-weight: 700;
   src: local('PT Serif Bold'), local('PTSerif-Bold'), url(../fonts/PT_Serif-Web-Bold.ttf) format('truetype');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* regular italic */
 @font-face {
@@ -464,7 +454,6 @@ section {
   font-style: italic;
   font-weight: 400;
   src: local('PT Serif Italic'), local('PTSerif-Italic'), url(../fonts/PT_Serif-Web-Italic.ttf) format('truetype');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* bold italic */
 @font-face {
@@ -472,7 +461,6 @@ section {
   font-style: italic;
   font-weight: 700;
   src: local('PT Serif Bold Italic'), local('PTSerif-BoldItalic'), url(../fonts/PT_Serif-Web-BoldItalic.ttf) format('truetype');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* Подключение шрифта Icons */
@@ -552,12 +540,13 @@ p {
 		width:100%;
 	}
 }
-/* For Smartphone (Landscape orientation) users (If window width > 568 px and < 640 px) */
+/* For Smartphone (Landscape orientation) users (If window width > 568 px and < 640 px) 
 @media only screen and (min-width:569px) and (max-width:640px) {
     .section_prices .collumns__col {
 		width:50%;
 	}
 }
+*/
 .icon::before {
     font-family: 'icomoon' !important;
     line-height: 1;
@@ -920,7 +909,8 @@ section {
 /* For Tablet & Smartphone users (If window width < 960 px) */
 @media only screen and (max-width: 976px) {
     .top-pannel__logo .logo__wrapper {
-		margin-left:-50%;
+        position: relative;
+		left:-50%;
 	}
 }
 .h {

@@ -1,11 +1,14 @@
 .icon_size_x16::before {
-	font-size: 0.8888em;
+	/*font-size: 0.8888em;*/
+    font-size: 16px;
 }
 .icon_size_x24::before {
-	font-size: 1.3333em;
+	/*font-size: 1.3333em;*/
+    font-size: 24px;
 }
 .icon_size_x32::before {
-	font-size: 1.7777em;
+	/*font-size: 1.7777em;*/
+    font-size: 32px;
 }
 .icon_size_x48::before {
 	font-size: 2.6666em;

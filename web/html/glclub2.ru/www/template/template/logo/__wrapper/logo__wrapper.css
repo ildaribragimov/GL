@@ -5,6 +5,7 @@
 /* For Tablet & Smartphone users (If window width < 960 px) */
 @media only screen and (max-width: 976px) {
     .top-pannel__logo .logo__wrapper {
-		margin-left:-50%;
+        position: relative;
+		left:-50%;
 	}
 }

@@ -13,9 +13,10 @@
 		width:100%;
 	}
 }
-/* For Smartphone (Landscape orientation) users (If window width > 568 px and < 640 px) */
+/* For Smartphone (Landscape orientation) users (If window width > 568 px and < 640 px) 
 @media only screen and (min-width:569px) and (max-width:640px) {
     .section_prices .collumns__col {
 		width:50%;
 	}
 }
+*/
