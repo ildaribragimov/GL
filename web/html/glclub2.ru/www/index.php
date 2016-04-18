@@ -50,6 +50,8 @@
 		<?php
 			// Вставка главного меню
 			include "includes/mainMenu.php";
+            // Вставка JS-скрипта, отрабатывающего по завершении загрузки страницы
+            include_once "template/js/post-load.php";
 		?>
     </body>
 </html>

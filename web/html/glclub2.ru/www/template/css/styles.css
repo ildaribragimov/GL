@@ -1,3 +1,4 @@
+/* level 0 - normalize css */
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -51,10 +52,9 @@ header {
 section {
     display: block;
 }
+/* level 1 - standart css */
 body {
     overflow-x: hidden;
-}
-body {
 	font-size: 100%;    
 }
 .link {
@@ -93,9 +93,6 @@ button,
     border-style: solid;
     background: none;
     display: block;
-}
-button,
-.button {
     border-width: 2px;
     border-radius: 4px;
     padding-left: 0;
@@ -115,8 +112,6 @@ button::after,
 .button__title {
     margin-left:1em;
 	float:left;
-}
-.button__title {
 	margin-top:0.3888em;
 	margin-bottom:0.3888em;
 }
@@ -127,8 +122,6 @@ button::after,
 .button__icon {
     margin-left:1em;
 	float:left;
-}
-.button__icon {
 	margin-top:0.5555em;
 	margin-bottom:0.5555em;    
 }
@@ -299,13 +292,6 @@ section {
     z-index: 20;
 }
 .burger-button__icon {
-    -webkit-transition: 0.25s;
-    -moz-transition: 0.25s;
-    -ms-transition: 0.25s;
-    -o-transition: 0.25s;
-    transition: 0.25s;
-}
-.burger-button__icon {
     padding: 0.4444em;
     width: 24px;
     height: 24px;
@@ -331,7 +317,6 @@ section {
     border-radius: 2px;
     background-color: #5d463a;
 }
-
 .burger-button__icon span {
     position:relative;
     top: 10px;
@@ -348,8 +333,6 @@ section {
 .burger-button__icon span:after {
     top: 8px;
 }
-
-
 .slide-pannel_open .burger-button__icon span:before,
 .slide-pannel_open .burger-button__icon span:after {
     width:70%;
@@ -403,66 +386,11 @@ section {
 .menu_main .menu__item {
     float: left;
 }
-/* Подключение шрифта Open Sans */
-/* regular */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(../fonts/OpenSans-Regular.ttf) format('truetype');
-}
-/* bold */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(../fonts/OpenSans-Bold.ttf) format('truetype');
-}
-/* regular italic */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(../fonts/OpenSans-Italic.ttf) format('truetype');
-}
-/* bold italic */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(../fonts/OpenSans-BoldItalic.ttf) format('truetype');
-}
-
-/* Подключение шрифта PT Serif */
-/* regular */
-@font-face {
-  font-family: 'PT Serif';
-  font-style: normal;
-  font-weight: 400;
-  src: local('PT Serif'), local('PTSerif-Regular'), url(/template/fonts/PT_Serif-Web-Regular.ttf) format('truetype');
-}
-/* bold */
-@font-face {
-  font-family: 'PT Serif';
-  font-style: normal;
-  font-weight: 700;
-  src: local('PT Serif Bold'), local('PTSerif-Bold'), url(../fonts/PT_Serif-Web-Bold.ttf) format('truetype');
-}
-/* regular italic */
-@font-face {
-  font-family: 'PT Serif';
-  font-style: italic;
-  font-weight: 400;
-  src: local('PT Serif Italic'), local('PTSerif-Italic'), url(../fonts/PT_Serif-Web-Italic.ttf) format('truetype');
-}
-/* bold italic */
-@font-face {
-  font-family: 'PT Serif';
-  font-style: italic;
-  font-weight: 700;
-  src: local('PT Serif Bold Italic'), local('PTSerif-BoldItalic'), url(../fonts/PT_Serif-Web-BoldItalic.ttf) format('truetype');
-}
-
+/* level 2 - template css */
+/* Open Sans */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700italic,700&subset=cyrillic,latin);
+/* PT Serif */
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic);
 /* Подключение шрифта Icons */
 @font-face {
     font-family: 'icomoon';
@@ -719,8 +647,6 @@ p {
 .page-wrapper {
 	box-shadow:0 0 30px rgba(0, 0, 0, 0.5);
 	z-index:5;
-}
-.page-wrapper {
     margin-left:0px;
     -webkit-transition:margin-left 0.25s ease;
     -moz-transition:margin-left 025s ease;
@@ -919,21 +845,22 @@ p {
     font-family: 'PT Serif', 'Times New Roman';
     font-weight: normal;
 }
-.h_lev_2 {
+.h_lev_2,
+.h_lev_3 {
     margin-top: 1.25em;
+    line-height: 1.25em;
+}
+.h_lev_2 {
     margin-bottom: 0.9375em;
     padding-left: 0.8333em;
     padding-right: 0.8333em;
     font-size: 2.6666em;
-    line-height: 1.25em;
 }
 .h_lev_3 {
-	margin-top:1.25em;
 	margin-bottom:1.25em;
 	padding-left:1.1111em;
 	padding-right:1.1111em;
-	font-size:2em;
-	line-height:1.25em;    
+	font-size:2em;   
 }
 .h_lev_4 {
 	margin-top:1.5em;
@@ -986,8 +913,6 @@ p {
     margin-top: 1.6666em;
     padding: 0;
 }
-.price-card__options {
-}
 .price {
     margin-top: 1.6666em;
     margin-bottom: 2.5em;
@@ -1020,8 +945,6 @@ p {
 }.reviews {
     margin-top: 0.8333em;
     margin-bottom: 1.6666em;
-}
-.reviews__wrapper {
 }
 .reviews__item {
     margin-top: 2.5em;
@@ -1071,23 +994,23 @@ p {
 .phone-number__link:hover {
     text-decoration: none;
 }.section_about {
-    background-image: url(../../media/contacts/contacts_bg_tablet.jpg);
+    background-image:url(../../media/contacts/contacts_bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
-/* For Desktop users (If window width >= 960 px) */
+/* For Desktop users (If window width >= 960 px) 
 @media only screen and (min-width:976px) {
     .section_about {
 		background-image:url(../../media/contacts/contacts_bg.jpg);
 	}
-}
-/* For Tablet & Smartphone users (If window width < 960 px) */
+}*/
+/* For Tablet & Smartphone users (If window width < 960 px) 
 @media only screen and (max-width: 976px) {
     .section_about {
 		background-image:url(../../media/contacts/contacts_bg_tablet.jpg);
 	}
-}
+}*/
 /* For Smartphone users (If window width < 768 px) */
 @media only screen and (max-width:768px) {
     .section_about {
@@ -1244,6 +1167,7 @@ p {
     float: left;
     left: -50%;
 }
+/* level 3 - theme css */
 .button_theme_pink {
     border-color: #e9bdac;
     color: #e9bdac;

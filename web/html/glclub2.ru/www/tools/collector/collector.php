@@ -61,11 +61,14 @@ class Collector
         foreach ($files as $value) {
             // получает содержимое файла в строку
             $file = $this->config["root"].$value;
-            $handle = fopen($file, "r");
-            $fileContent .= fread($handle, filesize($file));
-            fclose($handle);
+            $fileSize = filesize($file);
+            if ($fileSize > 0) {
+                $handle = fopen($file, "r");
+                $fileContent .= fread($handle, $fileSize);
+                fclose($handle);
+            }
         }
-        if ($this->filesType == "js") {
+        if (strstr($this->filesType, "js")) {
             $fileContent = str_replace('"use strict";', '', $fileContent);
         }
         // Добавление конечной строки

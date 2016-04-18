@@ -10,6 +10,7 @@ $config["cacheEnable"] = false;
  */
 // Порядок загрузки CSS-стилей
 $config["css"] = array(
+    "/template/normalize/normalize.css",
     "/template/normalize/html/html.css",
     "/template/normalize/body/body.css",
     "/template/normalize/nav/nav.css",
@@ -21,6 +22,7 @@ $config["css"] = array(
     "/template/normalize/header/header.css",
     "/template/normalize/section/section.css",
 
+    "/template/standart/standart.css",
     "/template/standart/body/body.css",
     "/template/standart/link/link.css",
     "/template/standart/link/_block/link_block.css",
@@ -66,6 +68,7 @@ $config["css"] = array(
     "/template/standart/menu/__items/menu__items.css",
     "/template/standart/menu/__item/menu__item.css",
 
+    "/template/template/template.css",
     "/template/css/fonts.css",
     "/template/template/html/html.css",
     "/template/template/body/body.css",
@@ -165,6 +168,7 @@ $config["css"] = array(
     "/template/template/menu/__wrapper/menu__wrapper.css",
     "/template/template/menu/__content/menu__content.css",
 
+    "/template/theme/theme.css",
     "/template/theme/button/_theme/button_theme.css",
     "/template/theme/switchers/switchers.css",
     "/template/theme/separator/separator.css",    
@@ -191,8 +195,15 @@ $config["js"] = array(
     "/template/template/menu/menu.js",
     "/template/template/rooms/rooms.js",
     
-    "/library/js/plugin.popUp.js",
+    //"/library/js/plugin.popUp.js",
 );
+
+// Порядок загрузки JS-пост-скриптов
+$config["js-post-load"] = array(
+    "/library/js/plugin.popUp.js",
+    "/template/template/button/button.js"
+);
+
 // Порядок загрузки файлов секций
 $config["sections"] = array(
     "rooms",
