@@ -10,3 +10,6 @@
     -o-transition:margin-left 0.25s ease;
     transition:margin-left 0.25s ease;
 }
+.page-wrapper.slide-pannel_open {
+    margin-left: 240px;
+}

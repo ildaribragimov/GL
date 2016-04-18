@@ -31,6 +31,43 @@ var a={32:1,33:1,34:1,35:1,36:1,37:1,38:1,39:1,40:1};function b(d){if(a[d.keyCod
  * ==== Решение "Плавная прогрутка до якоря" ==== *
  * ============================================== */
 function scrollingToAnchor(e,a){a=a||null;var b=e.target.getAttribute("href"),b=document.getElementById(b.match(/[^#].*/));if(null===b)a&&a();else var c=document.documentElement,f=c.clientHeight,g=Math.max(document.body.scrollHeight,c.scrollHeight,document.body.offsetHeight,c.offsetHeight,document.body.clientHeight,c.clientHeight),h=b.offsetTop,k=setInterval(function(){var d=window.pageYOffset,b=g-(d+f),d=h-d,c=2!=Math.abs(d)?d/3:d;0==d||0>=b&&0>=b-c?(clearInterval(k),a&&a()):window.scrollBy(0,c)},1000/75)};
+/**
+ * Класс выезжающей панели навигации
+ * @author Ildar Ibragimov <iibragimov84@gmail.com>
+ * @copyright Ildar Ibragimov 2016
+ */
+function slidePannel(e){function a(b,c){c=c||null;for(var a="show"==b?!0:!1,d=0;d<e.length;d++)document.querySelector(e[d]).classList.toggle("slide-pannel_open",a);f.enable=a;c&&c()}this.enable=!1;var f=this;this.show=function(b){a("show",b)};this.hide=function(b){a("hide",b)}};
+// Создание экземпляра объекта "Выезжающей панели главного меню"
+var slideMenuPannel = new slidePannel([".page-wrapper", ".burger-button"]);
+
+// Открытие/Скрытие главного меню на мобильных устройствах, при клике по кнопке "burger-button"
+(function(burgerButton){
+    // Назначение обработчика события татча по пунктам меню
+    burgerButton.addEventListener('touchend', function(event) {
+        // Отмена действия по умолчанию браузера на событие
+        event.preventDefault();
+        // Вызов события "onclick"
+        event.target.click();
+    });
+    // Назначение обработчика события клика по пункту меню
+    burgerButton.addEventListener('click', function(event) {
+        // Отмена действия по умолчанию браузера на событие
+        event.preventDefault();
+        // Проверка состояния главного меню
+        (slideMenuPannel.enable == true)
+            // Вызов метода "Сворачивания панели", если панель развернута
+            ? slideMenuPannel.hide(enableScroll)
+            // Вызов метода "Разворачивания панели", если панель свернута
+            : slideMenuPannel.show(disableScroll);
+    });
+})(document.querySelector('.top-pannel__burger-button'));
+
+// Назначение обработчика событию "Изменение размера окна браузера"
+window.addEventListener("resize", function(event){
+    // Сворачивание панели навигации, при условиях: Ширина "Области просмотра браузера" > 960px; Панель навигации развернута.
+    if ( document.documentElement.clientWidth > 960 && slideMenuPannel.enable == true ) slideMenuPannel.hide(enableScroll);
+});
+
 // Плавная прокрутка страницы до якоря, при клике по пункту меню
 (function(menu){
     // Назначение обработчика события татча по пунктам меню
@@ -45,9 +82,13 @@ function scrollingToAnchor(e,a){a=a||null;var b=e.target.getAttribute("href"),b=
         // Отмена действия по умолчанию браузера на событие
         event.preventDefault();
         // Вызов функции готового решения "плавная прокрутка страницы до якоря"
-        scrollingToAnchor(event);
+        scrollingToAnchor(event, function(){
+            // Сворачивание панели навигации, если она развернута
+            if ( slideMenuPannel.enable == true ) { slideMenuPannel.hide(enableScroll); }
+        });
     });
 })(document.getElementById("main-menu"));
+
 // Установка высоты элементов слайдера ROOMS относительно области просмотра браузера
 (function(elements){
     setSizeFrom(elements, {height:100});

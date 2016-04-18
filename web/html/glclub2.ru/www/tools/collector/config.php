@@ -185,7 +185,9 @@ $config["js"] = array(
     "/library/js/setSizeFrom.min.js",
     "/library/js/disableScroll.min.js",
     "/library/js/scrollingToAnchor.min.js",
+    "/library/js/slidePannel.min.js",
 
+    "/template/template/top-pannel/top-pannel.js",
     "/template/template/menu/menu.js",
     "/template/template/rooms/rooms.js",
     

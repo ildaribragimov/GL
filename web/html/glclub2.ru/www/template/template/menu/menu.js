@@ -13,6 +13,9 @@
         // Отмена действия по умолчанию браузера на событие
         event.preventDefault();
         // Вызов функции готового решения "плавная прокрутка страницы до якоря"
-        scrollingToAnchor(event);
+        scrollingToAnchor(event, function(){
+            // Сворачивание панели навигации, если она развернута
+            if ( slideMenuPannel.enable == true ) { slideMenuPannel.hide(enableScroll); }
+        });
     });
 })(document.getElementById("main-menu"));
