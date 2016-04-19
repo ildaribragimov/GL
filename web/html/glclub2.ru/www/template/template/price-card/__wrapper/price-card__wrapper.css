@@ -3,4 +3,12 @@
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     background-color: #f2eee9;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -ms-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+}
+.price-card__wrapper:hover {
+    background-color: #6fa491;
 }

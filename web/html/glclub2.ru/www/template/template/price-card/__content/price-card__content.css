@@ -1,6 +1,10 @@
 .price-card__content {
     border: 2px solid #daccc0;
     padding: 0 1.6666em 1.1111em;
+    background-color: #f2eee9;
+}
+.price-card__wrapper:hover .price-card__content {
+    border-color: #6fa491;
 }
 /* For Smartphone users (If window width < 768 px) */
 @media only screen and (max-width:768px) {
