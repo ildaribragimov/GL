@@ -1,6 +1,6 @@
 "use strict";
 // Создание экземпляра объекта "Выезжающей панели главного меню"
-var slideMenuPannel = new slidePannel([".page__wrapper", ".burger-button"]);
+var slideMenuPannel = new slidePannel([".page-wrapper", ".burger-button"]);
 
 // Открытие/Скрытие главного меню на мобильных устройствах, при клике по кнопке "burger-button"
 (function(burgerButton){

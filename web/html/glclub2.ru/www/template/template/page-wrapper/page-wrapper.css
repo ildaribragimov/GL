@@ -1,4 +1,4 @@
-.page__wrapper {
+.page-wrapper {
 	box-shadow:0 0 30px rgba(0, 0, 0, 0.5);
 	z-index:5;
     margin-left:0px;
@@ -8,6 +8,6 @@
     -o-transition:margin-left 0.25s ease;
     transition:margin-left 0.25s ease;
 }
-.page__wrapper.slide-pannel_open {
+.page-wrapper.slide-pannel_open {
     margin-left: 240px;
 }
