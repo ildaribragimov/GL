@@ -1,0 +1,23 @@
+.popup {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transition:visibility 0s, opacity 0.25s linear;
+    -moz-transition:visibility 0s, opacity 0.25s linear;
+    -ms-transition:visibility 0s, opacity 0.25s linear;
+    -o-transition:visibility 0s, opacity 0.25s linear;
+    transition:visibility 0s, opacity 0.25s linear;
+    text-align: center;
+}
+.popup::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
