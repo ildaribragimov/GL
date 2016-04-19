@@ -43,7 +43,7 @@ $config["css"] = array(
     "/template/standart/separator/__wrapper/separator__wrapper.css",
     "/template/standart/separator/__content/separator__content.css",
     "/template/standart/separator/__line/separator__line.css",
-    "/template/standart/page-wrapper/page-wrapper.css",
+    "/template/standart/page/__wrapper/page__wrapper.css",
     "/template/standart/section/section.css",
     "/template/standart/section/__wrapper/section__wrapper.css",
     "/template/standart/section/__header/section__header.css",
@@ -67,6 +67,11 @@ $config["css"] = array(
     "/template/standart/menu/_main/menu_main.css",
     "/template/standart/menu/__items/menu__items.css",
     "/template/standart/menu/__item/menu__item.css",
+    "/template/standart/popup/popup.css",
+    "/template/standart/popup/_open/popup_open.css",
+    "/template/standart/popup/__wrapper/popup__wrapper.css",
+    "/template/standart/popup/__content/popup__content.css",
+    "/template/standart/popup/__window-controls/popup__window-controls.css",
 
     "/template/template/template.css",
     "/template/css/fonts.css",
@@ -94,6 +99,7 @@ $config["css"] = array(
     "/template/template/icon/_logo-medium/icon_logo-medium.css",
     "/template/template/icon/_social-vk/icon_social-vk.css",
     "/template/template/icon/_arrow-right/icon_arrow-right.css",
+    "/template/template/icon/_close-button/icon_close-button.css",
     "/template/template/switchers/_arrows/switchers_arrows.css",
     "/template/template/switchers/_radio-buttons/switchers_radio-buttons.css",
     "/template/template/switchers/__wrapper/switchers__wrapper.css",
@@ -110,7 +116,7 @@ $config["css"] = array(
     "/template/template/separator/__line/separator__line.css",
     "/template/template/separator/__icon/separator__icon.css",
     "/template/template/header/__separator/header__separator.css",
-    "/template/template/page-wrapper/page-wrapper.css",
+    "/template/template/page/__wrapper/page__wrapper.css",
     "/template/template/section/section.css",
     "/template/template/section/__wrapper/section__wrapper.css",
     "/template/template/section/__content/section__content.css",
@@ -167,6 +173,9 @@ $config["css"] = array(
     "/template/template/menu/__link/menu__link.css",
     "/template/template/menu/__wrapper/menu__wrapper.css",
     "/template/template/menu/__content/menu__content.css",
+    "/template/template/menu/__link/menu__link.css",
+    "/template/template/popup/__window-header/popup__window-header.css",
+    "/template/template/popup/__window-content/popup__window-content.css",
 
     "/template/theme/theme.css",
     "/template/theme/button/_theme/button_theme.css",
@@ -174,8 +183,6 @@ $config["css"] = array(
     "/template/theme/separator/separator.css",    
     "/template/theme/separator/__line/separator__line.css",
     "/template/theme/section/_theme/section_theme.css",
-
-    "/library/css/plugin.popUp.css",
 );
 
 // Порядок загрузки JS-скриптов
