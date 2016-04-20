@@ -30,7 +30,7 @@
                 <div class="subsection-sendMail">
                     <p>Интересуют дополнительные услуги? &nbsp; Или у вас к нам коммерческое предложение?<br>
                     Свяжитесь с нами! &nbsp; Мы открыты и для новых друзей!</p>
-                    <div class="controls controls_feedback">
+                    <div class="controls">
                         <div class="controls__wrapper">
                             <div class="controls__content">
                                 <button class="button button_theme_pink" value="sendMail">

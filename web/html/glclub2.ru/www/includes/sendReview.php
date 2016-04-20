@@ -30,7 +30,7 @@
 			<div class="content__wrapper">
 				<p>Вы уже отдыхали у нас? &nbsp; У вас есть предложения по улучшению сервиса?<br>
 				Поделитесь своим впечатлением.</p>
-                <div class="controls controls_feedback">
+                <div class="controls">
                     <div class="controls__wrapper">
                         <div class="controls__content">
                             <button class="button button_theme_green" value="sendReview">
