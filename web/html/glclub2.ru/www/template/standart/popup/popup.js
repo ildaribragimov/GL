@@ -1,49 +1,70 @@
 "use strict";
-
 /**
- * Объект "Всплывающее окно"
+ * Класс "Всплывающее окно"
  *
- * Свойства объекта:
- * * popup (тип: public) - Объект всплывающего окна
- * * name (тип: string) - Имя всплывающего окна. Будет использовано в значении атрибута ID конструкции
- * * options (тип: object) - Объект параметров всплывающего окна. Содержит слудующие параметры:
- * * * type (тип: string) - Тип всплывающего окна. может принимать значения: "alert", "confirm", "prompt"
- * * * header (тип: string) - Заголовок окна
- * * * data (тип: object) - Объект передаваемых данных для вывода в окне
- * * * navigation (тип: string) - Тип навигационной панели. Может принимать значения: "standart", "minimal".
+ * @class
+ * @classdesc Генерирует HTML-конструкцию всплывающего окна и вставляет в него переданное содержимое (Заголовок, Содержимое).
  *
- * Методы объекта:
- * * createPopup (тип: private) - Создаёт HTML-конструкцию окна
- * * createHeader (тип: private) - Создает HTML-конструкцию заголовка окна
- * * createContlols (тип: private) - Создает HTML-конструкцию панели основной навигации окна
- * * createСontent (тип: private) - Созадет HTML-конструкцию содержательной части окна и вставляет в нее содержимое
- * * open (тип: public) - Открывает всплывающее окно
- * * close (тип: public) - Закрывает всплывающее окно
- * * setСontent (тип: public) - Вставляет с замещением в содержательную часть окна содержимое
+ * @param {object} popup - Объект всплывающего окна
+ * @param {string} name - Имя всплывающего окна. Будет использовано в значении атрибута ID конструкции
+ * @param {object} options - Объект параметров всплывающего окна. Содержит слудующие параметры:
+ * @param {string} type - Тип всплывающего окна. может принимать значения: "alert", "confirm", "prompt"
+ * @param {string} header - Заголовок окна
+ * @param {object} content - Объект передаваемых данных для вывода в окне
+ * @param {string} navigation - Тип навигационной панели. Может принимать значения: "standart", "minimal".
+ *
+ * @method createPopup - Создаёт HTML-конструкцию окна
+ * @method createHeader - Создает HTML-конструкцию заголовка окна
+ * @method createContlols - Создает HTML-конструкцию панели основной навигации окна
+ * @method createСontent - Созадет HTML-конструкцию содержательной части окна и вставляет в нее содержимое
+ * @method open - Открывает всплывающее окно
+ * @method close - Закрывает всплывающее окно
+ * @method setHeader - Вставляет с замещением в заголовок окна содержимое
+ * @method setСontent - Вставляет с замещением в содержательную часть окна содержимое
  */
 function popUp(name, options) {
-    // Назначение значения по умолчанию свойству всплывающего окна
+    /**
+     * Свойство, содержащее объект всплывающего окна
+     * @public
+     */
     this.popup = null;
-    // Сохранение ссылки на объект в переменной
+    /**
+     * @property {object} self - Ссылка на текущий объект
+     * @private
+     */
     var self = this;
-    // Назначение значений по умолчанию параметрам объекта окна, если они не были переданы в вызове
+    /**
+     * Назначение значений по умолчанию параметрам объекта окна, если они не были переданы в вызове
+     *
+     * @property {object} options - Объект параметров всплывающего окна, переданных при генерации
+     * @property {string} [options.type = "alert"] - Тип всплывающего окна
+     * @property {string} [options.header = null] - Заголовок окна
+     * @property {string} [options.content = "<p>Содержимое окна не было передано!</p>"] - Объект передаваемых данных для вывода в окне
+     * @property {string} [options.navigation = "standart"] - Тип навигационной панели
+     */
     options = options || new Object;
     options.type = options.type || "alert";
     options.header = options.header || null;
     options.content = options.content || "<p>Содержимое окна не было передано!</p>";
     options.navigation = options.navigation || "standart";
     /**
-     * Метод "createContlols" создает HTML-конструкцию панели основной навигации окна
+     * Метод "createContlols"
      *
-     * Возвращаемое значение:
-     * * controls (тип: object) - HTML-конструкция панели основной навигации окна
+     * @description Cоздает HTML-конструкцию панели основной навигации окна
+     * @private
+     *
+     * @return {object} controls - HTML-конструкция панели основной навигации окна
      */
     function createContlols(){
-        // Создание корневого элемента навигационной панели окна
+        /**
+         * @property {object} controls - Корневой элемент навигационной панели окна
+         */
         var controls = document.createElement('div');
         // Добавление к элементу атрибута "class"
         controls.setAttribute("class", "popup__window-controls");
-        // Создание корневого элемента кнопки "Закрыть"
+        /**
+         * @property {object} close - Корневой элемент кнопки "Закрыть"
+         */
         var close = document.createElement("a");
         // Добавление к элементу атрибута "class"
         close.setAttribute("class", "link link_block");
@@ -66,13 +87,17 @@ function popUp(name, options) {
         return controls;
     }
     /**
-     * Метод "createHeader" создает HTML-конструкцию заголовка окна
+     * Метод "createHeader"
      *
-     * Возвращаемое значение:
-     * * header (тип: object) - HTML-конструкция заголовка окна
+     * @description Cоздает HTML-конструкцию заголовка окна
+     * @private
+     *
+     * @return {object} header - HTML-конструкция заголовка окна
      */
     function createHeader(){
-        // Создание корневого элемента заголовка окна
+        /**
+         * @property {object} header - Корневой элемент заголовка окна
+         */
         var header = document.createElement('div');
         // Добавление к элементу атрибута "class"
         header.setAttribute("class", "popup__window-header");        
@@ -87,13 +112,17 @@ function popUp(name, options) {
         return header;
     }
     /**
-     * Метод "createСontent" созадет HTML-конструкцию содержательной части окна и вставляет в нее содержимое, полученные при вызове плагина
+     * Метод "createСontent"
      *
-     * Возвращаемое значение:
-     * * content (тип: object) - HTML-конструкция содержательной части окна
+     * @description Cозадет HTML-конструкцию содержательной части окна и вставляет в нее содержимое, полученные при вызове плагина
+     * @private
+     *
+     * @return {object} content - HTML-конструкция содержательной части окна
      */
     function createСontent(){
-        // Создание корневого элемента содержательной части окна
+        /**
+         * @property {object} content - Корневой элемент содержательной части окна
+         */
         var content = document.createElement('div');
         // Добавление к элементу атрибута "class"
         content.setAttribute("class", "popup__window-content");
@@ -103,17 +132,17 @@ function popUp(name, options) {
         return content;
     }
     /**
-     * Метод "createPopup" создаёт HTML-конструкцию окна
+     * Метод "createСontent"
      *
-     * Возвращаемое значение:
-     * * popup (тип: object) - Объект HTML-конструкции окна
+     * @description Cоздаёт HTML-конструкцию окна
+     * @private
+     *
+     * @return {object} popup - Объект HTML-конструкции окна
      */
     function createPopup(){
         /**
-         * Объявление перменных:
-         *
-         ** htmlTree (тип: object) - HTML-конструкция окна
-         ** parentElem (тип: object) - Ссылка на родильский элемент текущего создаваемого элемента
+         * @property {object} htmlTree - HTML-конструкция окна
+         * @property {object} parentElem - Ссылка на родильский элемент текущего создаваемого элемента
          */
         var htmlTree = ["popup", "popup__wrapper", "popup__content"],
             parentElem = null;
@@ -148,33 +177,56 @@ function popUp(name, options) {
         // Возвращаемый объект созданного окна
         return popup;
     }
-
     // Создание HTML-конструкции всплывающего окна
     this.popup = createPopup();
     // Вставка HTML-конструкции окна в конец элемента "body"
     document.querySelector("body").appendChild(this.popup);
     /**
-     * Метод "open" открывает всплывающее окно
+     * Метод "open"
+     *
+     * @description Открывает всплывающее окно (Добавляет CSS-класс "opened" корневому элементу окна)
+     * @public
+     *
+     * @return void
      */
     this.open = function() {
-        // Добавление CSS-класса "opened" корневому элементу окна
         self.popup.classList.add("popup_open");
     };
     /**
-     * Метод "close" закрывает всплывающее окно
+     * Метод "close"
+     *
+     * @description Закрывает всплывающее окно (Удаляет CSS-класс "opened" у корневого элемента окна)
+     * @public
+     *
+     * @return void
      */
     this.close = function() {
-        // Удаление CSS-класса "opened" у корневого элемента окна
         self.popup.classList.remove("popup_open");
     };
     /**
-     * Метод "setСontent" вставляет с замещением в содержательную часть окна содержимое, переданное в параметре
+     * Метод "setHeader"
      *
-     * Возвращаемое значение:
-     * * content (тип: object/string) - объект(строка), который необходимо вставить в содержательную часть окна
+     * @description Вставляет с замещением в заголовок окна содержимое, переданное в параметре
+     * @public
+     *
+     * @param {object/string} header - Объект(строка), который необходимо вставить в заголовок окна
+     *
+     * @return void
+     */
+    this.setHeader = function(header){
+        self.popup.querySelector(".popup__window-header .h").innerHTML = content;
+    };
+    /**
+     * Метод "setСontent"
+     *
+     * @description Вставляет с замещением в содержательную часть окна содержимое, переданное в параметре
+     * @public
+     *
+     * @param {object/string} content - Объект(строка), который необходимо вставить в содержательную часть окна
+     *
+     * @return void
      */
     this.setContent = function(content){
-        // Вставка в корневой элемент данных, полученных при вызове плагина
-        self.popup.querySelector(".content").innerHTML = content;
-    }
+        self.popup.querySelector(".popup__window-content").innerHTML = content;
+    };
 }
