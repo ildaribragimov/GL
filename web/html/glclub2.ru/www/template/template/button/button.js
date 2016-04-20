@@ -2,11 +2,16 @@
 /**
  * Объявление переменных
  *
+ * * sendReviewPopupTemplate (тип: string) - HTML-шаблон содержимого всплывающего окна добавления отзыва
+ * * sendMailPopupTemplate (тип: string) - HTML-шаблон содержимого всплывающего окна отправки email
  * * sendReviewPopup (тип: object) - Экземпляр объекта модального окна "Добавления отзыва"
  * * sendMailPopup (тип: object) - Экземпляр объекта модального окна "Отправки письма"
  */
-var sendReviewPopup = new popUp("sendReview", {type: "alert", header: "Отправить отзыв", content:"<p>Это всплывающее окно с формой отправки отзыва!</p>", navigation:"minimal"}),
-    sendMailPopup = new popUp("sendMail", {type: "alert", header: "Отправить письмо", content:"<p>Это всплывающее окно с формой отправки письма с сайта!</p>", navigation:"minimal"});
+var sendReviewPopupTemplate = '<p>Это всплывающее окно с формой отправки отзыва!</p>',
+    sendMailPopupTemplate = '<form class="form form_send-mail" action="/" method="post" accept-charset="utf-8" autocomplete="on" novalidate><div class="form__element form__element_input"><input class="form__element-field" name="user-name" type="text" placeholder="Ваше имя" pattern="^[А-Яа-яЁё\s]+$" required="required"></div><div class="form__element form__element_input"><input class="form__element-field" name="user-email" type="email" placeholder="Ваш E-mail" required="required"></div><div class="form__element form__element_textarea"><textarea class="form__element-field" name="user-meggage" placeholder="Напишите сообщение здесь..." wrap="soft" rows="3" required="required"></textarea></div><div class="form__element form__element_button controls"><div class="controls__wrapper"><div class="controls__content"><button class="button button_rounded button_theme_green" type="submit"><span class="button__icon icon icon_plane icon_size_x24"></span></button></div></div></div></form>';
+    
+var sendReviewPopup = new popUp('sendReview', {type: 'alert', header: 'Отправить отзыв', content: sendReviewPopupTemplate, navigation:'minimal'}),
+    sendMailPopup = new popUp('sendMail', {type: 'alert', header: 'Отправить письмо', content: sendMailPopupTemplate, navigation:'minimal'});
 
 // Получение ссылки на элемент вызывающий окно "sendReview"
 document.querySelector('button[value="sendReview"]')
