@@ -78,6 +78,8 @@ $config["css"] = array(
     "/template/standart/popup/__window-content/popup__window-content.css",
     "/template/standart/form/form.css",
     "/template/standart/form/__element/form__element.css",
+    "/template/standart/form/__element/_first/form__element_first.css",
+    "/template/standart/form/__element/_last/form__element_last.css",
     "/template/standart/form/__element-field/form__element-field.css",
 
     "/template/template/template.css",

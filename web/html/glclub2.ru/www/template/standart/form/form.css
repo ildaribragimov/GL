@@ -1,0 +1,9 @@
+.form {
+    padding: 1em;
+}
+/* For Smartphone users (If window width < 768 px) */
+@media only screen and (max-width:768px) {
+    .form {
+        padding: 1em 0.8em;
+    }
+}
