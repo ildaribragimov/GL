@@ -18,6 +18,7 @@ $config["css"] = array(
     "/template/normalize/a/a.css",
     "/template/normalize/hr/hr.css",
     "/template/normalize/ul/ul.css",
+    "/template/normalize/input/input.css",
     "/template/normalize/button/button.css",
     "/template/normalize/header/header.css",
     "/template/normalize/section/section.css",
@@ -72,6 +73,11 @@ $config["css"] = array(
     "/template/standart/popup/__wrapper/popup__wrapper.css",
     "/template/standart/popup/__content/popup__content.css",
     "/template/standart/popup/__window-controls/popup__window-controls.css",
+    "/template/standart/popup/__window-header/popup__window-header.css",
+    "/template/standart/popup/__window-content/popup__window-content.css",
+    "/template/standart/form/form.css",
+    "/template/standart/form/__element/form__element.css",
+    "/template/standart/form/__element-field/form__element-field.css",
 
     "/template/template/template.css",
     "/template/css/fonts.css",
@@ -174,6 +180,7 @@ $config["css"] = array(
     "/template/template/menu/__wrapper/menu__wrapper.css",
     "/template/template/menu/__content/menu__content.css",
     "/template/template/menu/__link/menu__link.css",
+    "/template/template/popup/__content/popup__content.css",
     "/template/template/popup/__window-header/popup__window-header.css",
     "/template/template/popup/__window-content/popup__window-content.css",
 
@@ -201,13 +208,11 @@ $config["js"] = array(
     "/template/template/top-pannel/top-pannel.js",
     "/template/template/menu/menu.js",
     "/template/template/rooms/rooms.js",
-    
-    //"/library/js/plugin.popUp.js",
 );
 
 // Порядок загрузки JS-пост-скриптов
 $config["js-post-load"] = array(
-    "/library/js/plugin.popUp.js",
+    "/template/standart/popup/popup.min.js",
     "/template/template/button/button.js"
 );
 
